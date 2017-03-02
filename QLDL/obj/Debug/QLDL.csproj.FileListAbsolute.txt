@@ -1,1 +1,13 @@
 c:\users\vmq\documents\visual studio 2013\Projects\QLDL\QLDL\bin\Debug\QLDL.exe.config
+c:\users\vmq\documents\visual studio 2013\Projects\QLDL\QLDL\bin\Debug\QLDL.exe
+c:\users\vmq\documents\visual studio 2013\Projects\QLDL\QLDL\bin\Debug\QLDL.pdb
+c:\users\vmq\documents\visual studio 2013\Projects\QLDL\QLDL\obj\Debug\QLDL.csprojResolveAssemblyReference.cache
+c:\users\vmq\documents\visual studio 2013\Projects\QLDL\QLDL\obj\Debug\MainWindow.baml
+c:\users\vmq\documents\visual studio 2013\Projects\QLDL\QLDL\obj\Debug\MainWindow.g.cs
+c:\users\vmq\documents\visual studio 2013\Projects\QLDL\QLDL\obj\Debug\App.g.cs
+c:\users\vmq\documents\visual studio 2013\Projects\QLDL\QLDL\obj\Debug\QLDL_MarkupCompile.cache
+c:\users\vmq\documents\visual studio 2013\Projects\QLDL\QLDL\obj\Debug\QLDL.g.resources
+c:\users\vmq\documents\visual studio 2013\Projects\QLDL\QLDL\obj\Debug\QLDL.Properties.Resources.resources
+c:\users\vmq\documents\visual studio 2013\Projects\QLDL\QLDL\obj\Debug\QLDL.csproj.GenerateResource.Cache
+c:\users\vmq\documents\visual studio 2013\Projects\QLDL\QLDL\obj\Debug\QLDL.exe
+c:\users\vmq\documents\visual studio 2013\Projects\QLDL\QLDL\obj\Debug\QLDL.pdb
