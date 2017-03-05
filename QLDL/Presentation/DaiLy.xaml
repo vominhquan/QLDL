@@ -30,8 +30,8 @@
                 </Grid>
                 <Grid Grid.Column="1">
                     <Button Content="Thêm"  Height="24" Margin="10,155,173,10" Click="AddDL"></Button>
-                    <Button Content="Sửa"  Height="24" Margin="77,155,106,10"></Button>
-                    <TextBox Text="{Binding SelectedValue ,ElementName=cbbQuan}" HorizontalAlignment="Left" Height="23" Margin="67,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Button Content="Sửa"  Height="24" Margin="77,155,106,10" Click="UpdateDL"></Button>
+                    <Button Content="Xóa"  Height="24" Margin="144,155,39,10" Click="RemoveDL"/>
                 </Grid>
             </Grid>
         </Grid>
@@ -58,7 +58,7 @@
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="{Binding SONO}"></TextBlock>
-                                        <TextBlock Text="VNĐ"></TextBlock>
+                                        <TextBlock Text=" VNĐ"></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>

@@ -47,9 +47,12 @@ Temporary Items
 .apdisk
 
 DataAccess/
-bin/
+QLDL/bin/
 obj/
 Debug/
 Release/
 DEBUG/
 *.suo
+*.cache
+QLDL.v12.suo
+QLDL/obj/

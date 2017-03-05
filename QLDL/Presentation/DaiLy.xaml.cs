@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using QLDL.BusinessLogic;
-using QLDL.DataAccess;
 using System.Collections.ObjectModel;
 
 namespace QLDL.Presentation
@@ -32,9 +31,11 @@ namespace QLDL.Presentation
 
             // Lấy dữ liệu ban đầu
             lsvDL.ItemsSource = dlbus.getAllDaiLy();
+
             cbbLoaiDL.ItemsSource = dlbus.getAllLoaiDL();
             cbbLoaiDL.DisplayMemberPath = "TENLOAI";
             cbbLoaiDL.SelectedValuePath = "MALOAI";
+
             cbbQuan.ItemsSource = dlbus.getAllQuan();
             cbbQuan.DisplayMemberPath = "TENQUAN";
             cbbQuan.SelectedValuePath = "MAQUAN";
@@ -43,22 +44,42 @@ namespace QLDL.Presentation
 
         private void AddDL(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(cbbQuan.SelectedValue.ToString());
-            DAILY dl = new DAILY
+            dynamic item = lsvDL.SelectedItem;
+
+            if (dlbus.insertDaiLy(item.TENDL, item.DIACHI, item.DIENTHOAI, item.MAQUAN, item.LOAIDL, item.NGAYTIEPNHAN))
             {
-                MADL=2,
-                TENDL = txtTenDL.Text,
-                DIACHI = txtDiaChi.Text,
-                DIENTHOAI = txtDienThoai.Text,
-                NGAYTIEPNHAN = dpNgayTiepNhan.SelectedDate,
-                MAQUAN = Int32.Parse(cbbQuan.SelectedValue.ToString()),
-                LOAIDL = Int32.Parse(cbbLoaiDL.SelectedValue.ToString()),
-                TINHTRANG = 1
-            };
-            if (dlbus.insertDaiLy(dl))
                 MessageBox.Show("Đã thêm thành công");
+                lsvDL.ItemsSource = dlbus.getAllDaiLy();
+            }
             else
                 MessageBox.Show("Có lỗi xảy ra");
         }
+
+        private void UpdateDL(object sender, RoutedEventArgs e)
+        {
+            dynamic item = lsvDL.SelectedItem;
+
+            if (dlbus.updateDaiLy(item.MADL, item.TENDL, item.DIACHI, item.DIENTHOAI, item.MAQUAN, item.LOAIDL, item.NGAYTIEPNHAN))
+            {
+                MessageBox.Show("Đã sửa thành công");
+                lsvDL.ItemsSource = dlbus.getAllDaiLy();
+            }
+            else
+                MessageBox.Show("Có lỗi xảy ra");
+        }
+
+        private void RemoveDL(object sender, RoutedEventArgs e)
+        {
+            dynamic item = lsvDL.SelectedItem;
+
+            if (dlbus.removeDaiLy(item.MADL))
+            {
+                MessageBox.Show("Đã xóa thành công");
+                lsvDL.ItemsSource = dlbus.getAllDaiLy();
+            }
+            else
+                MessageBox.Show("Có lỗi xảy ra");
+        }
+
     }
 }
