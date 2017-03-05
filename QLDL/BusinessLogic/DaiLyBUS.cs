@@ -52,19 +52,19 @@ namespace QLDL.BusinessLogic
 
         public bool insertDaiLy(DAILY dl)
         {
-            //try
-            //{
+            try
+            {
                 using (QLDLEntities context = new QLDLEntities())
                 {
                     context.DAILies.Add(dl);
                     context.SaveChanges();
                     return true;
                 }
-            //}
-            //catch
-            //{
-            //    return false;
-            //}
+            }
+            catch
+            {
+                return false;
+            }
         }
         
     }
