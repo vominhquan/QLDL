@@ -84,7 +84,8 @@ namespace QLDL.Presentation
         #endregion
 
         // to do 
-        // search: theo tên làm do làm biếng. fulltext: https://msdn.microsoft.com/en-us/library/ms142583.aspx
+        // check null foreign key
+        // search: chỉ theo tên do làm biếng. fulltext: https://msdn.microsoft.com/en-us/library/ms142583.aspx
         // right click contextmenu: set dẹp tiệm (tình trạng =0), xóa đại lý(?? có nên)
         // in tất cả đại lý, in 1 đại lý
 

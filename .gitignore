@@ -46,14 +46,11 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-DataAccess/*
+QLDL/DataAccess/*
 QLDL/bin/*
-obj/
-Debug/
-Release/
-DEBUG/
+QLDL/obj/*
+QLDL/obj/Debug/
 *.suo
 *.cache
 QLDL.v12.suo
-QLDL/obj/
 QLDL/App.config
