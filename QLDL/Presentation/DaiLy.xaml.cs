@@ -24,6 +24,7 @@ namespace QLDL.Presentation
     public partial class DaiLy : Window
     {
         private DaiLyBUS dlbus = new DaiLyBUS();
+        private bool _isReportViewerLoaded;
 
         public DaiLy()
         {
@@ -39,7 +40,20 @@ namespace QLDL.Presentation
             cbbQuan.ItemsSource = dlbus.getAllQuan();
             cbbQuan.DisplayMemberPath = "TENQUAN";
             cbbQuan.SelectedValuePath = "MAQUAN";
+
+            _reportViewer.Load += ReportViewer_Load;
             
+        }
+
+        private void ReportViewer_Load(object sender, EventArgs e)
+        {
+            if (!_isReportViewerLoaded)
+            {
+                this._reportViewer.LocalReport.ReportEmbeddedResource = "QLDL.Report.HoSoDaiLy.rdlc";
+                _reportViewer.RefreshReport();
+
+                _isReportViewerLoaded = true;
+            }
         }
 
         #region Đại lý CRUD

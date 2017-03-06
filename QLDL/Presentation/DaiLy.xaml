@@ -1,9 +1,9 @@
 ﻿<Window x:Class="QLDL.Presentation.DaiLy"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
         Title="Danh sách đại lý" Height="452.827" Width="716.837">
     <Grid Name="MainGrid">
-
         <TabControl Height="413" Width="699">
             <TabItem Header="Đại lý">
                 <Grid>
@@ -103,7 +103,11 @@
                 </Grid>
             </TabItem>
             <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid>
+                    <WindowsFormsHost>
+                        <rv:ReportViewer x:Name="_reportViewer" />
+                    </WindowsFormsHost>
+                </Grid>
             </TabItem>
         </TabControl>
         <!-- list view -->
