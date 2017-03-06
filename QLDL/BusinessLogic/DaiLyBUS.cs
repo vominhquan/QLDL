@@ -50,6 +50,8 @@ namespace QLDL.BusinessLogic
             return allQuan;
         }
 
+
+        #region Đại lý CRUD
         public bool insertDaiLy(string tendl, string diachi, string dienthoai, int maquan, int loaidl, DateTime ngaytiepnhan)
         {
             try
@@ -114,7 +116,8 @@ namespace QLDL.BusinessLogic
             {
                 return false;
             }
-        }
+        } 
+        #endregion
         
     }
 }
