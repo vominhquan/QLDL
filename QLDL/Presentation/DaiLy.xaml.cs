@@ -61,46 +61,67 @@ namespace QLDL.Presentation
         {
             dynamic item = lsvDL.SelectedItem;
 
-            if (dlbus.insertDaiLy(item.TENDL, item.DIACHI, item.DIENTHOAI, item.MAQUAN, item.LOAIDL, item.NGAYTIEPNHAN))
+            MessageBoxResult result = MessageBox.Show("Bạn muốn thêm thông tin đã chọn?", "Xác nhận thêm", MessageBoxButton.YesNo);
+
+            if (result == MessageBoxResult.Yes)
             {
-                MessageBox.Show("Đã thêm thành công");
-                lsvDL.ItemsSource = dlbus.getAllDaiLy();
+                if (dlbus.insertDaiLy(item.TENDL, item.DIACHI, item.DIENTHOAI, item.MAQUAN, item.LOAIDL, item.NGAYTIEPNHAN))
+                {
+                    MessageBox.Show("Đã thêm thành công");
+                    lsvDL.ItemsSource = dlbus.getAllDaiLy();
+                }
+                else
+                    MessageBox.Show("Có lỗi xảy ra");
             }
-            else
-                MessageBox.Show("Có lỗi xảy ra");
         }
 
         private void UpdateDL(object sender, RoutedEventArgs e)
         {
             dynamic item = lsvDL.SelectedItem;
 
-            if (dlbus.updateDaiLy(item.MADL, item.TENDL, item.DIACHI, item.DIENTHOAI, item.MAQUAN, item.LOAIDL, item.NGAYTIEPNHAN))
+            item.TENDL = txtTenDL.Text;
+            item.DIACHI = txtDiaChi.Text;
+            item.DIENTHOAI = txtDienThoai.Text;
+            item.MAQUAN = Int32.Parse(cbbQuan.SelectedValue.ToString());
+            item.LOAIDL = Int32.Parse(cbbLoaiDL.SelectedValue.ToString());
+            item.NGAYTIEPNHAN = dpNgayTiepNhan.SelectedDate;
+            
+            MessageBoxResult result = MessageBox.Show("Bạn muốn sửa thông tin đã chọn?", "Xác nhận sửa", MessageBoxButton.YesNo);
+
+            if (result == MessageBoxResult.Yes)
             {
-                MessageBox.Show("Đã sửa thành công");
-                lsvDL.ItemsSource = dlbus.getAllDaiLy();
+                if (dlbus.updateDaiLy(item.MADL, item.TENDL, item.DIACHI, item.DIENTHOAI, item.MAQUAN, item.LOAIDL, item.NGAYTIEPNHAN))
+                {
+                    MessageBox.Show("Đã sửa thành công");
+                    lsvDL.ItemsSource = dlbus.getAllDaiLy();
+                }
+                else
+                    MessageBox.Show("Có lỗi xảy ra");
             }
-            else
-                MessageBox.Show("Có lỗi xảy ra");
         }
 
         private void RemoveDL(object sender, RoutedEventArgs e)
         {
             dynamic item = lsvDL.SelectedItem;
-
-            if (dlbus.removeDaiLy(item.MADL))
+            MessageBoxResult result = MessageBox.Show("Bạn muốn sửa thông tin đã chọn?", "Xác nhận sửa", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
             {
-                MessageBox.Show("Đã xóa thành công");
-                lsvDL.ItemsSource = dlbus.getAllDaiLy();
+                if (dlbus.removeDaiLy(item.MADL))
+                {
+                    MessageBox.Show("Đã xóa thành công");
+                    lsvDL.ItemsSource = dlbus.getAllDaiLy();
+                }
+                else
+                    MessageBox.Show("Có lỗi xảy ra");
             }
-            else
-                MessageBox.Show("Có lỗi xảy ra");
-        } 
+        }
         #endregion
 
-        // to do 
+        // to do
         // check null foreign key
         // search: chỉ theo tên do làm biếng. fulltext: https://msdn.microsoft.com/en-us/library/ms142583.aspx
         // right click contextmenu: set dẹp tiệm (tình trạng =0), xóa đại lý(?? có nên)
+        // selectbox : 1 hiển thị đại lý đã ngưng hđ, 0 (default): ko hiển thị
         // in tất cả đại lý, in 1 đại lý
 
 

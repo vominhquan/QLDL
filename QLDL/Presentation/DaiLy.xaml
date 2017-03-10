@@ -35,7 +35,7 @@
                             <Grid Grid.Column="1">
                                 <Button Content="Thêm" Height="30" Width="100" Margin="10,196,235,28" Click="AddDL"></Button>
                                 <Button Content="Sửa" Height="30" Width="100" Margin="122,196,123,28" Click="UpdateDL"></Button>
-                                <Button Content="Xóa" Height="30" Width="100" Margin="227,196,18,28" Click="RemoveDL"/>
+                                <Button Content="Xóa" Height="30" Width="100" Margin="235,196,10,28" Click="RemoveDL"/>
                             </Grid>
                         </Grid>
                     </Grid>
