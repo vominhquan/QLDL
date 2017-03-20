@@ -66,7 +66,8 @@ namespace QLDL.BusinessLogic
                         NGAYTIEPNHAN = ngaytiepnhan,
                         MAQUAN = maquan,
                         LOAIDL = loaidl,
-                        TINHTRANG = 1 // 1: đang hoạt động, 0: đã dẹp tiệm
+                        TINHTRANG = 1, // 1: đang hoạt động, 0: đã dẹp tiệm
+                        SONO = 0
                     };
                     context.DAILies.Add(dl);
                     context.SaveChanges();
@@ -78,6 +79,7 @@ namespace QLDL.BusinessLogic
                 return false;
             }
         }
+
         public bool updateDaiLy(int madl, string tendl, string diachi, string dienthoai, int maquan, int loaidl, DateTime ngaytiepnhan)
         {
             try
