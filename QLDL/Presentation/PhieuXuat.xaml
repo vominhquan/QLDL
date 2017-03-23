@@ -1,0 +1,39 @@
+﻿<Window
+        Name="PhieuXuatWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:uc="clr-namespace:QLDL.Presentation"
+        x:Class="QLDL.Presentation.PhieuXuat"
+        Title="PhieuXuat" Height="391.353" Width="537.97">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <TextBlock Text="Đại lý" Margin="10,10,159,195"/>
+                <ComboBox Name="cbbDaiLy" Margin="114,10,55,195"/>
+                <TextBlock Text="Số tiền trả" Margin="10,51,159,154"/>
+                <TextBox Name="txtSoTienTra" Margin="114,51,55,154" RenderTransformOrigin="-0.49,-0.361"></TextBox>
+            </Grid>
+            <Grid Grid.Column="1">
+                <ScrollViewer Name="svCTPX">
+                    <StackPanel>
+                        <StackPanel Name="spCTPX">
+                        </StackPanel>
+                        <Button Name="btnAddCTPX" Content="Thêm Sản phẩm" Width="100" Click="AddCTPX"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <ListView/>
+        </Grid>
+
+    </Grid>
+</Window>

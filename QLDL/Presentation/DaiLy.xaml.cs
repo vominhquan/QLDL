@@ -27,7 +27,6 @@ namespace QLDL.Presentation
     public partial class DaiLy : Window
     {
         private DaiLyBUS dlbus = new DaiLyBUS();
-        private bool _isReportViewerLoaded;
         public ObservableCollection<vwDAILY_LOAIDL_QUAN> listDL;
         public ObservableCollection<LOAIDL> listLoaiDL;
         public ObservableCollection<QUAN> listQuan;
@@ -44,19 +43,17 @@ namespace QLDL.Presentation
 
             // Lấy dữ liệu ban đầu
             InitialData();
-            _reportViewer.Load += ReportViewer_Load;
         }
 
-        private void ReportViewer_Load(object sender, EventArgs e)
+        #region Report
+        
+        private void OpenReport(object sender, RoutedEventArgs e)
         {
-            if (!_isReportViewerLoaded)
-            {
-                this._reportViewer.LocalReport.ReportEmbeddedResource = "QLDL.Report.HoSoDaiLy.rdlc";
-                _reportViewer.RefreshReport();
-
-                _isReportViewerLoaded = true;
-            }
+            ReportPreview rp = new ReportPreview();
+            rp.Show();
         }
+
+        #endregion
 
         #region Đại lý CRUD
 
@@ -68,22 +65,7 @@ namespace QLDL.Presentation
             listQuan = dlbus.getAllQuan();
 
             //create and apply 2 filters
-            collectionView = CollectionViewSource.GetDefaultView(listDL);
-
-            searchFilter = delegate(object item)
-            {
-                return (item as vwDAILY_LOAIDL_QUAN).TENDL.Contains(txtSearch.Text) == true ? true : false;
-            };
-
-            showhide = delegate(object item)
-            {
-                return (item as vwDAILY_LOAIDL_QUAN).TINHTRANG == 1 ? true : false;
-            };
-
-            groupFilter = new GroupFilter();
-            groupFilter.AddFilter(showhide);
-            groupFilter.AddFilter(searchFilter);
-            collectionView.Filter = groupFilter.Filter;
+            CreateFilter();
 
             // get datalist to UI
             lsvDL.ItemsSource = listDL;
@@ -101,13 +83,13 @@ namespace QLDL.Presentation
                 vw.TENDL = txtTenDL.Text;
                 vw.DIACHI = txtDiaChi.Text;
                 vw.DIENTHOAI = txtDienThoai.Text;
-                vw.NGAYTIEPNHAN = dpNgayTiepNhan.SelectedDate;
+                vw.NGAYTIEPNHAN = DateTime.Today;
                 QUAN q = cbbQuan.SelectedItem as QUAN;
                 vw.TENQUAN = q.TENQUAN;
                 LOAIDL l = cbbLoaiDL.SelectedItem as LOAIDL;
                 vw.TENLOAI = l.TENLOAI;
 
-                if (dlbus.insertDaiLy(vw.TENDL, vw.DIACHI, vw.DIENTHOAI, q.MAQUAN, l.MALOAI, (DateTime)dpNgayTiepNhan.SelectedDate))
+                if (dlbus.insertDaiLy(vw.TENDL, vw.DIACHI, vw.DIENTHOAI, q.MAQUAN, l.MALOAI))
                 {
                     MessageBox.Show("Đã thêm thành công");
                     // thêm dòng mới trong list view, thay vì load lại tất cả dữ liệu vì sẽ tốn thời gian nếu quá nhiều dữ liệu
@@ -127,19 +109,14 @@ namespace QLDL.Presentation
             item.DIENTHOAI = txtDienThoai.Text;
             item.MAQUAN = Int32.Parse(cbbQuan.SelectedValue.ToString());
             item.LOAIDL = Int32.Parse(cbbLoaiDL.SelectedValue.ToString());
-            item.NGAYTIEPNHAN = dpNgayTiepNhan.SelectedDate;
-            
+
             MessageBoxResult result = MessageBox.Show("Bạn muốn sửa thông tin đã chọn?", "Xác nhận sửa", MessageBoxButton.YesNo);
 
             if (result == MessageBoxResult.Yes)
-            {
-                if (dlbus.updateDaiLy(item.MADL, item.TENDL, item.DIACHI, item.DIENTHOAI, item.MAQUAN, item.LOAIDL, item.NGAYTIEPNHAN))
-                {
+                if (dlbus.updateDaiLy(item.MADL, item.TENDL, item.DIACHI, item.DIENTHOAI, item.MAQUAN, item.LOAIDL))
                     MessageBox.Show("Đã sửa thành công");
-                }
                 else
                     MessageBox.Show("Có lỗi xảy ra");
-            }
         }
 
         private void RemoveDL(object sender, RoutedEventArgs e)
@@ -159,6 +136,30 @@ namespace QLDL.Presentation
         }
         #endregion
 
+        #region Filter
+
+        // khởi tạo filter
+        private void CreateFilter()
+        {
+            collectionView = CollectionViewSource.GetDefaultView(listDL);
+
+            searchFilter = delegate(object item)
+            {
+                return (item as vwDAILY_LOAIDL_QUAN).TENDL.ToLower().Contains(txtSearch.Text.ToLower()) == true ? true : false;
+            };
+
+            showhide = delegate(object item)
+            {
+                return (item as vwDAILY_LOAIDL_QUAN).TINHTRANG == 1 ? true : false;
+            };
+
+            groupFilter = new GroupFilter();
+            groupFilter.AddFilter(showhide);
+            groupFilter.AddFilter(searchFilter);
+            collectionView.Filter = groupFilter.Filter;
+        }
+
+        // bỏ chọn trong listview
         private void RemoveSelected(object sender, MouseButtonEventArgs e)
         {
             HitTestResult r = VisualTreeHelper.HitTest(this, e.GetPosition(this));
@@ -166,12 +167,14 @@ namespace QLDL.Presentation
                 lsvDL.UnselectAll();
         }
 
+        // load mặc định combobox, đang tìm cách khác
         private void loadcbb(object sender, EventArgs e)
         {
             cbbLoaiDL.SelectedIndex = 0;
             cbbQuan.SelectedIndex = 0;
         }
 
+        // show/hide đại lí đã ngưng hoạt động
         private void StoppedDL(object sender, RoutedEventArgs e)
         {
             if (cbTinhTrang.IsChecked == true)
@@ -181,6 +184,7 @@ namespace QLDL.Presentation
             collectionView.Filter = groupFilter.Filter;
         }
 
+        //filter dựa trên thanh search
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(lsvDL.ItemsSource).Refresh();
@@ -224,11 +228,14 @@ namespace QLDL.Presentation
                     _filters.Remove(filter);
                 }
             }
-        }
+        } 
+        #endregion
+
+        
 
         // to do
-        // right click contextmenu: set dẹp tiệm (tình trạng =0), xóa đại lý(?? có nên)
-        // in tất cả đại lý, in 1 đại lý
+        // right click contextmenu: set dẹp tiệm (tình trạng =0), xóa đại lý(?? có nên), in 1 đại lý
+        // in tất cả đại lý
         // tìm cách gán default combobox
 
 

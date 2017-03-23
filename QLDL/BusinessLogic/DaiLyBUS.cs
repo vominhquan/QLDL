@@ -52,7 +52,7 @@ namespace QLDL.BusinessLogic
 
 
         #region Đại lý CRUD
-        public bool insertDaiLy(string tendl, string diachi, string dienthoai, int maquan, int loaidl, DateTime ngaytiepnhan)
+        public bool insertDaiLy(string tendl, string diachi, string dienthoai, int maquan, int loaidl)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace QLDL.BusinessLogic
                         TENDL = tendl,
                         DIACHI = diachi,
                         DIENTHOAI = dienthoai,
-                        NGAYTIEPNHAN = ngaytiepnhan,
+                        NGAYTIEPNHAN = DateTime.Now,
                         MAQUAN = maquan,
                         LOAIDL = loaidl,
                         TINHTRANG = 1, // 1: đang hoạt động, 0: đã dẹp tiệm
@@ -80,7 +80,7 @@ namespace QLDL.BusinessLogic
             }
         }
 
-        public bool updateDaiLy(int madl, string tendl, string diachi, string dienthoai, int maquan, int loaidl, DateTime ngaytiepnhan)
+        public bool updateDaiLy(int madl, string tendl, string diachi, string dienthoai, int maquan, int loaidl)
         {
             try
             {
@@ -92,7 +92,6 @@ namespace QLDL.BusinessLogic
                     daily.DIENTHOAI = dienthoai;
                     daily.MAQUAN = maquan;
                     daily.LOAIDL = loaidl;
-                    daily.NGAYTIEPNHAN = ngaytiepnhan;
                     context.SaveChanges();
                     return true;
                 }
