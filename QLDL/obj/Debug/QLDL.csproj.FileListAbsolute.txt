@@ -15,3 +15,6 @@ C:\Users\VMQ\Documents\Visual Studio 2013\Projects\QLDL\QLDL\obj\Debug\QLDL.Prop
 C:\Users\VMQ\Documents\Visual Studio 2013\Projects\QLDL\QLDL\obj\Debug\QLDL.csproj.GenerateResource.Cache
 C:\Users\VMQ\Documents\Visual Studio 2013\Projects\QLDL\QLDL\obj\Debug\QLDL.exe
 C:\Users\VMQ\Documents\Visual Studio 2013\Projects\QLDL\QLDL\obj\Debug\QLDL.pdb
+C:\Users\KIEUTRINH\Desktop\QLDL\QLDL\bin\Debug\QLDL.exe.config
+C:\Users\KIEUTRINH\Desktop\QLDL\QLDL\obj\Debug\QLDL.exe
+C:\Users\KIEUTRINH\Desktop\QLDL\QLDL\obj\Debug\QLDL.pdb
