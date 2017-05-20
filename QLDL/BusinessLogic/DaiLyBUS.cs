@@ -96,8 +96,9 @@ namespace QLDL.BusinessLogic
                     return true;
                 }
             }
-            catch
+            catch (Exception e)
             {
+                System.Console.Out.WriteLine(e.ToString());
                 return false;
             }
         }

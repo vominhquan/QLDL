@@ -4,26 +4,24 @@
         Title="SuaDaiLy" Height="325.463" Width="369">
     <Grid>
         <TextBlock Text="Tên đại lý:" Height="30" Width="100" Margin="17.5,18.5,174.5,221.5"/>
-        <TextBox x:Name="txtTenDL" Height="30" VerticalAlignment="Bottom" Margin="126,0,61,234" Text="{Binding vw.TENDL, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+        <TextBox Name="txtTenDL" Height="30" VerticalAlignment="Bottom" Margin="126,0,61,234" Text="{Binding vw.TENDL, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
         <TextBlock Text="Loại đại lý:" Height="30" Width="100" Margin="17.5,53.5,174.5,186.5"/>
-        <ComboBox x:Name="cbbLoaiDL" Height="30" VerticalAlignment="Bottom" Margin="126,0,61,179" 
-    		ItemsSource="{Binding listldl}"
+        <ComboBox Name="cbbLoaiDL" Height="30" VerticalAlignment="Bottom" Margin="126,0,61,179" Text="{Binding vw.TENLOAI, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"		
     		DisplayMemberPath="TENLOAI"
     		SelectedValuePath="MALOAI"
     		IsSynchronizedWithCurrentItem="True"
     		SelectedIndex="0"/>
         <TextBlock Text="Điện thoại:" Height="30" Width="100" Margin="17.5,88.5,174.5,151.5"/>
-        <TextBox x:Name="txtDienThoai" Height="30" VerticalAlignment="Bottom" Margin="126,0,61,143" Text="{Binding SelectedValue.DIENTHOAI, ElementName=lsvDL}"/>
+        <TextBox Name="txtDienThoai" Height="30" VerticalAlignment="Bottom" Margin="126,0,61,143" Text="{Binding vw.DIENTHOAI, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
         <TextBlock Text="Địa chỉ:" Height="30" Width="100" Margin="17.5,123.5,174.5,116.5"/>
-        <TextBox x:Name="txtDiaChi" Height="30" VerticalAlignment="Bottom" Margin="126,0,61,108" Text="{Binding vw.DIACHI, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+        <TextBox Name="txtDiaChi" Height="30" VerticalAlignment="Bottom" Margin="126,0,61,108" Text="{Binding vw.DIACHI, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
         <TextBlock Text="Quận:" Height="30" Width="100" Margin="17.5,158.5,174.5,81.5"/>
-        <ComboBox  x:Name="cbbQuan" Height="30" VerticalAlignment="Bottom" Margin="126,0,61,73" Text="{Binding SelectedValue.TENQUAN, ElementName=lsvDL}"
-    		ItemsSource="{Binding listquan}"
+        <ComboBox  Name="cbbQuan" Height="30" VerticalAlignment="Bottom" Margin="126,0,61,73"
     		DisplayMemberPath="TENQUAN"
     		SelectedValuePath="MAQUAN"
     		IsSynchronizedWithCurrentItem="True"
     		SelectedIndex="0"/>
-        <Button Content="Lưu" HorizontalAlignment="Left" Margin="156,242,0,0" VerticalAlignment="Top" Width="75" />
-        <Button Content="Hủy" HorizontalAlignment="Left" Margin="249,242,-32,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Lưu" HorizontalAlignment="Left" Margin="156,242,0,0" VerticalAlignment="Top" Width="75" Click="SuaDL"/>
+        <Button Content="Hủy" HorizontalAlignment="Left" Margin="249,242,-32,0" VerticalAlignment="Top" Width="75" Click="Close"/>
     </Grid>
 </Window>

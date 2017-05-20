@@ -34,6 +34,7 @@ namespace QLDL.Presentation
         {
             InitializeComponent();
             this.vw = vw1;
+            InitialData();
         }
 
         public void Dispose()
@@ -51,19 +52,19 @@ namespace QLDL.Presentation
             // get datalist to UI
             cbbLoaiDL.ItemsSource = listLoaiDL;
             cbbQuan.ItemsSource = listQuan;
+
         }
 
         private void SuaDL(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Bạn muốn thêm thông tin đã chọn?", "Xác nhận thêm", MessageBoxButton.YesNo);
+            MessageBoxResult result = MessageBox.Show("Bạn muốn sửa thông tin?", "Xác nhận thêm", MessageBoxButton.YesNo);
 
             if (result == MessageBoxResult.Yes)
             {
-                vw = new vwDAILY_LOAIDL_QUAN();
+                //vw = new vwDAILY_LOAIDL_QUAN();
                 vw.TENDL = txtTenDL.Text;
                 vw.DIACHI = txtDiaChi.Text;
                 vw.DIENTHOAI = txtDienThoai.Text;
-                vw.NGAYTIEPNHAN = DateTime.Today;
                 QUAN q = cbbQuan.SelectedItem as QUAN;
                 vw.TENQUAN = q.TENQUAN;
                 LOAIDL l = cbbLoaiDL.SelectedItem as LOAIDL;
@@ -72,7 +73,7 @@ namespace QLDL.Presentation
 
                 if (dlbus.updateDaiLy(vw.MADL, vw.TENDL, vw.DIACHI, vw.DIENTHOAI, q.MAQUAN, l.MALOAI))
                 {
-                    MessageBox.Show("Đã thêm thành công");
+                    MessageBox.Show("Đã sửa thành công");
                     this.DialogResult = true;
                 }
                 else

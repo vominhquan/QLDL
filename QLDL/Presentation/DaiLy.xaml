@@ -22,7 +22,7 @@
                                 <TextBox Name="txtTenDL" Height="30" VerticalAlignment="Bottom" Margin="126,0,103,217" Text="{Binding SelectedValue.TENDL,ElementName=lsvDL}"/>
                                 <TextBlock Text="Loại đại lý:" Height="30" Width="100" Margin="10,45,209,182"></TextBlock>
                                 <ComboBox Name="cbbLoaiDL" Height="30" VerticalAlignment="Bottom" Margin="126,0,103,183" Text="{Binding SelectedValue.TENLOAI,ElementName=lsvDL}"
-                                          ItemsSource="{Binding listldl}"
+                                          
                                           DisplayMemberPath="TENLOAI"
                                           SelectedValuePath="MALOAI"
                                           IsSynchronizedWithCurrentItem="True"
@@ -76,13 +76,6 @@
                     <Grid Grid.Row="1">
                         <ListView Name="lsvDL" MouseDown="RemoveSelected" SelectionMode="Single" Background="{x:Null}">
                             <ListView.Resources>
-                                <Style TargetType="{x:Type ListViewItem}">
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding TINHTRANG}" Value="0">
-                                            <Setter Property="Background" Value="#FFEEE7E7"/>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
                                 <ContextMenu x:Key="ItemContextMenu">
                                     <MenuItem Header="More Info" Click="abc" Background="WhiteSmoke" />
                                 </ContextMenu>
@@ -91,6 +84,11 @@
                             <ListView.ItemContainerStyle>
                                 <Style TargetType="{x:Type ListViewItem}" >
                                     <Setter Property="ContextMenu" Value="{StaticResource ItemContextMenu}" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding TINHTRANG}" Value="0">
+                                            <Setter Property="Background" Value="#FFEEE7E7"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
                                 </Style>
                             </ListView.ItemContainerStyle>
                             <ListView.View>

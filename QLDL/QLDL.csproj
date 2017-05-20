@@ -88,6 +88,35 @@
     </Compile>
     <Compile Include="BusinessLogic\MatHangBUS.cs" />
     <Compile Include="BusinessLogic\PhieuXuatBUS.cs" />
+    <Compile Include="Class\DPI.cs" />
+    <Compile Include="Components\Button.xaml.cs">
+      <DependentUpon>Button.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Button\Button.Active.cs" />
+    <Compile Include="Components\Button\Button.Icon.cs" />
+    <Compile Include="Components\Button\Button.Size.cs" />
+    <Compile Include="Components\Button\Button.Text.cs" />
+    <Compile Include="Components\Input.xaml.cs">
+      <DependentUpon>Input.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Input\Input.Height.cs" />
+    <Compile Include="Components\Input\Input.Label.cs" />
+    <Compile Include="Components\Input\Input.LabelWidth.cs" />
+    <Compile Include="Components\Input\Input.Password.cs" />
+    <Compile Include="Components\Input\Input.Value.cs" />
+    <Compile Include="Components\Input\InputProperty.cs" />
+    <Compile Include="Components\Line.xaml.cs">
+      <DependentUpon>Line.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\BooleanToVisibility.cs" />
+    <Compile Include="Converter\ColorToBrush.cs" />
+    <Compile Include="Converter\ColorToHex.cs" />
+    <Compile Include="Converter\SizeToIconFontSize.cs" />
+    <Compile Include="Converter\SizeToPadding.cs" />
+    <Compile Include="Converter\SizeToPaddingText.cs" />
+    <Compile Include="Converter\SizeToTextFontSize.cs" />
+    <Compile Include="Converter\VisibilityCollapsed.cs" />
+    <Compile Include="Converter\VisibilityVisible.cs" />
     <Compile Include="DataAccess\CTPX.cs">
       <DependentUpon>QLDLModel.tt</DependentUpon>
     </Compile>
@@ -145,6 +174,26 @@
     <Compile Include="DataAccess\vwDAILY_LOAIDL_QUAN.cs">
       <DependentUpon>QLDLModel.tt</DependentUpon>
     </Compile>
+    <Page Include="Components\Button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\Button\ButtonResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\Input.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\Input\InputResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\Line.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Presentation\CTPXUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -160,6 +209,10 @@
     <Page Include="Presentation\PhieuXuat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\Presentation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Presentation\ReportPreview.xaml">
       <SubType>Designer</SubType>
@@ -191,6 +244,9 @@
     </Compile>
     <Compile Include="Presentation\PhieuXuat.xaml.cs">
       <DependentUpon>PhieuXuat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Presentation.xaml.cs">
+      <DependentUpon>Presentation.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\ReportPreview.xaml.cs">
       <DependentUpon>ReportPreview.xaml</DependentUpon>
@@ -226,6 +282,12 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>QLDLModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="bin\Debug\QLDL.application" />
+    <None Include="bin\Debug\QLDL.exe.config" />
+    <None Include="bin\Debug\QLDL.exe.manifest" />
+    <None Include="bin\Debug\QLDL.vshost.application" />
+    <None Include="bin\Debug\QLDL.vshost.exe.config" />
+    <None Include="bin\Debug\QLDL.vshost.exe.manifest" />
     <None Include="DataAccess\QLDLModel.edmx.diagram">
       <DependentUpon>QLDLModel.edmx</DependentUpon>
     </None>
@@ -249,6 +311,14 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\app.publish\QLDL.exe" />
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
+    <Resource Include="bin\Debug\EntityFramework.SqlServer.xml" />
+    <Resource Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\QLDL.exe" />
+    <Content Include="bin\Debug\QLDL.pdb" />
+    <Content Include="bin\Debug\QLDL.vshost.exe" />
     <Content Include="DataAccess\QLDLModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLDLModel.edmx</DependentUpon>
@@ -260,6 +330,9 @@
       <LastGenOutput>QLDLModel.cs</LastGenOutput>
     </Content>
     <Resource Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.1.29.2\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\packages\Fody.1.29.2\build\portable-net+sl+win+wpa+wp\Fody.targets')" />

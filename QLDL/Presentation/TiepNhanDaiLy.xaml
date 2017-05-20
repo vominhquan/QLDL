@@ -6,8 +6,7 @@
         <TextBlock Text="Tên đại lý:" Height="30" Width="100" Margin="10,10,209,217"></TextBlock>
         <TextBox Name="txtTenDL" Height="30" VerticalAlignment="Bottom" Margin="126,0,103,217" Text="{Binding SelectedValue.TENDL,ElementName=lsvDL}"/>
         <TextBlock Text="Loại đại lý:" Height="30" Width="100" Margin="10,45,209,182"></TextBlock>
-        <ComboBox Name="cbbLoaiDL" Height="30" VerticalAlignment="Bottom" Margin="126,0,103,183" Text="{Binding SelectedValue.TENLOAI,ElementName=lsvDL}"
-                                          ItemsSource="{Binding listldl}"
+        <ComboBox Name="cbbLoaiDL" Height="30" VerticalAlignment="Bottom" Margin="126,0,103,183"
                                           DisplayMemberPath="TENLOAI"
                                           SelectedValuePath="MALOAI"
                                           IsSynchronizedWithCurrentItem="True"
@@ -17,8 +16,7 @@
         <TextBlock Text="Địa chỉ:" Height="30" Width="100" Margin="10,115,209,112"></TextBlock>
         <TextBox Name="txtDiaChi" Height="30" VerticalAlignment="Bottom" Margin="126,0,103,112" Text="{Binding SelectedValue.DIACHI,ElementName=lsvDL}"/>
         <TextBlock Text="Quận:" Height="30" Width="100" Margin="10,150,209,77"></TextBlock>
-        <ComboBox  Name="cbbQuan" Height="30" VerticalAlignment="Bottom" Margin="126,0,103,77" Text="{Binding SelectedValue.TENQUAN,ElementName=lsvDL}"
-                                          ItemsSource="{Binding listquan}"
+        <ComboBox  Name="cbbQuan" Height="30" VerticalAlignment="Bottom" Margin="126,0,103,77"
                                           DisplayMemberPath="TENQUAN"
                                           SelectedValuePath="MAQUAN"
                                           IsSynchronizedWithCurrentItem="True"
