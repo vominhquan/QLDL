@@ -31,11 +31,33 @@
             <StackPanel 
                 Margin="20"
                 Style="{StaticResource Shadow}"
-                Orientation="Horizontal" 
+                Orientation="Vertical" 
                 DockPanel.Dock="Left">
-                <_:Button Icon=""/>
-                <_:Line Height="35"/>
-                <_:Button Text="Đăng nhập"/>
+                <Rectangle Height="20"/>
+                <DockPanel>
+                    <StackPanel 
+                        Margin="10"
+                        Orientation="Vertical">
+                        <_:Input
+                            Height="50"
+                            Width="350"
+                            Label="Tên đăng nhập"
+                            LabelWidth="150"/>
+                    </StackPanel>
+                </DockPanel>
+                <DockPanel>
+                    <StackPanel 
+                        Margin="10"
+                        Orientation="Vertical">
+                        <_:Input
+                            Password="True"
+                            Height="50"
+                            Width="350"
+                            Label="Mật khẩu"
+                            LabelWidth="150"
+                            PasswordBox.PasswordChanged="Input_PasswordChanged"/>
+                    </StackPanel>
+                </DockPanel>
             </StackPanel>
         </DockPanel>        
     </DockPanel>

@@ -10,19 +10,19 @@ namespace QLDL.Components
 {
     public partial class Input : UserControl
     {
-        // LabelWidth
-        private static readonly DependencyProperty _LabelWidth =
+        // Password
+        private static readonly DependencyProperty _Password =
             DependencyProperty.Register
             (
-                "LabelWidth",
-                typeof(double),
+                "Password",
+                typeof(bool),
                 typeof(Input),
-                new FrameworkPropertyMetadata(double.NaN)
+                new FrameworkPropertyMetadata(false)
             );
-        public double LabelWidth
+        public bool Password
         {
-            get { return (double)GetValue(_LabelWidth); }
-            set { SetValue(_LabelWidth, value); }
+            get { return (bool)GetValue(_Password); }
+            set { SetValue(_Password, Password); }
         }
     }
 }

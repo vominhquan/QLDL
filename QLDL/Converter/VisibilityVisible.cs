@@ -13,11 +13,18 @@ namespace QLDL.Converter
         public object Convert
             (object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            if (value == null || !(value is string))
+            if (value == null || !(value is string || value is bool))
             {
                 throw new NotImplementedException();
             };
-            return (string)value != "" ? Visibility.Visible : Visibility.Collapsed;
+            if (value is string)
+            {
+                return (string)value != "" ? Visibility.Visible : Visibility.Collapsed;
+            }
+            else
+            {
+                return (bool)value == true ? Visibility.Visible : Visibility.Collapsed;
+            }
         }
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {

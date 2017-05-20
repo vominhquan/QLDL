@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Paint.Components
+namespace QLDL.Components
 {
     public partial class Input : UserControl
     {

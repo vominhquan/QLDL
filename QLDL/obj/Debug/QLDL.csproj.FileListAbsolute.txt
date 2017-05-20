@@ -25,7 +25,6 @@ E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\Presentation\Presentation.g.cs
 E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\App.g.cs
 E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\QLDL_MarkupCompile.cache
 E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\QLDL_MarkupCompile.lref
-E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\QLDL.csprojResolveAssemblyReference.cache
 E:\Code\[C Sharp]\QLDL\QLDL\bin\Debug\QLDL.exe.config
 E:\Code\[C Sharp]\QLDL\QLDL\bin\Debug\QLDL.exe.manifest
 E:\Code\[C Sharp]\QLDL\QLDL\bin\Debug\QLDL.application
@@ -48,3 +47,7 @@ E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\QLDL.pdb
 E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\GeneratedInternalTypeHelper.g.cs
 E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\Components\Line.g.cs
 E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\Components\Line.baml
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\Components\Input.g.cs
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\Components\Input.baml
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\Components\Input\InputResource.baml
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\QLDL.csprojResolveAssemblyReference.cache

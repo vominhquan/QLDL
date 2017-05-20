@@ -22,6 +22,12 @@ namespace QLDL.Presentation
         public Presentation()
         {
             InitializeComponent();
+            Application.Current.MainWindow.Loaded += Class.DPI.Initialize;
+        }
+
+        private void Input_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(e.ToString());
         }
     }
 }
