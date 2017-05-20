@@ -1,0 +1,42 @@
+﻿<Window x:Class="QLDL.Presentation.Presentation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QLDL.Presentation"
+        xmlns:_="clr-namespace:QLDL.Components"
+        mc:Ignorable="d"
+        
+        Title="Quản lý đại lý" 
+        Height="450" Width="500"
+        Name="App">
+    <DockPanel
+        x:Name="Main">
+        <StackPanel 
+            DockPanel.Dock="Top"
+            Orientation="Vertical"
+            Panel.ZIndex="2">
+            <DockPanel>
+                <StackPanel 
+                    Style="{StaticResource Shadow}"
+                    Orientation="Horizontal" 
+                    DockPanel.Dock="Left">
+                    <_:Button Icon=""/>
+                    <_:Line Height="35"/>
+                    <_:Button Text="Đăng nhập"/>
+                </StackPanel>
+            </DockPanel>
+        </StackPanel>
+        <DockPanel>
+            <StackPanel 
+                Margin="20"
+                Style="{StaticResource Shadow}"
+                Orientation="Horizontal" 
+                DockPanel.Dock="Left">
+                <_:Button Icon=""/>
+                <_:Line Height="35"/>
+                <_:Button Text="Đăng nhập"/>
+            </StackPanel>
+        </DockPanel>        
+    </DockPanel>
+</Window>

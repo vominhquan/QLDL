@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 
-namespace QLDL.Config
+namespace QLDL.Class
 {
     class DPI
     {
@@ -21,7 +21,7 @@ namespace QLDL.Config
             double scaleX = 1 / DpiWidthFactor;
             double scaleY = 1 / DpiHeightFactor;
 
-            ((QLDL.Presentation.Main)Application.Current.MainWindow).Main.LayoutTransform = new ScaleTransform(scaleX, scaleY);
+            ((Presentation.Presentation)Application.Current.MainWindow).Main.LayoutTransform = new ScaleTransform(scaleX, scaleY);
         }
     }
 }

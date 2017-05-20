@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\KIEUTRINH\Desktop\QLDL\QLDL\obj\Debug\
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\
 QLDL
 none
 false
 DEBUG;TRACE
-C:\Users\KIEUTRINH\Desktop\QLDL\QLDL\App.xaml
-1-1592147869
-2-1655728627
-27-1885927085
-21914178778
-Presentation\DaiLy.xaml;
+E:\Code\[C Sharp]\QLDL\QLDL\App.xaml
+6706040907
 
-False
+3273460137
+20680648763
+Components\Button.xaml;Components\Button\ButtonResource.xaml;Components\Input.xaml;Components\Input\InputResource.xaml;Components\Line.xaml;Presentation\Presentation.xaml;
+
+True
 

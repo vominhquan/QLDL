@@ -17,12 +17,11 @@ namespace QLDL.Presentation
     /// <summary>
     /// Interaction logic for Main.xaml
     /// </summary>
-    public partial class Main : Window
+    public partial class Presentation : Window
     {
-        public Main()
+        public Presentation()
         {
             InitializeComponent();
-            Application.Current.MainWindow.Loaded += Config.DPI.Initialize;
         }
     }
 }

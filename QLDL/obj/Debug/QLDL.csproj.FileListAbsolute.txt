@@ -18,3 +18,33 @@ C:\Users\VMQ\Documents\Visual Studio 2013\Projects\QLDL\QLDL\obj\Debug\QLDL.pdb
 C:\Users\KIEUTRINH\Desktop\QLDL\QLDL\bin\Debug\QLDL.exe.config
 C:\Users\KIEUTRINH\Desktop\QLDL\QLDL\obj\Debug\QLDL.exe
 C:\Users\KIEUTRINH\Desktop\QLDL\QLDL\obj\Debug\QLDL.pdb
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\Components\Button.baml
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\App.baml
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\Components\Button.g.cs
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\Presentation\Presentation.g.cs
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\App.g.cs
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\QLDL_MarkupCompile.cache
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\QLDL_MarkupCompile.lref
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\QLDL.csprojResolveAssemblyReference.cache
+E:\Code\[C Sharp]\QLDL\QLDL\bin\Debug\QLDL.exe.config
+E:\Code\[C Sharp]\QLDL\QLDL\bin\Debug\QLDL.exe.manifest
+E:\Code\[C Sharp]\QLDL\QLDL\bin\Debug\QLDL.application
+E:\Code\[C Sharp]\QLDL\QLDL\bin\Debug\QLDL.exe
+E:\Code\[C Sharp]\QLDL\QLDL\bin\Debug\QLDL.pdb
+E:\Code\[C Sharp]\QLDL\QLDL\bin\Debug\EntityFramework.dll
+E:\Code\[C Sharp]\QLDL\QLDL\bin\Debug\EntityFramework.SqlServer.dll
+E:\Code\[C Sharp]\QLDL\QLDL\bin\Debug\EntityFramework.xml
+E:\Code\[C Sharp]\QLDL\QLDL\bin\Debug\EntityFramework.SqlServer.xml
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\Components\Button\ButtonResource.baml
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\Presentation\Presentation.baml
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\QLDL.g.resources
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\QLDL.Properties.Resources.resources
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\QLDL.csproj.GenerateResource.Cache
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\QLDL.TrustInfo.xml
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\QLDL.exe.manifest
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\QLDL.application
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\QLDL.exe
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\QLDL.pdb
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\Components\Line.g.cs
+E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\Components\Line.baml
