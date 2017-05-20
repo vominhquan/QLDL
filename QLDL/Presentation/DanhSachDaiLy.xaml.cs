@@ -20,12 +20,11 @@ using QLDL.DataAccess;
 namespace QLDL.Presentation
 {
     /// <summary>
-    /// Interaction logic for DaiLy.xaml
+    /// Interaction logic for DanhSachDaiLy.xaml
     /// </summary>
-    /// 
-
-    public partial class DaiLy : Window
+    public partial class DanhSachDaiLy : Window
     {
+
         private DaiLyBUS dlbus = new DaiLyBUS();
         public ObservableCollection<vwDAILY_LOAIDL_QUAN> listDL;
         public ObservableCollection<LOAIDL> listLoaiDL;
@@ -36,106 +35,21 @@ namespace QLDL.Presentation
         public Predicate<object> showhide;
         public string searchstring;
 
-        public DaiLy()
-
+        public DanhSachDaiLy()
         {
             InitializeComponent();
-
             // Lấy dữ liệu ban đầu
             InitialData();
         }
 
         #region Report
-        
+
         private void OpenReport(object sender, RoutedEventArgs e)
         {
             ReportPreview rp = new ReportPreview();
             rp.Show();
         }
 
-        #endregion
-
-        #region Đại lý CRUD
-
-        private void InitialData()
-        {
-            //get data to list
-            listDL = dlbus.getAllDaiLy();
-            listLoaiDL = dlbus.getAllLoaiDL();
-            listQuan = dlbus.getAllQuan();
-
-            //create and apply 2 filters
-            CreateFilter();
-
-            // get datalist to UI
-            lsvDL.ItemsSource = listDL;
-            cbbLoaiDL.ItemsSource = listLoaiDL;
-            cbbQuan.ItemsSource = listQuan;
-        }
-
-        private void AddDL(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult result = MessageBox.Show("Bạn muốn thêm thông tin đã chọn?", "Xác nhận thêm", MessageBoxButton.YesNo);
-
-            if (result == MessageBoxResult.Yes)
-            {
-                vwDAILY_LOAIDL_QUAN vw = new vwDAILY_LOAIDL_QUAN();
-                vw.TENDL = txtTenDL.Text;
-                vw.DIACHI = txtDiaChi.Text;
-                vw.DIENTHOAI = txtDienThoai.Text;
-                vw.NGAYTIEPNHAN = DateTime.Today;
-                QUAN q = cbbQuan.SelectedItem as QUAN;
-                vw.TENQUAN = q.TENQUAN;
-                LOAIDL l = cbbLoaiDL.SelectedItem as LOAIDL;
-                vw.TENLOAI = l.TENLOAI;
-                vw.TINHTRANG = 1;
-
-                if (dlbus.insertDaiLy(vw.TENDL, vw.DIACHI, vw.DIENTHOAI, q.MAQUAN, l.MALOAI))
-                {
-                    MessageBox.Show("Đã thêm thành công");
-                    // thêm dòng mới trong list view, thay vì load lại tất cả dữ liệu vì sẽ tốn thời gian nếu quá nhiều dữ liệu
-                    listDL.Add(vw);
-                    //listDL.Insert(0, vw); //thêm đầu
-                }
-                else
-                    MessageBox.Show("Có lỗi xảy ra");
-            }
-        }
-
-        private void UpdateDL(object sender, RoutedEventArgs e)
-        {
-            dynamic item = lsvDL.SelectedItem;
-
-            item.TENDL = txtTenDL.Text;
-            item.DIACHI = txtDiaChi.Text;
-            item.DIENTHOAI = txtDienThoai.Text;
-            item.MAQUAN = Int32.Parse(cbbQuan.SelectedValue.ToString());
-            item.LOAIDL = Int32.Parse(cbbLoaiDL.SelectedValue.ToString());
-
-            MessageBoxResult result = MessageBox.Show("Bạn muốn sửa thông tin đã chọn?", "Xác nhận sửa", MessageBoxButton.YesNo);
-
-            if (result == MessageBoxResult.Yes)
-                if (dlbus.updateDaiLy(item.MADL, item.TENDL, item.DIACHI, item.DIENTHOAI, item.MAQUAN, item.LOAIDL))
-                    MessageBox.Show("Đã sửa thành công");
-                else
-                    MessageBox.Show("Có lỗi xảy ra");
-        }
-
-        private void RemoveDL(object sender, RoutedEventArgs e)
-        {
-            dynamic item = lsvDL.SelectedItem;
-            MessageBoxResult result = MessageBox.Show("Bạn muốn sửa thông tin đã chọn?", "Xác nhận sửa", MessageBoxButton.YesNo);
-            if (result == MessageBoxResult.Yes)
-            {
-                if (dlbus.removeDaiLy(item.MADL))
-                {
-                    MessageBox.Show("Đã xóa thành công");
-                    listDL.Remove(item);
-                }
-                else
-                    MessageBox.Show("Có lỗi xảy ra");
-            }
-        }
         #endregion
 
         #region Filter
@@ -167,13 +81,6 @@ namespace QLDL.Presentation
             HitTestResult r = VisualTreeHelper.HitTest(this, e.GetPosition(this));
             if (r.VisualHit.GetType() != typeof(ListBoxItem))
                 lsvDL.UnselectAll();
-        }
-
-        // load mặc định combobox, đang tìm cách khác
-        private void loadcbb(object sender, EventArgs e)
-        {
-            cbbLoaiDL.SelectedIndex = 0;
-            cbbQuan.SelectedIndex = 0;
         }
 
         // show/hide đại lí đã ngưng hoạt động
@@ -230,22 +137,48 @@ namespace QLDL.Presentation
                     _filters.Remove(filter);
                 }
             }
-        } 
+        }
         #endregion
 
-        private void abc(object sender, RoutedEventArgs e)
+        private void InitialData()
         {
-            MessageBox.Show(lsvDL.SelectedItem.ToString());
+            //get data to list
+            listDL = dlbus.getAllDaiLy();
+            listLoaiDL = dlbus.getAllLoaiDL();
+            listQuan = dlbus.getAllQuan();
+
+            //create and apply 2 filters
+            CreateFilter();
+
+            // get datalist to UI
+            lsvDL.ItemsSource = listDL;
+        }
+
+        private void AddDL(object sender, RoutedEventArgs e)
+        {
+            using (TiepNhanDaiLy tndl = new TiepNhanDaiLy())
+            {
+                tndl.ShowDialog();
+                if (tndl.DialogResult.HasValue && tndl.DialogResult.Value)
+                {
+                    listDL.Add(tndl.vw);
+                }
+            }
+
 
         }
 
-        
+        private void XemDL(object sender, RoutedEventArgs e)
+        {
+            XemDaiLy xdl = new XemDaiLy(lsvDL.SelectedItem as vwDAILY_LOAIDL_QUAN);
+            xdl.ShowDialog();
+        }
 
-        // to do
-        // right click contextmenu: set dẹp tiệm (tình trạng =0), in 1 đại lý
-        // in tất cả đại lý
-        // tìm cách gán default combobox
-
+        private void SuaDL(object sender, RoutedEventArgs e)
+        {
+            SuaDaiLy sdl = new SuaDaiLy(lsvDL.SelectedItem as vwDAILY_LOAIDL_QUAN);
+            sdl.ShowDialog();
+        }
 
     }
 }

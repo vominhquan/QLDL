@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:CurrencyTextBoxControl="clr-namespace:CurrencyTextBoxControl;assembly=CurrencyTextBoxControl" x:Class="QLDL.Presentation.CTPXUserControl" 
+             x:Class="QLDL.Presentation.CTPXUserControl" 
              mc:Ignorable="d" Height="41.729" Width="270.677">
     <Grid>
         <ComboBox Name="cbb" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120"/>

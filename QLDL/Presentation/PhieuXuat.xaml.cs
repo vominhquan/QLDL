@@ -27,10 +27,12 @@ namespace QLDL.Presentation
     {
         private ObservableCollection<MATHANG> listMatHang;
         private MatHangBUS mhbus = new MatHangBUS();
+        private PhieuXuatBUS pxbus = new PhieuXuatBUS();
         private ObservableCollection<CTPX> listCTPX;
         private ObservableCollection<CTPXUserControl> listUserControl;
+        private int madl;
 
-        public PhieuXuat()
+        public PhieuXuat(int madl)
         {
             InitializeComponent();
 
@@ -38,6 +40,7 @@ namespace QLDL.Presentation
             listCTPX = new ObservableCollection<CTPX>();
             listUserControl = new ObservableCollection<CTPXUserControl>();
             CreateCTPX();
+            this.madl = madl;
         }
 
         private void AddCTPX(object sender, RoutedEventArgs e)
@@ -77,10 +80,38 @@ namespace QLDL.Presentation
             ctpxuc.sl.SetBinding(TextBox.TextProperty, bindSOLUONG);
         }
 
+        private void ThemPhieuXuat(object sender, RoutedEventArgs e)
+        {
+            
+            CTPX[] arr_ctpx = listCTPX.ToArray();
+            decimal tongtien = 0;
+            foreach(CTPX ct in arr_ctpx)
+            {
+                tongtien += (decimal)(listMatHang.ToList().Find(x => x.MAHANG == ct.MAHANG).DONGIA * ct.SOLUONG);
+            }
+
+            PHIEUXUATHANG px = new PHIEUXUATHANG();
+            px.MADL = this.madl;
+            px.NGAYLAP = DateTime.Now;
+            px.TONGTIEN = tongtien;
+            px.SOTIENTRA = Decimal.Parse(txtSoTienTra.Text);
+            px.CONLAI = tongtien - px.SOTIENTRA;
+            px.NGUOIXUAT = 1;
+            /////////////////if sotientra !=0 nhảy sang tab thu tiền
+            //////////////// if còn lại >0, update số nợ đại lý += còn lại
+            if (pxbus.insertPhieuXuat(arr_ctpx, px))
+            {
+                MessageBox.Show("Đã thêm thành công");
+            }
+            else
+                MessageBox.Show("Có lỗi xảy ra");
+        }
+
 
 
         // to do
         // CRUD PX-CTPX 2 trong 1
+        // hàng nào chọn rồi thì hủy trong list danh sách cbb sau, ko cho chọn nữa
         // if (số tiền trả > 0) then nhảy sang tab tạo phiếu thu tiền
 
     }

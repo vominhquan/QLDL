@@ -51,6 +51,7 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationFramework.Aero" />
     <Reference Include="PropertyChanged">
       <HintPath>..\packages\PropertyChanged.Fody.1.52.1\Lib\portable-net4+sl4+wp8+win8+wpa81+MonoAndroid16+MonoTouch40\PropertyChanged.dll</HintPath>
       <Private>False</Private>
@@ -58,6 +59,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
@@ -84,6 +86,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BusinessLogic\MatHangBUS.cs" />
+    <Compile Include="BusinessLogic\PhieuXuatBUS.cs" />
     <Compile Include="DataAccess\CTPX.cs">
       <DependentUpon>QLDLModel.tt</DependentUpon>
     </Compile>
@@ -141,14 +145,64 @@
     <Compile Include="DataAccess\vwDAILY_LOAIDL_QUAN.cs">
       <DependentUpon>QLDLModel.tt</DependentUpon>
     </Compile>
+    <Page Include="Presentation\CTPXUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Presentation\DaiLy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\DanhSachDaiLy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\PhieuXuat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\ReportPreview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\SuaDaiLy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\XemDaiLy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\TiepNhanDaiLy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presentation\CTPXUserControl.xaml.cs">
+      <DependentUpon>CTPXUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\DaiLy.xaml.cs">
       <DependentUpon>DaiLy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\DanhSachDaiLy.xaml.cs">
+      <DependentUpon>DanhSachDaiLy.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Presentation\PhieuXuat.xaml.cs">
+      <DependentUpon>PhieuXuat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ReportPreview.xaml.cs">
+      <DependentUpon>ReportPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\SuaDaiLy.xaml.cs">
+      <DependentUpon>SuaDaiLy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\XemDaiLy.xaml.cs">
+      <DependentUpon>XemDaiLy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\TiepNhanDaiLy.xaml.cs">
+      <DependentUpon>TiepNhanDaiLy.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -175,7 +229,9 @@
     <None Include="DataAccess\QLDLModel.edmx.diagram">
       <DependentUpon>QLDLModel.edmx</DependentUpon>
     </None>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

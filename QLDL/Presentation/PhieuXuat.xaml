@@ -16,10 +16,8 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <TextBlock Text="Đại lý" Margin="10,10,159,195"/>
-                <ComboBox Name="cbbDaiLy" Margin="114,10,55,195"/>
                 <TextBlock Text="Số tiền trả" Margin="10,51,159,154"/>
-                <TextBox Name="txtSoTienTra" Margin="114,51,55,154" RenderTransformOrigin="-0.49,-0.361"></TextBox>
+                <TextBox Name="txtSoTienTra" Text="0" Margin="114,51,55,154" RenderTransformOrigin="-0.49,-0.361"></TextBox>
             </Grid>
             <Grid Grid.Column="1">
                 <ScrollViewer Name="svCTPX">
@@ -34,6 +32,7 @@
         <Grid Grid.Row="1">
             <ListView/>
         </Grid>
+        <Button Click="ThemPhieuXuat" Content="Button" HorizontalAlignment="Left" Margin="100,163,0,0" VerticalAlignment="Top" Width="74"/>
 
     </Grid>
 </Window>
