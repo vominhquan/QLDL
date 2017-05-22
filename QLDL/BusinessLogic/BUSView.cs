@@ -51,5 +51,34 @@ namespace BUS
             {
                 return DAOView.Instance.GetAllCV();
             }
+
+
+        /// <summary>
+        /// Get all worker ny name
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+            public ObservableCollection<vwCHUCVU_NHANVIEN_TAIKHOAN> GetWorkerByName(string name, int macv, string dc)
+            {
+                ObservableCollection<vwCHUCVU_NHANVIEN_TAIKHOAN> src = DAOView.Instance.GetAllNV(name);
+                ObservableCollection<vwCHUCVU_NHANVIEN_TAIKHOAN> des = new ObservableCollection<vwCHUCVU_NHANVIEN_TAIKHOAN>();
+                if (macv <= 0) 
+                {
+                    foreach (vwCHUCVU_NHANVIEN_TAIKHOAN item in src)
+                    {
+                        if (item.DIACHI.Contains(dc))
+                            des.Add(item);
+                    }
+                }
+                else
+                {
+                    foreach (vwCHUCVU_NHANVIEN_TAIKHOAN item in src)
+                    {
+                        if (item.MACHUCVU == macv && item.DIACHI.Contains(dc))
+                            des.Add(item);
+                    }
+                }
+                return des;
+            }
     }
 }

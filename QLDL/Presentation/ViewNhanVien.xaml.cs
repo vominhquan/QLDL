@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BUS;
+using QLDL.DataAccess;
+using QLDL.Presentation;
 
 namespace GUI
 {
@@ -23,78 +25,82 @@ namespace GUI
         public ViewNhanVien()
         {
             InitializeComponent();
-            cbcv.ItemsSource = BUSView.Instance.GetAllCV();
+            gridAdvanced.Visibility = Visibility.Collapsed;
+            cbChucvu.ItemsSource = BUSView.Instance.GetAllCV();
         }
 
         /// <summary>
-        /// Update nhan vien
+        /// Cancel form;
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (cbcv.SelectedValue == null || txbTen.Text == "" || txbDC.Text == "")
-            {
-                MessageBox.Show("Gia tri khong hop le");
-            }
-            else
-            {
-                int manv = Int32.Parse(txbMa.Text);
-                if (BUSQLNhanVien.Instance.Update(manv, txbTen.Text, dpNS.SelectedDate.Value, txbDC.Text, (int)cbcv.SelectedValue))
-                {
-                    MessageBox.Show(cbcv.SelectedValue.ToString());
-                }
-                else
-                {
-                    MessageBox.Show("Upadate Fail");
-                }
-            }
-        }
-
-        /// <summary>
-        /// Delete Nhan vien
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            if (lv.SelectedItem == null)
-            {
-                MessageBox.Show("Chon 1 nhan vien");
-            }
-            else
-            {
-                int manv = Int32.Parse(txbMa.Text);
-                if (BUSQLNhanVien.Instance.Delete(manv))
-                {
-                    MessageBox.Show("Delete OK");
-                }
-                else
-                {
-                    MessageBox.Show("Delete Fail");
-                }
-            }
-        }
-
-        /// <summary>
-        /// View
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void btnHuy_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Set enable or disable advance search
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void HandleCheck(object sender, RoutedEventArgs e)
         {
-            if (cbcv.SelectedValue == null)
+            gridAdvanced.Visibility = Visibility.Visible;
+        }
+        private void HandleUnchecked(object sender, RoutedEventArgs e)
+        {
+            gridAdvanced.Visibility = Visibility.Collapsed;
+        }
+
+        /// <summary>
+        /// Search worker by Name
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnTim_Click(object sender, RoutedEventArgs e)
+        {
+            if(cbChucvu.SelectedItem == null)
             {
-                MessageBox.Show("Khong hop le");
+                lv.ItemsSource = BUSView.Instance.GetWorkerByName(txbTen.Text, 0, txbDC.Text);
             }
             else
             {
-                lv.ItemsSource = BUSQLNhanVien.Instance.Search((int)cbcv.SelectedValue, txbTen.Text, txbDC.Text);
+                lv.ItemsSource = BUSView.Instance.GetWorkerByName(txbTen.Text, (int)cbChucvu.SelectedValue, txbDC.Text);
+            }
+            cbChucvu.SelectedItem = null;
+            txbDC.Clear();
+        }
+
+        private void Xoa_Click(object sender, RoutedEventArgs e)
+        {
+            if(lv.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng chọn 1 nhân viên muốn xóa");
+            }
+            else
+            {
+                int ma = (lv.SelectedItem as vwCHUCVU_NHANVIEN_TAIKHOAN).MANV;
+                MessageBoxResult result = MessageBox.Show("Bạn muốn xóa nhân viên đã chọn?", "Xác nhận xóa", MessageBoxButton.YesNo);
+
+                if (result == MessageBoxResult.Yes)
+                    if (BUSQLNhanVien.Instance.Delete(ma))
+                        MessageBox.Show("Đã xóa thành công");
+                    else
+                        MessageBox.Show("Có lỗi xảy ra");
+            }
+        }
+
+        private void btnSua_Click(object sender, RoutedEventArgs e)
+        {
+            if (lv.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng chọn 1 nhân viên muốn sửa");
+            }
+            else
+            {
+                EditNhanVien edit = new EditNhanVien(lv.SelectedItem as vwCHUCVU_NHANVIEN_TAIKHOAN);
+                edit.Show();
             }
         }
     }
