@@ -51,3 +51,125 @@ E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\Components\Input.g.cs
 E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\Components\Input.baml
 E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\Components\Input\InputResource.baml
 E:\Code\[C Sharp]\QLDL\QLDL\obj\Debug\QLDL.csprojResolveAssemblyReference.cache
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\bin\Debug\QLDL.exe.config
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\QLDL.csprojResolveAssemblyReference.cache
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\Presentation\CTPXUserControl.baml
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\Presentation\DaiLy.baml
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\Presentation\DanhSachDaiLy.baml
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\Presentation\ReportPreview.baml
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\Presentation\SuaDaiLy.baml
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\Presentation\XemDaiLy.baml
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\Presentation\TiepNhanDaiLy.baml
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\App.baml
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\Presentation\CTPXUserControl.g.cs
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\Presentation\DaiLy.g.cs
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\Presentation\DanhSachDaiLy.g.cs
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\Presentation\PhieuXuat.g.cs
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\Presentation\ReportPreview.g.cs
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\Presentation\SuaDaiLy.g.cs
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\Presentation\XemDaiLy.g.cs
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\Presentation\TiepNhanDaiLy.g.cs
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\App.g.cs
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\QLDL_MarkupCompile.cache
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\QLDL_MarkupCompile.lref
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\bin\Debug\QLDL.exe.manifest
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\bin\Debug\QLDL.application
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\bin\Debug\QLDL.exe
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\bin\Debug\QLDL.pdb
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\bin\Debug\EntityFramework.dll
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\bin\Debug\EntityFramework.xml
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\Presentation\PhieuXuat.baml
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\QLDL.g.resources
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\QLDL.Properties.Resources.resources
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\QLDL.csproj.GenerateResource.Cache
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\RdlCompile.cache
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\RdlCompile.compiled
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\QLDL.TrustInfo.xml
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\QLDL.exe.manifest
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\QLDL.application
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\QLDL.exe
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\QLDL.pdb
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\Presentation\ThietLapQuyDinh.baml
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\Presentation\TiepNhanNhanVien.baml
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\Presentation\ViewNhanVien.baml
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\Presentation\ThietLapQuyDinh.g.cs
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\Presentation\TiepNhanNhanVien.g.cs
+D:\Document\study\C#\Example\QLDL\QLDL\QLDL\obj\Debug\Presentation\ViewNhanVien.g.cs
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\QLDL.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\Presentation\CTPXUserControl.baml
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\Presentation\DaiLy.baml
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\Presentation\DanhSachDaiLy.baml
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\Presentation\ReportPreview.baml
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\Presentation\SuaDaiLy.baml
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\Presentation\ThietLapQuyDinh.baml
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\Presentation\TiepNhanNhanVien.baml
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\Presentation\ViewNhanVien.baml
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\Presentation\XemDaiLy.baml
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\Presentation\TiepNhanDaiLy.baml
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\App.baml
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\Presentation\CTPXUserControl.g.cs
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\Presentation\DaiLy.g.cs
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\Presentation\DanhSachDaiLy.g.cs
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\Presentation\PhieuXuat.g.cs
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\Presentation\ReportPreview.g.cs
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\Presentation\SuaDaiLy.g.cs
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\Presentation\ThietLapQuyDinh.g.cs
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\Presentation\TiepNhanNhanVien.g.cs
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\Presentation\ViewNhanVien.g.cs
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\Presentation\XemDaiLy.g.cs
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\Presentation\TiepNhanDaiLy.g.cs
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\App.g.cs
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\QLDL_MarkupCompile.cache
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\QLDL_MarkupCompile.lref
+C:\Users\user\Desktop\QLDL\QLDL\bin\Debug\QLDL.exe.config
+C:\Users\user\Desktop\QLDL\QLDL\obj\Debug\Presentation\EditNhanVien.g.cs
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\bin\Debug\QLDL.exe.config
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\QLDL.csprojResolveAssemblyReference.cache
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\CTPXUserControl.baml
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\DaiLy.baml
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\DanhSachDaiLy.baml
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\ReportPreview.baml
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\SuaDaiLy.baml
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\ThietLapQuyDinh.baml
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\TiepNhanNhanVien.baml
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\ViewNhanVien.baml
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\XemDaiLy.baml
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\TiepNhanDaiLy.baml
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\App.baml
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\CTPXUserControl.g.cs
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\DaiLy.g.cs
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\DanhSachDaiLy.g.cs
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\EditNhanVien.g.cs
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\PhieuXuat.g.cs
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\ReportPreview.g.cs
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\SuaDaiLy.g.cs
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\ThietLapQuyDinh.g.cs
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\TiepNhanNhanVien.g.cs
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\ViewNhanVien.g.cs
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\XemDaiLy.g.cs
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\TiepNhanDaiLy.g.cs
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\App.g.cs
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\QLDL_MarkupCompile.cache
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\QLDL_MarkupCompile.lref
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\bin\Debug\QLDL.exe.manifest
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\bin\Debug\QLDL.application
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\bin\Debug\QLDL.exe
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\bin\Debug\QLDL.pdb
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\bin\Debug\EntityFramework.dll
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\bin\Debug\EntityFramework.xml
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\EditNhanVien.baml
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\Presentation\PhieuXuat.baml
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\QLDL.g.resources
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\QLDL.Properties.Resources.resources
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\QLDL.csproj.GenerateResource.Cache
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\RdlCompile.cache
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\RdlCompile.compiled
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\QLDL.TrustInfo.xml
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\QLDL.exe.manifest
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\QLDL.application
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\QLDL.exe
+C:\Users\Golden Darkness\Desktop\QLDL\QLDL\obj\Debug\QLDL.pdb

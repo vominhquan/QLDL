@@ -81,6 +81,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BusinessLogic\BUSQLNhanVien.cs" />
+    <Compile Include="BusinessLogic\BUSThietLapQuyDinh.cs" />
+    <Compile Include="BusinessLogic\BUSView.cs" />
     <Compile Include="BusinessLogic\DaiLyBUS.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -88,12 +91,68 @@
     </Compile>
     <Compile Include="BusinessLogic\MatHangBUS.cs" />
     <Compile Include="BusinessLogic\PhieuXuatBUS.cs" />
+    <Page Include="Presentation\CTPXUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\DaiLy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\DanhSachDaiLy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\EditNhanVien.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\PhieuXuat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\ReportPreview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\SuaDaiLy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\ThietLapQuyDinh.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\TiepNhanNhanVien.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ViewNhanVien.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\XemDaiLy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\TiepNhanDaiLy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAccess\CHUCVU.cs">
+      <DependentUpon>QLDLModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataAccess\CTPX.cs">
       <DependentUpon>QLDLModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\DAILY.cs">
       <DependentUpon>QLDLModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataAccess\DAOQLNhanVien.cs" />
+    <Compile Include="DataAccess\DAOThietLapQuyDinh.cs" />
+    <Compile Include="DataAccess\DAOView.cs" />
     <Compile Include="DataAccess\DVT.cs">
       <DependentUpon>QLDLModel.tt</DependentUpon>
     </Compile>
@@ -142,43 +201,15 @@
     <Compile Include="DataAccess\TAIKHOAN.cs">
       <DependentUpon>QLDLModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataAccess\vwCHUCVU_NHANVIEN_TAIKHOAN.cs">
+      <DependentUpon>QLDLModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataAccess\vwDAILY_LOAIDL_QUAN.cs">
       <DependentUpon>QLDLModel.tt</DependentUpon>
     </Compile>
-    <Page Include="Presentation\CTPXUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Presentation\DaiLy.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Presentation\DanhSachDaiLy.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Presentation\PhieuXuat.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Presentation\ReportPreview.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Presentation\SuaDaiLy.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Presentation\XemDaiLy.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Presentation\TiepNhanDaiLy.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="DataAccess\vwDAILY_PHIEUTHUTIEN_NHANVIEN.cs">
+      <DependentUpon>QLDLModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\CTPXUserControl.xaml.cs">
       <DependentUpon>CTPXUserControl.xaml</DependentUpon>
     </Compile>
@@ -189,6 +220,9 @@
       <DependentUpon>DanhSachDaiLy.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Presentation\EditNhanVien.xaml.cs">
+      <DependentUpon>EditNhanVien.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\PhieuXuat.xaml.cs">
       <DependentUpon>PhieuXuat.xaml</DependentUpon>
     </Compile>
@@ -197,6 +231,15 @@
     </Compile>
     <Compile Include="Presentation\SuaDaiLy.xaml.cs">
       <DependentUpon>SuaDaiLy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ThietLapQuyDinh.xaml.cs">
+      <DependentUpon>ThietLapQuyDinh.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\TiepNhanNhanVien.xaml.cs">
+      <DependentUpon>TiepNhanNhanVien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ViewNhanVien.xaml.cs">
+      <DependentUpon>ViewNhanVien.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\XemDaiLy.xaml.cs">
       <DependentUpon>XemDaiLy.xaml</DependentUpon>
@@ -226,8 +269,19 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>QLDLModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="DataAccess\QLDLModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLDLModel.edmx</DependentUpon>
+      <LastGenOutput>QLDLModel.Context.cs</LastGenOutput>
+    </None>
     <None Include="DataAccess\QLDLModel.edmx.diagram">
       <DependentUpon>QLDLModel.edmx</DependentUpon>
+    </None>
+    <None Include="DataAccess\QLDLModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLDLModel.edmx</DependentUpon>
+      <LastGenOutput>QLDLModel.cs</LastGenOutput>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
@@ -240,27 +294,15 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataAccess\QLDLModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLDLModel.edmx</DependentUpon>
-      <LastGenOutput>QLDLModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DataAccess\QLDLModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLDLModel.edmx</DependentUpon>
-      <LastGenOutput>QLDLModel.cs</LastGenOutput>
-    </Content>
     <Resource Include="FodyWeavers.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.1.29.2\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\packages\Fody.1.29.2\build\portable-net+sl+win+wpa+wp\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
