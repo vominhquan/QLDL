@@ -15,8 +15,10 @@
         <TextBox Name="txtQuan" Height="30" VerticalAlignment="Bottom" Margin="133,0,96,107" Text="{Binding vw.TENQUAN,RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
         <Button Content="Quay lại" HorizontalAlignment="Left" Margin="270,303,0,0" VerticalAlignment="Top" Width="75" Click="Close"/>
         <Button Content="In thông tin" HorizontalAlignment="Left" Margin="190,303,0,0" VerticalAlignment="Top" Width="75" />
-        <Button Content="Phiếu thu tiền" HorizontalAlignment="Left" Margin="110,303,0,0" VerticalAlignment="Top" Width="75" />
-        <Button Click="XuatHang" Content="Phiếu xuất hàng" HorizontalAlignment="Left" Margin="10,303,0,0" VerticalAlignment="Top" Width="93" />
+        <Button Click="ThuTien" Content="Thu tiền" HorizontalAlignment="Left" Margin="110,303,0,0" VerticalAlignment="Top" Width="75" />
+        <Button Click="XemPhieuThu" Content="Phiếu thu" HorizontalAlignment="Left" Margin="110,276,0,0" VerticalAlignment="Top" Width="75" />
+        <Button Click="XuatHang" Content="Xuất hàng" HorizontalAlignment="Left" Margin="10,303,0,0" VerticalAlignment="Top" Width="93" />
+        <Button Click="XemPhieuXuat" Content="Phiếu xuất" HorizontalAlignment="Left" Margin="10,276,0,0" VerticalAlignment="Top" Width="93" />
         <TextBlock Text="Ngày tiếp nhận:" Height="30" Width="100" Margin="19,233,236,72"/>
         <TextBox Name="txtNgayTiepNhan" Height="30" VerticalAlignment="Bottom" Margin="133,0,96,72"/>
         <TextBlock Text="Số nợ:" Height="30" Width="100" Margin="19,55,236,250"/>

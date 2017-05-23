@@ -87,6 +87,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="BusinessLogic\MatHangBUS.cs" />
+    <Compile Include="BusinessLogic\PhieuThuBUS.cs" />
     <Compile Include="BusinessLogic\PhieuXuatBUS.cs" />
     <Compile Include="Class\DPI.cs" />
     <Compile Include="Components\Button.xaml.cs">
@@ -194,6 +195,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Presentation\ChiTietPhieuXuat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Presentation\CTPXUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -203,6 +208,26 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Presentation\DanhSachDaiLy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\DanhSachPhieuThu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\DanhSachPhieuXuat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\DSPT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\DSPX.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\PhieuThu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -232,6 +257,21 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess\vw_PhieuThu_NhanVien_DaiLy.cs">
+      <DependentUpon>QLDLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\vw_PhieuXuat_CTPX_MatHang.cs">
+      <DependentUpon>QLDLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\vw_PhieuXuat_CTPX_NhanVien_DaiLy.cs">
+      <DependentUpon>QLDLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\vw_PhieuXuat_NhanVien_DaiLy.cs">
+      <DependentUpon>QLDLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ChiTietPhieuXuat.xaml.cs">
+      <DependentUpon>ChiTietPhieuXuat.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\CTPXUserControl.xaml.cs">
       <DependentUpon>CTPXUserControl.xaml</DependentUpon>
     </Compile>
@@ -241,6 +281,21 @@
     <Compile Include="Presentation\DanhSachDaiLy.xaml.cs">
       <DependentUpon>DanhSachDaiLy.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Presentation\DanhSachPhieuThu.xaml.cs">
+      <DependentUpon>DanhSachPhieuThu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\DanhSachPhieuXuat.xaml.cs">
+      <DependentUpon>DanhSachPhieuXuat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\DSPT.xaml.cs">
+      <DependentUpon>DSPT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\DSPX.xaml.cs">
+      <DependentUpon>DSPX.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\PhieuThu.xaml.cs">
+      <DependentUpon>PhieuThu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\PhieuXuat.xaml.cs">
       <DependentUpon>PhieuXuat.xaml</DependentUpon>
@@ -314,6 +369,7 @@
     <Content Include="bin\Debug\app.publish\QLDL.exe" />
     <Content Include="bin\Debug\EntityFramework.dll" />
     <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
+    <Resource Include="icon.ico" />
     <Resource Include="bin\Debug\EntityFramework.SqlServer.xml" />
     <Resource Include="bin\Debug\EntityFramework.xml" />
     <Content Include="bin\Debug\QLDL.exe" />

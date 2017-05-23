@@ -244,8 +244,6 @@ namespace QLDL.Presentation
         // to do
         // right click contextmenu: set dẹp tiệm (tình trạng =0), in 1 đại lý
         // in tất cả đại lý
-        // tìm cách gán default combobox
-
 
     }
 }

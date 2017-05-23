@@ -3,6 +3,7 @@ using QLDL.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,23 +26,48 @@ namespace QLDL.Presentation
 
     public partial class PhieuXuat : Window
     {
+        public vwDAILY_LOAIDL_QUAN vwdl { get; set; }
         private ObservableCollection<MATHANG> listMatHang;
+        public ICollectionView collectionView;
+        public string searchstring;
+        public Predicate<object> searchFilter;
         private MatHangBUS mhbus = new MatHangBUS();
         private PhieuXuatBUS pxbus = new PhieuXuatBUS();
+        private PhieuThuBUS ptbus = new PhieuThuBUS();
         private ObservableCollection<CTPX> listCTPX;
         private ObservableCollection<CTPXUserControl> listUserControl;
-        private int madl;
 
-        public PhieuXuat(int madl)
+        public PhieuXuat(vwDAILY_LOAIDL_QUAN vwdl)
         {
             InitializeComponent();
+            this.vwdl = vwdl;
 
+            // Lấy dữ liệu ban đầu
+            InitialData();
+
+            
+        }
+
+        private void InitialData()
+        {                        
+            // tab xuất hàng
             listMatHang = mhbus.getAllMatHang();
             listCTPX = new ObservableCollection<CTPX>();
             listUserControl = new ObservableCollection<CTPXUserControl>();
             CreateCTPX();
-            this.madl = madl;
         }
+
+        #region Report
+
+        private void OpenReport(object sender, RoutedEventArgs e)
+        {
+            ReportPreview rp = new ReportPreview();
+            rp.Show();
+        }
+
+        #endregion
+
+
 
         private void AddCTPX(object sender, RoutedEventArgs e)
         {
@@ -56,7 +82,6 @@ namespace QLDL.Presentation
             // add user control
             CTPXUserControl ctpxuc = new CTPXUserControl();
             spCTPX.Children.Add(ctpxuc);
-            //spCTPX.Children[0];
 
             //get cbb data
             ctpxuc.cbb.ItemsSource = listMatHang;
@@ -65,6 +90,7 @@ namespace QLDL.Presentation
 
             //create a ctpx and add it to list
             CTPX ct = new CTPX();
+            ct.SOLUONG=1;
             listCTPX.Add(ct);
 
             //bind MAHANG to item
@@ -82,32 +108,37 @@ namespace QLDL.Presentation
 
         private void ThemPhieuXuat(object sender, RoutedEventArgs e)
         {
-            
-            CTPX[] arr_ctpx = listCTPX.ToArray();
-            decimal tongtien = 0;
-            foreach(CTPX ct in arr_ctpx)
+            MessageBoxResult result = MessageBox.Show("Khi đã tạo không thể thay đổi", "Xác nhận", MessageBoxButton.YesNo);
+
+            if (result == MessageBoxResult.Yes)
             {
-                tongtien += (decimal)(listMatHang.ToList().Find(x => x.MAHANG == ct.MAHANG).DONGIA * ct.SOLUONG);
+                CTPX[] arr_ctpx = listCTPX.ToArray();
+                decimal tongtien = 0;
+                foreach (CTPX ct in arr_ctpx)
+                {
+                    tongtien += (decimal)(listMatHang.ToList().Find(x => x.MAHANG == ct.MAHANG).DONGIA * ct.SOLUONG);
+                }
+
+                PHIEUXUATHANG px = new PHIEUXUATHANG();
+                px.MADL = this.vwdl.MADL;
+                px.NGAYLAP = DateTime.Now;
+                px.TONGTIEN = tongtien;
+                px.SOTIENTRA = Decimal.Parse(txtSoTienTra.Text);
+                px.CONLAI = tongtien - px.SOTIENTRA;
+                if (px.CONLAI < 0) px.CONLAI = 0;
+                px.NGUOIXUAT = 1;
+                /////////////////if sotientra !=0 nhảy sang tab thu tiền
+                if (pxbus.insertPhieuXuat(arr_ctpx, px))
+                {
+                    MessageBox.Show("Đã thêm thành công");
+                    vwdl.SONO += px.CONLAI;
+                    this.DialogResult = true;
+                }
+                else
+                    MessageBox.Show("Có lỗi xảy ra");
             }
 
-            PHIEUXUATHANG px = new PHIEUXUATHANG();
-            px.MADL = this.madl;
-            px.NGAYLAP = DateTime.Now;
-            px.TONGTIEN = tongtien;
-            px.SOTIENTRA = Decimal.Parse(txtSoTienTra.Text);
-            px.CONLAI = tongtien - px.SOTIENTRA;
-            px.NGUOIXUAT = 1;
-            /////////////////if sotientra !=0 nhảy sang tab thu tiền
-            //////////////// if còn lại >0, update số nợ đại lý += còn lại
-            if (pxbus.insertPhieuXuat(arr_ctpx, px))
-            {
-                MessageBox.Show("Đã thêm thành công");
-            }
-            else
-                MessageBox.Show("Có lỗi xảy ra");
         }
-
-
 
         // to do
         // CRUD PX-CTPX 2 trong 1

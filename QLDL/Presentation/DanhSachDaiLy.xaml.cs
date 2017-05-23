@@ -75,14 +75,6 @@ namespace QLDL.Presentation
             collectionView.Filter = groupFilter.Filter;
         }
 
-        // bỏ chọn trong listview
-        private void RemoveSelected(object sender, MouseButtonEventArgs e)
-        {
-            HitTestResult r = VisualTreeHelper.HitTest(this, e.GetPosition(this));
-            if (r.VisualHit.GetType() != typeof(ListBoxItem))
-                lsvDL.UnselectAll();
-        }
-
         // show/hide đại lí đã ngưng hoạt động
         private void StoppedDL(object sender, RoutedEventArgs e)
         {
@@ -178,6 +170,22 @@ namespace QLDL.Presentation
         {
             SuaDaiLy sdl = new SuaDaiLy(lsvDL.SelectedItem as vwDAILY_LOAIDL_QUAN);
             sdl.ShowDialog();
+        }
+
+        private void XoaDL(object sender, RoutedEventArgs e)
+        {
+            dynamic item = lsvDL.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Bạn muốn xóa đại lý đã chọn?", "Xác nhận xóa", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                if (dlbus.removeDaiLy(item.MADL))
+                {
+                    MessageBox.Show("Đã xóa thành công");
+                    listDL.Remove(item);
+                }
+                else
+                    MessageBox.Show("Có lỗi xảy ra");
+            }
         }
 
     }

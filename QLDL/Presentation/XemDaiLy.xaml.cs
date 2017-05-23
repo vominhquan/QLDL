@@ -44,8 +44,26 @@ namespace QLDL.Presentation
 
         private void XuatHang(object sender, RoutedEventArgs e)
         {
-            PhieuXuat px = new PhieuXuat(vw.MADL);
+            PhieuXuat px = new PhieuXuat(vw);
             px.ShowDialog();
+        }
+
+        private void ThuTien(object sender, RoutedEventArgs e)
+        {
+            PhieuThu pt = new PhieuThu(vw);
+            pt.ShowDialog();
+        }
+
+        private void XemPhieuXuat(object sender, RoutedEventArgs e)
+        {
+            DSPX px = new DSPX(vw);
+            px.ShowDialog();
+        }
+
+        private void XemPhieuThu(object sender, RoutedEventArgs e)
+        {
+            DSPT pt = new DSPT(vw);
+            pt.ShowDialog();
         }
 
 

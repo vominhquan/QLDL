@@ -1,0 +1,38 @@
+﻿<Window x:Class="QLDL.Presentation.ChiTietPhieuXuat"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ChiTietPhieuXuat" Height="331.579" Width="355.263">
+    <Grid>
+        <TextBlock Text="Ngày lập:" Width="100" Margin="38,13,209,251"/>
+        <TextBox Name="txtNgayLap" Height="30" VerticalAlignment="Bottom" Margin="138,0,91,251" Text="{Binding vwPX.NGAYLAP,RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
+        <TextBlock Text="Tổng tiền:" Height="30" Width="100" Margin="10,45,182,195"></TextBlock>
+        <TextBox Name="txtTongTien" Height="30" VerticalAlignment="Bottom" Margin="138,0,91,216" Text="{Binding vwPX.TONGTIEN,RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
+        <TextBlock Text="Số tiền trả:" Height="30" Width="100" Margin="10,80,182,160"></TextBlock>
+        <TextBox Name="txtSoTienTra" Height="30" VerticalAlignment="Bottom" Margin="138,0,91,181" Text="{Binding vwPX.SOTIENTRA,RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
+        <TextBlock Text="Còn lại:" Height="30" Width="100" Margin="10,115,182,125"></TextBlock>
+        <TextBox Name="txtConLai" Height="30" VerticalAlignment="Bottom" Margin="138,0,91,146" Text="{Binding vwPX.CONLAI,RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
+        <TextBlock Text="Người xuất:" Height="30" Width="100" Margin="10,150,182,90"></TextBlock>
+        <TextBox Name="txtNguoiXuat" Height="30" VerticalAlignment="Bottom" Margin="138,0,91,111" Text="{Binding vwPX.NGUOIXUAT,RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
+        <ListView Name="lsvCTPX" SelectionMode="Single" Background="{x:Null}" Margin="0,217,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Tên hàng">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding TENHANG}"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Số lượng">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding SOLUONG}"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>
