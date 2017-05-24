@@ -86,7 +86,7 @@ namespace QLDL.Presentation
         }
 
         //filter dựa trên thanh search
-        private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(lsvDL.ItemsSource).Refresh();
         }
@@ -135,9 +135,9 @@ namespace QLDL.Presentation
         private void InitialData()
         {
             //get data to list
-            listDL = dlbus.getAllDaiLy();
-            listLoaiDL = dlbus.getAllLoaiDL();
-            listQuan = dlbus.getAllQuan();
+            listDL = dlbus.GetAllDaiLy();
+            listLoaiDL = dlbus.GetAllLoaiDL();
+            listQuan = dlbus.GetAllQuan();
 
             //create and apply 2 filters
             CreateFilter();
@@ -153,7 +153,7 @@ namespace QLDL.Presentation
                 tndl.ShowDialog();
                 if (tndl.DialogResult.HasValue && tndl.DialogResult.Value)
                 {
-                    listDL.Add(tndl.vw);
+                    listDL.Add(tndl.VW);
                 }
             }
 
@@ -178,7 +178,7 @@ namespace QLDL.Presentation
             MessageBoxResult result = MessageBox.Show("Bạn muốn xóa đại lý đã chọn?", "Xác nhận xóa", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
-                if (dlbus.removeDaiLy(item.MADL))
+                if (dlbus.RemoveDaiLy(item.MADL))
                 {
                     MessageBox.Show("Đã xóa thành công");
                     listDL.Remove(item);

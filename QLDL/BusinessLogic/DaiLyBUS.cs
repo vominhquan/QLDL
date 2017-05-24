@@ -11,7 +11,7 @@ namespace QLDL.BusinessLogic
 
     class DaiLyBUS
     {
-        public ObservableCollection<vwDAILY_LOAIDL_QUAN> getAllDaiLy()
+        public ObservableCollection<vwDAILY_LOAIDL_QUAN> GetAllDaiLy()
         {
             ObservableCollection<vwDAILY_LOAIDL_QUAN> allDL = new ObservableCollection<vwDAILY_LOAIDL_QUAN>();
             using (QLDLEntities context = new QLDLEntities())
@@ -24,7 +24,7 @@ namespace QLDL.BusinessLogic
             return allDL;
         }
 
-        public ObservableCollection<LOAIDL> getAllLoaiDL()
+        public ObservableCollection<LOAIDL> GetAllLoaiDL()
         {
             ObservableCollection<LOAIDL> allLoai = new ObservableCollection<LOAIDL>();
             using (QLDLEntities context = new QLDLEntities())
@@ -37,7 +37,7 @@ namespace QLDL.BusinessLogic
             return allLoai;
         }
 
-        public ObservableCollection<QUAN> getAllQuan()
+        public ObservableCollection<QUAN> GetAllQuan()
         {
             ObservableCollection<QUAN> allQuan = new ObservableCollection<QUAN>();
             using (QLDLEntities context = new QLDLEntities())
@@ -52,7 +52,7 @@ namespace QLDL.BusinessLogic
 
 
         #region Đại lý CRUD
-        public bool insertDaiLy(string tendl, string diachi, string dienthoai, int maquan, int loaidl)
+        public bool InsertDaiLy(string tendl, string diachi, string dienthoai, int maquan, int loaidl)
         {
             try
             {
@@ -80,7 +80,7 @@ namespace QLDL.BusinessLogic
             }
         }
 
-        public bool updateDaiLy(int madl, string tendl, string diachi, string dienthoai, int maquan, int loaidl)
+        public bool UpdateDaiLy(int madl, string tendl, string diachi, string dienthoai, int maquan, int loaidl)
         {
             try
             {
@@ -102,7 +102,7 @@ namespace QLDL.BusinessLogic
                 return false;
             }
         }
-        public bool removeDaiLy(int madl)
+        public bool RemoveDaiLy(int madl)
         {
             try
             {

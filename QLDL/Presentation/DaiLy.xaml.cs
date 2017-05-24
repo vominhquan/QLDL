@@ -60,9 +60,9 @@ namespace QLDL.Presentation
         private void InitialData()
         {
             //get data to list
-            listDL = dlbus.getAllDaiLy();
-            listLoaiDL = dlbus.getAllLoaiDL();
-            listQuan = dlbus.getAllQuan();
+            listDL = dlbus.GetAllDaiLy();
+            listLoaiDL = dlbus.GetAllLoaiDL();
+            listQuan = dlbus.GetAllQuan();
 
             //create and apply 2 filters
             CreateFilter();
@@ -79,18 +79,20 @@ namespace QLDL.Presentation
 
             if (result == MessageBoxResult.Yes)
             {
-                vwDAILY_LOAIDL_QUAN vw = new vwDAILY_LOAIDL_QUAN();
-                vw.TENDL = txtTenDL.Text;
-                vw.DIACHI = txtDiaChi.Text;
-                vw.DIENTHOAI = txtDienThoai.Text;
-                vw.NGAYTIEPNHAN = DateTime.Today;
+                vwDAILY_LOAIDL_QUAN vw = new vwDAILY_LOAIDL_QUAN()
+                {
+                    TENDL = txtTenDL.Text,
+                    DIACHI = txtDiaChi.Text,
+                    DIENTHOAI = txtDienThoai.Text,
+                    NGAYTIEPNHAN = DateTime.Today
+                };
                 QUAN q = cbbQuan.SelectedItem as QUAN;
                 vw.TENQUAN = q.TENQUAN;
                 LOAIDL l = cbbLoaiDL.SelectedItem as LOAIDL;
                 vw.TENLOAI = l.TENLOAI;
                 vw.TINHTRANG = 1;
 
-                if (dlbus.insertDaiLy(vw.TENDL, vw.DIACHI, vw.DIENTHOAI, q.MAQUAN, l.MALOAI))
+                if (dlbus.InsertDaiLy(vw.TENDL, vw.DIACHI, vw.DIENTHOAI, q.MAQUAN, l.MALOAI))
                 {
                     MessageBox.Show("Đã thêm thành công");
                     // thêm dòng mới trong list view, thay vì load lại tất cả dữ liệu vì sẽ tốn thời gian nếu quá nhiều dữ liệu
@@ -115,7 +117,7 @@ namespace QLDL.Presentation
             MessageBoxResult result = MessageBox.Show("Bạn muốn sửa thông tin đã chọn?", "Xác nhận sửa", MessageBoxButton.YesNo);
 
             if (result == MessageBoxResult.Yes)
-                if (dlbus.updateDaiLy(item.MADL, item.TENDL, item.DIACHI, item.DIENTHOAI, item.MAQUAN, item.LOAIDL))
+                if (dlbus.UpdateDaiLy(item.MADL, item.TENDL, item.DIACHI, item.DIENTHOAI, item.MAQUAN, item.LOAIDL))
                     MessageBox.Show("Đã sửa thành công");
                 else
                     MessageBox.Show("Có lỗi xảy ra");
@@ -127,7 +129,7 @@ namespace QLDL.Presentation
             MessageBoxResult result = MessageBox.Show("Bạn muốn sửa thông tin đã chọn?", "Xác nhận sửa", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
-                if (dlbus.removeDaiLy(item.MADL))
+                if (dlbus.RemoveDaiLy(item.MADL))
                 {
                     MessageBox.Show("Đã xóa thành công");
                     listDL.Remove(item);
@@ -170,7 +172,7 @@ namespace QLDL.Presentation
         }
 
         // load mặc định combobox, đang tìm cách khác
-        private void loadcbb(object sender, EventArgs e)
+        private void Loadcbb(object sender, EventArgs e)
         {
             cbbLoaiDL.SelectedIndex = 0;
             cbbQuan.SelectedIndex = 0;
@@ -187,7 +189,7 @@ namespace QLDL.Presentation
         }
 
         //filter dựa trên thanh search
-        private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(lsvDL.ItemsSource).Refresh();
         }
@@ -233,7 +235,7 @@ namespace QLDL.Presentation
         } 
         #endregion
 
-        private void abc(object sender, RoutedEventArgs e)
+        private void Abc(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(lsvDL.SelectedItem.ToString());
 

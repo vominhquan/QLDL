@@ -9,7 +9,7 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Name="ahihi">
             <Button Name="btnPrintAll" Content="In danh sách" Margin="174,16,276,29" Click="OpenReport"/>
-            <TextBox Name="txtSearch" TextChanged="txtSearch_TextChanged" Text="{Binding searchstring}" Margin="287,16,131,29"/>
+            <TextBox Name="txtSearch" TextChanged="TxtSearch_TextChanged" Text="{Binding searchstring}" Margin="287,16,131,29"/>
             <CheckBox Name="cbTinhTrang" Content="Đại lý ngưng hoạt động" Click="StoppedDL" Margin="387,44,10,4"></CheckBox>
             <Button Content="Tiếp nhận đại lý"  Click="AddDL" Margin="65,16,388,29"></Button>
         </Grid>

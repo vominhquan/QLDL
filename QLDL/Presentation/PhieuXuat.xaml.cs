@@ -26,7 +26,7 @@ namespace QLDL.Presentation
 
     public partial class PhieuXuat : Window
     {
-        public vwDAILY_LOAIDL_QUAN vwdl { get; set; }
+        public vwDAILY_LOAIDL_QUAN Vwdl { get; set; }
         private ObservableCollection<MATHANG> listMatHang;
         public ICollectionView collectionView;
         public string searchstring;
@@ -40,7 +40,7 @@ namespace QLDL.Presentation
         public PhieuXuat(vwDAILY_LOAIDL_QUAN vwdl)
         {
             InitializeComponent();
-            this.vwdl = vwdl;
+            this.Vwdl = vwdl;
 
             // Lấy dữ liệu ban đầu
             InitialData();
@@ -89,20 +89,26 @@ namespace QLDL.Presentation
             ctpxuc.cbb.SelectedValuePath = "MAHANG";
 
             //create a ctpx and add it to list
-            CTPX ct = new CTPX();
-            ct.SOLUONG=1;
+            CTPX ct = new CTPX()
+            {
+                SOLUONG = 1
+            };
             listCTPX.Add(ct);
 
             //bind MAHANG to item
-            var binding = new Binding();
-            binding.Source = ct;
-            binding.Path = new PropertyPath("MAHANG");
+            var binding = new Binding()
+            {
+                Source = ct,
+                Path = new PropertyPath("MAHANG")
+            };
             ctpxuc.cbb.SetBinding(ComboBox.SelectedValueProperty, binding);
 
             //bind SOLUONG
-            var bindSOLUONG = new Binding();
-            bindSOLUONG.Source = ct;
-            bindSOLUONG.Path = new PropertyPath("SOLUONG");
+            var bindSOLUONG = new Binding()
+            {
+                Source = ct,
+                Path = new PropertyPath("SOLUONG")
+            };
             ctpxuc.sl.SetBinding(TextBox.TextProperty, bindSOLUONG);
         }
 
@@ -119,11 +125,13 @@ namespace QLDL.Presentation
                     tongtien += (decimal)(listMatHang.ToList().Find(x => x.MAHANG == ct.MAHANG).DONGIA * ct.SOLUONG);
                 }
 
-                PHIEUXUATHANG px = new PHIEUXUATHANG();
-                px.MADL = this.vwdl.MADL;
-                px.NGAYLAP = DateTime.Now;
-                px.TONGTIEN = tongtien;
-                px.SOTIENTRA = Decimal.Parse(txtSoTienTra.Text);
+                PHIEUXUATHANG px = new PHIEUXUATHANG()
+                {
+                    MADL = this.Vwdl.MADL,
+                    NGAYLAP = DateTime.Now,
+                    TONGTIEN = tongtien,
+                    SOTIENTRA = Decimal.Parse(txtSoTienTra.Text)
+                };
                 px.CONLAI = tongtien - px.SOTIENTRA;
                 if (px.CONLAI < 0) px.CONLAI = 0;
                 px.NGUOIXUAT = 1;
@@ -131,7 +139,7 @@ namespace QLDL.Presentation
                 if (pxbus.insertPhieuXuat(arr_ctpx, px))
                 {
                     MessageBox.Show("Đã thêm thành công");
-                    vwdl.SONO += px.CONLAI;
+                    Vwdl.SONO += px.CONLAI;
                     this.DialogResult = true;
                 }
                 else

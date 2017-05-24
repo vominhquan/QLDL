@@ -27,7 +27,7 @@ namespace QLDL.Presentation
         public ObservableCollection<QUAN> listQuan;
         public Predicate<object> searchFilter;
         public Predicate<object> showhide;
-        public vwDAILY_LOAIDL_QUAN vw { get; set; }
+        public vwDAILY_LOAIDL_QUAN VW { get; set; }
 
         public TiepNhanDaiLy()
         {
@@ -44,8 +44,8 @@ namespace QLDL.Presentation
         private void InitialData()
         {
             //get data to list
-            listLoaiDL = dlbus.getAllLoaiDL();
-            listQuan = dlbus.getAllQuan();
+            listLoaiDL = dlbus.GetAllLoaiDL();
+            listQuan = dlbus.GetAllQuan();
 
             // get datalist to UI
             cbbLoaiDL.ItemsSource = listLoaiDL;
@@ -58,18 +58,20 @@ namespace QLDL.Presentation
 
             if (result == MessageBoxResult.Yes)
             {
-                vw = new vwDAILY_LOAIDL_QUAN();
-                vw.TENDL = txtTenDL.Text;
-                vw.DIACHI = txtDiaChi.Text;
-                vw.DIENTHOAI = txtDienThoai.Text;
-                vw.NGAYTIEPNHAN = DateTime.Today;
+                VW = new vwDAILY_LOAIDL_QUAN()
+                {
+                    TENDL = txtTenDL.Text,
+                    DIACHI = txtDiaChi.Text,
+                    DIENTHOAI = txtDienThoai.Text,
+                    NGAYTIEPNHAN = DateTime.Today
+                };
                 QUAN q = cbbQuan.SelectedItem as QUAN;
-                vw.TENQUAN = q.TENQUAN;
+                VW.TENQUAN = q.TENQUAN;
                 LOAIDL l = cbbLoaiDL.SelectedItem as LOAIDL;
-                vw.TENLOAI = l.TENLOAI;
-                vw.TINHTRANG = 1;
+                VW.TENLOAI = l.TENLOAI;
+                VW.TINHTRANG = 1;
 
-                if (dlbus.insertDaiLy(vw.TENDL, vw.DIACHI, vw.DIENTHOAI, q.MAQUAN, l.MALOAI))
+                if (dlbus.InsertDaiLy(VW.TENDL, VW.DIACHI, VW.DIENTHOAI, q.MAQUAN, l.MALOAI))
                 {
                     MessageBox.Show("Đã thêm thành công");
                     this.DialogResult = true;

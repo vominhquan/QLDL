@@ -46,8 +46,8 @@ namespace QLDL.Presentation
         private void InitialData()
         {
             //get data to list
-            listLoaiDL = dlbus.getAllLoaiDL();
-            listQuan = dlbus.getAllQuan();
+            listLoaiDL = dlbus.GetAllLoaiDL();
+            listQuan = dlbus.GetAllQuan();
 
             // get datalist to UI
             cbbLoaiDL.ItemsSource = listLoaiDL;
@@ -71,7 +71,7 @@ namespace QLDL.Presentation
                 vw.TENLOAI = l.TENLOAI;
                 vw.TINHTRANG = 1;
 
-                if (dlbus.updateDaiLy(vw.MADL, vw.TENDL, vw.DIACHI, vw.DIENTHOAI, q.MAQUAN, l.MALOAI))
+                if (dlbus.UpdateDaiLy(vw.MADL, vw.TENDL, vw.DIACHI, vw.DIENTHOAI, q.MAQUAN, l.MALOAI))
                 {
                     MessageBox.Show("Đã sửa thành công");
                     this.DialogResult = true;

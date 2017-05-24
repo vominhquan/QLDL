@@ -4,7 +4,7 @@
         Title="DSPX" Height="330.451" Width="492.857">
     <Grid>
         <Button Name="btnPrintAll" Content="In danh sách" Margin="62,16,291,256" Click="OpenReport"/>
-        <TextBox Name="txtSearch" TextChanged="txtSearch_TextChanged" Text="{Binding searchstring}" Margin="287,16,98,256"/>
+        <TextBox Name="txtSearch" TextChanged="TxtSearch_TextChanged" Text="{Binding searchstring}" Margin="287,16,98,256"/>
         <ListView Name="lsvPX" MouseDoubleClick="XemPX" SelectionMode="Single" Background="{x:Null}" Margin="0,67,0,0">
             <ListView.Resources>
                 <ContextMenu x:Key="ItemContextMenu">

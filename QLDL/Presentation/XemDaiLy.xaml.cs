@@ -24,12 +24,12 @@ namespace QLDL.Presentation
     /// </summary>
     public partial class XemDaiLy : Window, IDisposable
     {
-        public vwDAILY_LOAIDL_QUAN vw { get; set; }
+        public vwDAILY_LOAIDL_QUAN VW { get; set; }
 
         public XemDaiLy(vwDAILY_LOAIDL_QUAN vw)
         {
             InitializeComponent();
-            this.vw = vw;
+            this.VW = vw;
         }
 
         public void Dispose()
@@ -44,25 +44,25 @@ namespace QLDL.Presentation
 
         private void XuatHang(object sender, RoutedEventArgs e)
         {
-            PhieuXuat px = new PhieuXuat(vw);
+            PhieuXuat px = new PhieuXuat(VW);
             px.ShowDialog();
         }
 
         private void ThuTien(object sender, RoutedEventArgs e)
         {
-            PhieuThu pt = new PhieuThu(vw);
+            PhieuThu pt = new PhieuThu(VW);
             pt.ShowDialog();
         }
 
         private void XemPhieuXuat(object sender, RoutedEventArgs e)
         {
-            DSPX px = new DSPX(vw);
+            DSPX px = new DSPX(VW);
             px.ShowDialog();
         }
 
         private void XemPhieuThu(object sender, RoutedEventArgs e)
         {
-            DSPT pt = new DSPT(vw);
+            DSPT pt = new DSPT(VW);
             pt.ShowDialog();
         }
 

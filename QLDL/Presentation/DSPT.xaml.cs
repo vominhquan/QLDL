@@ -23,7 +23,7 @@ namespace QLDL.Presentation
     /// </summary>
     public partial class DSPT : Window
     {
-        public vwDAILY_LOAIDL_QUAN vwdl { get; set; }
+        public vwDAILY_LOAIDL_QUAN Vwdl { get; set; }
         private ObservableCollection<vw_PhieuThu_NhanVien_DaiLy> listPhieuThu;
         public ICollectionView collectionView;
         public string searchstring;
@@ -34,7 +34,7 @@ namespace QLDL.Presentation
         public DSPT(vwDAILY_LOAIDL_QUAN vwdl)
         {
             InitializeComponent();
-            this.vwdl = vwdl;
+            this.Vwdl = vwdl;
 
             // Lấy dữ liệu ban đầu
             InitialData();
@@ -43,7 +43,7 @@ namespace QLDL.Presentation
         private void InitialData()
         {
             //get data to list
-            listPhieuThu = ptbus.getPhieuThuByDaiLy(vwdl.MADL);
+            listPhieuThu = ptbus.getPhieuThuByDaiLy(Vwdl.MADL);
 
             //create and apply 2 filters
             CreateFilter();
@@ -79,7 +79,7 @@ namespace QLDL.Presentation
             collectionView.Filter = groupFilter.Filter;
         }
         //filter dựa trên thanh search
-        private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(lsvPT.ItemsSource).Refresh();
         }

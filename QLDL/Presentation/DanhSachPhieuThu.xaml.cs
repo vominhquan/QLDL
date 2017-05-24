@@ -75,7 +75,7 @@ namespace QLDL.Presentation
             collectionView.Filter = groupFilter.Filter;
         }
         //filter dựa trên thanh search
-        private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(lsvPT.ItemsSource).Refresh();
         }
