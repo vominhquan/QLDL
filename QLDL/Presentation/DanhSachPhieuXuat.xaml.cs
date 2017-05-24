@@ -54,8 +54,8 @@ namespace QLDL.Presentation
 
         private void OpenReport(object sender, RoutedEventArgs e)
         {
-            ReportPreview rp = new ReportPreview();
-            rp.Show();
+            //ReportPreview rp = new ReportPreview();
+            //rp.Show();
         }
 
         #endregion

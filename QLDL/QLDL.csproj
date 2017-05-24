@@ -50,7 +50,6 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="PropertyChanged">
       <HintPath>..\packages\PropertyChanged.Fody.1.52.1\Lib\portable-net4+sl4+wp8+win8+wpa81+MonoAndroid16+MonoTouch40\PropertyChanged.dll</HintPath>
@@ -118,63 +117,6 @@
     <Compile Include="Converter\SizeToTextFontSize.cs" />
     <Compile Include="Converter\VisibilityCollapsed.cs" />
     <Compile Include="Converter\VisibilityVisible.cs" />
-    <Compile Include="DataAccess\CTPX.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\DAILY.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\DVT.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\LOAIDL.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\MATHANG.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\NHANVIEN.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\PHIEUTHUTIEN.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\PHIEUXUATHANG.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\QLDLModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLDLModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\QLDLModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLDLModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\QLDLModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLDLModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\QUAN.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\sp_helpdiagrams_Result.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\sysdiagram.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\TAIKHOAN.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\vwDAILY_LOAIDL_QUAN.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
-    </Compile>
     <Page Include="Components\Button.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -239,10 +181,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Presentation\ReportPreview.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Presentation\SuaDaiLy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -257,6 +195,63 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess\CTPX.cs">
+      <DependentUpon>QLDLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\DAILY.cs">
+      <DependentUpon>QLDLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\DVT.cs">
+      <DependentUpon>QLDLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\LOAIDL.cs">
+      <DependentUpon>QLDLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\MATHANG.cs">
+      <DependentUpon>QLDLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\NHANVIEN.cs">
+      <DependentUpon>QLDLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\PHIEUTHUTIEN.cs">
+      <DependentUpon>QLDLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\PHIEUXUATHANG.cs">
+      <DependentUpon>QLDLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\QLDLModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLDLModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\QLDLModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLDLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\QLDLModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLDLModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\QUAN.cs">
+      <DependentUpon>QLDLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>QLDLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\sp_helpdiagrams_Result.cs">
+      <DependentUpon>QLDLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\sysdiagram.cs">
+      <DependentUpon>QLDLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\TAIKHOAN.cs">
+      <DependentUpon>QLDLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\vwDAILY_LOAIDL_QUAN.cs">
+      <DependentUpon>QLDLModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataAccess\vw_PhieuThu_NhanVien_DaiLy.cs">
       <DependentUpon>QLDLModel.tt</DependentUpon>
     </Compile>
@@ -303,9 +298,6 @@
     <Compile Include="Presentation\Presentation.xaml.cs">
       <DependentUpon>Presentation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\ReportPreview.xaml.cs">
-      <DependentUpon>ReportPreview.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\SuaDaiLy.xaml.cs">
       <DependentUpon>SuaDaiLy.xaml</DependentUpon>
     </Compile>
@@ -333,16 +325,11 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\HoSoDaiLy.rdlc" />
+    <None Include="App.Config" />
     <EntityDeploy Include="DataAccess\QLDLModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>QLDLModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="bin\Debug\QLDL.application" />
-    <None Include="bin\Debug\QLDL.exe.config" />
-    <None Include="bin\Debug\QLDL.exe.manifest" />
-    <None Include="bin\Debug\QLDL.vshost.application" />
-    <None Include="bin\Debug\QLDL.vshost.exe.config" />
-    <None Include="bin\Debug\QLDL.vshost.exe.manifest" />
     <None Include="DataAccess\QLDLModel.edmx.diagram">
       <DependentUpon>QLDLModel.edmx</DependentUpon>
     </None>
@@ -357,24 +344,12 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\app.publish\QLDL.exe" />
-    <Content Include="bin\Debug\EntityFramework.dll" />
-    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
-    <Resource Include="icon.ico" />
-    <Resource Include="bin\Debug\EntityFramework.SqlServer.xml" />
-    <Resource Include="bin\Debug\EntityFramework.xml" />
-    <Content Include="bin\Debug\QLDL.exe" />
-    <Content Include="bin\Debug\QLDL.pdb" />
-    <Content Include="bin\Debug\QLDL.vshost.exe" />
     <Content Include="DataAccess\QLDLModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLDLModel.edmx</DependentUpon>
@@ -385,9 +360,11 @@
       <DependentUpon>QLDLModel.edmx</DependentUpon>
       <LastGenOutput>QLDLModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="icon.ico" />
     <Resource Include="FodyWeavers.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Debug\" />
     <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

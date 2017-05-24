@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 using System.ComponentModel;
 using QLDL.BusinessLogic;
 using System.Collections.ObjectModel;
-using Microsoft.Reporting.WinForms;
+//using Microsoft.Reporting.WinForms;
 using QLDL.DataAccess;
 
 namespace QLDL.Presentation
@@ -46,8 +46,8 @@ namespace QLDL.Presentation
 
         private void OpenReport(object sender, RoutedEventArgs e)
         {
-            ReportPreview rp = new ReportPreview();
-            rp.Show();
+            //ReportPreview rp = new ReportPreview();
+            //rp.Show();
         }
 
         #endregion
