@@ -21,7 +21,9 @@ namespace QLDL.Class
             double scaleX = 1 / DpiWidthFactor;
             double scaleY = 1 / DpiHeightFactor;
 
-            ((Presentation.Presentation)Application.Current.MainWindow).Main.LayoutTransform = new ScaleTransform(scaleX, scaleY);
+
+            
+            // ((Presentation.Presentation)Application.Current.MainWindow).Main.LayoutTransform = new ScaleTransform(scaleX, scaleY);
         }
     }
 }

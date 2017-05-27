@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QLDL.Presentation"
-        xmlns:_="clr-namespace:QLDL.Components"
+        xmlns:_="clr-namespace:Applications.Components"
         mc:Ignorable="d"
         
         Title="Quản lý đại lý" 
@@ -50,7 +50,6 @@
                         Margin="10"
                         Orientation="Vertical">
                         <_:Input
-                            Password="True"
                             Height="50"
                             Width="350"
                             Label="Mật khẩu"

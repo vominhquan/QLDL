@@ -156,8 +156,6 @@ namespace QLDL.Presentation
                     listDL.Add(tndl.VW);
                 }
             }
-
-
         }
 
         private void XemDL(object sender, RoutedEventArgs e)

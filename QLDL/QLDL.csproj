@@ -89,53 +89,79 @@
     <Compile Include="BusinessLogic\PhieuThuBUS.cs" />
     <Compile Include="BusinessLogic\PhieuXuatBUS.cs" />
     <Compile Include="Class\DPI.cs" />
-    <Compile Include="Components\Button.xaml.cs">
-      <DependentUpon>Button.xaml</DependentUpon>
+    <Compile Include="Components\Border\Border.xaml.cs">
+      <DependentUpon>Border.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\Button\Button.Active.cs" />
     <Compile Include="Components\Button\Button.Icon.cs" />
     <Compile Include="Components\Button\Button.Size.cs" />
     <Compile Include="Components\Button\Button.Text.cs" />
-    <Compile Include="Components\Input.xaml.cs">
-      <DependentUpon>Input.xaml</DependentUpon>
+    <Compile Include="Components\Button\Button.xaml.cs">
+      <DependentUpon>Button.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Components\ColorH\ColorH.H.cs" />
+    <Compile Include="Components\ColorH\ColorH.xaml.cs">
+      <DependentUpon>ColorH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ColorSV\ColorSV.Hue.cs" />
+    <Compile Include="Components\ColorSV\ColorSV.Saturation.cs" />
+    <Compile Include="Components\ColorSV\ColorSV.Value.cs" />
+    <Compile Include="Components\ColorSV\ColorSV.xaml.cs">
+      <DependentUpon>ColorSV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\IconShape\IconShape.cs" />
+    <Compile Include="Components\IconShape\IconShape.Text.cs" />
+    <Compile Include="Components\IconShape\IconShape.X.cs" />
+    <Compile Include="Components\IconShape\IconShape.Y.cs" />
+    <Compile Include="Components\Input\Input.Align.cs" />
+    <Compile Include="Components\Input\Input.Border.cs" />
     <Compile Include="Components\Input\Input.Height.cs" />
     <Compile Include="Components\Input\Input.Label.cs" />
     <Compile Include="Components\Input\Input.LabelWidth.cs" />
-    <Compile Include="Components\Input\Input.Password.cs" />
+    <Compile Include="Components\Input\Input.Max.cs" />
+    <Compile Include="Components\Input\Input.Min.cs" />
+    <Compile Include="Components\Input\Input.Type.cs" />
     <Compile Include="Components\Input\Input.Value.cs" />
-    <Compile Include="Components\Input\InputProperty.cs" />
-    <Compile Include="Components\Line.xaml.cs">
+    <Compile Include="Components\Input\Input.xaml.cs">
+      <DependentUpon>Input.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Input\InputResource.xaml.cs">
+      <DependentUpon>InputResource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Line\Line.xaml.cs">
       <DependentUpon>Line.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Converter\BooleanToVisibility.cs" />
-    <Compile Include="Converter\ColorToBrush.cs" />
-    <Compile Include="Converter\ColorToHex.cs" />
-    <Compile Include="Converter\SizeToIconFontSize.cs" />
-    <Compile Include="Converter\SizeToPadding.cs" />
-    <Compile Include="Converter\SizeToPaddingText.cs" />
-    <Compile Include="Converter\SizeToTextFontSize.cs" />
-    <Compile Include="Converter\VisibilityCollapsed.cs" />
-    <Compile Include="Converter\VisibilityVisible.cs" />
-    <Page Include="Components\Button.xaml">
+    <Page Include="Components\Border\Border.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Components\Button\Button.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Components\Button\ButtonResource.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
-    <Page Include="Components\Input.xaml">
+    <Page Include="Components\ColorH\ColorH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Components\ColorSV\ColorSV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Components\Input\Input.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Components\Input\InputResource.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
-    <Page Include="Components\Line.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Components\Line\Line.xaml">
       <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
     <Page Include="Presentation\ChiTietPhieuXuat.xaml">
       <SubType>Designer</SubType>
@@ -178,8 +204,8 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Presentation\Presentation.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
     <Page Include="Presentation\SuaDaiLy.xaml">
       <SubType>Designer</SubType>
@@ -195,6 +221,18 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converter\BooleanToVisibility.cs" />
+    <Compile Include="Converter\ColorToBrush.cs" />
+    <Compile Include="Converter\ColorToHex.cs" />
+    <Compile Include="Converter\CompareString.cs" />
+    <Compile Include="Converter\DoubleToPercent.cs" />
+    <Compile Include="Converter\SizeToIconFontSize.cs" />
+    <Compile Include="Converter\SizeToPadding.cs" />
+    <Compile Include="Converter\SizeToPaddingText.cs" />
+    <Compile Include="Converter\SizeToTextFontSize.cs" />
+    <Compile Include="Converter\ValueConverterGroup.cs" />
+    <Compile Include="Converter\VisibilityCollapsed.cs" />
+    <Compile Include="Converter\VisibilityVisible.cs" />
     <Compile Include="DataAccess\CTPX.cs">
       <DependentUpon>QLDLModel.tt</DependentUpon>
     </Compile>
