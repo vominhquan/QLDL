@@ -38,10 +38,14 @@ namespace QLDL.Presentation
         public DanhSachDaiLy()
         {
             InitializeComponent();
-            // Lấy dữ liệu ban đầu
+            Application.Current.MainWindow.Loaded += DPIInitialize;
             InitialData();
         }
-
+        private void DPIInitialize(object sender, RoutedEventArgs e)
+        {
+            Point Scale = Class.DPI.Initialize(sender, e);
+            Main.LayoutTransform = new ScaleTransform(Scale.X * 2, Scale.Y * 2);
+        }
         #region Report
 
         private void OpenReport(object sender, RoutedEventArgs e)

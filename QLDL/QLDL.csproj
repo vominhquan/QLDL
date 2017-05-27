@@ -203,10 +203,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Presentation\Presentation.xaml">
-      <SubType>Designer</SubType>
-      <Generator>XamlIntelliSenseFileGenerator</Generator>
-    </Page>
     <Page Include="Presentation\SuaDaiLy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -216,6 +212,26 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Presentation\TiepNhanDaiLy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\XAML\Global.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\XAML\StackPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\XAML\Table.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\XAML\Table\ListViewItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\XAML\Table\ListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -333,9 +349,6 @@
     <Compile Include="Presentation\PhieuXuat.xaml.cs">
       <DependentUpon>PhieuXuat.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Presentation.xaml.cs">
-      <DependentUpon>Presentation.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\SuaDaiLy.xaml.cs">
       <DependentUpon>SuaDaiLy.xaml</DependentUpon>
     </Compile>
@@ -380,6 +393,8 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <Resource Include="Resources\Fonts\aicon.ttf" />
+    <Resource Include="Resources\Fonts\Segoe UI Light.ttf" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
