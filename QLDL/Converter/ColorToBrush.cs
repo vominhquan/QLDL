@@ -7,25 +7,29 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Data;
 
-namespace QLDL.Converter
+namespace Applications.Converter
 {
     //[ValueConversion(typeof(double), typeof(double))]
     public class ColorToBrush : IValueConverter
     {
-        public object Convert
-            (
-                object value, 
-                Type targetType, 
-                object parameter, 
-                System.Globalization.CultureInfo culture
-            )
+        public object Convert(
+            object value, 
+            Type targetType, 
+            object parameter, 
+            System.Globalization.CultureInfo culture
+        )
         {
             if (value == null || !(value is Color)) {
                 throw new NotImplementedException("Kiểu dữ liệu khi sử dụng Converter không đúng");
             };
             return new SolidColorBrush((Color)value);
         }
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public object ConvertBack(
+            object value, 
+            Type targetType, 
+            object parameter, 
+            System.Globalization.CultureInfo culture
+        )
         {
             throw new NotImplementedException();
         }

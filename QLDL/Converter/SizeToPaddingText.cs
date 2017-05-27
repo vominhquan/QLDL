@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 
-namespace QLDL.Converter
+namespace Applications.Converter
 {
     //[ValueConversion(typeof(bool), typeof(Visibility))]
     public class SizeToPaddingText : IValueConverter

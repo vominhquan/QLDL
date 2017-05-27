@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace QLDL.Components
+namespace Applications.Components
 {
     public partial class Input : UserControl
     {

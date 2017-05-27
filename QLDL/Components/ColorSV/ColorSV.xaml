@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="Applications.Components.ColorSV"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:_="clr-namespace:Applications.Components"
+             mc:Ignorable="d"
+             x:Name="UserControlColorSV"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <TextBox
+            Visibility="Collapsed"
+            Name="BindingSaturation"
+            Text="{Binding Path=Saturation, ElementName=UserControlColorSV, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox
+            Visibility="Collapsed"
+            Name="BindingValue"
+            Text="{Binding Path=Value, ElementName=UserControlColorSV, UpdateSourceTrigger=PropertyChanged}"/>
+        <Border
+            Grid.Column="1"
+            Grid.Row="1"
+            Background="Black">
+            <Rectangle>
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                        <GradientStop Color="White" Offset="0.0" />
+                        <GradientStop 
+                            Color="{Binding
+                                Path=Hue,
+                                ElementName=UserControlColorSV
+                            }"
+                            Offset="1.0" />
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+                <Rectangle.OpacityMask>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="White" Offset="0" />
+                        <GradientStop Color="Transparent" Offset="1" />
+                    </LinearGradientBrush>
+                </Rectangle.OpacityMask>
+            </Rectangle>
+        </Border>
+        <Canvas
+            ClipToBounds="True"
+            MouseDown="PickColor"
+            MouseMove="PickColor"
+            Background="Transparent">
+            <Ellipse 
+                Name="Picker"
+                Width="20"
+                Height="20"
+                Stroke="#66000000"
+                StrokeThickness="3"/>
+        </Canvas>
+    </Grid>
+</UserControl>

@@ -1,12 +1,13 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:convert="clr-namespace:QLDL.Converter">
+                    xmlns:convert="clr-namespace:Applications.Converter">
+    <!--<convert:BooleanToVisibility x:Key="BooleanToVisibilityConverter"/>-->
     <convert:SizeToPadding x:Key="SizeToPadding"/>
     <convert:SizeToTextFontSize x:Key="SizeToTextFontSize"/>
     <convert:SizeToIconFontSize x:Key="SizeToIconFontSize"/>
     <convert:VisibilityVisible x:Key="VisibilityVisible"/>
     <convert:VisibilityCollapsed x:Key="VisibilityCollapsed"/>
-
+    
     <Style TargetType="{x:Type Button}">
         <Setter Property="Background" Value="{StaticResource Background}"/>
         <Setter Property="Height" Value="{Binding Path=Size, ElementName=UserControlButton}"/>

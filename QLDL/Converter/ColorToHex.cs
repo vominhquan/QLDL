@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Data;
 
-namespace QLDL.Converter
+namespace Applications.Converter
 {
     //[ValueConversion(typeof(double), typeof(double))]
     public class ColorToHex: IValueConverter
