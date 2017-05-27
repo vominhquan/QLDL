@@ -4,6 +4,7 @@
                     xmlns:local="clr-namespace:QLDL.Resources.XAML">
 
     <SolidColorBrush x:Key="GrayLineColor" Color="#7c8086"/>
+    <SolidColorBrush x:Key="BlueLineColor" Color="#007acc"/>
 
     <SolidColorBrush x:Key="Background" Color="#3f454b"/>
     <SolidColorBrush x:Key="Foreground" Color="#c3cad0"/>
@@ -13,7 +14,7 @@
     <SolidColorBrush x:Key="InputBackground" Color="#4b5259"/>
     <SolidColorBrush x:Key="InputBackgroundHover" Color="#393e44"/>
     <SolidColorBrush x:Key="InputBackgroundFocus" Color="#363b40"/>
-
+    
     <SolidColorBrush x:Key="TableHeaderColor" Color="#217346"/>
     <SolidColorBrush x:Key="TableHeaderBackground" Color="#d2d2d2"/>
     <SolidColorBrush x:Key="TableHeaderBackgroundHover" Color="#27ae60"/>

@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
 
-namespace Paint
+namespace Applications.Input
 {                                                        
     public partial class InputResource
     {
@@ -19,8 +19,7 @@ namespace Paint
 
             if (type == "Number"){
                 value = value == "" ? "0" : value;
-                double number;
-                if (Double.TryParse(value, out number))
+                if (Double.TryParse(value, out double number))
                 {
                     if (e.Key == Key.Up)
                     {
@@ -47,7 +46,7 @@ namespace Paint
                 }
                 else
                 {
-                    // throw new NotImplementedException("Kiểu dữ liệu sai");
+                    throw new NotImplementedException("Kiểu dữ liệu sai");
                 }
             }
             else if(type == "String") {}
