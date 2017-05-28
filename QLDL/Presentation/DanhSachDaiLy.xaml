@@ -3,9 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:_="clr-namespace:Applications.Components"
         SnapsToDevicePixels="True"
-        Title="DanhSachDaiLy" Height="513.6" Width="811.2">
+        Title="DanhSachDaiLy" Height="514" Width="811">
     <Window.Resources>
-        <ContextMenu x:Key="ContextMenu"> 
+        <ContextMenu x:Key="ContextMenu">
             <MenuItem Header="Xem thông tin" Click="XemDL"/>
             <MenuItem Header="Cập nhật thông tin" Click="SuaDL"/>
             <MenuItem Header="Xóa đại lý" Click="XoaDL"/>
@@ -17,7 +17,7 @@
         </Style>
     </Window.Resources>
     <DockPanel Name="Main">
-        <StackPanel Style="{StaticResource Shadow}"
+        <StackPanel 
             DockPanel.Dock="Top">
             <Border Padding="10">
                 <DockPanel>
@@ -25,7 +25,6 @@
                         Orientation="Horizontal"
                         DockPanel.Dock="Left">
                         <_:Button 
-                            BG="Azure"
                             Icon=""
                             Text="Tiếp nhận đại lý" 
                             Click="AddDL"/>

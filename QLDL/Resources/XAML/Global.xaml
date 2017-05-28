@@ -3,6 +3,7 @@
                     xmlns:_="clr-namespace:System;assembly=mscorlib">
 
     <Color x:Key="GreenColor">#ff227447</Color>
+    <SolidColorBrush x:Key="GreenSolid" Color="{StaticResource GreenColor}"/>
     
     <Color x:Key="Green45">#ff227447</Color>
     <Color x:Key="Green40">#ff1e663e</Color>

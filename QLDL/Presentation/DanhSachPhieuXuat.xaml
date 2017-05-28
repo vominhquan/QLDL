@@ -3,6 +3,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:_="clr-namespace:Applications.Components"
         Title="DanhSachPhieuXuat" Height="400" Width="600">
+    <Window.Resources>
+        <ContextMenu x:Key="ContextMenu">
+            <!--<MenuItem Header="Xem thông tin" Click="XemDL"/>
+            <MenuItem Header="Cập nhật thông tin" Click="SuaDL"/>
+            <MenuItem Header="Xóa đại lý" Click="XoaDL"/>-->
+        </ContextMenu>
+        <Style x:Key="ListViewItemResources" 
+               TargetType="ListViewItem"
+               BasedOn="{StaticResource ListViewItem}">
+            <Setter Property="ContextMenu" Value="{StaticResource ContextMenu}"/>
+        </Style>
+    </Window.Resources>
     <DockPanel Name="Main">
         <StackPanel 
             Style="{StaticResource Shadow}"
@@ -29,8 +41,8 @@
             </Border>
         </StackPanel>
         
-        <!--<Button Name="btnPrintAll" Content="Lập báo cáo doanh số" Margin="62,16,291,256" Click="OpenReport"/>
-        <TextBox Name="txtSearch" TextChanged="TxtSearch_TextChanged" Text="{Binding searchstring}" Margin="287,16,98,256"/>-->
+        <Button Name="btnPrintAll" Content="Lập báo cáo doanh số" Margin="62,16,291,256" Click="OpenReport"/>
+        <TextBox Name="txtSearch" TextChanged="TxtSearch_TextChanged" Text="{Binding searchstring}" Margin="287,16,98,256"/>
         <ListView
             Name="lsvPX" 
             MouseDoubleClick="XemPX"

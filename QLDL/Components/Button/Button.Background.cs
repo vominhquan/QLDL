@@ -11,23 +11,21 @@ namespace Applications.Components
 {
     public partial class Button : UserControl
     {
-        // BG
-        private static readonly DependencyProperty _BG =
+        // Background
+        private static readonly DependencyProperty _Background =
             DependencyProperty.Register
             (
-                "BG",
-                typeof(Color),
+                "Background",
+                typeof(SolidColorBrush),
                 typeof(Button),
                 new FrameworkPropertyMetadata(
-                       Color.FromRgb(255,0,0)
-                    // (Color)Application.Current.Resources["GreenColor"]
-                    
+                     (SolidColorBrush)Application.Current.Resources["GreenSolid"]
                 )
             );
-        public Color BG
+        public new SolidColorBrush Background
         {
-            get { return (Color)GetValue(_BG); }
-            set { SetValue(_BG, value); }
+            get { return (SolidColorBrush)GetValue(_Background); }
+            set { SetValue(_Background, value); }
         }
     }
 }

@@ -16,17 +16,17 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}">
+                    <Border Background="{Binding Path=Background, ElementName=UserControlButton}">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock 
                                 Foreground="{StaticResource ButtonForeground}"
                                 FontFamily="{StaticResource IconFont}"
                                 Visibility="{Binding Path=Icon, 
-                                                     ElementName=UserControlButton,
-                                                     Converter={StaticResource VisibilityVisible}}"
+                                                        ElementName=UserControlButton,
+                                                        Converter={StaticResource VisibilityVisible}}"
                                 FontSize="{Binding Path=Size, 
-                                                   ElementName=UserControlButton, 
-                                                   Converter={StaticResource SizeToIconFontSize}}"
+                                                    ElementName=UserControlButton, 
+                                                    Converter={StaticResource SizeToIconFontSize}}"
                                 Width="{Binding Path=Size, ElementName=UserControlButton}"
                                 Text="{Binding Path=Icon, ElementName=UserControlButton}"
                                 HorizontalAlignment="Center"
@@ -53,7 +53,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="StackPanel.Background" 
+                <Setter Property="Background" 
                         Value="#33000000"/>
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
