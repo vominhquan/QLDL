@@ -60,6 +60,10 @@
                                         Path=Align,
                                         ElementName=UserControlInput
                                     }"
+                                    IsReadOnly="{Binding
+                                        Path=ReadOnly,
+                                        ElementName=UserControlInput
+                                    }"
                                     FontFamily="{StaticResource TextFont}"
                                     Background="Transparent"
                                     Foreground="{StaticResource InputForeground}"

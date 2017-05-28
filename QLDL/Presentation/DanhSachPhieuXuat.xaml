@@ -49,7 +49,7 @@
             ItemsSource="{Binding Path=DanhSachPhieuXuat}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Đại lý" DisplayMemberBinding="{Binding MADL}"/>
+                    <GridViewColumn Header="Đại lý" DisplayMemberBinding="{Binding TENDL}"/>
                     <GridViewColumn Header="Ngày lập" DisplayMemberBinding="{Binding NGAYLAP}"/>
                     <GridViewColumn Header="Người xuất" DisplayMemberBinding="{Binding TENNV}"/>
                     <GridViewColumn Header="Tổng tiền" DisplayMemberBinding="{Binding TONGTIEN}"/>

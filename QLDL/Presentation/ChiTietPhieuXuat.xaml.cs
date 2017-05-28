@@ -1,8 +1,10 @@
 ﻿using QLDL.BusinessLogic;
+using QLDL.Class;
 using QLDL.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,27 +25,64 @@ namespace QLDL.Presentation
     public partial class ChiTietPhieuXuat : Window
     {
 
-        public vw_PhieuXuat_NhanVien_DaiLy vwPX { get; set; }
-        private ObservableCollection<vw_PhieuXuat_CTPX_MatHang> listCTPX;
-        private PhieuXuatBUS pxbus = new PhieuXuatBUS();
+        //public vw_PhieuXuat_NhanVien_DaiLy vwPX { get; set; }
+        ////private ObservableCollection<vw_PhieuXuat_CTPX_MatHang> listCTPX;
+        //private PhieuXuatBUS pxbus = new PhieuXuatBUS();
 
 
-        public ChiTietPhieuXuat(vw_PhieuXuat_NhanVien_DaiLy px)
+        public ChiTietPhieuXuat(vw_PhieuXuat_NhanVien_DaiLy View)
         {
             InitializeComponent();
-            vwPX = px;
+            Application.Current.MainWindow.Loaded += Initialize;
 
-            //get data to list
-            listCTPX = pxbus.getCTPXPhieuXuatByMaPhieu(px.MAPHIEU);
-
-            // get datalist to UI
-            lsvCTPX.ItemsSource = listCTPX;
-
-            //MessageBox.Show(px.MAPHIEU.ToString());
-
-            //foreach(vw_PhieuXuat_CTPX_MatHang item in listCTPX ){
-            //    MessageBox.Show(item.TENHANG.ToString());
-            //}
+            DataContext = new State()
+            {
+                ChiTietPhieuXuat = View,
+                DanhSachChiTietPhieuXuat = (new PhieuXuatBUS()).getCTPXPhieuXuatByMaPhieu(View.MAPHIEU)
+            };
         }
+        #region Initialize
+        private void Initialize(object sender, RoutedEventArgs e)
+        {
+            Point Scale = Class.DPI.Initialize(sender, e);
+            Main.LayoutTransform = new ScaleTransform(Scale.X, Scale.Y);
+        }
+        #endregion
+
+        private class State : INotifyPropertyChanged
+        {
+            #region Init INotifyPropertyChanged
+            public event PropertyChangedEventHandler PropertyChanged;
+            protected void OnPropertyChanged(string name)
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            }
+            #endregion
+
+            #region (ObservableCollection) Chi tiết phiếu xuất
+            private vw_PhieuXuat_NhanVien_DaiLy chiTietPhieuXuat;
+
+            public vw_PhieuXuat_NhanVien_DaiLy ChiTietPhieuXuat
+            {
+                get => chiTietPhieuXuat;
+                set => chiTietPhieuXuat = value;
+            }
+            #endregion
+
+            #region (ObservableCollection) Danh sách chi tiết phiếu xuất
+            private ObservableCollection<vw_PhieuXuat_CTPX_MatHang> danhSachChiTietPhieuXuat;
+            public ObservableCollection<vw_PhieuXuat_CTPX_MatHang> DanhSachChiTietPhieuXuat {
+                get => danhSachChiTietPhieuXuat;
+                set => danhSachChiTietPhieuXuat = value;
+            }
+            #endregion
+        };
+
+        #region Quay lại
+        private void Back(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+        #endregion
     }
 }

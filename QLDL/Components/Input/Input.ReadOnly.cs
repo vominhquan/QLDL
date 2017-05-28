@@ -10,19 +10,19 @@ namespace Applications.Components
 {
     public partial class Input : UserControl
     {
-        // Height
-        private static readonly DependencyProperty _Height =
+        // Text
+        private static readonly DependencyProperty _ReadOnly =
             DependencyProperty.Register
             (
-                "Height",
-                typeof(double),
+                "ReadOnly",
+                typeof(bool),
                 typeof(Input),
-                new FrameworkPropertyMetadata((double)40)
+                new FrameworkPropertyMetadata(false)
             );
-        public new double Height
+        public bool ReadOnly
         {
-            get { return (double)GetValue(_Height); }
-            set { SetValue(_Height, value); }
+            get { return (bool)GetValue(_ReadOnly); }
+            set { SetValue(_ReadOnly, value); }
         }
     }
 }

@@ -115,6 +115,7 @@
     <Compile Include="Components\IconShape\IconShape.Text.cs" />
     <Compile Include="Components\IconShape\IconShape.X.cs" />
     <Compile Include="Components\IconShape\IconShape.Y.cs" />
+    <Compile Include="Components\Input\Input.ReadOnly.cs" />
     <Compile Include="Components\Input\Input.Background.cs" />
     <Compile Include="Components\Input\Input.Align.cs" />
     <Compile Include="Components\Input\Input.Border.cs" />
@@ -264,74 +265,83 @@
     <Compile Include="Converter\ValueConverterGroup.cs" />
     <Compile Include="Converter\VisibilityCollapsed.cs" />
     <Compile Include="Converter\VisibilityVisible.cs" />
+    <Compile Include="DataAccess\CHUCVU.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataAccess\CTPX.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\DAILY.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\DVT.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\LOAIDL.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\MATHANG.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\NHANVIEN.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\PHIEUTHUTIEN.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\PHIEUXUATHANG.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\QLDLModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLDLModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\QLDLModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLDLModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\QLDLModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLDLModel.edmx</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\QUAN.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\sp_helpdiagrams_Result.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\sysdiagram.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\TAIKHOAN.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\vwCHUCVU_NHANVIEN_TAIKHOAN.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\vwDAILY_LOAIDL_QUAN.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\vwDAILY_PHIEUTHUTIEN_NHANVIEN.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\vw_PhieuThu_NhanVien_DaiLy.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\vw_PhieuXuat_CTPX_MatHang.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\vw_PhieuXuat_CTPX_NhanVien_DaiLy.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\vw_PhieuXuat_NhanVien_DaiLy.cs">
-      <DependentUpon>QLDLModel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Presentation\ChiTietPhieuXuat.xaml.cs">
       <DependentUpon>ChiTietPhieuXuat.xaml</DependentUpon>
@@ -388,13 +398,13 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\HoSoDaiLy.rdlc" />
-    <EntityDeploy Include="DataAccess\QLDLModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLDLModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="App.Config" />
-    <None Include="DataAccess\QLDLModel.edmx.diagram">
-      <DependentUpon>QLDLModel.edmx</DependentUpon>
+    <EntityDeploy Include="DataAccess\Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataAccess\Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
@@ -423,15 +433,15 @@
     <Folder Include="bin\Release\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataAccess\QLDLModel.Context.tt">
+    <Content Include="DataAccess\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLDLModel.edmx</DependentUpon>
-      <LastGenOutput>QLDLModel.Context.cs</LastGenOutput>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DataAccess\QLDLModel.tt">
+    <Content Include="DataAccess\Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLDLModel.edmx</DependentUpon>
-      <LastGenOutput>QLDLModel.cs</LastGenOutput>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

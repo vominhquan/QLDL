@@ -1,38 +1,80 @@
 ﻿<Window x:Class="QLDL.Presentation.ChiTietPhieuXuat"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="ChiTietPhieuXuat" Height="331.579" Width="355.263">
-    <Grid>
-        <TextBlock Text="Ngày lập:" Width="100" Margin="38,13,209,251"/>
-        <TextBox Name="txtNgayLap" Height="30" VerticalAlignment="Bottom" Margin="138,0,91,251" Text="{Binding vwPX.NGAYLAP,RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
-        <TextBlock Text="Tổng tiền:" Height="30" Width="100" Margin="10,45,182,195"></TextBlock>
-        <TextBox Name="txtTongTien" Height="30" VerticalAlignment="Bottom" Margin="138,0,91,216" Text="{Binding vwPX.TONGTIEN,RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
-        <TextBlock Text="Số tiền trả:" Height="30" Width="100" Margin="10,80,182,160"></TextBlock>
-        <TextBox Name="txtSoTienTra" Height="30" VerticalAlignment="Bottom" Margin="138,0,91,181" Text="{Binding vwPX.SOTIENTRA,RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
-        <TextBlock Text="Còn lại:" Height="30" Width="100" Margin="10,115,182,125"></TextBlock>
-        <TextBox Name="txtConLai" Height="30" VerticalAlignment="Bottom" Margin="138,0,91,146" Text="{Binding vwPX.CONLAI,RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
-        <TextBlock Text="Người xuất:" Height="30" Width="100" Margin="10,150,182,90"></TextBlock>
-        <TextBox Name="txtNguoiXuat" Height="30" VerticalAlignment="Bottom" Margin="138,0,91,111" Text="{Binding vwPX.NGUOIXUAT,RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
-        <ListView Name="lsvCTPX" SelectionMode="Single" Background="{x:Null}" Margin="0,217,0,0">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Tên hàng">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding TENHANG}"></TextBlock>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Số lượng">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding SOLUONG}"></TextBlock>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
-
-    </Grid>
+        xmlns:_="clr-namespace:Applications.Components"
+        Title="ChiTietPhieuXuat" Height="500" Width="600">
+    <Window.Resources>
+        <Style TargetType="_:Input" x:Key="Input">
+            <Setter Property="ReadOnly" Value="True"/>
+            <Setter Property="Border" Value="0"/>
+            <Setter Property="LabelWidth" Value="150"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
+    <DockPanel Name="Main">
+        <DockPanel.LayoutTransform>
+            <ScaleTransform 
+                ScaleX="0.8"
+                ScaleY="0.8"/>
+        </DockPanel.LayoutTransform>
+        <StackPanel 
+            Style="{StaticResource Shadow}"
+            DockPanel.Dock="Top">
+            <Border Padding="10">
+                <DockPanel>
+                    <_:Button 
+                        Click="Back"
+                        Icon=""
+                        DockPanel.Dock="Left"
+                        Text="Quay lại"/>
+                    <Rectangle/>
+                </DockPanel>
+            </Border>
+        </StackPanel>
+        <DockPanel Margin="5">
+            <DockPanel
+                DockPanel.Dock="Top"
+                Height="50">
+                <_:Input
+                    DockPanel.Dock="Right"
+                    Style="{StaticResource Input}"
+                    Width="280"
+                    Label="Ngày lập" 
+                    Value="{Binding Path=ChiTietPhieuXuat.NGAYLAP, Mode=OneWay}"/>
+                <_:Input
+                    Style="{StaticResource Input}"
+                    Label="Người xuất" 
+                    Value="{Binding Path=ChiTietPhieuXuat.TENNV, Mode=OneWay}"/>
+            </DockPanel>
+            <StackPanel 
+                HorizontalAlignment="Right"
+                DockPanel.Dock="Bottom"
+                Width="300">
+                <_:Input
+                    Style="{StaticResource Input}"
+                    Label="Số tiền trước đó"
+                    Value="{Binding Path=ChiTietPhieuXuat.TONGTIEN, Mode=OneWay}"/>
+                <_:Input
+                    Style="{StaticResource Input}"
+                    Label="Số tiền trả"
+                    Value="{Binding Path=ChiTietPhieuXuat.SOTIENTRA, Mode=OneWay}"/>
+                <_:Input
+                    Style="{StaticResource Input}"
+                    Label="Còn lại"
+                    Value="{Binding Path=ChiTietPhieuXuat.CONLAI, Mode=OneWay}"/>
+            </StackPanel>
+            <ListView 
+                ItemsSource="{Binding Path=DanhSachChiTietPhieuXuat}"
+                Margin="5"
+                ItemContainerStyle="{StaticResource ListViewItem}"
+                SelectionMode="Single">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Tên hàng" DisplayMemberBinding="{Binding TENHANG}"/>
+                        <GridViewColumn Header="Số lượng" DisplayMemberBinding="{Binding SOLUONG}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </DockPanel>
+    </DockPanel>
 </Window>
