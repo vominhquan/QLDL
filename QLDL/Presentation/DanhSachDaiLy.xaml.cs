@@ -26,10 +26,10 @@ namespace QLDL.Presentation
     {
 
         private DaiLyBUS dlbus = new DaiLyBUS();
-        public ObservableCollection<vwDAILY_LOAIDL_QUAN> listDL;
-        public ObservableCollection<LOAIDL> listLoaiDL;
-        public ObservableCollection<QUAN> listQuan;
-        public ICollectionView collectionView;
+        private ObservableCollection<vwDAILY_LOAIDL_QUAN> listDL;
+        //public ObservableCollection<LOAIDL> listLoaiDL;
+        //public ObservableCollection<QUAN> listQuan;
+        private ICollectionView collectionView;
         public GroupFilter groupFilter;
         public Predicate<object> searchFilter;
         public Predicate<object> showhide;
@@ -39,13 +39,44 @@ namespace QLDL.Presentation
         {
             InitializeComponent();
             Application.Current.MainWindow.Loaded += DPIInitialize;
-            InitialData();
+            DataContext = new State()
+            {
+                // Cài đặt cái giá trị mặc định ban đầu ở đây
+                Loc = "asd",
+                HienThiDLNgungHoatDong = true,
+                DanhSachDaiLy = dlbus.GetAllDaiLy()
+            };
+            // CreateFilter();
         }
         private void DPIInitialize(object sender, RoutedEventArgs e)
         {
             Point Scale = Class.DPI.Initialize(sender, e);
-            Main.LayoutTransform = new ScaleTransform(Scale.X * 2, Scale.Y * 2);
+            Main.LayoutTransform = new ScaleTransform(Scale.X, Scale.Y);
         }
+        private class State
+        {
+            private string loc;
+            private bool hienThiDLNgungHoatDong;
+            private ObservableCollection<vwDAILY_LOAIDL_QUAN> danhSachDaiLy;
+
+            public string Loc {
+                get {
+                    return loc;
+                }
+                set
+                {
+                    loc = value;
+                    if(DanhSachDaiLy != null)
+                        CollectionViewSource.GetDefaultView(DanhSachDaiLy).Refresh();
+                }
+            }
+            public bool HienThiDLNgungHoatDong { get => hienThiDLNgungHoatDong; set => hienThiDLNgungHoatDong = value; }
+            public ObservableCollection<vwDAILY_LOAIDL_QUAN> DanhSachDaiLy {
+                get => danhSachDaiLy;
+                set => danhSachDaiLy = value;
+            }
+        };
+
         #region Report
 
         private void OpenReport(object sender, RoutedEventArgs e)
@@ -65,7 +96,8 @@ namespace QLDL.Presentation
 
             searchFilter = delegate(object item)
             {
-                return (item as vwDAILY_LOAIDL_QUAN).TENDL.ToLower().Contains(txtSearch.Text.ToLower()) == true ? true : false;
+                return (item as vwDAILY_LOAIDL_QUAN).TENDL.ToLower()
+                .Contains( ((State)DataContext).Loc.ToLower() ) == true ? true : false;
             };
 
             showhide = delegate(object item)
@@ -76,23 +108,28 @@ namespace QLDL.Presentation
             groupFilter = new GroupFilter();
             groupFilter.AddFilter(showhide);
             groupFilter.AddFilter(searchFilter);
+
             collectionView.Filter = groupFilter.Filter;
         }
 
         // show/hide đại lí đã ngưng hoạt động
         private void StoppedDL(object sender, RoutedEventArgs e)
         {
-            if (cbTinhTrang.IsChecked == true)
+            if (((State)DataContext).HienThiDLNgungHoatDong)
+            {
                 groupFilter.RemoveFilter(showhide);
+            }
             else
+            {
                 groupFilter.AddFilter(showhide);
+            }
             collectionView.Filter = groupFilter.Filter;
         }
 
         //filter dựa trên thanh search
         private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            CollectionViewSource.GetDefaultView(lsvDL.ItemsSource).Refresh();
+            
         }
 
         // group filter khi có nhiều filter
@@ -134,22 +171,25 @@ namespace QLDL.Presentation
                 }
             }
         }
+
         #endregion
 
         private void InitialData()
         {
             //get data to list
             listDL = dlbus.GetAllDaiLy();
-            listLoaiDL = dlbus.GetAllLoaiDL();
-            listQuan = dlbus.GetAllQuan();
+            //listLoaiDL = dlbus.GetAllLoaiDL();
+            //listQuan = dlbus.GetAllQuan();
 
             //create and apply 2 filters
             CreateFilter();
 
             // get datalist to UI
-            lsvDL.ItemsSource = listDL;
+            ((State)DataContext).DanhSachDaiLy = listDL;
+            // lsvDL.ItemsSource = listDL;
         }
 
+        #region Thêm xóa sửa Đại Lý (show)
         private void AddDL(object sender, RoutedEventArgs e)
         {
             using (TiepNhanDaiLy tndl = new TiepNhanDaiLy())
@@ -173,7 +213,6 @@ namespace QLDL.Presentation
             SuaDaiLy sdl = new SuaDaiLy(lsvDL.SelectedItem as vwDAILY_LOAIDL_QUAN);
             sdl.ShowDialog();
         }
-
         private void XoaDL(object sender, RoutedEventArgs e)
         {
             dynamic item = lsvDL.SelectedItem;
@@ -189,6 +228,6 @@ namespace QLDL.Presentation
                     MessageBox.Show("Có lỗi xảy ra");
             }
         }
-
+        #endregion
     }
 }

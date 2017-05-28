@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Applications.Components"
              mc:Ignorable="d"
              Loaded="ControlLoaded">
-    <Rectangle Fill="{StaticResource GrayLineColor}"
+    <Rectangle Fill="{StaticResource WhiteLineColor}"
                Width="1"
                Height="1"
                x:Name="Child"/>

@@ -18,15 +18,15 @@
                             Path=Border,
                             ElementName=UserControlInput
                         }"
-                            BorderBrush="{TemplateBinding BorderBrush}">
+                        BorderBrush="{TemplateBinding BorderBrush}">
                         <DockPanel
                             Height="{Binding 
                                 Path=Height,
                                 ElementName=UserControlInput
                             }">
                             <Border 
+                                Background="{StaticResource InputBackgroundHover}"
                                 DockPanel.Dock="Left"
-                                Background="{StaticResource BackgroundActive}"
                                 Width="{Binding 
                                     Path=LabelWidth,
                                     ElementName=UserControlInput
@@ -40,7 +40,7 @@
                                     VerticalAlignment="Center"
                                     HorizontalAlignment="Center"
                                     FontFamily="{StaticResource TextFont}"
-                                    Foreground="{StaticResource Foreground}"
+                                    Foreground="{StaticResource InputForeground}"
                                     Text="{Binding 
                                         Path=Label,
                                         ElementName=UserControlInput
@@ -62,8 +62,8 @@
                                 }"
                                 FontFamily="{StaticResource TextFont}"
                                 Background="{TemplateBinding Background}"
-                                Foreground="{StaticResource Foreground}"
-                                CaretBrush="{StaticResource Foreground}"
+                                Foreground="{StaticResource InputForeground}"
+                                CaretBrush="{StaticResource InputForeground}"
                                 DataContext="{Binding
                                     Path=Type,
                                     ElementName=UserControlInput
@@ -95,11 +95,13 @@
                         <Trigger SourceName="TextInput" Property="IsFocused" Value="True">
                             <Setter Property="Background" 
                                     Value="{StaticResource InputBackgroundFocus}"/>
-                            <Setter Property="BorderBrush" Value="{StaticResource BlueLineColor}"/>
+                            <Setter Property="BorderBrush" 
+                                    Value="{StaticResource BlueLineColor}"/>
                         </Trigger>
                         <DataTrigger 
-                            Binding="{Binding Path=(Validation.HasError), 
-                                              ElementName=UserControlInput}"
+                            Binding="{Binding 
+                                Path=(Validation.HasError), 
+                                ElementName=UserControlInput}"
                             Value="true">
                             <Setter Property="BorderBrush" 
                                     Value="#e74c3c"/>

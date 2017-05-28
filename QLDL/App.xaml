@@ -8,6 +8,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/XAML/Global.xaml"/>
                 <ResourceDictionary Source="Resources/XAML/StackPanel.xaml"/>
+                <ResourceDictionary Source="Resources/XAML/Table.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
