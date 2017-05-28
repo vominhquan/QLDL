@@ -1,4 +1,5 @@
 ﻿using QLDL.BusinessLogic;
+using QLDL.Class;
 using QLDL.DataAccess;
 using System;
 using System.Collections.Generic;
@@ -35,7 +36,67 @@ namespace QLDL.Presentation
         public DanhSachPhieuXuat()
         {
             InitializeComponent();
+            Application.Current.MainWindow.Loaded += DPIInitialize;
+
             InitialData();
+        }
+
+        private void DPIInitialize(object sender, RoutedEventArgs e)
+        {
+            Point Scale = Class.DPI.Initialize(sender, e);
+            Main.LayoutTransform = new ScaleTransform(Scale.X, Scale.Y);
+        }
+
+        private class State: INotifyPropertyChanged
+        {
+            #region Init INotifyPropertyChanged
+            public event PropertyChangedEventHandler PropertyChanged;
+            protected void OnPropertyChanged(string name)
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            }
+            #endregion
+
+            #region (string) Lọc theo tên 
+            private string locTheoTen;
+            public string LocTheoTen
+            {
+                get => locTheoTen;
+                set
+                {
+                    locTheoTen = value;
+                    if (DanhSachPhieuXuat != null)
+                        CollectionViewSource.GetDefaultView(DanhSachPhieuXuat).Refresh();
+                }
+            }
+            #endregion
+
+            #region (ObservableCollection) Danh sách phiếu xuất
+            private ObservableCollection<vw_PhieuXuat_NhanVien_DaiLy> danhSachPhieuXuat;
+            public ObservableCollection<vw_PhieuXuat_NhanVien_DaiLy> DanhSachPhieuXuat
+            {
+                get => danhSachPhieuXuat;
+                set => danhSachPhieuXuat = value;
+            }
+            #endregion
+
+            #region (void) SetFilter
+            public void SetFilter()
+            {
+                #region Tạo Filters
+                GroupFilter Filters = new GroupFilter();
+                Filters.AddFilter(delegate (object item)
+                {
+                    return (item as vw_PhieuXuat_NhanVien_DaiLy).TENNV.ToLower()
+                    .Contains(LocTheoTen.ToLower()) == true ? true : false;
+                });
+                #endregion
+
+                ICollectionView CollectionView =
+                    CollectionViewSource.GetDefaultView(DanhSachPhieuXuat);
+                if (CollectionView != null) CollectionView.Filter = Filters.Filter;
+            }
+            #endregion
         }
 
         private void InitialData()
@@ -65,16 +126,16 @@ namespace QLDL.Presentation
         // khởi tạo filter
         private void CreateFilter()
         {
-            collectionView = CollectionViewSource.GetDefaultView(listPhieuXuat);
+            //collectionView = CollectionViewSource.GetDefaultView(listPhieuXuat);
 
-            searchFilter = delegate(object item)
-            {
-                return (item as vw_PhieuXuat_NhanVien_DaiLy).TENNV.ToLower().Contains(txtSearch.Text.ToLower()) == true ? true : false;
-            };
+            //searchFilter = delegate (object item)
+            //{
+            //    return (item as vw_PhieuXuat_NhanVien_DaiLy).TENNV.ToLower().Contains(txtSearch.Text.ToLower()) == true ? true : false;
+            //};
 
-            groupFilter = new GroupFilter();
-            groupFilter.AddFilter(searchFilter);
-            collectionView.Filter = groupFilter.Filter;
+            //groupFilter = new GroupFilter();
+            //groupFilter.AddFilter(searchFilter);
+            //collectionView.Filter = groupFilter.Filter;
         }
         //filter dựa trên thanh search
         private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
@@ -82,45 +143,7 @@ namespace QLDL.Presentation
             CollectionViewSource.GetDefaultView(lsvPX.ItemsSource).Refresh();
         }
 
-        // group filter khi có nhiều filter
-        public class GroupFilter
-        {
-            private List<Predicate<object>> _filters;
-
-            public Predicate<object> Filter { get; private set; }
-
-            public GroupFilter()
-            {
-                _filters = new List<Predicate<object>>();
-                Filter = InternalFilter;
-            }
-
-            private bool InternalFilter(object o)
-            {
-                foreach (var filter in _filters)
-                {
-                    if (!filter(o))
-                    {
-                        return false;
-                    }
-                }
-
-                return true;
-            }
-
-            public void AddFilter(Predicate<object> filter)
-            {
-                _filters.Add(filter);
-            }
-
-            public void RemoveFilter(Predicate<object> filter)
-            {
-                if (_filters.Contains(filter))
-                {
-                    _filters.Remove(filter);
-                }
-            }
-        }
+        
         #endregion
 
         private void XemPX(object sender, MouseButtonEventArgs e)

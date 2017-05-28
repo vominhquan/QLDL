@@ -4,6 +4,18 @@
         xmlns:_="clr-namespace:Applications.Components"
         SnapsToDevicePixels="True"
         Title="DanhSachDaiLy" Height="513.6" Width="811.2">
+    <Window.Resources>
+        <ContextMenu x:Key="ContextMenu"> 
+            <MenuItem Header="Xem thông tin" Click="XemDL"/>
+            <MenuItem Header="Cập nhật thông tin" Click="SuaDL"/>
+            <MenuItem Header="Xóa đại lý" Click="XoaDL"/>
+        </ContextMenu>
+        <Style x:Key="ListViewItemResources" 
+               TargetType="ListViewItem"
+               BasedOn="{StaticResource ListViewItem}">
+            <Setter Property="ContextMenu" Value="{StaticResource ContextMenu}"/>
+        </Style>
+    </Window.Resources>
     <DockPanel Name="Main">
         <StackPanel Style="{StaticResource Shadow}"
             DockPanel.Dock="Top">
@@ -13,6 +25,7 @@
                         Orientation="Horizontal"
                         DockPanel.Dock="Left">
                         <_:Button 
+                            BG="Azure"
                             Icon=""
                             Text="Tiếp nhận đại lý" 
                             Click="AddDL"/>
@@ -21,11 +34,20 @@
                             Icon=""
                             Text="In danh sách" 
                             Click="OpenReport"/>
-                        
                     </StackPanel>
                     <StackPanel
                         Orientation="Horizontal"
                         DockPanel.Dock="Right">
+                        <_:Input 
+                            Height="50"
+                            Width="250"
+                            Border="0"
+                            Label="Lọc"
+                            LabelWidth="60"
+                            Value="{Binding 
+                                Path=LocTheoTen, 
+                                UpdateSourceTrigger=PropertyChanged
+                            }"/>
                         <_:Line 
                             DockPanel.Dock="Right"
                             Height="50"/>
@@ -35,54 +57,18 @@
                             Text="Ngưng hoạt động" 
                             Click="ToggleHienThiDLNgungHoatDong"/>
                     </StackPanel>
-                    <_:Input 
-                        Height="50"
-                        Border="0"
-                        Label="Lọc"
-                        LabelWidth="60"
-                        Value="{Binding 
-                            Path=LocTheoTen, 
-                            UpdateSourceTrigger=PropertyChanged
-                        }"/>
-                    <!--<Rectangle Fill="Red" Height="10"/>-->
+                    <Rectangle/>
                 </DockPanel>
             </Border>
         </StackPanel>
-        <!--<Grid Grid.Row="0" Name="ahihi">
-            --><!--<TextBox Name="txtSearch" TextChanged="TxtSearch_TextChanged" Text="{Binding searchstring}" Margin="180,16,131.2,334.4"/>-->
-            <!--<CheckBox Name="cbTinhTrang" Content="Đại lý ngưng hoạt động" Click="StoppedDL" Margin="387,44,10,4"></CheckBox>-->
-            <!--<Button Content="Tiếp nhận đại lý"  Click="AddDL" Margin="65,16,387.6,28.8"></Button>--><!--
-        </Grid>-->
         <ListView 
             Name="lsvDL"
             ItemsSource="{Binding Path=DanhSachDaiLy}"
             MouseDoubleClick="XemDL" 
             SelectionMode="Single" 
-            Background="{x:Null}" 
+            Background="{x:Null}"
+            ItemContainerStyle="{StaticResource ListViewItemResources}"
             Margin="20">
-            <ListView.Resources>
-                <ContextMenu x:Key="ItemContextMenu">
-                    <MenuItem Header="Xem thông tin"  Background="WhiteSmoke" Click="XemDL"/>
-                    <MenuItem Header="Cập nhật thông tin"  Background="WhiteSmoke" Click="SuaDL"/>
-                    <MenuItem Header="Xóa đại lý"  Background="WhiteSmoke" Click="XoaDL"/>
-                </ContextMenu>
-            </ListView.Resources>
-            <!--<ListView.ItemContainerStyle>
-                <Style TargetType="{x:Type ListViewItem}" >
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding TINHTRANG}" Value="0">
-                                -->
-            <!--Style cho ROW có tình trạng là ngưng hoạt động (=0)-->
-            <!-- 
-                            <Setter Property="Background" Value="Red"/>
-                        </DataTrigger>
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="Red" />
-                        </Trigger>
-                    </Style.Triggers>
-                    <Setter Property="ContextMenu" Value="{StaticResource ItemContextMenu}" />
-                </Style>
-            </ListView.ItemContainerStyle>-->
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Tên đại lý" DisplayMemberBinding="{Binding TENDL}"/>

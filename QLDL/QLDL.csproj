@@ -94,6 +94,7 @@
       <DependentUpon>Border.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\Button\Button.Active.cs" />
+    <Compile Include="Components\Button\Button.Background.cs" />
     <Compile Include="Components\Button\Button.Icon.cs" />
     <Compile Include="Components\Button\Button.Size.cs" />
     <Compile Include="Components\Button\Button.Text.cs" />
@@ -169,10 +170,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Presentation\CTPXUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Presentation\DaiLy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -340,9 +337,6 @@
     </Compile>
     <Compile Include="Presentation\CTPXUserControl.xaml.cs">
       <DependentUpon>CTPXUserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\DaiLy.xaml.cs">
-      <DependentUpon>DaiLy.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\DanhSachDaiLy.xaml.cs">
       <DependentUpon>DanhSachDaiLy.xaml</DependentUpon>

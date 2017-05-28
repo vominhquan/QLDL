@@ -2,6 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:_="clr-namespace:System;assembly=mscorlib">
 
+    <Color x:Key="GreenColor">#ff227447</Color>
+    
     <Color x:Key="Green45">#ff227447</Color>
     <Color x:Key="Green40">#ff1e663e</Color>
     <Color x:Key="Green35">#ff1a5936</Color>
@@ -12,8 +14,9 @@
     
     <SolidColorBrush x:Key="ButtonForeground" Color="#FFFFFF"/>
     <SolidColorBrush x:Key="ButtonBackground" Color="{StaticResource Green45}"/>
-    <SolidColorBrush x:Key="ButtonBackgroundHover" Color="{StaticResource Green40}"/>
-    <SolidColorBrush x:Key="ButtonBackgroundActive" Color="{StaticResource Green35}"/>
+    
+    <!--<SolidColorBrush x:Key="ButtonBackgroundHover" Color="{StaticResource Green40}"/>
+    <SolidColorBrush x:Key="ButtonBackgroundActive" Color="{StaticResource Green35}"/>-->
 
     <SolidColorBrush x:Key="InputForeground" Color="#FFFFFF"/>
     <SolidColorBrush x:Key="InputBackground" Color="{StaticResource Green40}"/>

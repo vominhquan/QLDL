@@ -25,7 +25,6 @@ namespace QLDL.Presentation
     /// </summary>
     public partial class DanhSachDaiLy : Window
     {
-        // Main <-- bắt đầu
         public DanhSachDaiLy()
         {
             InitializeComponent();
@@ -54,19 +53,23 @@ namespace QLDL.Presentation
             }
             #endregion
 
+            #region (string) Lọc theo tên 
             private string locTheoTen;
-            private bool hienThiDLNgungHoatDong;
-            private ObservableCollection<vwDAILY_LOAIDL_QUAN> danhSachDaiLy;
-                                             
-            public string LocTheoTen {
+            public string LocTheoTen
+            {
                 get => locTheoTen;
                 set
                 {
                     locTheoTen = value;
-                    if(DanhSachDaiLy != null)
+                    if (DanhSachDaiLy != null)
                         CollectionViewSource.GetDefaultView(DanhSachDaiLy).Refresh();
                 }
             }
+            #endregion
+
+            #region (bool) Hiển thị ngưng hoạt động 
+
+            private bool hienThiDLNgungHoatDong;
             public bool HienThiDLNgungHoatDong {
                 get => hienThiDLNgungHoatDong;
                 set
@@ -77,10 +80,18 @@ namespace QLDL.Presentation
                     OnPropertyChanged("HienThiDLNgungHoatDong");
                 }
             }
-            public ObservableCollection<vwDAILY_LOAIDL_QUAN> DanhSachDaiLy {
+            #endregion
+
+            #region (ObservableCollection) Danh sách đại lý
+            private ObservableCollection<vwDAILY_LOAIDL_QUAN> danhSachDaiLy;
+            public ObservableCollection<vwDAILY_LOAIDL_QUAN> DanhSachDaiLy
+            {
                 get => danhSachDaiLy;
                 set => danhSachDaiLy = value;
             }
+            #endregion
+
+            #region (void) SetFilter
             public void SetFilter()
             {
                 #region Tạo Filters
@@ -100,6 +111,7 @@ namespace QLDL.Presentation
                     CollectionViewSource.GetDefaultView(DanhSachDaiLy);
                 if (CollectionView != null) CollectionView.Filter = Filters.Filter;
             }
+            #endregion
         };
 
         #region Button
@@ -159,6 +171,5 @@ namespace QLDL.Presentation
             }
         }
         #endregion
-
     }
 }
