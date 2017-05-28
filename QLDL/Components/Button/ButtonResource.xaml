@@ -62,7 +62,7 @@
             </Trigger>
             <DataTrigger Binding="{Binding Path=Active, ElementName=UserControlButton}" Value="True">
                 <Setter Property="Background"
-                        Value="{StaticResource BackgroundActive}"/>
+                        Value="{StaticResource ButtonBackgroundActive}"/>
             </DataTrigger>
         </Style.Triggers>
     </Style>

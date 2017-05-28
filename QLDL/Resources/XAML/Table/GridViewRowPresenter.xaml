@@ -1,8 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:QLDL.Resources.XAML.Table">
+                    xmlns:local="clr-namespace:QLDL.Resources.XAML">
     <Style TargetType="GridViewRowPresenter">
         <Setter Property="TextBlock.FontSize" Value="{StaticResource FontSize}"/>
+        <!--<Setter Property="TextBlock.Background"/>-->
         <Setter Property="Content" Value="1"/>
     </Style>
     

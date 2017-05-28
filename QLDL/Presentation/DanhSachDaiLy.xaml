@@ -23,21 +23,25 @@
                             Click="OpenReport"/>
                         
                     </StackPanel>
-                    <_:Button 
-                        DockPanel.Dock="Right"
-                        Icon=""
-                        Text="Đại lý ngưng hoạt động" 
-                        Click="OpenReport"/>
-                    <_:Line 
-                        DockPanel.Dock="Right"
-                        Height="50"/>
+                    <StackPanel
+                        Orientation="Horizontal"
+                        DockPanel.Dock="Right">
+                        <_:Line 
+                            DockPanel.Dock="Right"
+                            Height="50"/>
+                        <_:Button 
+                            Icon=""
+                            Active="{Binding Path=HienThiDLNgungHoatDong}"
+                            Text="Ngưng hoạt động" 
+                            Click="ToggleHienThiDLNgungHoatDong"/>
+                    </StackPanel>
                     <_:Input 
                         Height="50"
                         Border="0"
                         Label="Lọc"
                         LabelWidth="60"
                         Value="{Binding 
-                            Path=Loc, 
+                            Path=LocTheoTen, 
                             UpdateSourceTrigger=PropertyChanged
                         }"/>
                     <!--<Rectangle Fill="Red" Height="10"/>-->

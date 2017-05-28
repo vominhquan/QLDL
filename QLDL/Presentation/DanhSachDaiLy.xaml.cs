@@ -16,6 +16,7 @@ using QLDL.BusinessLogic;
 using System.Collections.ObjectModel;
 //using Microsoft.Reporting.WinForms;
 using QLDL.DataAccess;
+using QLDL.Class;
 
 namespace QLDL.Presentation
 {
@@ -24,17 +25,7 @@ namespace QLDL.Presentation
     /// </summary>
     public partial class DanhSachDaiLy : Window
     {
-
-        private DaiLyBUS dlbus = new DaiLyBUS();
-        private ObservableCollection<vwDAILY_LOAIDL_QUAN> listDL;
-        //public ObservableCollection<LOAIDL> listLoaiDL;
-        //public ObservableCollection<QUAN> listQuan;
-        private ICollectionView collectionView;
-        public GroupFilter groupFilter;
-        public Predicate<object> searchFilter;
-        public Predicate<object> showhide;
-        public string searchstring;
-
+        // Main <-- bắt đầu
         public DanhSachDaiLy()
         {
             InitializeComponent();
@@ -42,40 +33,81 @@ namespace QLDL.Presentation
             DataContext = new State()
             {
                 // Cài đặt cái giá trị mặc định ban đầu ở đây
-                Loc = "asd",
+                LocTheoTen = "",
                 HienThiDLNgungHoatDong = true,
-                DanhSachDaiLy = dlbus.GetAllDaiLy()
+                DanhSachDaiLy = (new DaiLyBUS()).GetAllDaiLy()
             };
-            // CreateFilter();
+            ((State)DataContext).SetFilter();
         }
         private void DPIInitialize(object sender, RoutedEventArgs e)
         {
             Point Scale = Class.DPI.Initialize(sender, e);
             Main.LayoutTransform = new ScaleTransform(Scale.X, Scale.Y);
         }
-        private class State
+        private class State: INotifyPropertyChanged
         {
-            private string loc;
+            #region Init INotifyPropertyChanged
+            public event PropertyChangedEventHandler PropertyChanged;
+            protected void OnPropertyChanged(string name)
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            }
+            #endregion
+
+            private string locTheoTen;
             private bool hienThiDLNgungHoatDong;
             private ObservableCollection<vwDAILY_LOAIDL_QUAN> danhSachDaiLy;
-
-            public string Loc {
-                get {
-                    return loc;
-                }
+                                             
+            public string LocTheoTen {
+                get => locTheoTen;
                 set
                 {
-                    loc = value;
+                    locTheoTen = value;
                     if(DanhSachDaiLy != null)
                         CollectionViewSource.GetDefaultView(DanhSachDaiLy).Refresh();
                 }
             }
-            public bool HienThiDLNgungHoatDong { get => hienThiDLNgungHoatDong; set => hienThiDLNgungHoatDong = value; }
+            public bool HienThiDLNgungHoatDong {
+                get => hienThiDLNgungHoatDong;
+                set
+                {
+                    if (hienThiDLNgungHoatDong == value) return;
+                    hienThiDLNgungHoatDong = value;
+                    SetFilter();
+                    OnPropertyChanged("HienThiDLNgungHoatDong");
+                }
+            }
             public ObservableCollection<vwDAILY_LOAIDL_QUAN> DanhSachDaiLy {
                 get => danhSachDaiLy;
                 set => danhSachDaiLy = value;
             }
+            public void SetFilter()
+            {
+                #region Tạo Filters
+                GroupFilter Filters = new GroupFilter();
+                Filters.AddFilter(delegate (object item)
+                {
+                    return (item as vwDAILY_LOAIDL_QUAN).TENDL.ToLower()
+                    .Contains(LocTheoTen.ToLower()) == true ? true : false;
+                });
+                Filters.AddFilter(delegate (object item)
+                {
+                    return (item as vwDAILY_LOAIDL_QUAN).TINHTRANG == 1 ? true : false;
+                }, !HienThiDLNgungHoatDong);
+                #endregion
+
+                ICollectionView CollectionView = 
+                    CollectionViewSource.GetDefaultView(DanhSachDaiLy);
+                if (CollectionView != null) CollectionView.Filter = Filters.Filter;
+            }
         };
+
+        #region Button
+        private void ToggleHienThiDLNgungHoatDong(object sender, RoutedEventArgs e)
+        {
+            ((State)DataContext).HienThiDLNgungHoatDong ^= true;
+        }
+        #endregion
 
         #region Report
 
@@ -87,108 +119,6 @@ namespace QLDL.Presentation
 
         #endregion
 
-        #region Filter
-
-        // khởi tạo filter
-        private void CreateFilter()
-        {
-            collectionView = CollectionViewSource.GetDefaultView(listDL);
-
-            searchFilter = delegate(object item)
-            {
-                return (item as vwDAILY_LOAIDL_QUAN).TENDL.ToLower()
-                .Contains( ((State)DataContext).Loc.ToLower() ) == true ? true : false;
-            };
-
-            showhide = delegate(object item)
-            {
-                return (item as vwDAILY_LOAIDL_QUAN).TINHTRANG == 1 ? true : false;
-            };
-
-            groupFilter = new GroupFilter();
-            groupFilter.AddFilter(showhide);
-            groupFilter.AddFilter(searchFilter);
-
-            collectionView.Filter = groupFilter.Filter;
-        }
-
-        // show/hide đại lí đã ngưng hoạt động
-        private void StoppedDL(object sender, RoutedEventArgs e)
-        {
-            if (((State)DataContext).HienThiDLNgungHoatDong)
-            {
-                groupFilter.RemoveFilter(showhide);
-            }
-            else
-            {
-                groupFilter.AddFilter(showhide);
-            }
-            collectionView.Filter = groupFilter.Filter;
-        }
-
-        //filter dựa trên thanh search
-        private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            
-        }
-
-        // group filter khi có nhiều filter
-        public class GroupFilter
-        {
-            private List<Predicate<object>> _filters;
-
-            public Predicate<object> Filter { get; private set; }
-
-            public GroupFilter()
-            {
-                _filters = new List<Predicate<object>>();
-                Filter = InternalFilter;
-            }
-
-            private bool InternalFilter(object o)
-            {
-                foreach (var filter in _filters)
-                {
-                    if (!filter(o))
-                    {
-                        return false;
-                    }
-                }
-
-                return true;
-            }
-
-            public void AddFilter(Predicate<object> filter)
-            {
-                _filters.Add(filter);
-            }
-
-            public void RemoveFilter(Predicate<object> filter)
-            {
-                if (_filters.Contains(filter))
-                {
-                    _filters.Remove(filter);
-                }
-            }
-        }
-
-        #endregion
-
-        private void InitialData()
-        {
-            //get data to list
-            listDL = dlbus.GetAllDaiLy();
-            //listLoaiDL = dlbus.GetAllLoaiDL();
-            //listQuan = dlbus.GetAllQuan();
-
-            //create and apply 2 filters
-            CreateFilter();
-
-            // get datalist to UI
-            ((State)DataContext).DanhSachDaiLy = listDL;
-            // lsvDL.ItemsSource = listDL;
-        }
-
         #region Thêm xóa sửa Đại Lý (show)
         private void AddDL(object sender, RoutedEventArgs e)
         {
@@ -197,7 +127,7 @@ namespace QLDL.Presentation
                 tndl.ShowDialog();
                 if (tndl.DialogResult.HasValue && tndl.DialogResult.Value)
                 {
-                    listDL.Add(tndl.VW);
+                    ((State)DataContext).DanhSachDaiLy.Add(tndl.VW);
                 }
             }
         }
@@ -219,15 +149,16 @@ namespace QLDL.Presentation
             MessageBoxResult result = MessageBox.Show("Bạn muốn xóa đại lý đã chọn?", "Xác nhận xóa", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
-                if (dlbus.RemoveDaiLy(item.MADL))
+                if ((new DaiLyBUS()).RemoveDaiLy(item.MADL))
                 {
                     MessageBox.Show("Đã xóa thành công");
-                    listDL.Remove(item);
+                    ((State)DataContext).DanhSachDaiLy.Remove(item);
                 }
                 else
                     MessageBox.Show("Có lỗi xảy ra");
             }
         }
         #endregion
+
     }
 }
