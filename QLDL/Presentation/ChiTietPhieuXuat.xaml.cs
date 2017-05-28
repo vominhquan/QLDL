@@ -31,7 +31,7 @@ namespace QLDL.Presentation
         public ChiTietPhieuXuat(vw_PhieuXuat_NhanVien_DaiLy px)
         {
             InitializeComponent();
-            this.vwPX = px;
+            vwPX = px;
 
             //get data to list
             listCTPX = pxbus.getCTPXPhieuXuatByMaPhieu(px.MAPHIEU);
@@ -45,7 +45,5 @@ namespace QLDL.Presentation
             //    MessageBox.Show(item.TENHANG.ToString());
             //}
         }
-
-
     }
 }

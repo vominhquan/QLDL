@@ -28,21 +28,22 @@ namespace QLDL.Presentation
         public DanhSachDaiLy()
         {
             InitializeComponent();
-            Application.Current.MainWindow.Loaded += DPIInitialize;
+            Application.Current.MainWindow.Loaded += Initialize;
             DataContext = new State()
             {
-                // Cài đặt cái giá trị mặc định ban đầu ở đây
                 LocTheoTen = "",
                 HienThiDLNgungHoatDong = true,
                 DanhSachDaiLy = (new DaiLyBUS()).GetAllDaiLy()
             };
             ((State)DataContext).SetFilter();
         }
-        private void DPIInitialize(object sender, RoutedEventArgs e)
+        #region Initialize
+        private void Initialize(object sender, RoutedEventArgs e)
         {
             Point Scale = Class.DPI.Initialize(sender, e);
             Main.LayoutTransform = new ScaleTransform(Scale.X, Scale.Y);
         }
+        #endregion
         private class State: INotifyPropertyChanged
         {
             #region Init INotifyPropertyChanged

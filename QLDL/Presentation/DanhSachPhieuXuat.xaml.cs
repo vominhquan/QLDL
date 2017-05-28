@@ -24,7 +24,7 @@ namespace QLDL.Presentation
     /// </summary>
     public partial class DanhSachPhieuXuat : Window
     {
-        private ObservableCollection<vw_PhieuXuat_NhanVien_DaiLy> listPhieuXuat;
+        //private ObservableCollection<vw_PhieuXuat_NhanVien_DaiLy> listPhieuXuat;
         public ICollectionView collectionView;
         public string searchstring;
         public GroupFilter groupFilter;
@@ -36,17 +36,21 @@ namespace QLDL.Presentation
         public DanhSachPhieuXuat()
         {
             InitializeComponent();
-            Application.Current.MainWindow.Loaded += DPIInitialize;
-
-            InitialData();
+            Application.Current.MainWindow.Loaded += Initialize;
+            DataContext = new State()
+            {
+                LocTheoTen = "",
+                DanhSachPhieuXuat = (new PhieuXuatBUS()).getAllPhieuXuat()
+            };
+            ((State)DataContext).SetFilter();
         }
-
-        private void DPIInitialize(object sender, RoutedEventArgs e)
+        #region Initialize
+        private void Initialize(object sender, RoutedEventArgs e)
         {
             Point Scale = Class.DPI.Initialize(sender, e);
             Main.LayoutTransform = new ScaleTransform(Scale.X, Scale.Y);
         }
-
+        #endregion
         private class State: INotifyPropertyChanged
         {
             #region Init INotifyPropertyChanged
@@ -99,18 +103,6 @@ namespace QLDL.Presentation
             #endregion
         }
 
-        private void InitialData()
-        {
-            //get data to list
-            listPhieuXuat = pxbus.getAllPhieuXuat();
-
-            //create and apply 2 filters
-            CreateFilter();
-
-            // get datalist to UI
-            lsvPX.ItemsSource = listPhieuXuat;
-        }
-
         #region Report
 
         private void OpenReport(object sender, RoutedEventArgs e)
@@ -121,35 +113,13 @@ namespace QLDL.Presentation
 
         #endregion
 
-        #region Filter
-
-        // khởi tạo filter
-        private void CreateFilter()
+        #region Xem phiếu xuất
+        private void XemPhieuXuat(object sender, MouseButtonEventArgs e)
         {
-            //collectionView = CollectionViewSource.GetDefaultView(listPhieuXuat);
-
-            //searchFilter = delegate (object item)
-            //{
-            //    return (item as vw_PhieuXuat_NhanVien_DaiLy).TENNV.ToLower().Contains(txtSearch.Text.ToLower()) == true ? true : false;
-            //};
-
-            //groupFilter = new GroupFilter();
-            //groupFilter.AddFilter(searchFilter);
-            //collectionView.Filter = groupFilter.Filter;
+            (new ChiTietPhieuXuat(
+                ListViewDanhSachPhieuXuat.SelectedItem as vw_PhieuXuat_NhanVien_DaiLy
+            )).ShowDialog();
         }
-        //filter dựa trên thanh search
-        private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            CollectionViewSource.GetDefaultView(lsvPX.ItemsSource).Refresh();
-        }
-
-        
         #endregion
-
-        private void XemPX(object sender, MouseButtonEventArgs e)
-        {
-            ChiTietPhieuXuat xpx = new ChiTietPhieuXuat(lsvPX.SelectedItem as vw_PhieuXuat_NhanVien_DaiLy);
-            xpx.ShowDialog();
-        }
     }
 }

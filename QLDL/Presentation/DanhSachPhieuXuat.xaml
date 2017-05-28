@@ -2,12 +2,10 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:_="clr-namespace:Applications.Components"
-        Title="DanhSachPhieuXuat" Height="400" Width="600">
+        Title="DanhSachPhieuXuat" Height="500" Width="800">
     <Window.Resources>
         <ContextMenu x:Key="ContextMenu">
-            <!--<MenuItem Header="Xem thông tin" Click="XemDL"/>
-            <MenuItem Header="Cập nhật thông tin" Click="SuaDL"/>
-            <MenuItem Header="Xóa đại lý" Click="XoaDL"/>-->
+            <MenuItem Header="Xem thông tin"/>
         </ContextMenu>
         <Style x:Key="ListViewItemResources" 
                TargetType="ListViewItem"
@@ -28,10 +26,10 @@
                         <_:Line/>
                         <_:Input 
                             Height="50"
-                            Width="250"
+                            Width="350"
                             Border="0"
-                            Label="Lọc"
-                            LabelWidth="60"
+                            Label="Người xuất"
+                            LabelWidth="120"
                             Value="{Binding 
                                 Path=LocTheoTen, 
                                 UpdateSourceTrigger=PropertyChanged
@@ -40,78 +38,23 @@
                 </DockPanel>
             </Border>
         </StackPanel>
-        
-        <Button Name="btnPrintAll" Content="Lập báo cáo doanh số" Margin="62,16,291,256" Click="OpenReport"/>
-        <TextBox Name="txtSearch" TextChanged="TxtSearch_TextChanged" Text="{Binding searchstring}" Margin="287,16,98,256"/>
+        <!--<Button Name="btnPrintAll" Content="Lập báo cáo doanh số" Margin="62,16,291,256" Click="OpenReport"/>
+        <TextBox Name="txtSearch" TextChanged="TxtSearch_TextChanged" Text="{Binding searchstring}" Margin="287,16,98,256"/>-->
         <ListView
-            Name="lsvPX" 
-            MouseDoubleClick="XemPX"
-            SelectionMode="Single" 
-            Margin="20">
-            <ListView.Resources>
-                <ContextMenu x:Key="ItemContextMenu">
-                    <MenuItem Header="Xem thông tin"  Background="WhiteSmoke"/>
-                </ContextMenu>
-            </ListView.Resources>
-            <ListView.ItemContainerStyle>
-                <Style TargetType="{x:Type ListViewItem}">
-                    <Setter Property="ContextMenu" Value="{StaticResource ItemContextMenu}" />
-                </Style>
-            </ListView.ItemContainerStyle>
+            Name="ListViewDanhSachPhieuXuat"
+            Margin="20"
+            SelectionMode="Single"
+            MouseDoubleClick="XemPhieuXuat"
+            ItemContainerStyle="{StaticResource ListViewItemResources}"
+            ItemsSource="{Binding Path=DanhSachPhieuXuat}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Đại lý">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding TENDL}"></TextBlock>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Ngày lập">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding NGAYLAP}"></TextBlock>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Tổng tiền">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding TONGTIEN}"></TextBlock>
-                                    <TextBlock Text=" VNĐ"></TextBlock>
-                                </StackPanel>
-
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Số tiền trả">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding SOTIENTRA}"></TextBlock>
-                                    <TextBlock Text=" VNĐ"></TextBlock>
-                                </StackPanel>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Còn lại">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding CONLAI}"></TextBlock>
-                                    <TextBlock Text=" VNĐ"></TextBlock>
-                                </StackPanel>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Người xuất">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding TENNV}"></TextBlock>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
+                    <GridViewColumn Header="Đại lý" DisplayMemberBinding="{Binding MADL}"/>
+                    <GridViewColumn Header="Ngày lập" DisplayMemberBinding="{Binding NGAYLAP}"/>
+                    <GridViewColumn Header="Người xuất" DisplayMemberBinding="{Binding TENNV}"/>
+                    <GridViewColumn Header="Tổng tiền" DisplayMemberBinding="{Binding TONGTIEN}"/>
+                    <GridViewColumn Header="Số tiền trả" DisplayMemberBinding="{Binding SOTIENTRA}"/>
+                    <GridViewColumn Header="Còn lại" DisplayMemberBinding="{Binding CONLAI}"/>
                 </GridView>
             </ListView.View>
         </ListView>

@@ -63,12 +63,11 @@
         </StackPanel>
         <ListView 
             Name="lsvDL"
-            ItemsSource="{Binding Path=DanhSachDaiLy}"
-            MouseDoubleClick="XemDL" 
+            Margin="20"
             SelectionMode="Single" 
-            Background="{x:Null}"
+            MouseDoubleClick="XemDL" 
             ItemContainerStyle="{StaticResource ListViewItemResources}"
-            Margin="20">
+            ItemsSource="{Binding Path=DanhSachDaiLy}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Tên đại lý" DisplayMemberBinding="{Binding TENDL}"/>
