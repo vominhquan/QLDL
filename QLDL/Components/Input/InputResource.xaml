@@ -7,94 +7,94 @@
     <convert:VisibilityVisible x:Key="VisibilityVisible"/>
     <convert:SizeToPaddingText x:Key="SizeToPaddingText"/>
     <Style TargetType="{x:Type TextBox}" x:Key="InputStyle">
-        <Setter Property="Foreground" Value="{StaticResource Foreground}"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundSolid}"/>
         <Setter Property="BorderBrush" Value="{StaticResource GrayLineColor}"/>
-        <Setter Property="Background" Value="{StaticResource InputBackground}"/>
+        <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
                     <Border 
-                        BorderThickness="{Binding
-                            Path=Border,
-                            ElementName=UserControlInput
-                        }"
+                        BorderThickness="{Binding Path=Border, ElementName=UserControlInput}"
+                        Background="{Binding Path=Background, ElementName=UserControlInput}"
                         BorderBrush="{TemplateBinding BorderBrush}">
-                        <DockPanel
-                            Height="{Binding 
-                                Path=Height,
-                                ElementName=UserControlInput
-                            }">
-                            <Border 
-                                Background="{StaticResource InputBackgroundHover}"
-                                DockPanel.Dock="Left"
-                                Width="{Binding 
-                                    Path=LabelWidth,
+                        <Border Background="{TemplateBinding Background}">
+                            <DockPanel
+                                Background="#22000000"
+                                Height="{Binding 
+                                    Path=Height,
                                     ElementName=UserControlInput
-                                }"
-                                Visibility="{Binding 
-                                    Path=Label,
-                                    ElementName=UserControlInput, 
-                                    Converter={StaticResource VisibilityVisible}
                                 }">
-                                <TextBlock
-                                    VerticalAlignment="Center"
-                                    HorizontalAlignment="Center"
-                                    FontFamily="{StaticResource TextFont}"
-                                    Foreground="{StaticResource InputForeground}"
-                                    Text="{Binding 
+                                <Border 
+                                    Background="#22000000"
+                                    DockPanel.Dock="Left"
+                                    Width="{Binding 
+                                        Path=LabelWidth,
+                                        ElementName=UserControlInput
+                                    }"
+                                    Visibility="{Binding 
                                         Path=Label,
+                                        ElementName=UserControlInput, 
+                                        Converter={StaticResource VisibilityVisible}
+                                    }">
+                                    <TextBlock
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        FontFamily="{StaticResource TextFont}"
+                                        Foreground="{StaticResource InputForeground}"
+                                        Text="{Binding 
+                                            Path=Label,
+                                            ElementName=UserControlInput
+                                        }"
+                                        FontSize="{Binding 
+                                            Path=Height,
+                                            ElementName=UserControlInput, 
+                                            Converter={StaticResource SizeToTextFontSize}
+                                        }"/>
+                                </Border>
+                                <TextBox 
+                                    x:Name="TextInput"
+                                    BorderThickness="0"
+                                    VerticalContentAlignment="Center"
+                                    Validation.ErrorTemplate="{x:Null}"
+                                    HorizontalContentAlignment="{Binding 
+                                        Path=Align,
+                                        ElementName=UserControlInput
+                                    }"
+                                    FontFamily="{StaticResource TextFont}"
+                                    Background="Transparent"
+                                    Foreground="{StaticResource InputForeground}"
+                                    CaretBrush="{StaticResource InputForeground}"
+                                    DataContext="{Binding
+                                        Path=Type,
                                         ElementName=UserControlInput
                                     }"
                                     FontSize="{Binding 
                                         Path=Height,
                                         ElementName=UserControlInput, 
                                         Converter={StaticResource SizeToTextFontSize}
-                                    }"/>
-                            </Border>
-                            <TextBox 
-                                x:Name="TextInput"
-                                BorderThickness="0"
-                                VerticalContentAlignment="Center"
-                                Validation.ErrorTemplate="{x:Null}"
-                                HorizontalContentAlignment="{Binding 
-                                    Path=Align,
-                                    ElementName=UserControlInput
-                                }"
-                                FontFamily="{StaticResource TextFont}"
-                                Background="{TemplateBinding Background}"
-                                Foreground="{StaticResource InputForeground}"
-                                CaretBrush="{StaticResource InputForeground}"
-                                DataContext="{Binding
-                                    Path=Type,
-                                    ElementName=UserControlInput
-                                }"
-                                FontSize="{Binding 
-                                    Path=Height,
-                                    ElementName=UserControlInput, 
-                                    Converter={StaticResource SizeToTextFontSize}
-                                }"
-                                Padding="{Binding 
-                                    Path=Height,
-                                    ElementName=UserControlInput, 
-                                    Converter={StaticResource SizeToPaddingText}
-                                }"
-                                Text="{Binding 
-                                    Path=Value,
-                                    ElementName=UserControlInput,
-                                    UpdateSourceTrigger=PropertyChanged            
-                                }"
-                                PreviewKeyDown="InputKeyDown"/>
-                        </DockPanel>
-                        
+                                    }"
+                                    Padding="{Binding 
+                                        Path=Height,
+                                        ElementName=UserControlInput, 
+                                        Converter={StaticResource SizeToPaddingText}
+                                    }"
+                                    Text="{Binding 
+                                        Path=Value,
+                                        ElementName=UserControlInput,
+                                        UpdateSourceTrigger=PropertyChanged            
+                                    }"
+                                    PreviewKeyDown="InputKeyDown"/>
+                            </DockPanel>
+                        </Border>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Background" 
-                                    Value="{StaticResource InputBackgroundHover}"/>
+                                    Value="#22000000"/>
                         </Trigger>  
                         <Trigger SourceName="TextInput" Property="IsFocused" Value="True">
                             <Setter Property="Background" 
-                                    Value="{StaticResource InputBackgroundFocus}"/>
+                                    Value="#44000000"/>
                             <Setter Property="BorderBrush" 
                                     Value="{StaticResource BlueLineColor}"/>
                         </Trigger>

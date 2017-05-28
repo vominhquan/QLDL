@@ -9,44 +9,46 @@
     <convert:VisibilityCollapsed x:Key="VisibilityCollapsed"/>
     
     <Style TargetType="{x:Type Button}">
-        <Setter Property="Background" Value="{Binding Path=BG, ElementName=UserControlButton}"/>
         <Setter Property="Height" Value="{Binding Path=Size, ElementName=UserControlButton}"/>
+        <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{Binding Path=Background, ElementName=UserControlButton}">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock 
-                                Foreground="{StaticResource ButtonForeground}"
-                                FontFamily="{StaticResource IconFont}"
-                                Visibility="{Binding Path=Icon, 
-                                                        ElementName=UserControlButton,
-                                                        Converter={StaticResource VisibilityVisible}}"
-                                FontSize="{Binding Path=Size, 
-                                                    ElementName=UserControlButton, 
-                                                    Converter={StaticResource SizeToIconFontSize}}"
-                                Width="{Binding Path=Size, ElementName=UserControlButton}"
-                                Text="{Binding Path=Icon, ElementName=UserControlButton}"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                TextAlignment="Center"/>
-                            <Rectangle 
-                                Width="{Binding Path=Size,ElementName=UserControlButton, Converter={StaticResource SizeToPadding}}"
-                                Visibility="{Binding Path=Icon, ElementName=UserControlButton, Converter={StaticResource VisibilityCollapsed}}"/>
-                            <TextBlock
-                                Foreground="{StaticResource ButtonForeground}"
-                                FontFamily="{StaticResource TextFont}"
-                                Visibility="{Binding Path=Text, ElementName=UserControlButton, Converter={StaticResource VisibilityVisible}}"
-                                FontSize="{Binding Path=Size, ElementName=UserControlButton, Converter={StaticResource SizeToTextFontSize}}"
-                                Text="{Binding Path=Text, ElementName=UserControlButton}"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"/>
-                            <Rectangle 
-                                Width="{Binding Path=Size,ElementName=UserControlButton, Converter={StaticResource SizeToPadding}}"
-                                Visibility="{Binding Path=Text, ElementName=UserControlButton, Converter={StaticResource VisibilityVisible}}"/>
-                        </StackPanel>
+                        <Border Background="{TemplateBinding Background}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock 
+                                    Foreground="{StaticResource ButtonForeground}"
+                                    FontFamily="{StaticResource IconFont}"
+                                    Visibility="{Binding Path=Icon, 
+                                                            ElementName=UserControlButton,
+                                                            Converter={StaticResource VisibilityVisible}}"
+                                    FontSize="{Binding Path=Size, 
+                                                        ElementName=UserControlButton, 
+                                                        Converter={StaticResource SizeToIconFontSize}}"
+                                    Width="{Binding Path=Size, ElementName=UserControlButton}"
+                                    Text="{Binding Path=Icon, ElementName=UserControlButton}"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    TextAlignment="Center"/>
+                                <Rectangle 
+                                    Width="{Binding Path=Size,ElementName=UserControlButton, Converter={StaticResource SizeToPadding}}"
+                                    Visibility="{Binding Path=Icon, ElementName=UserControlButton, Converter={StaticResource VisibilityCollapsed}}"/>
+                                <TextBlock
+                                    Foreground="{StaticResource ButtonForeground}"
+                                    FontFamily="{StaticResource TextFont}"
+                                    Visibility="{Binding Path=Text, ElementName=UserControlButton, Converter={StaticResource VisibilityVisible}}"
+                                    FontSize="{Binding Path=Size, ElementName=UserControlButton, Converter={StaticResource SizeToTextFontSize}}"
+                                    Text="{Binding Path=Text, ElementName=UserControlButton}"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"/>
+                                <Rectangle 
+                                    Width="{Binding Path=Size,ElementName=UserControlButton, Converter={StaticResource SizeToPadding}}"
+                                    Visibility="{Binding Path=Text, ElementName=UserControlButton, Converter={StaticResource VisibilityVisible}}"/>
+                            </StackPanel>
+                        </Border>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>

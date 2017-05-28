@@ -9,7 +9,7 @@ using System.Windows.Media;
 
 namespace Applications.Components
 {
-    public partial class Button : UserControl
+    public partial class Input : UserControl
     {
         // Background
         private static readonly DependencyProperty _Background =
@@ -17,7 +17,7 @@ namespace Applications.Components
             (
                 "Background",
                 typeof(SolidColorBrush),
-                typeof(Button),
+                typeof(Input),
                 new FrameworkPropertyMetadata(
                      (SolidColorBrush)Application.Current.Resources["BackgroundSolid"]
                 )

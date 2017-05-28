@@ -18,6 +18,7 @@
     </Window.Resources>
     <DockPanel Name="Main">
         <StackPanel 
+            Style="{StaticResource Shadow}"
             DockPanel.Dock="Top">
             <Border Padding="10">
                 <DockPanel>

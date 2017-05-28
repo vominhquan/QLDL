@@ -115,6 +115,7 @@
     <Compile Include="Components\IconShape\IconShape.Text.cs" />
     <Compile Include="Components\IconShape\IconShape.X.cs" />
     <Compile Include="Components\IconShape\IconShape.Y.cs" />
+    <Compile Include="Components\Input\Input.Background.cs" />
     <Compile Include="Components\Input\Input.Align.cs" />
     <Compile Include="Components\Input\Input.Border.cs" />
     <Compile Include="Components\Input\Input.Height.cs" />
