@@ -4,6 +4,7 @@
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ListBoxItem">
@@ -44,8 +45,8 @@
                         </VisualStateManager.VisualStateGroups>
                         <StackPanel Orientation="Horizontal" Background="{TemplateBinding Background}">
                             <GridViewRowPresenter
-                                VerticalAlignment="Stretch" 
-                                HorizontalAlignment="Stretch" 
+                                VerticalAlignment="Center" 
+                                HorizontalAlignment="Center" 
                                 Content="{TemplateBinding Content}"
                                 Width="Auto" 
                                 Margin="0">

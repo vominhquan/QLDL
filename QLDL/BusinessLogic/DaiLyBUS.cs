@@ -79,7 +79,13 @@ namespace QLDL.BusinessLogic
             }
         }
 
-        public bool UpdateDaiLy(int madl, string tendl, string diachi, string dienthoai, int maquan, int loaidl)
+        public bool UpdateDaiLy
+            (int madl, 
+            string tendl, 
+            string diachi, 
+            string dienthoai,
+            int maquan,
+            int loaidl)
         {
             try
             {
@@ -100,6 +106,17 @@ namespace QLDL.BusinessLogic
                 System.Console.Out.WriteLine(e.ToString());
                 return false;
             }
+        }
+        public bool UpdateDaiLy(vwDAILY_LOAIDL_QUAN DaiLy)
+        {
+            return UpdateDaiLy(
+                DaiLy.MADL,
+                DaiLy.TENDL, 
+                DaiLy.DIACHI, 
+                DaiLy.DIENTHOAI, 
+                (int)DaiLy.MAQUAN,
+                (int)DaiLy.LOAIDL
+            );
         }
         public bool RemoveDaiLy(int madl)
         {

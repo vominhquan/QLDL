@@ -5,7 +5,7 @@
         Title="DanhSachPhieuXuat" Height="500" Width="800">
     <Window.Resources>
         <ContextMenu x:Key="ContextMenu">
-            <MenuItem Header="Xem thông tin"/>
+            <MenuItem Header="Xem thông tin" Click="XemPhieuXuat"/>
         </ContextMenu>
         <Style x:Key="ListViewItemResources" 
                TargetType="ListViewItem"
@@ -13,7 +13,7 @@
             <Setter Property="ContextMenu" Value="{StaticResource ContextMenu}"/>
         </Style>
     </Window.Resources>
-    <DockPanel Name="Main">
+    <DockPanel Name="Main" Style="{StaticResource DockPanelScale}">
         <StackPanel 
             Style="{StaticResource Shadow}"
             DockPanel.Dock="Top">
@@ -38,8 +38,6 @@
                 </DockPanel>
             </Border>
         </StackPanel>
-        <!--<Button Name="btnPrintAll" Content="Lập báo cáo doanh số" Margin="62,16,291,256" Click="OpenReport"/>
-        <TextBox Name="txtSearch" TextChanged="TxtSearch_TextChanged" Text="{Binding searchstring}" Margin="287,16,98,256"/>-->
         <ListView
             Name="ListViewDanhSachPhieuXuat"
             Margin="20"
@@ -50,11 +48,35 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Đại lý" DisplayMemberBinding="{Binding TENDL}"/>
-                    <GridViewColumn Header="Ngày lập" DisplayMemberBinding="{Binding NGAYLAP}"/>
+                    <GridViewColumn Header="Ngày lập" DisplayMemberBinding="{Binding NGAYLAP, Converter={StaticResource DateTimeToDate}}"/>
                     <GridViewColumn Header="Người xuất" DisplayMemberBinding="{Binding TENNV}"/>
-                    <GridViewColumn Header="Tổng tiền" DisplayMemberBinding="{Binding TONGTIEN}"/>
-                    <GridViewColumn Header="Số tiền trả" DisplayMemberBinding="{Binding SOTIENTRA}"/>
-                    <GridViewColumn Header="Còn lại" DisplayMemberBinding="{Binding CONLAI}"/>
+                    <GridViewColumn Header="Tổng tiền" Width="142">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock 
+                                    Text="{Binding TONGTIEN, Converter={StaticResource DecimalToD}}"
+                                    TextAlignment="Right" Width="130"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Số tiền trả" Width="142">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock 
+                                    Text="{Binding SOTIENTRA, Converter={StaticResource DecimalToD}}"
+                                    TextAlignment="Right" Width="130"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Còn lại" Width="142">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock 
+                                    Text="{Binding CONLAI, Converter={StaticResource DecimalToD}}"
+                                    TextAlignment="Right" Width="130"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

@@ -115,7 +115,6 @@
     <Compile Include="Components\IconShape\IconShape.Text.cs" />
     <Compile Include="Components\IconShape\IconShape.X.cs" />
     <Compile Include="Components\IconShape\IconShape.Y.cs" />
-    <Compile Include="Components\Input\Input.ReadOnly.cs" />
     <Compile Include="Components\Input\Input.Background.cs" />
     <Compile Include="Components\Input\Input.Align.cs" />
     <Compile Include="Components\Input\Input.Border.cs" />
@@ -124,6 +123,7 @@
     <Compile Include="Components\Input\Input.LabelWidth.cs" />
     <Compile Include="Components\Input\Input.Max.cs" />
     <Compile Include="Components\Input\Input.Min.cs" />
+    <Compile Include="Components\Input\Input.ReadOnly.cs" />
     <Compile Include="Components\Input\Input.Type.cs" />
     <Compile Include="Components\Input\Input.Value.cs" />
     <Compile Include="Components\Input\Input.xaml.cs">
@@ -167,7 +167,7 @@
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
-    <Page Include="Presentation\ChiTietPhieuXuat.xaml">
+    <Page Include="Presentation\Phiếu Xuất\ChiTietPhieuXuat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -175,7 +175,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Presentation\DanhSachDaiLy.xaml">
+    <Page Include="Presentation\Đại Lý\DanhSachDaiLy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -183,7 +183,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Presentation\DanhSachPhieuXuat.xaml">
+    <Page Include="Presentation\Phiếu Xuất\DanhSachPhieuXuat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -203,15 +203,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Presentation\SuaDaiLy.xaml">
+    <Page Include="Presentation\Đại Lý\SuaDaiLy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Presentation\XemDaiLy.xaml">
+    <Page Include="Presentation\Đại Lý\XemDaiLy.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Presentation\TiepNhanDaiLy.xaml">
+    <Page Include="Presentation\Đại Lý\TiepNhanDaiLy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\XAML\Convert.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\XAML\DockPanelScale.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -255,6 +263,8 @@
   <ItemGroup>
     <Compile Include="Converter\BooleanToVisibility.cs" />
     <Compile Include="Converter\ColorToBrush.cs" />
+    <Compile Include="Converter\StringToD.cs" />
+    <Compile Include="Converter\DateTimeToDate.cs" />
     <Compile Include="Converter\ColorToHex.cs" />
     <Compile Include="Converter\CompareString.cs" />
     <Compile Include="Converter\DoubleToPercent.cs" />
@@ -343,20 +353,20 @@
     <Compile Include="DataAccess\vw_PhieuXuat_NhanVien_DaiLy.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\ChiTietPhieuXuat.xaml.cs">
+    <Compile Include="Presentation\Phiếu Xuất\ChiTietPhieuXuat.xaml.cs">
       <DependentUpon>ChiTietPhieuXuat.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\CTPXUserControl.xaml.cs">
       <DependentUpon>CTPXUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\DanhSachDaiLy.xaml.cs">
+    <Compile Include="Presentation\Đại Lý\DanhSachDaiLy.xaml.cs">
       <DependentUpon>DanhSachDaiLy.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Presentation\DanhSachPhieuThu.xaml.cs">
       <DependentUpon>DanhSachPhieuThu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\DanhSachPhieuXuat.xaml.cs">
+    <Compile Include="Presentation\Phiếu Xuất\DanhSachPhieuXuat.xaml.cs">
       <DependentUpon>DanhSachPhieuXuat.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\DSPT.xaml.cs">
@@ -371,13 +381,13 @@
     <Compile Include="Presentation\PhieuXuat.xaml.cs">
       <DependentUpon>PhieuXuat.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\SuaDaiLy.xaml.cs">
+    <Compile Include="Presentation\Đại Lý\SuaDaiLy.xaml.cs">
       <DependentUpon>SuaDaiLy.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\XemDaiLy.xaml.cs">
+    <Compile Include="Presentation\Đại Lý\XemDaiLy.xaml.cs">
       <DependentUpon>XemDaiLy.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\TiepNhanDaiLy.xaml.cs">
+    <Compile Include="Presentation\Đại Lý\TiepNhanDaiLy.xaml.cs">
       <DependentUpon>TiepNhanDaiLy.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">

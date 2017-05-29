@@ -2,11 +2,13 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:_="clr-namespace:System;assembly=mscorlib"
-             StartupUri="Presentation/DanhSachPhieuXuat.xaml">
+             StartupUri="Presentation/Đại Lý/DanhSachDaiLy.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/XAML/Global.xaml"/>
+                <ResourceDictionary Source="Resources/XAML/Convert.xaml"/>
+                <ResourceDictionary Source="Resources/XAML/DockPanelScale.xaml"/>
                 <ResourceDictionary Source="Resources/XAML/StackPanel.xaml"/>
                 <ResourceDictionary Source="Resources/XAML/Table.xaml"/>
             </ResourceDictionary.MergedDictionaries>

@@ -24,16 +24,10 @@ namespace QLDL.Presentation
     /// </summary>
     public partial class ChiTietPhieuXuat : Window
     {
-
-        //public vw_PhieuXuat_NhanVien_DaiLy vwPX { get; set; }
-        ////private ObservableCollection<vw_PhieuXuat_CTPX_MatHang> listCTPX;
-        //private PhieuXuatBUS pxbus = new PhieuXuatBUS();
-
-
         public ChiTietPhieuXuat(vw_PhieuXuat_NhanVien_DaiLy View)
         {
             InitializeComponent();
-            Application.Current.MainWindow.Loaded += Initialize;
+            Application.Current.MainWindow.Loaded += DPI.Initialize;
 
             DataContext = new State()
             {
@@ -41,14 +35,6 @@ namespace QLDL.Presentation
                 DanhSachChiTietPhieuXuat = (new PhieuXuatBUS()).getCTPXPhieuXuatByMaPhieu(View.MAPHIEU)
             };
         }
-        #region Initialize
-        private void Initialize(object sender, RoutedEventArgs e)
-        {
-            Point Scale = Class.DPI.Initialize(sender, e);
-            Main.LayoutTransform = new ScaleTransform(Scale.X, Scale.Y);
-        }
-        #endregion
-
         private class State : INotifyPropertyChanged
         {
             #region Init INotifyPropertyChanged

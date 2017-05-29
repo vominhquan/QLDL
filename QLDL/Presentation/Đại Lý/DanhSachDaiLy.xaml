@@ -16,7 +16,7 @@
             <Setter Property="ContextMenu" Value="{StaticResource ContextMenu}"/>
         </Style>
     </Window.Resources>
-    <DockPanel Name="Main">
+    <DockPanel Name="Main" Style="{StaticResource DockPanelScale}">
         <StackPanel 
             Style="{StaticResource Shadow}"
             DockPanel.Dock="Top">

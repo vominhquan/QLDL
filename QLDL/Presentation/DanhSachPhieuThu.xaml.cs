@@ -1,4 +1,5 @@
 ﻿using QLDL.BusinessLogic;
+using QLDL.Class;
 using QLDL.DataAccess;
 using System;
 using System.Collections.Generic;
@@ -23,29 +24,67 @@ namespace QLDL.Presentation
     /// </summary>
     public partial class DanhSachPhieuThu : Window
     {
-        private ObservableCollection<vw_PhieuThu_NhanVien_DaiLy> listPhieuThu;
-        public ICollectionView collectionView;
-        public string searchstring;
-        public GroupFilter groupFilter;
-        public Predicate<object> searchFilter;
-        private PhieuThuBUS ptbus = new PhieuThuBUS();
-
         public DanhSachPhieuThu()
         {
             InitializeComponent();
-            InitialData();
+            Application.Current.MainWindow.Loaded += DPI.Initialize;
+            DataContext = new State()
+            {
+                LocTheoTen = "",
+                DanhSachPhieuThu = (new PhieuThuBUS()).getAllPhieuThu()
+            };
+            ((State)DataContext).SetFilter();
         }
-
-        private void InitialData()
+        private class State : INotifyPropertyChanged
         {
-            //get data to list
-            listPhieuThu = ptbus.getAllPhieuThu();
+            #region Init INotifyPropertyChanged
+            public event PropertyChangedEventHandler PropertyChanged;
+            protected void OnPropertyChanged(string name)
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            }
+            #endregion
 
-            //create and apply 2 filters
-            CreateFilter();
+            #region (string) Lọc theo tên 
+            private string locTheoTen;
+            public string LocTheoTen
+            {
+                get => locTheoTen;
+                set
+                {
+                    locTheoTen = value;
+                    if (DanhSachPhieuThu != null)
+                        CollectionViewSource.GetDefaultView(DanhSachPhieuThu).Refresh();
+                }
+            }
+            #endregion
 
-            // get datalist to UI
-            lsvPT.ItemsSource = listPhieuThu;
+            #region (ObservableCollection) Danh sách phiếu thu
+            private ObservableCollection<vw_PhieuThu_NhanVien_DaiLy> danhSachPhieuThu;
+            public ObservableCollection<vw_PhieuThu_NhanVien_DaiLy> DanhSachPhieuThu
+            {
+                get => danhSachPhieuThu;
+                set => danhSachPhieuThu = value;
+            }
+            #endregion
+
+            #region (void) SetFilter
+            public void SetFilter()
+            {
+                #region Tạo Filters
+                GroupFilter Filters = new GroupFilter();
+                Filters.AddFilter(delegate (object item)
+                {
+                    return (item as vw_PhieuThu_NhanVien_DaiLy).TENNV.ToLower()
+                    .Contains(LocTheoTen.ToLower()) == true ? true : false;
+                });
+                #endregion
+
+                ICollectionView CollectionView =
+                    CollectionViewSource.GetDefaultView(DanhSachPhieuThu);
+                if (CollectionView != null) CollectionView.Filter = Filters.Filter;
+            }
+            #endregion
         }
 
         #region Report
@@ -57,69 +96,5 @@ namespace QLDL.Presentation
         }
 
         #endregion
-
-        #region Filter
-
-        // khởi tạo filter
-        private void CreateFilter()
-        {
-            collectionView = CollectionViewSource.GetDefaultView(listPhieuThu);
-
-            searchFilter = delegate(object item)
-            {
-                return (item as vw_PhieuThu_NhanVien_DaiLy).TENNV.ToLower().Contains(txtSearch.Text.ToLower()) == true ? true : false;
-            };
-
-            groupFilter = new GroupFilter();
-            groupFilter.AddFilter(searchFilter);
-            collectionView.Filter = groupFilter.Filter;
-        }
-        //filter dựa trên thanh search
-        private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            CollectionViewSource.GetDefaultView(lsvPT.ItemsSource).Refresh();
-        }
-
-        // group filter khi có nhiều filter
-        public class GroupFilter
-        {
-            private List<Predicate<object>> _filters;
-
-            public Predicate<object> Filter { get; private set; }
-
-            public GroupFilter()
-            {
-                _filters = new List<Predicate<object>>();
-                Filter = InternalFilter;
-            }
-
-            private bool InternalFilter(object o)
-            {
-                foreach (var filter in _filters)
-                {
-                    if (!filter(o))
-                    {
-                        return false;
-                    }
-                }
-
-                return true;
-            }
-
-            public void AddFilter(Predicate<object> filter)
-            {
-                _filters.Add(filter);
-            }
-
-            public void RemoveFilter(Predicate<object> filter)
-            {
-                if (_filters.Contains(filter))
-                {
-                    _filters.Remove(filter);
-                }
-            }
-        }
-        #endregion
-
     }
 }

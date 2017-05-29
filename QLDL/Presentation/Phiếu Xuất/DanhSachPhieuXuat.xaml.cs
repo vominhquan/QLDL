@@ -25,18 +25,19 @@ namespace QLDL.Presentation
     public partial class DanhSachPhieuXuat : Window
     {
         //private ObservableCollection<vw_PhieuXuat_NhanVien_DaiLy> listPhieuXuat;
-        public ICollectionView collectionView;
-        public string searchstring;
-        public GroupFilter groupFilter;
-        public Predicate<object> searchFilter;
-        private MatHangBUS mhbus = new MatHangBUS();
-        private PhieuXuatBUS pxbus = new PhieuXuatBUS();
-        private PhieuThuBUS ptbus = new PhieuThuBUS();
+        //public ICollectionView collectionView;
+        //public string searchstring;
+        //public GroupFilter groupFilter;
+        //public Predicate<object> searchFilter;
+        //private MatHangBUS mhbus = new MatHangBUS();
+        //private PhieuXuatBUS pxbus = new PhieuXuatBUS();
+        //private PhieuThuBUS ptbus = new PhieuThuBUS();
 
         public DanhSachPhieuXuat()
         {
             InitializeComponent();
-            Application.Current.MainWindow.Loaded += Initialize;
+            Application.Current.MainWindow.Loaded += DPI.Initialize;
+            // Application.Current.Resources["Scale"] = 
             DataContext = new State()
             {
                 LocTheoTen = "",
@@ -44,13 +45,6 @@ namespace QLDL.Presentation
             };
             ((State)DataContext).SetFilter();
         }
-        #region Initialize
-        private void Initialize(object sender, RoutedEventArgs e)
-        {
-            Point Scale = Class.DPI.Initialize(sender, e);
-            Main.LayoutTransform = new ScaleTransform(Scale.X, Scale.Y);
-        }
-        #endregion
         private class State: INotifyPropertyChanged
         {
             #region Init INotifyPropertyChanged
@@ -114,7 +108,7 @@ namespace QLDL.Presentation
         #endregion
 
         #region Xem phiếu xuất
-        private void XemPhieuXuat(object sender, MouseButtonEventArgs e)
+        private void XemPhieuXuat(object sender, RoutedEventArgs e)
         {
             (new ChiTietPhieuXuat(
                 ListViewDanhSachPhieuXuat.SelectedItem as vw_PhieuXuat_NhanVien_DaiLy

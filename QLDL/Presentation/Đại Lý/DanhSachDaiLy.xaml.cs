@@ -28,7 +28,7 @@ namespace QLDL.Presentation
         public DanhSachDaiLy()
         {
             InitializeComponent();
-            Application.Current.MainWindow.Loaded += Initialize;
+            Application.Current.MainWindow.Loaded += DPI.Initialize;
             DataContext = new State()
             {
                 LocTheoTen = "",
@@ -37,13 +37,6 @@ namespace QLDL.Presentation
             };
             ((State)DataContext).SetFilter();
         }
-        #region Initialize
-        private void Initialize(object sender, RoutedEventArgs e)
-        {
-            Point Scale = Class.DPI.Initialize(sender, e);
-            Main.LayoutTransform = new ScaleTransform(Scale.X, Scale.Y);
-        }
-        #endregion
         private class State: INotifyPropertyChanged
         {
             #region Init INotifyPropertyChanged

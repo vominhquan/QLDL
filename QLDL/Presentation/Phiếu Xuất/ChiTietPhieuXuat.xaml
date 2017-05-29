@@ -8,10 +8,9 @@
             <Setter Property="ReadOnly" Value="True"/>
             <Setter Property="Border" Value="0"/>
             <Setter Property="LabelWidth" Value="150"/>
-            <Setter Property="Margin" Value="5"/>
         </Style>
     </Window.Resources>
-    <DockPanel Name="Main">
+    <DockPanel Name="Main" Style="{StaticResource DockPanelScale}">
         <DockPanel.LayoutTransform>
             <ScaleTransform 
                 ScaleX="0.8"
@@ -31,41 +30,57 @@
                 </DockPanel>
             </Border>
         </StackPanel>
-        <DockPanel Margin="5">
+        <DockPanel Margin="20">
             <DockPanel
                 DockPanel.Dock="Top"
-                Height="50">
-                <_:Input
+                Height="40">
+                <_:Input Label="Ngày lập" 
                     DockPanel.Dock="Right"
-                    Style="{StaticResource Input}"
+                    Align="Center"
                     Width="280"
-                    Label="Ngày lập" 
-                    Value="{Binding Path=ChiTietPhieuXuat.NGAYLAP, Mode=OneWay}"/>
-                <_:Input
                     Style="{StaticResource Input}"
-                    Label="Người xuất" 
-                    Value="{Binding Path=ChiTietPhieuXuat.TENNV, Mode=OneWay}"/>
+                    Value="{Binding 
+                        Path=ChiTietPhieuXuat.NGAYLAP, 
+                        Converter={StaticResource DateTimeToDate}, 
+                        Mode=OneWay}"/>
+                <Rectangle Width="10" DockPanel.Dock="Right"/>
+                <_:Input Label="Người xuất"
+                    Style="{StaticResource Input}"
+                    Value="{Binding 
+                        Path=ChiTietPhieuXuat.TENNV,
+                        Mode=OneWay}"/>
             </DockPanel>
             <StackPanel 
                 HorizontalAlignment="Right"
                 DockPanel.Dock="Bottom"
                 Width="300">
-                <_:Input
+                <_:Input Label="Phải trả"
+                    Align="Right"
                     Style="{StaticResource Input}"
-                    Label="Số tiền trước đó"
-                    Value="{Binding Path=ChiTietPhieuXuat.TONGTIEN, Mode=OneWay}"/>
-                <_:Input
+                    Value="{Binding 
+                        Path=ChiTietPhieuXuat.TONGTIEN, 
+                        Converter={StaticResource DecimalToD},
+                        Mode=OneWay}"/>
+                <Rectangle Height="10"/>
+                <_:Input Label="Số tiền trả"
+                    Align="Right"
                     Style="{StaticResource Input}"
-                    Label="Số tiền trả"
-                    Value="{Binding Path=ChiTietPhieuXuat.SOTIENTRA, Mode=OneWay}"/>
-                <_:Input
+                    Value="{Binding 
+                        Path=ChiTietPhieuXuat.SOTIENTRA, 
+                        Converter={StaticResource DecimalToD},
+                        Mode=OneWay}"/>
+                <Rectangle Height="10"/>
+                <_:Input Label="Còn lại"
+                    Align="Right"
                     Style="{StaticResource Input}"
-                    Label="Còn lại"
-                    Value="{Binding Path=ChiTietPhieuXuat.CONLAI, Mode=OneWay}"/>
+                    Value="{Binding 
+                        Path=ChiTietPhieuXuat.CONLAI, 
+                        Converter={StaticResource DecimalToD},
+                        Mode=OneWay}"/>
             </StackPanel>
             <ListView 
                 ItemsSource="{Binding Path=DanhSachChiTietPhieuXuat}"
-                Margin="5"
+                Margin="0, 10"
                 ItemContainerStyle="{StaticResource ListViewItem}"
                 SelectionMode="Single">
                 <ListView.View>
