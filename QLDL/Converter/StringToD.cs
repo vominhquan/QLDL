@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Data;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace Applications.Converter
 {
@@ -20,11 +21,11 @@ namespace Applications.Converter
             System.Globalization.CultureInfo culture
         )
         {
-            if (value == null || !(value is Decimal)) {
-                return "???";
-                // throw new NotImplementedException("Kiểu dữ liệu khi sử dụng Converter không đúng");
+            if (value == null || !(value is Decimal))
+            {
+                return "";
             };
-            return ((Decimal)value).ToString("0 đ", CultureInfo.GetCultureInfo("vi-VN"));
+            return ((decimal)value).ToString("#,##0 đ", CultureInfo.GetCultureInfo("vi-VN"));
         }
         public object ConvertBack(
             object value, 
@@ -33,7 +34,15 @@ namespace Applications.Converter
             System.Globalization.CultureInfo culture
         )
         {
-            throw new NotImplementedException("Không cho phép convert nguược");
+            string OnlyNumberString = (new Regex(@"[^\d]")).Replace(
+                value.ToString(),
+                String.Empty
+            );
+            if(decimal.TryParse((string)OnlyNumberString, out decimal NumberString))
+            {
+                return NumberString;
+            }
+            return 0;
         }
     }
 }

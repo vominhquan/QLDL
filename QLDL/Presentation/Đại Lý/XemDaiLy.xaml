@@ -30,7 +30,7 @@
                 </DockPanel>
             </Border>
         </StackPanel>
-        <Grid Margin="20" VerticalAlignment="Center">
+        <Grid Margin="10" VerticalAlignment="Center" DataContext="{Binding DaiLy}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="10"/>
@@ -99,12 +99,16 @@
                      Grid.ColumnSpan="3"
                      Align="Right"
                      LabelWidth="120"
-                     ReadOnly="True"
-                     Value="{Binding SONO, Converter={StaticResource DecimalToD}}"/>
+                     Value="{Binding 
+                        SONO, 
+                        Converter={StaticResource DecimalToD},
+                        UpdateSourceTrigger=PropertyChanged}"/>
             <_:Button Text="Thu tiền" Icon=""
+                      Click="ThuTien"
                       Grid.Row="10"
                       Grid.Column="0"/>
             <_:Button Icon="" Text="Xuất hàng"
+                      Click="XuatHang"
                       Grid.Row="10"
                       Grid.Column="2"/>
             <_:Button Icon="" Text="Phiếu thu"

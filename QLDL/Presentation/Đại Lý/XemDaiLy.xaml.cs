@@ -30,39 +30,67 @@ namespace QLDL.Presentation
         {
             InitializeComponent();
             Application.Current.MainWindow.Loaded += DPI.Initialize;
-            DataContext = View;
+            DataContext = new State()
+            {
+                DaiLy = View
+            };
+        }
+        private class State : INotifyPropertyChanged
+        {
+            #region Init INotifyPropertyChanged
+            public event PropertyChangedEventHandler PropertyChanged;
+            public void OnPropertyChanged(string name)
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            }
+            #endregion
+
+            #region Đại lý
+            private vwDAILY_LOAIDL_QUAN daiLy;
+            public vwDAILY_LOAIDL_QUAN DaiLy {
+                get => daiLy;
+                set => daiLy = value;
+            }
+            #endregion
         }
 
         private void Back(object sender, RoutedEventArgs e)
         {
-            Close();
+            DialogResult = false;
         }
         private void Edit(object sender, RoutedEventArgs e)
         {
-            ReturnValue = "Edit";
-            Close();
+            if((bool)new SuaDaiLy(((State)DataContext).DaiLy).ShowDialog())
+            {
+                int MADL = ((State)DataContext).DaiLy.MADL;
+                ((State)DataContext).DaiLy = new DaiLyBUS().GetDaiLyByMADL(MADL);
+            }
         }
 
         private void XuatHang(object sender, RoutedEventArgs e)
         {
-            //PhieuXuat px = new PhieuXuat(VW);
-            //px.ShowDialog();
+            //new PhieuXuat((DataContext as State).DaiLy)
+            //    .ShowDialog();
         }
 
         private void ThuTien(object sender, RoutedEventArgs e)
         {
-            //PhieuThu pt = new PhieuThu(VW);
-            //pt.ShowDialog();
+            if ((bool)new PhieuThu(((State)DataContext).DaiLy).ShowDialog())
+            {
+                ((State)DataContext).DaiLy = new DaiLyBUS().GetDaiLyByMADL(((State)DataContext).DaiLy.MADL);
+            };
         }
 
         private void XemPhieuXuat(object sender, RoutedEventArgs e)
         {
-            (new DanhSachPhieuXuat((DataContext as vwDAILY_LOAIDL_QUAN).MADL)).ShowDialog();
+            int MADL = (DataContext as State).DaiLy.MADL;
+            new DanhSachPhieuXuat(MADL).ShowDialog();
         }
 
         private void XemPhieuThu(object sender, RoutedEventArgs e)
         {
-            (new DanhSachPhieuThu((DataContext as vwDAILY_LOAIDL_QUAN).MADL)).ShowDialog();
+            int MADL = (DataContext as State).DaiLy.MADL;
+            new DanhSachPhieuThu(MADL).ShowDialog();
         }
     }
 }

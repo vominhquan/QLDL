@@ -180,7 +180,7 @@
                                 <ContentPresenter
                                 TextBlock.FontSize="{Binding Path=ActualHeight, ElementName=Grid, Converter={StaticResource SizeToTextFontSize}}"
                                 TextBlock.FontFamily="{StaticResource TextFont}"
-                                TextBlock.Foreground="{StaticResource Foreground}"/>
+                                TextBlock.Foreground="{StaticResource ForegroundSolid}"/>
                             </Border>
                         </Border>
                     </Border>

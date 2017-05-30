@@ -31,6 +31,7 @@
             <Rectangle Height="10"/>
             <DockPanel Height="50">
                 <_:TextBlock 
+                    Background="#33000000"
                     Align="Center"
                     Width="120"
                     DockPanel.Dock="Left"
@@ -56,6 +57,7 @@
             <Rectangle Height="10"/>
             <DockPanel Height="50">
                 <_:TextBlock 
+                    Background="#33000000"
                     Align="Center"
                     Width="120"
                     DockPanel.Dock="Left"

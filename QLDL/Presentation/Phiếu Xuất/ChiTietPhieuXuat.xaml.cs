@@ -28,7 +28,6 @@ namespace QLDL.Presentation
         {
             InitializeComponent();
             Application.Current.MainWindow.Loaded += DPI.Initialize;
-
             DataContext = new State()
             {
                 ChiTietPhieuXuat = View,

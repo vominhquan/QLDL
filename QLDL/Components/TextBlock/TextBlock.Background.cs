@@ -18,9 +18,7 @@ namespace Applications.Components
                 "Background",
                 typeof(SolidColorBrush),
                 typeof(TextBlock),
-                new FrameworkPropertyMetadata(
-                     (SolidColorBrush)Application.Current.Resources["BackgroundSolid"]
-                )
+                new FrameworkPropertyMetadata(Brushes.Transparent)
             );
         public new SolidColorBrush Background
         {

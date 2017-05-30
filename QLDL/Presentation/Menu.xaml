@@ -13,7 +13,7 @@
             Style="{StaticResource Shadow}">
             <Border Padding="10">
                 <DockPanel Height="50">
-                    <_:TextBlock Text="Quản lý đại lý - Menu"/>
+                    <_:TextBlock Text="Quản lý đại lý"/>
                     <Rectangle/>
                 </DockPanel>
             </Border>

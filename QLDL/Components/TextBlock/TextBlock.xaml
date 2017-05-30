@@ -10,14 +10,13 @@
     </UserControl.Resources>
     <UserControl.Template>
         <ControlTemplate>
-            <Border Background="{Binding Path=Background, ElementName=UserControlTextBlock}">
-                <Border Background="#33000000">
+            <Border Background="{StaticResource BackgroundSolid}">
+                <Border Background="{Binding Path=Background, ElementName=UserControlTextBlock}">
                     <StackPanel 
-                        
+                        Orientation="Horizontal"
                         HorizontalAlignment="{Binding 
                             Path=Align,
-                            ElementName=UserControlTextBlock}"
-                        Orientation="Horizontal">
+                            ElementName=UserControlTextBlock}">
                         <TextBlock
                             Foreground="{StaticResource ForegroundSolid}"
                             FontFamily="{StaticResource IconFont}"

@@ -101,20 +101,6 @@
     <Compile Include="Components\Button\Button.xaml.cs">
       <DependentUpon>Button.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Components\ColorH\ColorH.H.cs" />
-    <Compile Include="Components\ColorH\ColorH.xaml.cs">
-      <DependentUpon>ColorH.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Components\ColorSV\ColorSV.Hue.cs" />
-    <Compile Include="Components\ColorSV\ColorSV.Saturation.cs" />
-    <Compile Include="Components\ColorSV\ColorSV.Value.cs" />
-    <Compile Include="Components\ColorSV\ColorSV.xaml.cs">
-      <DependentUpon>ColorSV.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Components\IconShape\IconShape.cs" />
-    <Compile Include="Components\IconShape\IconShape.Text.cs" />
-    <Compile Include="Components\IconShape\IconShape.X.cs" />
-    <Compile Include="Components\IconShape\IconShape.Y.cs" />
     <Compile Include="Components\Input\Input.Background.cs" />
     <Compile Include="Components\Input\Input.Align.cs" />
     <Compile Include="Components\Input\Input.Border.cs" />
@@ -147,14 +133,6 @@
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
-    <Page Include="Components\ColorH\ColorH.xaml">
-      <SubType>Designer</SubType>
-      <Generator>XamlIntelliSenseFileGenerator</Generator>
-    </Page>
-    <Page Include="Components\ColorSV\ColorSV.xaml">
-      <SubType>Designer</SubType>
-      <Generator>XamlIntelliSenseFileGenerator</Generator>
-    </Page>
     <Page Include="Components\Input\Input.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -183,9 +161,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Presentation\CTPXUserControl.xaml">
+    <Page Include="Presentation\Phiếu Xuất\CTPXUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\Phiếu Xuất\PhieuXuat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
     <Page Include="Presentation\Đại Lý\DanhSachDaiLy.xaml">
       <SubType>Designer</SubType>
@@ -199,11 +181,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Presentation\Đại Lý\PhieuThu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Presentation\Đại Lý\PhieuXuat.xaml">
+    <Page Include="Presentation\Phiếu Thu\PhieuThu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -375,8 +353,11 @@
     <Compile Include="Presentation\Phiếu Xuất\ChiTietPhieuXuat.xaml.cs">
       <DependentUpon>ChiTietPhieuXuat.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\CTPXUserControl.xaml.cs">
+    <Compile Include="Presentation\Phiếu Xuất\CTPXUserControl.xaml.cs">
       <DependentUpon>CTPXUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Phiếu Xuất\PhieuXuat.xaml.cs">
+      <DependentUpon>PhieuXuat.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Đại Lý\DanhSachDaiLy.xaml.cs">
       <DependentUpon>DanhSachDaiLy.xaml</DependentUpon>
@@ -388,11 +369,8 @@
     <Compile Include="Presentation\Phiếu Xuất\DanhSachPhieuXuat.xaml.cs">
       <DependentUpon>DanhSachPhieuXuat.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Đại Lý\PhieuThu.xaml.cs">
+    <Compile Include="Presentation\Phiếu Thu\PhieuThu.xaml.cs">
       <DependentUpon>PhieuThu.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Đại Lý\PhieuXuat.xaml.cs">
-      <DependentUpon>PhieuXuat.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Đại Lý\SuaDaiLy.xaml.cs">
       <DependentUpon>SuaDaiLy.xaml</DependentUpon>

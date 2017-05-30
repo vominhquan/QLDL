@@ -1,0 +1,118 @@
+﻿<Window
+        Name="PhieuXuatWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:uc="clr-namespace:QLDL.Presentation"
+        xmlns:_="clr-namespace:Applications.Components"
+        x:Class="QLDL.Presentation.PhieuXuat"
+        Title="Lập phiếu xuất" Height="500" Width="800">
+    <DockPanel Name="Main" Style="{StaticResource DockPanelScale}">
+        <StackPanel 
+            Style="{StaticResource Shadow}"
+            DockPanel.Dock="Top">
+            <Border Padding="10">
+                <DockPanel>
+                    <_:Button 
+                        Click="Back"
+                        Icon=""
+                        DockPanel.Dock="Left"
+                        Text="Quay lại"/>
+                    <_:Button 
+                        Click="Back"
+                        Icon=""
+                        DockPanel.Dock="Right"
+                        Text="Quay lại"/>
+                    <Rectangle/>
+                </DockPanel>
+            </Border>
+        </StackPanel>
+        <DockPanel Margin="20">
+            <DockPanel
+                DockPanel.Dock="Top"
+                Height="{StaticResource Size}">
+                <_:Input Label="Ngày lập" 
+                    DockPanel.Dock="Right"
+                    Align="Center"
+                    Width="280"
+                    ReadOnly="True"
+                    LabelWidth="150"
+                    Value="{Binding 
+                        Path=ChiTietPhieuXuat.NGAYLAP, 
+                        Converter={StaticResource DateTimeToDate}, 
+                        Mode=OneWay}"/>
+                <Rectangle Width="10" DockPanel.Dock="Right"/>
+                <_:Input Label="Người xuất"
+                    ReadOnly="True"
+                    LabelWidth="150"
+                    Value="{Binding 
+                        Path=ChiTietPhieuXuat.TENNV,
+                        Mode=OneWay}"/>
+            </DockPanel>
+            <StackPanel 
+                HorizontalAlignment="Right"
+                DockPanel.Dock="Bottom"
+                Width="300">
+                <_:Input Label="Phải trả"
+                    Align="Right"
+                    ReadOnly="True"
+                    LabelWidth="150"
+                    Value="{Binding 
+                        Path=ChiTietPhieuXuat.TONGTIEN, 
+                        Converter={StaticResource DecimalToD},
+                        Mode=OneWay}"/>
+                <Rectangle Height="10"/>
+                <_:Input Label="Số tiền trả"
+                    Align="Right"
+                    ReadOnly="True"
+                    LabelWidth="150"
+                    Value="{Binding 
+                        Path=ChiTietPhieuXuat.SOTIENTRA, 
+                        Converter={StaticResource DecimalToD},
+                        Mode=OneWay}"/>
+                <Rectangle Height="10"/>
+                <_:Input Label="Còn lại"
+                    Align="Right"
+                    ReadOnly="True"
+                    LabelWidth="150"
+                    Value="{Binding 
+                        Path=ChiTietPhieuXuat.CONLAI, 
+                        Converter={StaticResource DecimalToD},
+                        Mode=OneWay}"/>
+            </StackPanel>
+            <ListView 
+                ItemsSource="{Binding Path=DanhSachChiTietPhieuXuat}"
+                Margin="0, 10"
+                ItemContainerStyle="{StaticResource ListViewItem}"
+                SelectionMode="Single">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Tên hàng" DisplayMemberBinding="{Binding TENHANG}"/>
+                        <GridViewColumn Header="Số lượng" DisplayMemberBinding="{Binding SOLUONG}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </DockPanel>
+        <!--<Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <TextBlock Text="Số tiền trả" Margin="10,10,159,314"/>
+                    <TextBox Name="txtSoTienTra" Text="0" Margin="114,10,55,314" RenderTransformOrigin="-0.49,-0.361"></TextBox>
+                    <Button Click="ThemPhieuXuat" Content="Xuất phiếu" HorizontalAlignment="Left" Margin="121,117,0,0" VerticalAlignment="Top" Width="74"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <ScrollViewer Name="svCTPX">
+                        <StackPanel>
+                            <StackPanel Name="spCTPX">
+                            </StackPanel>
+                            <Button Name="btnAddCTPX" Content="Thêm Sản phẩm" Width="100" Click="AddCTPX"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </Grid>
+        </Grid>-->
+    </DockPanel>
+</Window>

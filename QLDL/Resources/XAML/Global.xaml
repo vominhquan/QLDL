@@ -24,6 +24,6 @@
     <_:Double x:Key="TableFontSize">15</_:Double>
 
     <FontFamily x:Key="TextFont">\Resources\Fonts\#Segoe UI Light</FontFamily>
-    <!--<FontFamily x:Key="IconFont">aicon</FontFamily>-->
-    <FontFamily x:Key="IconFont">\Resources\Fonts\#aicon</FontFamily>
+    <FontFamily x:Key="IconFont">aicon</FontFamily>
+    <!--<FontFamily x:Key="IconFont">\Resources\Fonts\#aicon</FontFamily>-->
 </ResourceDictionary>

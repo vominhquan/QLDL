@@ -14,7 +14,6 @@ using System.Windows.Shapes;
 using System.ComponentModel;
 using QLDL.BusinessLogic;
 using System.Collections.ObjectModel;
-//using Microsoft.Reporting.WinForms;
 using QLDL.DataAccess;
 using QLDL.Class;
 
@@ -141,20 +140,25 @@ namespace QLDL.Presentation
         private void XemDL(object sender, RoutedEventArgs e)
         {
             vwDAILY_LOAIDL_QUAN Item = ListViewDanhSachDaiLy.SelectedItem as vwDAILY_LOAIDL_QUAN;
-            XemDaiLy XemDaiLyPresentation = new XemDaiLy(Item);
-            XemDaiLyPresentation.ShowDialog();
-            if(XemDaiLyPresentation.ReturnValue == "Edit")
-            {
-                SuaDL(sender, e);
-            }
+            int SelectedIndex = ListViewDanhSachDaiLy.SelectedIndex;
+            new XemDaiLy(Item).ShowDialog();
+            
+            ((State)DataContext).DanhSachDaiLy[SelectedIndex] =
+                (new DaiLyBUS()).GetDaiLyByMADL(Item.MADL);
         }
 
-        private void SuaDL(object sender, RoutedEventArgs e)
+        public void SuaDL()
         {
             vwDAILY_LOAIDL_QUAN Item = ListViewDanhSachDaiLy.SelectedItem as vwDAILY_LOAIDL_QUAN;
-            (new SuaDaiLy(Item)).ShowDialog();
-            ((State)DataContext).DanhSachDaiLy[ListViewDanhSachDaiLy.SelectedIndex] = 
+            int SelectedIndex = ListViewDanhSachDaiLy.SelectedIndex;
+            new SuaDaiLy(Item).ShowDialog();
+
+            ((State)DataContext).DanhSachDaiLy[SelectedIndex] =
                 (new DaiLyBUS()).GetDaiLyByMADL(Item.MADL);
+        }
+        private void SuaDL(object sender, RoutedEventArgs e)
+        {
+            SuaDL();
         }
         private void XoaDL(object sender, RoutedEventArgs e)
         {
