@@ -17,7 +17,7 @@ namespace Applications.Components
                 "Border",
                 typeof(Thickness),
                 typeof(Input),
-                new FrameworkPropertyMetadata(new Thickness(1))
+                new FrameworkPropertyMetadata(new Thickness(0))
             );
         public Thickness Border
         {

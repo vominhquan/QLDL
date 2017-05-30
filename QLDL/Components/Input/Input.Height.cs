@@ -17,7 +17,7 @@ namespace Applications.Components
                 "Height",
                 typeof(double),
                 typeof(Input),
-                new FrameworkPropertyMetadata((double)40)
+                new FrameworkPropertyMetadata((double)50)
             );
         public new double Height
         {

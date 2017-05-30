@@ -196,8 +196,6 @@ E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ p
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\DSPT.baml
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\DSPX.baml
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\PhieuThu.baml
-E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Đại Lý\XemDaiLy.baml
-E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Đại Lý\TiepNhanDaiLy.baml
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Resources\XAML\DockPanelScale.baml
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Resources\XAML\Global.baml
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Resources\XAML\StackPanel.baml
@@ -245,6 +243,8 @@ E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ p
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Phiếu Xuất\DanhSachPhieuXuat.baml
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\PhieuXuat.baml
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Đại Lý\SuaDaiLy.baml
+E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Đại Lý\XemDaiLy.baml
+E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Đại Lý\TiepNhanDaiLy.baml
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Resources\XAML\ComboBox.baml
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Resources\XAML\Convert.baml
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Resources\XAML\Table\ScrollViewer.baml
@@ -257,4 +257,3 @@ E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ p
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\QLDL.application
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\QLDL.exe
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\QLDL.pdb
-E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\QLDL.csprojResolveAssemblyReference.cache

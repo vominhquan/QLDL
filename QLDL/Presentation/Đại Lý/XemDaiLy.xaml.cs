@@ -16,56 +16,49 @@ using QLDL.BusinessLogic;
 using System.Collections.ObjectModel;
 //using Microsoft.Reporting.WinForms;
 using QLDL.DataAccess;
+using QLDL.Class;
 
 namespace QLDL.Presentation
 {
     /// <summary>
     /// Interaction logic for TiepNhanDaiLy.xaml
     /// </summary>
-    public partial class XemDaiLy : Window, IDisposable
+    public partial class XemDaiLy : Window
     {
-        public vwDAILY_LOAIDL_QUAN VW { get; set; }
-
-        public XemDaiLy(vwDAILY_LOAIDL_QUAN vw)
+        public XemDaiLy(vwDAILY_LOAIDL_QUAN View)
         {
             InitializeComponent();
-            this.VW = vw;
+            Application.Current.MainWindow.Loaded += DPI.Initialize;
+            DataContext = View;
         }
 
-        public void Dispose()
+        private void Back(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Close(object sender, RoutedEventArgs e)
-        {
-            this.Close();
+            Close();
         }
 
         private void XuatHang(object sender, RoutedEventArgs e)
         {
-            PhieuXuat px = new PhieuXuat(VW);
-            px.ShowDialog();
+            //PhieuXuat px = new PhieuXuat(VW);
+            //px.ShowDialog();
         }
 
         private void ThuTien(object sender, RoutedEventArgs e)
         {
-            PhieuThu pt = new PhieuThu(VW);
-            pt.ShowDialog();
+            //PhieuThu pt = new PhieuThu(VW);
+            //pt.ShowDialog();
         }
 
         private void XemPhieuXuat(object sender, RoutedEventArgs e)
         {
-            DSPX px = new DSPX(VW);
-            px.ShowDialog();
+            //DSPX px = new DSPX(VW);
+            //px.ShowDialog();
         }
 
         private void XemPhieuThu(object sender, RoutedEventArgs e)
         {
-            DSPT pt = new DSPT(VW);
-            pt.ShowDialog();
+            //DSPT pt = new DSPT(VW);
+            //pt.ShowDialog();
         }
-
-
     }
 }

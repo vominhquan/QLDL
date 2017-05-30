@@ -136,21 +136,12 @@ namespace QLDL.Presentation
                     (new DaiLyBUS()).GetDaiLyByMADL((int)DaiLyMoi.ReturnValue)
                 );
             }
-
-            //using (TiepNhanDaiLy tndl = new TiepNhanDaiLy())
-            //{
-            //    tndl.ShowDialog();
-            //    if (tndl.DialogResult.HasValue && tndl.DialogResult.Value)
-            //    {
-            //        ((State)DataContext).DanhSachDaiLy.Add(tndl.VW);
-            //    }
-            //}
         }
 
         private void XemDL(object sender, RoutedEventArgs e)
         {
-            XemDaiLy xdl = new XemDaiLy(ListViewDanhSachDaiLy.SelectedItem as vwDAILY_LOAIDL_QUAN);
-            xdl.ShowDialog();
+            vwDAILY_LOAIDL_QUAN Item = ListViewDanhSachDaiLy.SelectedItem as vwDAILY_LOAIDL_QUAN;
+            (new XemDaiLy(Item)).ShowDialog();
         }
 
         private void SuaDL(object sender, RoutedEventArgs e)
