@@ -30,6 +30,7 @@ namespace QLDL.Presentation
             Application.Current.MainWindow.Loaded += DPI.Initialize;
             DataContext = new State()
             {
+                DaiLyWidth = double.NaN,
                 LocTheoTen = "",
                 DanhSachPhieuThu = (new PhieuThuBUS()).getAllPhieuThu()
             };
@@ -41,6 +42,7 @@ namespace QLDL.Presentation
             Application.Current.MainWindow.Loaded += DPI.Initialize;
             DataContext = new State()
             {
+                DaiLyWidth = 0,
                 LocTheoTen = "",
                 DanhSachPhieuThu = (new PhieuThuBUS()).getPhieuThuByDaiLy(MADL)
             };
@@ -54,6 +56,11 @@ namespace QLDL.Presentation
             {
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
             }
+            #endregion
+
+            #region Ẩn cột đại lý
+            private double daiLyWidth;
+            public double DaiLyWidth { get => daiLyWidth; set => daiLyWidth = value; }
             #endregion
 
             #region (string) Lọc theo tên 

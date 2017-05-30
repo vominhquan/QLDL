@@ -1,0 +1,37 @@
+﻿<Window x:Class="QLDL.Presentation.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:_="clr-namespace:Applications.Components"
+        xmlns:local="clr-namespace:QLDL.Presentation"
+        mc:Ignorable="d"
+        Title="Menu" Height="500" Width="500">
+    <DockPanel Name="Main" Style="{StaticResource DockPanelScale}">
+        <StackPanel 
+            DockPanel.Dock="Top"
+            Style="{StaticResource Shadow}">
+            <Border Padding="10">
+                <DockPanel Height="50">
+                    <_:TextBlock Text="Quản lý đại lý - Menu"/>
+                    <Rectangle/>
+                </DockPanel>
+            </Border>
+        </StackPanel>
+        <Border Padding="20">
+            <StackPanel VerticalAlignment="Center">
+                <_:Button 
+                    Click="DanhSachDaiLy"
+                    Text="Danh sách đại lý"/>
+                <Rectangle Height="10"/>
+                <_:Button 
+                    Click="DanhSachPhieuXuat"
+                    Text="Danh sách phiếu xuất"/>
+                <Rectangle Height="10"/>
+                <_:Button 
+                    Click="DanhSachPhieuThu"
+                    Text="Danh sách phiếu thu"/>
+            </StackPanel>
+        </Border>
+    </DockPanel>
+</Window>

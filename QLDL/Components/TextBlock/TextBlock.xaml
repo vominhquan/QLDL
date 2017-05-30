@@ -19,7 +19,7 @@
                             ElementName=UserControlTextBlock}"
                         Orientation="Horizontal">
                         <TextBlock
-                            Foreground="{StaticResource ButtonForeground}"
+                            Foreground="{StaticResource ForegroundSolid}"
                             FontFamily="{StaticResource IconFont}"
                             Visibility="{Binding Path=Icon, 
                                 ElementName=UserControlTextBlock,
@@ -37,7 +37,7 @@
                             Width="{Binding Path=Size,ElementName=UserControlTextBlock, Converter={StaticResource SizeToPadding}}"
                             Visibility="{Binding Path=Icon, ElementName=UserControlTextBlock, Converter={StaticResource VisibilityCollapsed}}"/>
                         <TextBlock
-                            Foreground="{StaticResource ButtonForeground}"
+                            Foreground="{StaticResource ForegroundSolid}"
                             FontFamily="{StaticResource TextFont}"
                             Visibility="{Binding Path=Text, ElementName=UserControlTextBlock, Converter={StaticResource VisibilityVisible}}"
                             FontSize="{Binding Path=Size, ElementName=UserControlTextBlock, Converter={StaticResource SizeToTextFontSize}}"

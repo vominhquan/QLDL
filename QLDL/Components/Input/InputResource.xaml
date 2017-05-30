@@ -40,7 +40,7 @@
                                         VerticalAlignment="Center"
                                         HorizontalAlignment="Center"
                                         FontFamily="{StaticResource TextFont}"
-                                        Foreground="{StaticResource InputForeground}"
+                                        Foreground="{StaticResource ForegroundSolid}"
                                         Text="{Binding 
                                             Path=Label,
                                             ElementName=UserControlInput
@@ -66,8 +66,8 @@
                                     }"
                                     FontFamily="{StaticResource TextFont}"
                                     Background="Transparent"
-                                    Foreground="{StaticResource InputForeground}"
-                                    CaretBrush="{StaticResource InputForeground}"
+                                    Foreground="{StaticResource ForegroundSolid}"
+                                    CaretBrush="{StaticResource ForegroundSolid}"
                                     DataContext="{Binding
                                         Path=Type,
                                         ElementName=UserControlInput

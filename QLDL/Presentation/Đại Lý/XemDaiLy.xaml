@@ -112,6 +112,7 @@
                       Grid.Row="10"
                       Grid.Column="4"/>
             <_:Button Icon="" Text="Phiếu xuất"
+                      Click="XemPhieuXuat"
                       Grid.Row="10"
                       Grid.Column="6"/>
         </Grid>

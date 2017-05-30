@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:_="clr-namespace:Applications.Components"
-        Title="DanhSachPhieuXuat" Height="500" Width="800">
+        Title="Danh sách phiếu xuất" Height="500" Width="800">
     <Window.Resources>
         <ContextMenu x:Key="ContextMenu">
             <MenuItem Header="Xem thông tin" Click="XemPhieuXuat"/>
@@ -22,7 +22,9 @@
                     <StackPanel 
                         Orientation="Horizontal"
                         DockPanel.Dock="Left">
-                        <_:Button Text="Lập báo cáo doanh số "/>
+                        <_:Button 
+                            Icon=""
+                            Text="Lập báo cáo doanh số "/>
                         <_:Line/>
                         <_:Input 
                             Height="50"
@@ -47,7 +49,12 @@
             ItemsSource="{Binding Path=DanhSachPhieuXuat}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Đại lý" DisplayMemberBinding="{Binding TENDL}"/>
+                    <GridViewColumn 
+                        Width="{Binding 
+                            Path=DataContext.DaiLyWidth,
+                            RelativeSource={RelativeSource FindAncestor, 
+                            AncestorType={x:Type Window}}}"
+                        Header="Đại lý" DisplayMemberBinding="{Binding TENDL}"/>
                     <GridViewColumn Header="Ngày lập" DisplayMemberBinding="{Binding NGAYLAP, Converter={StaticResource DateTimeToDate}}"/>
                     <GridViewColumn Header="Người xuất" DisplayMemberBinding="{Binding TENNV}"/>
                     <GridViewColumn Header="Tổng tiền" Width="142">

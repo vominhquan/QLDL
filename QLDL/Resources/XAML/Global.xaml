@@ -2,59 +2,28 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:_="clr-namespace:System;assembly=mscorlib">
     <_:Double x:Key="Scale">1</_:Double>
-    <Color 
-        x:Key="Background">#ff227447</Color>
-    <SolidColorBrush 
-        x:Key="BackgroundSolid"
-        Color="{StaticResource Background}"/>
-    <Color 
-        x:Key="Foreground">#ffffffff</Color>
+    <_:Double x:Key="Size">50</_:Double>
+    <_:Double x:Key="FontSize">20</_:Double>
+        
+    <Color x:Key="Background">#ff227447</Color>
+    <SolidColorBrush x:Key="BackgroundSolid" Color="{StaticResource Background}"/>
+    <Color x:Key="Foreground">#ffffffff</Color>
     <SolidColorBrush x:Key="ForegroundSolid" Color="#ffffff"/>
-    
-    <Color x:Key="Green45">#ff227447</Color>
-    <Color x:Key="Green40">#ff1e663e</Color>
-    <Color x:Key="Green35">#ff1a5936</Color>
-    <Color x:Key="Green30">#ff164d2f</Color>
-    <Color x:Key="Green25">#ff124027</Color>
-
-    <SolidColorBrush x:Key="StackPanelBackground" Color="{StaticResource Background}"/>
-    
-    <SolidColorBrush x:Key="ButtonForeground" Color="#FFFFFF"/>
-    <SolidColorBrush x:Key="ButtonBackground" Color="{StaticResource Green45}"/>
-    
-    <SolidColorBrush x:Key="InputForeground" Color="#FFFFFF"/>
-    <SolidColorBrush x:Key="InputBackground" Color="{StaticResource Green40}"/>
-    <SolidColorBrush x:Key="InputBackgroundHover" Color="{StaticResource Green35}"/>
-    <SolidColorBrush x:Key="InputBackgroundFocus" Color="{StaticResource Green30}"/>
-    <SolidColorBrush x:Key="InputBackgroundActive" Color="{StaticResource Green25}"/>
     
     <SolidColorBrush x:Key="WhiteLineColor" Color="#88ffffff"/>
     <SolidColorBrush x:Key="GrayLineColor" Color="#7c8086"/>
     <SolidColorBrush x:Key="BlueLineColor" Color="#007acc"/>
 
-
-    <!--<SolidColorBrush x:Key="Background" Color="#3f454b"/>
-    <SolidColorBrush x:Key="Foreground" Color="#c3cad0"/>-->
-    <SolidColorBrush x:Key="BackgroundHover" Color="#363b40"/>
-    <SolidColorBrush x:Key="BackgroundActive" Color="#272a2e"/>
-
-    
+    <Color x:Key="HeaderBackground">#d2d2d2</Color>
+    <Color x:Key="HeaderBackgroundHover">#d3f0e0</Color>
+        
     <SolidColorBrush x:Key="TableHeaderColor" Color="#217346"/>
     <SolidColorBrush x:Key="TableHeaderBackground" Color="#d2d2d2"/>
     <SolidColorBrush x:Key="TableHeaderBackgroundHover" Color="#27ae60"/>
-    
-
-    <Color x:Key="HeaderBackground">#d2d2d2</Color>
-    <Color x:Key="HeaderBackgroundHover">#d3f0e0</Color>
 
     <_:Double x:Key="TableFontSize">15</_:Double>
 
     <FontFamily x:Key="TextFont">\Resources\Fonts\#Segoe UI Light</FontFamily>
-    <FontFamily x:Key="IconFont">aicon</FontFamily>
-    <!--<FontFamily x:Key="IconFont">\Resources\Fonts\#aicon</FontFamily>-->
-    <_:Double x:Key="Size">50</_:Double>
-    <_:Double x:Key="FontSize">20</_:Double>
-    
-
-    
+    <!--<FontFamily x:Key="IconFont">aicon</FontFamily>-->
+    <FontFamily x:Key="IconFont">\Resources\Fonts\#aicon</FontFamily>
 </ResourceDictionary>

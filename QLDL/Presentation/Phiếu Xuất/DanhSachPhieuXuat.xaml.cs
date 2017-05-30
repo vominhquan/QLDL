@@ -24,22 +24,13 @@ namespace QLDL.Presentation
     /// </summary>
     public partial class DanhSachPhieuXuat : Window
     {
-        //private ObservableCollection<vw_PhieuXuat_NhanVien_DaiLy> listPhieuXuat;
-        //public ICollectionView collectionView;
-        //public string searchstring;
-        //public GroupFilter groupFilter;
-        //public Predicate<object> searchFilter;
-        //private MatHangBUS mhbus = new MatHangBUS();
-        //private PhieuXuatBUS pxbus = new PhieuXuatBUS();
-        //private PhieuThuBUS ptbus = new PhieuThuBUS();
-
         public DanhSachPhieuXuat()
         {
             InitializeComponent();
             Application.Current.MainWindow.Loaded += DPI.Initialize;
-            // Application.Current.Resources["Scale"] = 
             DataContext = new State()
             {
+                DaiLyWidth = double.NaN,
                 LocTheoTen = "",
                 DanhSachPhieuXuat = (new PhieuXuatBUS()).GetAllPhieuXuat()
             };
@@ -49,9 +40,9 @@ namespace QLDL.Presentation
         {
             InitializeComponent();
             Application.Current.MainWindow.Loaded += DPI.Initialize;
-            // Application.Current.Resources["Scale"] = 
             DataContext = new State()
             {
+                DaiLyWidth = 0,
                 LocTheoTen = "",
                 DanhSachPhieuXuat = (new PhieuXuatBUS()).GetPhieuXuatByDaiLy(MADL)
             };
@@ -65,6 +56,11 @@ namespace QLDL.Presentation
             {
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
             }
+            #endregion
+
+            #region Ẩn cột đại lý
+            private double daiLyWidth;
+            public double DaiLyWidth { get => daiLyWidth; set => daiLyWidth = value; } 
             #endregion
 
             #region (string) Lọc theo tên 

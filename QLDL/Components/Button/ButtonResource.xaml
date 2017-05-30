@@ -20,7 +20,7 @@
                         <Border Background="{TemplateBinding Background}">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock 
-                                    Foreground="{StaticResource ButtonForeground}"
+                                    Foreground="{StaticResource ForegroundSolid}"
                                     FontFamily="{StaticResource IconFont}"
                                     Visibility="{Binding Path=Icon, 
                                                             ElementName=UserControlButton,
@@ -37,7 +37,7 @@
                                     Width="{Binding Path=Size,ElementName=UserControlButton, Converter={StaticResource SizeToPadding}}"
                                     Visibility="{Binding Path=Icon, ElementName=UserControlButton, Converter={StaticResource VisibilityCollapsed}}"/>
                                 <TextBlock
-                                    Foreground="{StaticResource ButtonForeground}"
+                                    Foreground="{StaticResource ForegroundSolid}"
                                     FontFamily="{StaticResource TextFont}"
                                     Visibility="{Binding Path=Text, ElementName=UserControlButton, Converter={StaticResource VisibilityVisible}}"
                                     FontSize="{Binding Path=Size, ElementName=UserControlButton, Converter={StaticResource SizeToTextFontSize}}"

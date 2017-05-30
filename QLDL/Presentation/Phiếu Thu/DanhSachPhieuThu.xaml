@@ -43,7 +43,12 @@
             ItemsSource="{Binding Path=DanhSachPhieuThu}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Đại lý" 
+                    <GridViewColumn 
+                        Width="{Binding 
+                            Path=DataContext.DaiLyWidth,
+                            RelativeSource={RelativeSource FindAncestor, 
+                            AncestorType={x:Type Window}}}"
+                        Header="Đại lý" 
                         DisplayMemberBinding="{Binding TENDL}"/>
                     <GridViewColumn Header="Ngày thu tiền" 
                         DisplayMemberBinding="{Binding NGAYTHUTIEN, Converter={StaticResource DateTimeToDate}}"/>

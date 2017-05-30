@@ -11,11 +11,6 @@
         </Style>
     </Window.Resources>
     <DockPanel Name="Main" Style="{StaticResource DockPanelScale}">
-        <DockPanel.LayoutTransform>
-            <ScaleTransform 
-                ScaleX="0.8"
-                ScaleY="0.8"/>
-        </DockPanel.LayoutTransform>
         <StackPanel 
             Style="{StaticResource Shadow}"
             DockPanel.Dock="Top">
@@ -33,7 +28,7 @@
         <DockPanel Margin="20">
             <DockPanel
                 DockPanel.Dock="Top"
-                Height="40">
+                Height="{StaticResource Size}">
                 <_:Input Label="Ngày lập" 
                     DockPanel.Dock="Right"
                     Align="Center"

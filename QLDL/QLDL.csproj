@@ -175,6 +175,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Presentation\Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Presentation\Phiếu Xuất\ChiTietPhieuXuat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -195,11 +199,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Presentation\PhieuThu.xaml">
+    <Page Include="Presentation\Đại Lý\PhieuThu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Presentation\PhieuXuat.xaml">
+    <Page Include="Presentation\Đại Lý\PhieuXuat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -365,6 +369,9 @@
     <Compile Include="DataAccess\vw_PhieuXuat_NhanVien_DaiLy.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Phiếu Xuất\ChiTietPhieuXuat.xaml.cs">
       <DependentUpon>ChiTietPhieuXuat.xaml</DependentUpon>
     </Compile>
@@ -381,10 +388,10 @@
     <Compile Include="Presentation\Phiếu Xuất\DanhSachPhieuXuat.xaml.cs">
       <DependentUpon>DanhSachPhieuXuat.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\PhieuThu.xaml.cs">
+    <Compile Include="Presentation\Đại Lý\PhieuThu.xaml.cs">
       <DependentUpon>PhieuThu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\PhieuXuat.xaml.cs">
+    <Compile Include="Presentation\Đại Lý\PhieuXuat.xaml.cs">
       <DependentUpon>PhieuXuat.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Đại Lý\SuaDaiLy.xaml.cs">
