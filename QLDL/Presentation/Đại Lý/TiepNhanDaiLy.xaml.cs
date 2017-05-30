@@ -1,4 +1,5 @@
 ﻿using QLDL.BusinessLogic;
+using QLDL.Class;
 using QLDL.DataAccess;
 using System;
 using System.Collections.Generic;
@@ -20,72 +21,56 @@ namespace QLDL.Presentation
     /// <summary>
     /// Interaction logic for TiepNhanDaiLy.xaml
     /// </summary>
-    public partial class TiepNhanDaiLy : Window, IDisposable
+    public partial class TiepNhanDaiLy : Window
     {
-        private DaiLyBUS dlbus = new DaiLyBUS();
-        public ObservableCollection<LOAIDL> listLoaiDL;
-        public ObservableCollection<QUAN> listQuan;
-        public Predicate<object> searchFilter;
-        public Predicate<object> showhide;
-        public vwDAILY_LOAIDL_QUAN VW { get; set; }
-
+        public int? ReturnValue = null;
         public TiepNhanDaiLy()
         {
             InitializeComponent();
-            InitialData();
+            Application.Current.MainWindow.Loaded += DPI.Initialize;
+            DataContext = new State()
+            {
+                DaiLy = new vwDAILY_LOAIDL_QUAN()
+            };
         }
-
-        public void Dispose()
+        private class State
         {
+            #region Đại lý
+            private vwDAILY_LOAIDL_QUAN daiLy;
+            public vwDAILY_LOAIDL_QUAN DaiLy { get => daiLy; set => daiLy = value; }
+            #endregion
 
+            #region List
+            public ObservableCollection<LOAIDL> LoaiDL
+            {
+                get => (new DaiLyBUS()).GetAllLoaiDL();
+            }
+            public ObservableCollection<QUAN> Quan
+            {
+                get => (new DaiLyBUS()).GetAllQuan();
+            }
+            #endregion
         }
 
-
-        private void InitialData()
-        {
-            //get data to list
-            listLoaiDL = dlbus.GetAllLoaiDL();
-            listQuan = dlbus.GetAllQuan();
-
-            // get datalist to UI
-            cbbLoaiDL.ItemsSource = listLoaiDL;
-            cbbQuan.ItemsSource = listQuan;
-        }
-
-        private void ThemDL(object sender, RoutedEventArgs e)
+        private void Add(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Bạn muốn thêm thông tin đã chọn?", "Xác nhận thêm", MessageBoxButton.YesNo);
-
             if (result == MessageBoxResult.Yes)
             {
-                VW = new vwDAILY_LOAIDL_QUAN()
-                {
-                    TENDL = txtTenDL.Text,
-                    DIACHI = txtDiaChi.Text,
-                    DIENTHOAI = txtDienThoai.Text,
-                    NGAYTIEPNHAN = DateTime.Today
-                };
-                QUAN q = cbbQuan.SelectedItem as QUAN;
-                VW.TENQUAN = q.TENQUAN;
-                LOAIDL l = cbbLoaiDL.SelectedItem as LOAIDL;
-                VW.TENLOAI = l.TENLOAI;
-                VW.TINHTRANG = 1;
-
-                if (dlbus.InsertDaiLy(VW.TENDL, VW.DIACHI, VW.DIENTHOAI, q.MAQUAN, l.MALOAI))
+                int? MADL = (new DaiLyBUS()).InsertDaiLy(((State)DataContext).DaiLy);
+                if (MADL != null)
                 {
                     MessageBox.Show("Đã thêm thành công");
-                    this.DialogResult = true;
+                    ReturnValue = MADL;
+                    DialogResult = true;
                 }
                 else
                     MessageBox.Show("Có lỗi xảy ra");
             }
         }
-
-        private void Close(object sender, RoutedEventArgs e)
+        private void Back(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            DialogResult = false;
         }
-
-
     }
 }

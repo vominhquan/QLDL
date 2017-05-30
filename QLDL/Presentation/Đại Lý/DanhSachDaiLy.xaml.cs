@@ -128,30 +128,41 @@ namespace QLDL.Presentation
         #region Thêm xóa sửa Đại Lý (show)
         private void AddDL(object sender, RoutedEventArgs e)
         {
-            using (TiepNhanDaiLy tndl = new TiepNhanDaiLy())
+            TiepNhanDaiLy DaiLyMoi = new TiepNhanDaiLy();
+            DaiLyMoi.ShowDialog();
+            if (DaiLyMoi.ReturnValue != null)
             {
-                tndl.ShowDialog();
-                if (tndl.DialogResult.HasValue && tndl.DialogResult.Value)
-                {
-                    ((State)DataContext).DanhSachDaiLy.Add(tndl.VW);
-                }
+                ((State)DataContext).DanhSachDaiLy.Add(
+                    (new DaiLyBUS()).GetDaiLyByMADL((int)DaiLyMoi.ReturnValue)
+                );
             }
+
+            //using (TiepNhanDaiLy tndl = new TiepNhanDaiLy())
+            //{
+            //    tndl.ShowDialog();
+            //    if (tndl.DialogResult.HasValue && tndl.DialogResult.Value)
+            //    {
+            //        ((State)DataContext).DanhSachDaiLy.Add(tndl.VW);
+            //    }
+            //}
         }
 
         private void XemDL(object sender, RoutedEventArgs e)
         {
-            XemDaiLy xdl = new XemDaiLy(lsvDL.SelectedItem as vwDAILY_LOAIDL_QUAN);
+            XemDaiLy xdl = new XemDaiLy(ListViewDanhSachDaiLy.SelectedItem as vwDAILY_LOAIDL_QUAN);
             xdl.ShowDialog();
         }
 
         private void SuaDL(object sender, RoutedEventArgs e)
         {
-            SuaDaiLy sdl = new SuaDaiLy(lsvDL.SelectedItem as vwDAILY_LOAIDL_QUAN);
-            sdl.ShowDialog();
+            vwDAILY_LOAIDL_QUAN Item = ListViewDanhSachDaiLy.SelectedItem as vwDAILY_LOAIDL_QUAN;
+            (new SuaDaiLy(Item)).ShowDialog();
+            ((State)DataContext).DanhSachDaiLy[ListViewDanhSachDaiLy.SelectedIndex] = 
+                (new DaiLyBUS()).GetDaiLyByMADL(Item.MADL);
         }
         private void XoaDL(object sender, RoutedEventArgs e)
         {
-            dynamic item = lsvDL.SelectedItem;
+            dynamic item = ListViewDanhSachDaiLy.SelectedItem;
             MessageBoxResult result = MessageBox.Show("Bạn muốn xóa đại lý đã chọn?", "Xác nhận xóa", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {

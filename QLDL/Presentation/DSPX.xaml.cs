@@ -45,7 +45,7 @@ namespace QLDL.Presentation
         private void InitialData()
         {
             //get data to list
-            listPhieuXuat = pxbus.getPhieuXuatByDaiLy(Vwdl.MADL);
+            listPhieuXuat = pxbus.GetPhieuXuatByDaiLy(Vwdl.MADL);
 
             //create and apply 2 filters
             CreateFilter();

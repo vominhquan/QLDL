@@ -167,6 +167,14 @@
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
+    <Page Include="Components\TextBlock\TextBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\TextBlock\TextblockResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Presentation\Phiếu Xuất\ChiTietPhieuXuat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -212,6 +220,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Presentation\Đại Lý\TiepNhanDaiLy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\XAML\ComboBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -261,6 +273,14 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\TextBlock\TextBlock.Align.cs" />
+    <Compile Include="Components\TextBlock\TextBlock.Background.cs" />
+    <Compile Include="Components\TextBlock\TextBlock.Icon.cs" />
+    <Compile Include="Components\TextBlock\TextBlock.Size.cs" />
+    <Compile Include="Components\TextBlock\TextBlock.Text.cs" />
+    <Compile Include="Components\TextBlock\TextBlock.xaml.cs">
+      <DependentUpon>TextBlock.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converter\BooleanToVisibility.cs" />
     <Compile Include="Converter\ColorToBrush.cs" />
     <Compile Include="Converter\StringToD.cs" />

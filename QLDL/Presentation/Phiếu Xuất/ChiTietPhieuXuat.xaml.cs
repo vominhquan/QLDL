@@ -32,7 +32,7 @@ namespace QLDL.Presentation
             DataContext = new State()
             {
                 ChiTietPhieuXuat = View,
-                DanhSachChiTietPhieuXuat = (new PhieuXuatBUS()).getCTPXPhieuXuatByMaPhieu(View.MAPHIEU)
+                DanhSachChiTietPhieuXuat = (new PhieuXuatBUS()).GetCTPXPhieuXuatByMaPhieu(View.MAPHIEU)
             };
         }
         private class State : INotifyPropertyChanged

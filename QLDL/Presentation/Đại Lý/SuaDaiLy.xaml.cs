@@ -1,4 +1,5 @@
 ﻿using QLDL.BusinessLogic;
+using QLDL.Class;
 using QLDL.DataAccess;
 using System;
 using System.Collections.Generic;
@@ -22,58 +23,39 @@ namespace QLDL.Presentation
     /// </summary>
     public partial class SuaDaiLy : Window
     {
-
-        //private DaiLyBUS dlbus = new DaiLyBUS();
-        //public ObservableCollection<LOAIDL> listLoaiDL;
-        //public ObservableCollection<QUAN> listQuan;
-        //public Predicate<object> searchFilter;
-        //public Predicate<object> showhide;
-        //public vwDAILY_LOAIDL_QUAN vw { get; set; }
-        private vwDAILY_LOAIDL_QUAN Source;
         public SuaDaiLy(vwDAILY_LOAIDL_QUAN View)
         {
             InitializeComponent();
-            Source = View;
-            DataContext = View;
-            // View;
+            Application.Current.MainWindow.Loaded += DPI.Initialize;
+            DataContext = new State()
+            {
+                DaiLy = View
+            };
         }
         private class State
         {
-            private vwDAILY_LOAIDL_QUAN DaiLy;
-            public vwDAILY_LOAIDL_QUAN DaiLy1 { get => DaiLy; set => DaiLy = value; }
+            #region Đại lý
+            private vwDAILY_LOAIDL_QUAN daiLy;
+            public vwDAILY_LOAIDL_QUAN DaiLy { get => daiLy; set => daiLy = value; }
+            #endregion
+
+            #region List
+            public ObservableCollection<LOAIDL> LoaiDL {
+                get => (new DaiLyBUS()).GetAllLoaiDL();
+            }
+            public ObservableCollection<QUAN> Quan
+            {
+                get => (new DaiLyBUS()).GetAllQuan();
+            }
+            #endregion
         }
-
-        //private void InitialData()
-        //{
-        //    //get data to list
-        //    listLoaiDL = dlbus.GetAllLoaiDL();
-        //    listQuan = dlbus.GetAllQuan();
-
-        //    // get datalist to UI
-        //    cbbLoaiDL.ItemsSource = listLoaiDL;
-        //    cbbQuan.ItemsSource = listQuan;
-
-        //}
 
         private void Save(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Bạn muốn sửa thông tin?", "Xác nhận thêm", MessageBoxButton.YesNo);
-
             if (result == MessageBoxResult.Yes)
             {
-                //new vwDAILY_LOAIDL_QUAN()
-                //{
-                //};
-                //vw.TENDL = txtTenDL.Text;
-                //vw.DIACHI = txtDiaChi.Text;
-                //vw.DIENTHOAI = txtDienThoai.Text;
-                //QUAN q = cbbQuan.SelectedItem as QUAN;
-                //vw.TENQUAN = q.TENQUAN;
-                //LOAIDL l = cbbLoaiDL.SelectedItem as LOAIDL;
-                //vw.TENLOAI = l.TENLOAI;
-                //vw.TINHTRANG = 1;
-
-                if ((new DaiLyBUS()).UpdateDaiLy((vwDAILY_LOAIDL_QUAN)DataContext))
+                if ((new DaiLyBUS()).UpdateDaiLy(((State)DataContext).DaiLy))
                 {
                     MessageBox.Show("Đã sửa thành công");
                     DialogResult = true;
@@ -86,8 +68,7 @@ namespace QLDL.Presentation
         }
         private void Back(object sender, RoutedEventArgs e)
         {
-            DataContext = Source;
-            Close();
+            DialogResult = false;
         }
     }
 }

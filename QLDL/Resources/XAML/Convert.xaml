@@ -3,4 +3,8 @@
                     xmlns:_="clr-namespace:Applications.Converter">
     <_:DateTimeToDate x:Key="DateTimeToDate"/>
     <_:DecimalToD x:Key="DecimalToD"/>
+
+    <_:SizeToTextFontSize x:Key="SizeToTextFontSize"/>
+    <_:SizeToIconFontSize x:Key="SizeToIconFontSize"/>
+
 </ResourceDictionary>

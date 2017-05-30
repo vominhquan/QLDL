@@ -41,7 +41,7 @@ namespace QLDL.Presentation
             DataContext = new State()
             {
                 LocTheoTen = "",
-                DanhSachPhieuXuat = (new PhieuXuatBUS()).getAllPhieuXuat()
+                DanhSachPhieuXuat = (new PhieuXuatBUS()).GetAllPhieuXuat()
             };
             ((State)DataContext).SetFilter();
         }

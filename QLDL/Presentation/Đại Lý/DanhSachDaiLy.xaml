@@ -26,7 +26,7 @@
                         Orientation="Horizontal"
                         DockPanel.Dock="Left">
                         <_:Button 
-                            Icon=""
+                            Icon=""
                             Text="Tiếp nhận đại lý" 
                             Click="AddDL"/>
                         <_:Line Height="50"/>
@@ -62,7 +62,7 @@
             </Border>
         </StackPanel>
         <ListView 
-            Name="lsvDL"
+            Name="ListViewDanhSachDaiLy"
             Margin="20"
             SelectionMode="Single" 
             MouseDoubleClick="XemDL" 

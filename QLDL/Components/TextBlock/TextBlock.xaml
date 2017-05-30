@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="Applications.Components.TextBlock"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             x:Name="UserControlTextBlock">
+    <UserControl.Resources>
+        <ResourceDictionary Source="TextBlockResource.xaml"/>
+    </UserControl.Resources>
+    <UserControl.Template>
+        <ControlTemplate>
+            <Border Background="{Binding Path=Background, ElementName=UserControlTextBlock}">
+                <Border Background="#33000000">
+                    <StackPanel 
+                        
+                        HorizontalAlignment="{Binding 
+                            Path=Align,
+                            ElementName=UserControlTextBlock}"
+                        Orientation="Horizontal">
+                        <TextBlock
+                            Foreground="{StaticResource ButtonForeground}"
+                            FontFamily="{StaticResource IconFont}"
+                            Visibility="{Binding Path=Icon, 
+                                ElementName=UserControlTextBlock,
+                                Converter={StaticResource VisibilityVisible}}"
+                            FontSize="{Binding Path=Size, 
+                                ElementName=UserControlTextBlock, 
+                                Converter={StaticResource SizeToIconFontSize}}"
+                            Width="{Binding Path=Size, ElementName=UserControlTextBlock}"
+                            Height="{Binding Path=Size, ElementName=UserControlButton}"
+                            Text="{Binding Path=Icon, ElementName=UserControlTextBlock}"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            TextAlignment="Center"/>
+                        <Rectangle
+                            Width="{Binding Path=Size,ElementName=UserControlTextBlock, Converter={StaticResource SizeToPadding}}"
+                            Visibility="{Binding Path=Icon, ElementName=UserControlTextBlock, Converter={StaticResource VisibilityCollapsed}}"/>
+                        <TextBlock
+                            Foreground="{StaticResource ButtonForeground}"
+                            FontFamily="{StaticResource TextFont}"
+                            Visibility="{Binding Path=Text, ElementName=UserControlTextBlock, Converter={StaticResource VisibilityVisible}}"
+                            FontSize="{Binding Path=Size, ElementName=UserControlTextBlock, Converter={StaticResource SizeToTextFontSize}}"
+                            Text="{Binding Path=Text, ElementName=UserControlTextBlock}"
+                            Height="{Binding Path=Size, ElementName=UserControlButton}"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                        <Rectangle
+                            Width="{Binding Path=Size,ElementName=UserControlTextBlock, Converter={StaticResource SizeToPadding}}"
+                            Visibility="{Binding Path=Text, ElementName=UserControlTextBlock, Converter={StaticResource VisibilityVisible}}"/>
+                    </StackPanel>
+                </Border>
+            </Border>
+        </ControlTemplate>
+    </UserControl.Template>
+</UserControl>

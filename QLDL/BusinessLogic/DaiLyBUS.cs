@@ -23,7 +23,15 @@ namespace QLDL.BusinessLogic
             }
             return allDL;
         }
-
+        public vwDAILY_LOAIDL_QUAN GetDaiLyByMADL(int madl)
+        {
+            using (QLDLEntities context = new QLDLEntities())
+            {
+                vwDAILY_LOAIDL_QUAN daily = 
+                    context.vwDAILY_LOAIDL_QUAN.FirstOrDefault(dl => dl.MADL == madl);
+                return daily;
+            }
+        }
         public ObservableCollection<LOAIDL> GetAllLoaiDL()
         {
             ObservableCollection<LOAIDL> allLoai = new ObservableCollection<LOAIDL>();
@@ -49,9 +57,10 @@ namespace QLDL.BusinessLogic
             }
             return allQuan;
         }
-
+        
         #region Đại lý CRUD
-        public bool InsertDaiLy(string tendl, string diachi, string dienthoai, int maquan, int loaidl)
+
+        public int? InsertDaiLy(string tendl, string diachi, string dienthoai, int maquan, int loaidl)
         {
             try
             {
@@ -70,23 +79,27 @@ namespace QLDL.BusinessLogic
                     };
                     context.DAILies.Add(dl);
                     context.SaveChanges();
-                    return true;
+                    return dl.MADL;
                 }
             }
             catch
             {
-                return false;
+                return null;
             }
         }
 
-        public bool UpdateDaiLy
-            (int madl, 
-            string tendl, 
-            string diachi, 
-            string dienthoai,
-            int maquan,
-            int loaidl)
+        public int? InsertDaiLy(vwDAILY_LOAIDL_QUAN DaiLy)
         {
+            return InsertDaiLy(
+                DaiLy.TENDL,
+                DaiLy.DIACHI,
+                DaiLy.DIENTHOAI,
+                (int)DaiLy.MAQUAN,
+                (int)DaiLy.LOAIDL
+            );
+        }
+        public bool UpdateDaiLy (int madl, string tendl, string diachi, string dienthoai,int maquan, int loaidl)
+        { 
             try
             {
                 using (QLDLEntities context = new QLDLEntities())

@@ -8,6 +8,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/XAML/Global.xaml"/>
                 <ResourceDictionary Source="Resources/XAML/Convert.xaml"/>
+                <ResourceDictionary Source="Resources/XAML/ComboBox.xaml"/>
                 <ResourceDictionary Source="Resources/XAML/DockPanelScale.xaml"/>
                 <ResourceDictionary Source="Resources/XAML/StackPanel.xaml"/>
                 <ResourceDictionary Source="Resources/XAML/Table.xaml"/>

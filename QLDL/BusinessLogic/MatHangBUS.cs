@@ -10,7 +10,7 @@ namespace QLDL.BusinessLogic
 {
     class MatHangBUS
     {
-        public ObservableCollection<MATHANG> getAllMatHang()
+        public ObservableCollection<MATHANG> GetAllMatHang()
         {
             ObservableCollection<MATHANG> allMH = new ObservableCollection<MATHANG>();
             using (QLDLEntities context = new QLDLEntities())

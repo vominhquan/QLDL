@@ -51,7 +51,7 @@ namespace QLDL.Presentation
         private void InitialData()
         {                        
             // tab xuất hàng
-            listMatHang = mhbus.getAllMatHang();
+            listMatHang = mhbus.GetAllMatHang();
             listCTPX = new ObservableCollection<CTPX>();
             listUserControl = new ObservableCollection<CTPXUserControl>();
             CreateCTPX();
@@ -136,7 +136,7 @@ namespace QLDL.Presentation
                 if (px.CONLAI < 0) px.CONLAI = 0;
                 px.NGUOIXUAT = 1;
                 /////////////////if sotientra !=0 nhảy sang tab thu tiền
-                if (pxbus.insertPhieuXuat(arr_ctpx, px))
+                if (pxbus.InsertPhieuXuat(arr_ctpx, px))
                 {
                     MessageBox.Show("Đã thêm thành công");
                     Vwdl.SONO += px.CONLAI;

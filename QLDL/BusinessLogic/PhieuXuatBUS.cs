@@ -11,7 +11,7 @@ namespace QLDL.BusinessLogic
     class PhieuXuatBUS
     {
 
-        public ObservableCollection<vw_PhieuXuat_NhanVien_DaiLy> getAllPhieuXuat()
+        public ObservableCollection<vw_PhieuXuat_NhanVien_DaiLy> GetAllPhieuXuat()
         {
             ObservableCollection<vw_PhieuXuat_NhanVien_DaiLy> allPX = new ObservableCollection<vw_PhieuXuat_NhanVien_DaiLy>();
             using (QLDLEntities context = new QLDLEntities())
@@ -24,7 +24,7 @@ namespace QLDL.BusinessLogic
             return allPX;
         }
 
-        public ObservableCollection<vw_PhieuXuat_NhanVien_DaiLy> getPhieuXuatByDaiLy(int madl)
+        public ObservableCollection<vw_PhieuXuat_NhanVien_DaiLy> GetPhieuXuatByDaiLy(int madl)
         {
             ObservableCollection<vw_PhieuXuat_NhanVien_DaiLy> PXs = new ObservableCollection<vw_PhieuXuat_NhanVien_DaiLy>();
             using (QLDLEntities context = new QLDLEntities())
@@ -38,7 +38,7 @@ namespace QLDL.BusinessLogic
             return PXs;
         }
 
-        public ObservableCollection<vw_PhieuXuat_CTPX_MatHang> getCTPXPhieuXuatByMaPhieu(int maphieu)
+        public ObservableCollection<vw_PhieuXuat_CTPX_MatHang> GetCTPXPhieuXuatByMaPhieu(int maphieu)
         {
             ObservableCollection<vw_PhieuXuat_CTPX_MatHang> PXs = new ObservableCollection<vw_PhieuXuat_CTPX_MatHang>();
             using (QLDLEntities context = new QLDLEntities())
@@ -53,7 +53,7 @@ namespace QLDL.BusinessLogic
         }
 
 
-        public bool insertPhieuXuat(CTPX[] arr_ctpx,PHIEUXUATHANG pxh)
+        public bool InsertPhieuXuat(CTPX[] arr_ctpx,PHIEUXUATHANG pxh)
         {
             try
             {
@@ -90,7 +90,5 @@ namespace QLDL.BusinessLogic
                 return false;
             }
         }
-
-
     }
 }
