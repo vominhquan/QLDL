@@ -12,13 +12,20 @@
                     <StackPanel 
                         Orientation="Horizontal"
                         DockPanel.Dock="Left">
-                        <_:Button Text="In danh sách"/>
+                        <_:Button 
+                            Icon=""
+                            Click="Back"
+                            DockPanel.Dock="Left"
+                            Text="Quay lại"/>
+                        <_:Button 
+                            Icon=""
+                            Text="In danh sách"/>
                         <_:Line/>
                         <_:Input 
                             Height="50"
                             Width="350"
                             Border="0"
-                            Label="Người xuất"
+                            Label="Người thu"
                             LabelWidth="120"
                             Value="{Binding 
                                 Path=LocTheoTen, 

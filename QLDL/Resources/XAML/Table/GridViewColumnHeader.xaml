@@ -31,12 +31,13 @@
                         </VisualStateManager.VisualStateGroups>
                         <Border 
                             x:Name="HeaderBorder"
+                            Margin="0"
                             BorderThickness="0"
                             Padding="10"
                             Background="{StaticResource TableHeaderBackground}">
                             <ContentPresenter
                                 x:Name="HeaderContent"
-                                Margin="0,0,0,1"
+                                Margin="0,0,0,0"
                                 RecognizesAccessKey="True"
                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"

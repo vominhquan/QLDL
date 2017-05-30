@@ -141,7 +141,12 @@ namespace QLDL.Presentation
         private void XemDL(object sender, RoutedEventArgs e)
         {
             vwDAILY_LOAIDL_QUAN Item = ListViewDanhSachDaiLy.SelectedItem as vwDAILY_LOAIDL_QUAN;
-            (new XemDaiLy(Item)).ShowDialog();
+            XemDaiLy XemDaiLyPresentation = new XemDaiLy(Item);
+            XemDaiLyPresentation.ShowDialog();
+            if(XemDaiLyPresentation.ReturnValue == "Edit")
+            {
+                SuaDL(sender, e);
+            }
         }
 
         private void SuaDL(object sender, RoutedEventArgs e)

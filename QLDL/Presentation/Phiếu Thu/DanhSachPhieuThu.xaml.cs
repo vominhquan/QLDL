@@ -35,6 +35,17 @@ namespace QLDL.Presentation
             };
             ((State)DataContext).SetFilter();
         }
+        public DanhSachPhieuThu(int MADL)
+        {
+            InitializeComponent();
+            Application.Current.MainWindow.Loaded += DPI.Initialize;
+            DataContext = new State()
+            {
+                LocTheoTen = "",
+                DanhSachPhieuThu = (new PhieuThuBUS()).getPhieuThuByDaiLy(MADL)
+            };
+            ((State)DataContext).SetFilter();
+        }
         private class State : INotifyPropertyChanged
         {
             #region Init INotifyPropertyChanged
@@ -78,6 +89,11 @@ namespace QLDL.Presentation
                     return (item as vw_PhieuThu_NhanVien_DaiLy).TENNV.ToLower()
                     .Contains(LocTheoTen.ToLower()) == true ? true : false;
                 });
+                //Filters.AddFilter(delegate (object item)
+                //{
+                //    return (item as vw_PhieuThu_NhanVien_DaiLy).TENNV.ToLower()
+                //    .Contains(LocTheoTen.ToLower()) == true ? true : false;
+                //});
                 #endregion
 
                 ICollectionView CollectionView =
@@ -96,5 +112,13 @@ namespace QLDL.Presentation
         }
 
         #endregion
+
+        #region Button
+        private void Back(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+        #endregion
+
     }
 }

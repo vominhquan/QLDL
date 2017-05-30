@@ -21,6 +21,11 @@
                         DockPanel.Dock="Right"
                         Icon=""
                         Text="In thông tin đại lý"/>
+                    <_:Button 
+                        DockPanel.Dock="Right"
+                        Click="Edit"
+                        Icon=""
+                        Text="Sửa"/>
                     <Rectangle/>
                 </DockPanel>
             </Border>
@@ -103,6 +108,7 @@
                       Grid.Row="10"
                       Grid.Column="2"/>
             <_:Button Icon="" Text="Phiếu thu"
+                      Click="XemPhieuThu"
                       Grid.Row="10"
                       Grid.Column="4"/>
             <_:Button Icon="" Text="Phiếu xuất"

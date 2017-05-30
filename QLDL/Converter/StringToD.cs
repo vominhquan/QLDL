@@ -21,7 +21,7 @@ namespace Applications.Converter
         )
         {
             if (value == null || !(value is Decimal)) {
-                return "Không có giá trị";
+                return "???";
                 // throw new NotImplementedException("Kiểu dữ liệu khi sử dụng Converter không đúng");
             };
             return ((Decimal)value).ToString("0 đ", CultureInfo.GetCultureInfo("vi-VN"));

@@ -25,6 +25,7 @@ namespace QLDL.Presentation
     /// </summary>
     public partial class XemDaiLy : Window
     {
+        public string ReturnValue;
         public XemDaiLy(vwDAILY_LOAIDL_QUAN View)
         {
             InitializeComponent();
@@ -34,6 +35,11 @@ namespace QLDL.Presentation
 
         private void Back(object sender, RoutedEventArgs e)
         {
+            Close();
+        }
+        private void Edit(object sender, RoutedEventArgs e)
+        {
+            ReturnValue = "Edit";
             Close();
         }
 
@@ -51,14 +57,12 @@ namespace QLDL.Presentation
 
         private void XemPhieuXuat(object sender, RoutedEventArgs e)
         {
-            //DSPX px = new DSPX(VW);
-            //px.ShowDialog();
+            (new DanhSachPhieuXuat((DataContext as vwDAILY_LOAIDL_QUAN).MADL)).ShowDialog();
         }
 
         private void XemPhieuThu(object sender, RoutedEventArgs e)
         {
-            //DSPT pt = new DSPT(VW);
-            //pt.ShowDialog();
+            (new DanhSachPhieuThu((DataContext as vwDAILY_LOAIDL_QUAN).MADL)).ShowDialog();
         }
     }
 }

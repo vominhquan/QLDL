@@ -45,6 +45,18 @@ namespace QLDL.Presentation
             };
             ((State)DataContext).SetFilter();
         }
+        public DanhSachPhieuXuat(int MADL)
+        {
+            InitializeComponent();
+            Application.Current.MainWindow.Loaded += DPI.Initialize;
+            // Application.Current.Resources["Scale"] = 
+            DataContext = new State()
+            {
+                LocTheoTen = "",
+                DanhSachPhieuXuat = (new PhieuXuatBUS()).GetPhieuXuatByDaiLy(MADL)
+            };
+            ((State)DataContext).SetFilter();
+        }
         private class State: INotifyPropertyChanged
         {
             #region Init INotifyPropertyChanged

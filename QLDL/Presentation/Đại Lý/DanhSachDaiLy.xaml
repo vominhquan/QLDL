@@ -42,7 +42,7 @@
                             Height="50"
                             Width="250"
                             Border="0"
-                            Label="Lọc"
+                            Label="Tên"
                             LabelWidth="60"
                             Value="{Binding 
                                 Path=LocTheoTen, 
@@ -72,11 +72,19 @@
                 <GridView>
                     <GridViewColumn Header="Tên đại lý" DisplayMemberBinding="{Binding TENDL}"/>
                     <GridViewColumn Header="Loại đại lý" DisplayMemberBinding="{Binding TENLOAI}"/>
-                    <GridViewColumn Header="Số tiền nợ" DisplayMemberBinding="{Binding SONO}"/>
                     <GridViewColumn Header="Điện thoại" DisplayMemberBinding="{Binding DIENTHOAI}"/>
                     <GridViewColumn Header="Địa chỉ" DisplayMemberBinding="{Binding DIACHI}"/>
                     <GridViewColumn Header="Quận" DisplayMemberBinding="{Binding TENQUAN}"/>
-                    <GridViewColumn Header="Ngày tiếp nhận" DisplayMemberBinding="{Binding NGAYTIEPNHAN}"/>
+                    <GridViewColumn Header="Ngày tiếp nhận" DisplayMemberBinding="{Binding NGAYTIEPNHAN, Converter={StaticResource DateTimeToDate}}"/>
+                    <GridViewColumn Header="Số tiền nợ" Width="142">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock 
+                                    Text="{Binding SONO, Converter={StaticResource DecimalToD}}"
+                                    TextAlignment="Right" Width="130"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

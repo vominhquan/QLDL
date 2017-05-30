@@ -187,19 +187,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Presentation\DanhSachPhieuThu.xaml">
+    <Page Include="Presentation\Phiếu Thu\DanhSachPhieuThu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Presentation\Phiếu Xuất\DanhSachPhieuXuat.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Presentation\DSPT.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Presentation\DSPX.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -383,17 +375,11 @@
       <DependentUpon>DanhSachDaiLy.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Presentation\DanhSachPhieuThu.xaml.cs">
+    <Compile Include="Presentation\Phiếu Thu\DanhSachPhieuThu.xaml.cs">
       <DependentUpon>DanhSachPhieuThu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Phiếu Xuất\DanhSachPhieuXuat.xaml.cs">
       <DependentUpon>DanhSachPhieuXuat.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\DSPT.xaml.cs">
-      <DependentUpon>DSPT.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\DSPX.xaml.cs">
-      <DependentUpon>DSPX.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\PhieuThu.xaml.cs">
       <DependentUpon>PhieuThu.xaml</DependentUpon>

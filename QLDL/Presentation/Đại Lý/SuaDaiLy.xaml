@@ -29,14 +29,13 @@
                 LabelWidth="120"
                 Value="{Binding DaiLy.TENDL}"/>
             <Rectangle Height="10"/>
-            <DockPanel Height="40">
+            <DockPanel Height="50">
                 <_:TextBlock 
                     Align="Center"
                     Width="120"
                     DockPanel.Dock="Left"
                     Text="Loại đại lý"/>
                 <ComboBox 
-                    Height="40"
                     ItemsSource="{Binding LoaiDL}"
                     SelectedValue="{Binding DaiLy.LOAIDL}"
                     SelectedValuePath="MALOAI"
@@ -55,14 +54,13 @@
                 LabelWidth="120"
                 Value="{Binding DaiLy.DIACHI}"/>
             <Rectangle Height="10"/>
-            <DockPanel Height="40">
+            <DockPanel Height="50">
                 <_:TextBlock 
                     Align="Center"
                     Width="120"
                     DockPanel.Dock="Left"
                     Text="Quận"/>
                 <ComboBox 
-                    Height="40"
                     ItemsSource="{Binding Quan}"
                     SelectedValue="{Binding DaiLy.MAQUAN}"
                     Text="{Binding DaiLy.TENQUAN}"
