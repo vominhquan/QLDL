@@ -124,9 +124,14 @@ namespace QLDL.Presentation
         }
         private void RemoveSoNoToiDa(object sender, RoutedEventArgs e)
         {
-            LOAIDL item = ((sender as Applications.Components.Button).Tag as LOAIDL);
-            item.SONOTOIDA = null;
-            item.OnPropertyChanged("SONOTOIDA");
+            QUAN item = ((sender as Applications.Components.Button).Tag as QUAN);
+            item.SODLTOIDA = null;
+            item.OnPropertyChanged("SODLTOIDA");
+        }
+
+        private void Back(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
         }
     }
 }

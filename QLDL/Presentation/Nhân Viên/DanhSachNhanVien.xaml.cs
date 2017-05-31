@@ -178,6 +178,11 @@ namespace QLDL.Presentation
         {
             (DataContext as State).LocTheoMaChucVu = 0;
         }
+
+        private void Back(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+        }
         #endregion
 
         ///// <summary>

@@ -23,9 +23,14 @@
                         Orientation="Horizontal"
                         DockPanel.Dock="Left">
                         <_:Button 
+                            Click="Back"
+                            Icon=""
+                            Text="Quay lại"/>
+                        <_:Line/>
+                        <_:Button 
+                            Click="OpenReport"
                             Icon=""
                             Text="Lập báo cáo doanh số "/>
-                        <_:Line/>
                         <_:Input 
                             Height="50"
                             Width="350"

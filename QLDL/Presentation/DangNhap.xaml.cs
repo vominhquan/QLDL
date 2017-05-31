@@ -42,6 +42,7 @@ namespace QLDL.Presentation
             }
             else
             {
+                Application.Current.Resources.Add("MANV", MANV);
                 Menu menu = new Menu()
                 {
                     Owner = this

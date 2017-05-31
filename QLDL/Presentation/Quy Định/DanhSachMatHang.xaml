@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:_="clr-namespace:Applications.Components"
         SnapsToDevicePixels="True"
-        Title="Danh sách loại đại lý" Height="514" Width="811">
+        Title="Danh sách mặt hàng" Height="514" Width="811">
     <DockPanel Name="Main" Style="{StaticResource DockPanelScale}">
         <StackPanel 
             Style="{StaticResource Shadow}"
@@ -14,8 +14,12 @@
                         Orientation="Horizontal"
                         DockPanel.Dock="Left">
                         <_:Button 
+                            Click="Back"
+                            Icon=""
+                            Text="Quay lại"/>
+                        <_:Button 
                             Icon=""
-                            Text="Thêm loại đại lý" 
+                            Text="Thêm mặt hàng" 
                             Click="Add"/>
                     </StackPanel>
                     <StackPanel
@@ -57,32 +61,42 @@
                     <GridViewColumn Header="Tên mặt hàng" Width="250">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <_:Input 
-                                    Width="250"
-                                    Background="Transparent"
-                                    Foreground="White"
-                                    Overlay="#dd227447"
+                                <StackPanel
                                     Margin="-6, 0"
-                                    Height="36"
-                                    Value="{Binding TENHANG}"
-                                    Align="Left"/>
+                                    Width="250"
+                                    Orientation="Horizontal">
+                                    <_:Input 
+                                        Width="249"
+                                        Background="Transparent"
+                                        Foreground="White"
+                                        Overlay="#dd227447"
+                                        Height="36"
+                                        Value="{Binding TENHANG}"
+                                        Align="Left"/>
+                                    <_:Line Width="1" Background="#217346"/>
+                                </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="Đơn giá" Width="250">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <_:Input 
-                                    Width="250"
-                                    Background="Transparent"
-                                    Foreground="White"
-                                    Overlay="#dd227447"
+                                <StackPanel
                                     Margin="-6, 0"
-                                    Height="36"
-                                    Value="{Binding 
-                                        DONGIA, 
-                                        Converter={StaticResource DecimalToD}}"
-                                    Align="Left"/>
+                                    Width="250"
+                                    Orientation="Horizontal">
+                                    <_:Input 
+                                        Width="249"
+                                        Background="Transparent"
+                                        Foreground="White"
+                                        Overlay="#dd227447"
+                                        Height="36"
+                                        Value="{Binding 
+                                            DONGIA, 
+                                            Converter={StaticResource DecimalToD}}"
+                                        Align="Left"/>
+                                    <_:Line Width="1" Background="#217346"/>
+                                </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

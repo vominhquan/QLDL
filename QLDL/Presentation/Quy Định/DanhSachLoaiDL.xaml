@@ -14,6 +14,11 @@
                         Orientation="Horizontal"
                         DockPanel.Dock="Left">
                         <_:Button 
+                            Click="Back"
+                            Text="Quay lại"
+                            Icon=""/>
+                        <_:Line/>
+                        <_:Button 
                             Icon=""
                             Text="Thêm loại đại lý" 
                             Click="Add"/>
@@ -57,28 +62,35 @@
                     <GridViewColumn Header="Tên loại đại lý" Width="250">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <_:Input 
-                                    Width="250"
-                                    Background="Transparent"
-                                    Foreground="White"
-                                    Overlay="#dd227447"
+                                <StackPanel
                                     Margin="-6, 0"
-                                    Height="50"
-                                    Value="{Binding TENLOAI}"
-                                    Align="Left"/>
+                                    Width="250"
+                                    Orientation="Horizontal">
+                                    <_:Input 
+                                        Width="249"
+                                        Background="Transparent"
+                                        Foreground="White"
+                                        Overlay="#dd227447"
+                                        Height="50"
+                                        Value="{Binding TENLOAI}"
+                                        Align="Left"/>
+                                    <_:Line Width="1" Background="#217346"/>
+                                </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="Số nợ tối đa" Width="250">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel Width="250" Orientation="Horizontal">
+                                <StackPanel 
+                                    Margin="-6, 0"
+                                    Width="250" 
+                                    Orientation="Horizontal">
                                     <_:Input 
                                         Width="200"
                                         Background="Transparent"
                                         Foreground="White"
                                         Overlay="#dd227447"
-                                        Margin="-6, 0"
                                         Height="50"
                                         Value="{Binding 
                                             SONOTOIDA, 

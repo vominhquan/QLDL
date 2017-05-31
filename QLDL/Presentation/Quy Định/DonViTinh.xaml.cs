@@ -124,5 +124,10 @@ namespace QLDL.Presentation
             (DataContext as State).DanhSachDonViTinh = new DonViTinhBUS().GetAllDVT();
             MessageBox.Show("Đã làm mới");
         }
+
+        private void Back(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+        }
     }
 }

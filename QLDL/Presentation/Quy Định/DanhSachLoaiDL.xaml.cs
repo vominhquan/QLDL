@@ -129,5 +129,10 @@ namespace QLDL.Presentation
             item.SONOTOIDA = null;
             item.OnPropertyChanged("SONOTOIDA");
         }
+
+        private void Back(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+        }
     }
 }

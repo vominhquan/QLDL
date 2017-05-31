@@ -17,10 +17,10 @@
                             Click="Back"
                             DockPanel.Dock="Left"
                             Text="Quay lại"/>
+                        <_:Line/>
                         <_:Button 
                             Icon=""
                             Text="In danh sách"/>
-                        <_:Line/>
                         <_:Input 
                             Height="50"
                             Width="350"

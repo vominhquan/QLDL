@@ -38,5 +38,10 @@ namespace QLDL.Presentation
         {
             new DanhSachMatHang().ShowDialog();
         }
+
+        private void Back(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+        }
     }
 }

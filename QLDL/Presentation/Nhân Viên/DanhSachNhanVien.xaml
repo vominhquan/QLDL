@@ -25,11 +25,18 @@
                     <ColumnDefinition Width="10"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <_:Button 
-                    Grid.Column="0"
-                    Icon=""
-                    Text="Tiếp nhận nhân viên" 
-                    Click="ThemNhanVien"/>
+                <DockPanel Grid.Column="0">
+                    <_:Button 
+                        Icon=""
+                        Click="Back"
+                        DockPanel.Dock="Left"
+                        Text="Quay lại"/>
+                    <_:Line DockPanel.Dock="Left"/>
+                    <_:Button 
+                        Icon=""
+                        Text="Tiếp nhận nhân viên" 
+                        Click="ThemNhanVien"/>
+                </DockPanel>
                 <DockPanel
                     Grid.Column="2">
                     <_:Button 

@@ -2,6 +2,21 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style x:Key="Shadow" TargetType="{x:Type StackPanel}">
         <Setter Property="Background" Value="{StaticResource BackgroundSolid}"/>
+        <Setter Property="Panel.ZIndex" Value="9"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect 
+                        Color="#FF000000" 
+                        Direction="0" 
+                        ShadowDepth="0" 
+                        Opacity="0.5" 
+                        BlurRadius="8"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ShadowBlock" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="{StaticResource BackgroundSolid}"/>
+        <Setter Property="Panel.ZIndex" Value="9"/>
         <Setter Property="Effect">
             <Setter.Value>
                 <DropShadowEffect 

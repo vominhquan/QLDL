@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -34,21 +35,24 @@ namespace Applications.Components
             Input self = (Input)sender;
             if (self.Type == "Number")
             {
-                double number;
-                if (double.TryParse(self.Value, out number))
+                if (double.TryParse(self.Value, out double number))
                 {
                     if (number > self.Max)
                     {
                         self.Value = self.Max.ToString();
                     }
-                    else if(number < self.Min)
+                    else if (number < self.Min)
                     {
                         self.Value = self.Min.ToString();
                     }
                 }
                 else
                 {
-                    //
+                    string OnlyNumberString = (new Regex(@"[^\d]")).Replace(
+                        self.Value ?? "",
+                        String.Empty
+                    );
+                    self.Value = OnlyNumberString;
                 }
             }
         }

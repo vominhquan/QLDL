@@ -18,27 +18,37 @@
                 </DockPanel>
             </Border>
         </StackPanel>
-        <Border Padding="20">
+        <Border Padding="20" Background="#3f8660">
             <StackPanel VerticalAlignment="Center">
-                <_:Button 
-                    Click="DanhSachDaiLy"
-                    Text="Danh sách đại lý"/>
-                <Rectangle Height="10"/>
-                <_:Button 
-                    Click="DanhSachPhieuXuat"
-                    Text="Danh sách phiếu xuất"/>
-                <Rectangle Height="10"/>
-                <_:Button 
-                    Click="DanhSachPhieuThu"
-                    Text="Danh sách phiếu thu"/>
-                <Rectangle Height="10"/>
-                <_:Button 
-                    Click="DanhSachNhanVien"
-                    Text="Danh sách nhân viên"/>
-                <Rectangle Height="10"/>
-                <_:Button 
-                    Click="ThietLapQuyDinh"
-                    Text="Thiết lập quy định"/>
+                <Border Style="{StaticResource ShadowBlock}">
+                    <_:Button 
+                        Click="DanhSachDaiLy"
+                        Text="Danh sách đại lý"/>
+                </Border>
+                <Rectangle Height="15"/>
+                <Border Style="{StaticResource ShadowBlock}">
+                    <_:Button 
+                        Click="DanhSachPhieuXuat"
+                        Text="Danh sách phiếu xuất"/>
+                </Border>
+                <Rectangle Height="15"/>
+                <Border Style="{StaticResource ShadowBlock}">
+                    <_:Button 
+                        Click="DanhSachPhieuThu"
+                        Text="Danh sách phiếu thu"/>
+                </Border>
+                <Rectangle Height="15"/>
+                <Border Style="{StaticResource ShadowBlock}">
+                    <_:Button 
+                        Click="DanhSachNhanVien"
+                        Text="Danh sách nhân viên"/>
+                </Border>
+                <Rectangle Height="15"/>
+                <Border Style="{StaticResource ShadowBlock}">
+                    <_:Button 
+                        Click="ThietLapQuyDinh"
+                        Text="Thiết lập quy định"/>
+                </Border>
             </StackPanel>
         </Border>
     </DockPanel>

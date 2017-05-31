@@ -46,7 +46,8 @@ namespace Applications.Input
                 }
                 else
                 {
-                    throw new NotImplementedException("Kiểu dữ liệu sai");
+                    ((TextBox)sender).Text = "0";
+                    // throw new NotImplementedException("Kiểu dữ liệu sai");
                 }
             }
             else if(type == "String") {}

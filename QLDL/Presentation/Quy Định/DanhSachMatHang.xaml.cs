@@ -127,5 +127,10 @@ namespace QLDL.Presentation
             (DataContext as State).DanhSachMatHang = new MatHangBUS().GetAllMatHang();
             MessageBox.Show("Đã làm mới");
         }
+
+        private void Back(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+        }
     }
 }

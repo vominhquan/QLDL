@@ -12,26 +12,34 @@
             DockPanel.Dock="Top"
             Style="{StaticResource Shadow}">
             <Border Padding="10">
-                <DockPanel Height="50">
-                    <_:TextBlock Text="Quản lý đại lý"/>
-                    <Rectangle/>
-                </DockPanel>
+                <StackPanel Height="50" Orientation="Horizontal">
+                    <_:Button 
+                        Click="Back"
+                        Icon=""/>
+                    <_:Line/>
+                    <_:TextBlock Text="Thiết lập quy định"/>
+                </StackPanel>
             </Border>
         </StackPanel>
-        <Border Padding="20">
+        <Border Padding="20" Background="#3f8660">
             <StackPanel VerticalAlignment="Center">
-                <_:Button 
-                    Click="DanhSachLoaiDL"
-                    Text="Danh sách loại đại lý"/>
-                <Rectangle Height="10"/>
-                <_:Button 
-                    Click="DanhSachQuan"
-                    Text="Danh sách quận"/>
-                <Rectangle Height="10"/>
-                <_:Button 
-                    Click="DanhSachMatHang"
-                    Text="Danh sách mặt hàng"/>
-                <Rectangle Height="10"/>
+                <Border Style="{StaticResource ShadowBlock}">
+                    <_:Button 
+                        Click="DanhSachLoaiDL"
+                        Text="Danh sách loại đại lý"/>
+                </Border>
+                <Rectangle Height="15"/>
+                <Border Style="{StaticResource ShadowBlock}">
+                    <_:Button 
+                        Click="DanhSachQuan"
+                        Text="Danh sách quận"/>
+                </Border>
+                <Rectangle Height="15"/>
+                <Border Style="{StaticResource ShadowBlock}">
+                    <_:Button 
+                        Click="DanhSachMatHang"
+                        Text="Danh sách mặt hàng"/>
+                </Border>
             </StackPanel>
         </Border>
     </DockPanel>

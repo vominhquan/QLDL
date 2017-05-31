@@ -26,10 +26,16 @@
                         Orientation="Horizontal"
                         DockPanel.Dock="Left">
                         <_:Button 
+                            Icon=""
+                            Click="Back"
+                            DockPanel.Dock="Left"
+                            Text="Quay lại"/>
+                        <_:Line/>
+                        <_:Button 
                             Icon=""
                             Text="Tiếp nhận đại lý" 
                             Click="AddDL"/>
-                        <_:Line Height="50"/>
+                        <_:Line/>
                         <_:Button 
                             Icon=""
                             Text="In danh sách" 

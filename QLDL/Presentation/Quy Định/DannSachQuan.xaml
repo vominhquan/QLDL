@@ -14,8 +14,13 @@
                         Orientation="Horizontal"
                         DockPanel.Dock="Left">
                         <_:Button 
+                            Click="Back"
+                            Icon=""
+                            Text="Quay lại"/>
+                        <_:Line/>
+                        <_:Button 
                             Icon=""
-                            Text="Thêm loại đại lý" 
+                            Text="Thêm quận" 
                             Click="Add"/>
                     </StackPanel>
                     <StackPanel
@@ -57,36 +62,46 @@
                     <GridViewColumn Header="Tên quận" Width="250">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <_:Input 
-                                    Width="250"
-                                    Background="Transparent"
-                                    Foreground="White"
-                                    Overlay="#dd227447"
+                                <StackPanel
+                                    Height="40"
                                     Margin="-6, 0"
-                                    Height="50"
-                                    Value="{Binding TENQUAN}"
-                                    Align="Left"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Số đại lý tối đa" Width="250">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <StackPanel Width="250" Orientation="Horizontal">
+                                    Width="250"
+                                    Orientation="Horizontal">
                                     <_:Input 
-                                        Width="200"
+                                        Width="249"
                                         Background="Transparent"
                                         Foreground="White"
                                         Overlay="#dd227447"
-                                        Margin="-6, 0"
-                                        Height="50"
+                                        Height="40"
+                                        Value="{Binding TENQUAN}"
+                                        Align="Left"/>  
+                                    <_:Line Width="1" Background="#217346"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Số đại lý tối đa" Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel 
+                                    Margin="-6,0"
+                                    Width="200" Orientation="Horizontal">
+                                    <_:Input 
+                                        Width="150"
+                                        Background="Transparent"
+                                        Foreground="White"
+                                        Overlay="#dd227447"
+                                        Height="40"
+                                        Type="Number"
+                                        Min="1"
+                                        Max="500"
                                         Value="{Binding SODLTOIDA}"
                                         Align="Left"/>
                                     <_:Button 
                                         Click="RemoveSoNoToiDa"
                                         Tag="{Binding}"
-                                        Height="50"
-                                        Width="50"
+                                        Height="40"
+                                        Width="40"
                                         Icon=""/>
                                 </StackPanel>
                             </DataTemplate>

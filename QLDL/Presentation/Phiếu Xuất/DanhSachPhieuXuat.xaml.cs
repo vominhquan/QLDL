@@ -123,5 +123,10 @@ namespace QLDL.Presentation
             )).ShowDialog();
         }
         #endregion
+
+        private void Back(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+        }
     }
 }
