@@ -254,3 +254,6 @@ E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ p
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\QLDL.application
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\QLDL.exe
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\QLDL.pdb
+E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\QLDL.csprojResolveAssemblyReference.cache
+E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Nhân Viên\TiepNhanNhanVien.g.cs
+E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Nhân Viên\TiepNhanNhanVien.baml

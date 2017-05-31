@@ -149,6 +149,14 @@ namespace QLDL.Presentation
         private void ThemNhanVien(object sender, RoutedEventArgs e)
         {
 
+            TiepNhanNhanVien NhanVienMoi = new TiepNhanNhanVien();
+            NhanVienMoi.ShowDialog();
+            if (NhanVienMoi.ReturnValue != null)
+            {
+                ((State)DataContext).DanhSachNhanVien.Add(
+                    new NhanVienBUS().GetNhanVienByMANV((int)NhanVienMoi.ReturnValue)
+                );
+            }
         }
 
         private void SuaNV(object sender, RoutedEventArgs e)
@@ -158,7 +166,7 @@ namespace QLDL.Presentation
             int SelectedIndex = ListViewDanhSachNhanVien.SelectedIndex;
             new SuaNhanVien(Item).ShowDialog();
             ((State)DataContext).DanhSachNhanVien[SelectedIndex] =
-            new NhanVienBUS().GetDaiLyByMANV(Item.MANV);
+            new NhanVienBUS().GetNhanVienByMANV(Item.MANV);
         }
 
         private void ToggleMoreFilter(object sender, RoutedEventArgs e)

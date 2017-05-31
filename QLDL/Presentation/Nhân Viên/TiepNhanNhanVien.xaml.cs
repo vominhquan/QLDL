@@ -1,5 +1,9 @@
-﻿using System;
+﻿using QLDL.BusinessLogic;
+using QLDL.Class;
+using QLDL.DataAccess;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,54 +15,69 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using BUS;
 
-namespace GUI
+namespace QLDL.Presentation
 {
     /// <summary>
     /// Interaction logic for TiepNhanNhanVien.xaml
     /// </summary>
     public partial class TiepNhanNhanVien : Window
     {
+        public int? ReturnValue = null;
         public TiepNhanNhanVien()
         {
             InitializeComponent();
-
-            cbxChucvu.ItemsSource = BUSView.Instance.GetAllCV();
-        }
-
-        void Clear()
-        {
-            txbTen.Clear();
-            txbDc.Clear();
-            txbAcc.Clear();
-            txbPass.Clear();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (txbAcc.Text == "" || txbPass.Password == "" || txbTen.Text == "" || txbDc.Text == "" 
-                || dpNgay.SelectedDate == null || cbxChucvu.SelectedValue == null)
+            Application.Current.MainWindow.Loaded += DPI.Initialize;
+            DataContext = new State()
             {
-                MessageBox.Show("Value is empty");
+                NhanVien = new NHANVIEN(),
+                TaiKhoan = new TAIKHOAN()
+            };
+        }
+        private class State
+        {
+            #region Nhân viên
+            private NHANVIEN nhanVien;
+            public NHANVIEN NhanVien { get => nhanVien; set => nhanVien = value; }
+            #endregion
+
+            #region Tài khoản
+            private TAIKHOAN taiKhoan;
+            public TAIKHOAN TaiKhoan { get => taiKhoan; set => taiKhoan = value; }
+            #endregion
+
+            #region List
+            public ObservableCollection<CHUCVU> ChucVu
+            {
+                get => new NhanVienBUS().GetALLChucVu();
             }
-            else
+            #endregion
+        }
+
+        private void Add(object sender, RoutedEventArgs e)
+        {
+
+            MessageBoxResult result = MessageBox.Show("Bạn muốn thêm nhân viên?", "Xác nhận thêm", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
             {
-                if (BUSQLNhanVien.Instance.Insert(txbTen.Text, dpNgay.SelectedDate.Value, txbDc.Text,(int)cbxChucvu.SelectedValue, txbAcc.Text, txbPass.Password))
+                int? MANV = new NhanVienBUS().AddNhanVien_TaiKhoan(
+                    (DataContext as State).NhanVien, (DataContext as State).TaiKhoan
+                );
+                if (MANV != null)
                 {
-                    MessageBox.Show("OK");
-                    Clear();
+                    MessageBox.Show("Thêm thành công");
+                    ReturnValue = MANV;
+                    DialogResult = true;
                 }
                 else
                 {
-                    MessageBox.Show("Fail");
+                    MessageBox.Show("Có lỗi xảy ra");
                 }
             }
         }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Back(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            DialogResult = false;
         }
     }
 }

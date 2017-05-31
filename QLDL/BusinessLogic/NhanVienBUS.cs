@@ -55,13 +55,36 @@ namespace QLDL.BusinessLogic
                 return false;
             }
         }
-        public vwCHUCVU_NHANVIEN_TAIKHOAN GetDaiLyByMANV(int manv)
+        public vwCHUCVU_NHANVIEN_TAIKHOAN GetNhanVienByMANV(int manv)
         {
             using (QLDLEntities context = new QLDLEntities())
             {
                 vwCHUCVU_NHANVIEN_TAIKHOAN nhanvien =
                     context.vwCHUCVU_NHANVIEN_TAIKHOAN.FirstOrDefault(nv => nv.MANV == manv);
                 return nhanvien;
+            }
+        }
+        public int? AddNhanVien_TaiKhoan(NHANVIEN nhanvien, TAIKHOAN taikhoan)
+        {
+            using (QLDLEntities db = new QLDLEntities())
+            {
+                try
+                {
+                    db.NHANVIENs.Add(nhanvien);
+                    db.SaveChanges();
+
+                    taikhoan.MANV = nhanvien.MANV;
+                    db.TAIKHOANs.Add(taikhoan);
+                    db.SaveChanges();
+                    return nhanvien.MANV;
+                    // return ;
+                }
+                catch (Exception e)
+                {
+                    System.Console.Out.WriteLine(e.ToString());
+                    return null;
+                }
+
             }
         }
     }

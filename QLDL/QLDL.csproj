@@ -167,6 +167,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Presentation\Nhân Viên\TiepNhanNhanVien.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Presentation\Phiếu Xuất\ChiTietPhieuXuat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -371,6 +375,9 @@
     </Compile>
     <Compile Include="Presentation\Nhân Viên\SuaNhanVien.xaml.cs">
       <DependentUpon>SuaNhanVien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Nhân Viên\TiepNhanNhanVien.xaml.cs">
+      <DependentUpon>TiepNhanNhanVien.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Phiếu Xuất\ChiTietPhieuXuat.xaml.cs">
       <DependentUpon>ChiTietPhieuXuat.xaml</DependentUpon>
