@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:_="clr-namespace:Applications.Components"
         SnapsToDevicePixels="True"
-        Title="DanhSachDaiLy" Height="514" Width="811">
+        Title="Danh sách đại lý" Height="514" Width="811">
     <Window.Resources>
         <ContextMenu x:Key="ContextMenu">
             <MenuItem Header="Xem thông tin" Click="XemDL"/>

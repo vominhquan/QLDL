@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:_="clr-namespace:Applications.Components"
-        Title="SuaDaiLy" Height="380" Width="500">
+        Title="Sửa đại lý" Height="380" Width="500">
     <DockPanel Name="Main" Style="{StaticResource DockPanelScale}">
         <StackPanel 
             DockPanel.Dock="Top"

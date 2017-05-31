@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:QLDL.Presentation"
         xmlns:_="clr-namespace:Applications.Components"
         mc:Ignorable="d"
-        Title="ThietLapQuyDinh" Height="500" Width="300">
+        Title="Thiết lập quy định" Height="500" Width="300">
     <DockPanel Name="Main" Style="{StaticResource DockPanelScale}">
         <StackPanel 
             DockPanel.Dock="Top"

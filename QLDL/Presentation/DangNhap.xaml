@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:QLDL.Presentation"
         xmlns:_="clr-namespace:Applications.Components"
         mc:Ignorable="d"
-        Title="Login" Height="300" Width="450">
+        Title="Đăng nhập" Height="300" Width="450">
     <DockPanel Name="Main" Style="{StaticResource DockPanelScale}">
         <StackPanel 
             DockPanel.Dock="Top"

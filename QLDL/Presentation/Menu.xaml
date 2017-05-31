@@ -6,7 +6,7 @@
         xmlns:_="clr-namespace:Applications.Components"
         xmlns:local="clr-namespace:QLDL.Presentation"
         mc:Ignorable="d"
-        Title="Menu" Height="500" Width="500">
+        Title="Quản lý đại lý" Height="500" Width="500">
     <DockPanel Name="Main" Style="{StaticResource DockPanelScale}">
         <StackPanel 
             DockPanel.Dock="Top"
