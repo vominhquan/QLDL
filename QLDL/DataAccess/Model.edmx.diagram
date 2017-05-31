@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0626bbc006e24cca9402807f018e5675" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="QLDLModel.CHUCVU" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDLModel.CTPX" Width="1.5" PointX="10.5" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDLModel.DAILY" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDLModel.DVT" Width="1.5" PointX="6" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDLModel.LOAIDL" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDLModel.MATHANG" Width="1.5" PointX="8.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDLModel.NHANVIEN" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDLModel.PHIEUTHUTIEN" Width="1.5" PointX="5.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDLModel.PHIEUXUATHANG" Width="1.5" PointX="8.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDLModel.QUAN" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDLModel.sysdiagram" Width="1.5" PointX="7.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDLModel.TAIKHOAN" Width="1.5" PointX="5.25" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDLModel.vw_PhieuThu_NhanVien_DaiLy" Width="1.5" PointX="9.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDLModel.vw_PhieuXuat_CTPX_MatHang" Width="1.5" PointX="10.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDLModel.vw_PhieuXuat_CTPX_NhanVien_DaiLy" Width="1.5" PointX="0.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDLModel.vw_PhieuXuat_NhanVien_DaiLy" Width="1.5" PointX="11.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDLModel.vwCHUCVU_NHANVIEN_TAIKHOAN" Width="1.5" PointX="11.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDLModel.vwDAILY_LOAIDL_QUAN" Width="1.5" PointX="12.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDLModel.vwDAILY_PHIEUTHUTIEN_NHANVIEN" Width="1.5" PointX="7.75" PointY="14.625" IsExpanded="true" />
+        <AssociationConnector Association="QLDLModel.FK_NHANVIEN_CHUCVU" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDLModel.FK_CTPX_MATHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDLModel.FK_CTPX_PHIEUXUATHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDLModel.FK_DAILY_LOAIDL" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDLModel.FK_DAILY_QUAN" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDLModel.FK_PHIEUTHUTIEN_DAILY" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDLModel.FK_PHIEUXUATHANG_DAILY" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDLModel.FK_MATHANG_DVT" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDLModel.FK_PHIEUTHUTIEN_NHANVIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDLModel.FK_PHIEUXUATHANG_NHANVIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDLModel.FK_TAIKHOAN_NHANVIEN" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

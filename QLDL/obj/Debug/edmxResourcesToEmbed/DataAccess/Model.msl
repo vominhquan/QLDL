@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLDLModelStoreContainer" CdmEntityContainer="QLDLEntities">
+    <EntitySetMapping Name="CHUCVUs">
+      <EntityTypeMapping TypeName="QLDLModel.CHUCVU">
+        <MappingFragment StoreEntitySet="CHUCVU">
+          <ScalarProperty Name="MACHUCVU" ColumnName="MACHUCVU" />
+          <ScalarProperty Name="TENCHUCVU" ColumnName="TENCHUCVU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CTPXes">
+      <EntityTypeMapping TypeName="QLDLModel.CTPX">
+        <MappingFragment StoreEntitySet="CTPX">
+          <ScalarProperty Name="MAPHIEU" ColumnName="MAPHIEU" />
+          <ScalarProperty Name="MAHANG" ColumnName="MAHANG" />
+          <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DAILies">
+      <EntityTypeMapping TypeName="QLDLModel.DAILY">
+        <MappingFragment StoreEntitySet="DAILY">
+          <ScalarProperty Name="MADL" ColumnName="MADL" />
+          <ScalarProperty Name="TENDL" ColumnName="TENDL" />
+          <ScalarProperty Name="LOAIDL" ColumnName="LOAIDL" />
+          <ScalarProperty Name="DIENTHOAI" ColumnName="DIENTHOAI" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="MAQUAN" ColumnName="MAQUAN" />
+          <ScalarProperty Name="NGAYTIEPNHAN" ColumnName="NGAYTIEPNHAN" />
+          <ScalarProperty Name="SONO" ColumnName="SONO" />
+          <ScalarProperty Name="TINHTRANG" ColumnName="TINHTRANG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DVTs">
+      <EntityTypeMapping TypeName="QLDLModel.DVT">
+        <MappingFragment StoreEntitySet="DVT">
+          <ScalarProperty Name="MADVT" ColumnName="MADVT" />
+          <ScalarProperty Name="DVT1" ColumnName="DVT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOAIDLs">
+      <EntityTypeMapping TypeName="QLDLModel.LOAIDL">
+        <MappingFragment StoreEntitySet="LOAIDL">
+          <ScalarProperty Name="MALOAI" ColumnName="MALOAI" />
+          <ScalarProperty Name="TENLOAI" ColumnName="TENLOAI" />
+          <ScalarProperty Name="SONOTOIDA" ColumnName="SONOTOIDA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MATHANGs">
+      <EntityTypeMapping TypeName="QLDLModel.MATHANG">
+        <MappingFragment StoreEntitySet="MATHANG">
+          <ScalarProperty Name="MAHANG" ColumnName="MAHANG" />
+          <ScalarProperty Name="TENHANG" ColumnName="TENHANG" />
+          <ScalarProperty Name="MADVT" ColumnName="MADVT" />
+          <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NHANVIENs">
+      <EntityTypeMapping TypeName="QLDLModel.NHANVIEN">
+        <MappingFragment StoreEntitySet="NHANVIEN">
+          <ScalarProperty Name="MANV" ColumnName="MANV" />
+          <ScalarProperty Name="TENNV" ColumnName="TENNV" />
+          <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="MACHUCVU" ColumnName="MACHUCVU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PHIEUTHUTIENs">
+      <EntityTypeMapping TypeName="QLDLModel.PHIEUTHUTIEN">
+        <MappingFragment StoreEntitySet="PHIEUTHUTIEN">
+          <ScalarProperty Name="MAPHIEU" ColumnName="MAPHIEU" />
+          <ScalarProperty Name="MADL" ColumnName="MADL" />
+          <ScalarProperty Name="NGAYTHUTIEN" ColumnName="NGAYTHUTIEN" />
+          <ScalarProperty Name="SOTIEN" ColumnName="SOTIEN" />
+          <ScalarProperty Name="NGUOITHU" ColumnName="NGUOITHU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PHIEUXUATHANGs">
+      <EntityTypeMapping TypeName="QLDLModel.PHIEUXUATHANG">
+        <MappingFragment StoreEntitySet="PHIEUXUATHANG">
+          <ScalarProperty Name="MAPHIEU" ColumnName="MAPHIEU" />
+          <ScalarProperty Name="MADL" ColumnName="MADL" />
+          <ScalarProperty Name="NGAYLAP" ColumnName="NGAYLAP" />
+          <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+          <ScalarProperty Name="SOTIENTRA" ColumnName="SOTIENTRA" />
+          <ScalarProperty Name="CONLAI" ColumnName="CONLAI" />
+          <ScalarProperty Name="NGUOIXUAT" ColumnName="NGUOIXUAT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QUANs">
+      <EntityTypeMapping TypeName="QLDLModel.QUAN">
+        <MappingFragment StoreEntitySet="QUAN">
+          <ScalarProperty Name="MAQUAN" ColumnName="MAQUAN" />
+          <ScalarProperty Name="TENQUAN" ColumnName="TENQUAN" />
+          <ScalarProperty Name="SODLTOIDA" ColumnName="SODLTOIDA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="QLDLModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TAIKHOANs">
+      <EntityTypeMapping TypeName="QLDLModel.TAIKHOAN">
+        <MappingFragment StoreEntitySet="TAIKHOAN">
+          <ScalarProperty Name="MATK" ColumnName="MATK" />
+          <ScalarProperty Name="TENDANGNHAP" ColumnName="TENDANGNHAP" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="MANV" ColumnName="MANV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_PhieuThu_NhanVien_DaiLy">
+      <EntityTypeMapping TypeName="QLDLModel.vw_PhieuThu_NhanVien_DaiLy">
+        <MappingFragment StoreEntitySet="vw_PhieuThu_NhanVien_DaiLy">
+          <ScalarProperty Name="MAPHIEU" ColumnName="MAPHIEU" />
+          <ScalarProperty Name="MADL" ColumnName="MADL" />
+          <ScalarProperty Name="NGAYTHUTIEN" ColumnName="NGAYTHUTIEN" />
+          <ScalarProperty Name="SOTIEN" ColumnName="SOTIEN" />
+          <ScalarProperty Name="NGUOITHU" ColumnName="NGUOITHU" />
+          <ScalarProperty Name="TENDL" ColumnName="TENDL" />
+          <ScalarProperty Name="TENNV" ColumnName="TENNV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_PhieuXuat_CTPX_MatHang">
+      <EntityTypeMapping TypeName="QLDLModel.vw_PhieuXuat_CTPX_MatHang">
+        <MappingFragment StoreEntitySet="vw_PhieuXuat_CTPX_MatHang">
+          <ScalarProperty Name="MADL" ColumnName="MADL" />
+          <ScalarProperty Name="NGAYLAP" ColumnName="NGAYLAP" />
+          <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+          <ScalarProperty Name="SOTIENTRA" ColumnName="SOTIENTRA" />
+          <ScalarProperty Name="CONLAI" ColumnName="CONLAI" />
+          <ScalarProperty Name="NGUOIXUAT" ColumnName="NGUOIXUAT" />
+          <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+          <ScalarProperty Name="TENHANG" ColumnName="TENHANG" />
+          <ScalarProperty Name="MAPHIEU" ColumnName="MAPHIEU" />
+          <ScalarProperty Name="MAHANG" ColumnName="MAHANG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_PhieuXuat_CTPX_NhanVien_DaiLy">
+      <EntityTypeMapping TypeName="QLDLModel.vw_PhieuXuat_CTPX_NhanVien_DaiLy">
+        <MappingFragment StoreEntitySet="vw_PhieuXuat_CTPX_NhanVien_DaiLy">
+          <ScalarProperty Name="MAPHIEU" ColumnName="MAPHIEU" />
+          <ScalarProperty Name="MADL" ColumnName="MADL" />
+          <ScalarProperty Name="NGAYLAP" ColumnName="NGAYLAP" />
+          <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+          <ScalarProperty Name="SOTIENTRA" ColumnName="SOTIENTRA" />
+          <ScalarProperty Name="CONLAI" ColumnName="CONLAI" />
+          <ScalarProperty Name="NGUOIXUAT" ColumnName="NGUOIXUAT" />
+          <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+          <ScalarProperty Name="TENHANG" ColumnName="TENHANG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_PhieuXuat_NhanVien_DaiLy">
+      <EntityTypeMapping TypeName="QLDLModel.vw_PhieuXuat_NhanVien_DaiLy">
+        <MappingFragment StoreEntitySet="vw_PhieuXuat_NhanVien_DaiLy">
+          <ScalarProperty Name="TENNV" ColumnName="TENNV" />
+          <ScalarProperty Name="TENDL" ColumnName="TENDL" />
+          <ScalarProperty Name="MAPHIEU" ColumnName="MAPHIEU" />
+          <ScalarProperty Name="MADL" ColumnName="MADL" />
+          <ScalarProperty Name="NGAYLAP" ColumnName="NGAYLAP" />
+          <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+          <ScalarProperty Name="SOTIENTRA" ColumnName="SOTIENTRA" />
+          <ScalarProperty Name="CONLAI" ColumnName="CONLAI" />
+          <ScalarProperty Name="NGUOIXUAT" ColumnName="NGUOIXUAT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwCHUCVU_NHANVIEN_TAIKHOAN">
+      <EntityTypeMapping TypeName="QLDLModel.vwCHUCVU_NHANVIEN_TAIKHOAN">
+        <MappingFragment StoreEntitySet="vwCHUCVU-NHANVIEN-TAIKHOAN">
+          <ScalarProperty Name="MACHUCVU" ColumnName="MACHUCVU" />
+          <ScalarProperty Name="TENCHUCVU" ColumnName="TENCHUCVU" />
+          <ScalarProperty Name="MANV" ColumnName="MANV" />
+          <ScalarProperty Name="TENNV" ColumnName="TENNV" />
+          <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="TENDANGNHAP" ColumnName="TENDANGNHAP" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwDAILY_LOAIDL_QUAN">
+      <EntityTypeMapping TypeName="QLDLModel.vwDAILY_LOAIDL_QUAN">
+        <MappingFragment StoreEntitySet="vwDAILY-LOAIDL-QUAN">
+          <ScalarProperty Name="MADL" ColumnName="MADL" />
+          <ScalarProperty Name="TENDL" ColumnName="TENDL" />
+          <ScalarProperty Name="DIENTHOAI" ColumnName="DIENTHOAI" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="NGAYTIEPNHAN" ColumnName="NGAYTIEPNHAN" />
+          <ScalarProperty Name="SONO" ColumnName="SONO" />
+          <ScalarProperty Name="TINHTRANG" ColumnName="TINHTRANG" />
+          <ScalarProperty Name="TENLOAI" ColumnName="TENLOAI" />
+          <ScalarProperty Name="TENQUAN" ColumnName="TENQUAN" />
+          <ScalarProperty Name="MAQUAN" ColumnName="MAQUAN" />
+          <ScalarProperty Name="LOAIDL" ColumnName="LOAIDL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwDAILY_PHIEUTHUTIEN_NHANVIEN">
+      <EntityTypeMapping TypeName="QLDLModel.vwDAILY_PHIEUTHUTIEN_NHANVIEN">
+        <MappingFragment StoreEntitySet="vwDAILY-PHIEUTHUTIEN-NHANVIEN">
+          <ScalarProperty Name="TENDL" ColumnName="TENDL" />
+          <ScalarProperty Name="MAPHIEU" ColumnName="MAPHIEU" />
+          <ScalarProperty Name="MADL" ColumnName="MADL" />
+          <ScalarProperty Name="NGAYTHUTIEN" ColumnName="NGAYTHUTIEN" />
+          <ScalarProperty Name="SOTIEN" ColumnName="SOTIEN" />
+          <ScalarProperty Name="NGUOITHU" ColumnName="NGUOITHU" />
+          <ScalarProperty Name="TENNV" ColumnName="TENNV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="QLDLModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="QLDLModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="QLDLModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="QLDLModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLDLModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="QLDLModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLDLModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="QLDLModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="QLDLModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

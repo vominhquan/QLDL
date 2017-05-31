@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLDLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CTPX">
+    <Key>
+      <PropertyRef Name="MAPHIEU" />
+      <PropertyRef Name="MAHANG" />
+    </Key>
+    <Property Name="MAPHIEU" Type="Int32" Nullable="false" />
+    <Property Name="MAHANG" Type="Int32" Nullable="false" />
+    <Property Name="SOLUONG" Type="Int32" />
+    <NavigationProperty Name="MATHANG" Relationship="Self.FK_CTPX_MATHANG" FromRole="CTPX" ToRole="MATHANG" />
+    <NavigationProperty Name="PHIEUXUATHANG" Relationship="Self.FK_CTPX_PHIEUXUATHANG" FromRole="CTPX" ToRole="PHIEUXUATHANG" />
+  </EntityType>
+  <EntityType Name="DAILY">
+    <Key>
+      <PropertyRef Name="MADL" />
+    </Key>
+    <Property Name="MADL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENDL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LOAIDL" Type="Int32" />
+    <Property Name="DIENTHOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAQUAN" Type="Int32" />
+    <Property Name="NGAYTIEPNHAN" Type="DateTime" Precision="0" />
+    <Property Name="SONO" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TINHTRANG" Type="Int32" />
+    <NavigationProperty Name="LOAIDL1" Relationship="Self.FK_DAILY_LOAIDL" FromRole="DAILY" ToRole="LOAIDL" />
+    <NavigationProperty Name="QUAN" Relationship="Self.FK_DAILY_QUAN" FromRole="DAILY" ToRole="QUAN" />
+    <NavigationProperty Name="PHIEUTHUTIENs" Relationship="Self.FK_PHIEUTHUTIEN_DAILY" FromRole="DAILY" ToRole="PHIEUTHUTIEN" />
+    <NavigationProperty Name="PHIEUXUATHANGs" Relationship="Self.FK_PHIEUXUATHANG_DAILY" FromRole="DAILY" ToRole="PHIEUXUATHANG" />
+  </EntityType>
+  <EntityType Name="DVT">
+    <Key>
+      <PropertyRef Name="MADVT" />
+    </Key>
+    <Property Name="MADVT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DVT1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MATHANGs" Relationship="Self.FK_MATHANG_DVT" FromRole="DVT" ToRole="MATHANG" />
+  </EntityType>
+  <EntityType Name="LOAIDL">
+    <Key>
+      <PropertyRef Name="MALOAI" />
+    </Key>
+    <Property Name="MALOAI" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENLOAI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SONOTOIDA" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="DAILies" Relationship="Self.FK_DAILY_LOAIDL" FromRole="LOAIDL" ToRole="DAILY" />
+  </EntityType>
+  <EntityType Name="MATHANG">
+    <Key>
+      <PropertyRef Name="MAHANG" />
+    </Key>
+    <Property Name="MAHANG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENHANG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MADVT" Type="Int32" />
+    <Property Name="DONGIA" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="CTPXes" Relationship="Self.FK_CTPX_MATHANG" FromRole="MATHANG" ToRole="CTPX" />
+    <NavigationProperty Name="DVT" Relationship="Self.FK_MATHANG_DVT" FromRole="MATHANG" ToRole="DVT" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="MANV" />
+    </Key>
+    <Property Name="MANV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENNV" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="NGAYSINH" Type="DateTime" Precision="0" />
+    <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PHIEUTHUTIENs" Relationship="Self.FK_PHIEUTHUTIEN_NHANVIEN" FromRole="NHANVIEN" ToRole="PHIEUTHUTIEN" />
+    <NavigationProperty Name="PHIEUXUATHANGs" Relationship="Self.FK_PHIEUXUATHANG_NHANVIEN" FromRole="NHANVIEN" ToRole="PHIEUXUATHANG" />
+    <NavigationProperty Name="TAIKHOANs" Relationship="Self.FK_TAIKHOAN_NHANVIEN" FromRole="NHANVIEN" ToRole="TAIKHOAN" />
+  </EntityType>
+  <EntityType Name="PHIEUTHUTIEN">
+    <Key>
+      <PropertyRef Name="MAPHIEU" />
+    </Key>
+    <Property Name="MAPHIEU" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MADL" Type="Int32" />
+    <Property Name="NGAYTHUTIEN" Type="DateTime" Precision="0" />
+    <Property Name="SOTIEN" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="NGUOITHU" Type="Int32" />
+    <NavigationProperty Name="DAILY" Relationship="Self.FK_PHIEUTHUTIEN_DAILY" FromRole="PHIEUTHUTIEN" ToRole="DAILY" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_PHIEUTHUTIEN_NHANVIEN" FromRole="PHIEUTHUTIEN" ToRole="NHANVIEN" />
+  </EntityType>
+  <EntityType Name="PHIEUXUATHANG">
+    <Key>
+      <PropertyRef Name="MAPHIEU" />
+    </Key>
+    <Property Name="MAPHIEU" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MADL" Type="Int32" />
+    <Property Name="NGAYLAP" Type="DateTime" Precision="0" />
+    <Property Name="TONGTIEN" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SOTIENTRA" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CONLAI" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="NGUOIXUAT" Type="Int32" />
+    <NavigationProperty Name="CTPXes" Relationship="Self.FK_CTPX_PHIEUXUATHANG" FromRole="PHIEUXUATHANG" ToRole="CTPX" />
+    <NavigationProperty Name="DAILY" Relationship="Self.FK_PHIEUXUATHANG_DAILY" FromRole="PHIEUXUATHANG" ToRole="DAILY" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_PHIEUXUATHANG_NHANVIEN" FromRole="PHIEUXUATHANG" ToRole="NHANVIEN" />
+  </EntityType>
+  <EntityType Name="QUAN">
+    <Key>
+      <PropertyRef Name="MAQUAN" />
+    </Key>
+    <Property Name="MAQUAN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENQUAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SODLTOIDA" Type="Int32" />
+    <NavigationProperty Name="DAILies" Relationship="Self.FK_DAILY_QUAN" FromRole="QUAN" ToRole="DAILY" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TAIKHOAN">
+    <Key>
+      <PropertyRef Name="MATK" />
+    </Key>
+    <Property Name="MATK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENDANGNHAP" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="PASSWORD" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MANV" Type="Int32" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_TAIKHOAN_NHANVIEN" FromRole="TAIKHOAN" ToRole="NHANVIEN" />
+  </EntityType>
+  <EntityType Name="vw_PhieuThu_NhanVien_DaiLy">
+    <Key>
+      <PropertyRef Name="MAPHIEU" />
+    </Key>
+    <Property Name="MAPHIEU" Type="Int32" Nullable="false" />
+    <Property Name="MADL" Type="Int32" />
+    <Property Name="NGAYTHUTIEN" Type="DateTime" Precision="0" />
+    <Property Name="SOTIEN" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="NGUOITHU" Type="Int32" />
+    <Property Name="TENDL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TENNV" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vw_PhieuXuat_CTPX_MatHang">
+    <Key>
+      <PropertyRef Name="MAPHIEU" />
+      <PropertyRef Name="MAHANG" />
+    </Key>
+    <Property Name="MADL" Type="Int32" />
+    <Property Name="NGAYLAP" Type="DateTime" Precision="0" />
+    <Property Name="TONGTIEN" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SOTIENTRA" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CONLAI" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="NGUOIXUAT" Type="Int32" />
+    <Property Name="SOLUONG" Type="Int32" />
+    <Property Name="TENHANG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAPHIEU" Type="Int32" Nullable="false" />
+    <Property Name="MAHANG" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_PhieuXuat_CTPX_NhanVien_DaiLy">
+    <Key>
+      <PropertyRef Name="MAPHIEU" />
+    </Key>
+    <Property Name="MAPHIEU" Type="Int32" Nullable="false" />
+    <Property Name="MADL" Type="Int32" />
+    <Property Name="NGAYLAP" Type="DateTime" Precision="0" />
+    <Property Name="TONGTIEN" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SOTIENTRA" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CONLAI" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="NGUOIXUAT" Type="Int32" />
+    <Property Name="SOLUONG" Type="Int32" />
+    <Property Name="TENHANG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vw_PhieuXuat_NhanVien_DaiLy">
+    <Key>
+      <PropertyRef Name="MAPHIEU" />
+    </Key>
+    <Property Name="TENNV" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Expr1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAPHIEU" Type="Int32" Nullable="false" />
+    <Property Name="MADL" Type="Int32" />
+    <Property Name="NGAYLAP" Type="DateTime" Precision="0" />
+    <Property Name="TONGTIEN" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SOTIENTRA" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CONLAI" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="NGUOIXUAT" Type="Int32" />
+  </EntityType>
+  <EntityType Name="vwDAILY_LOAIDL_QUAN">
+    <Key>
+      <PropertyRef Name="MADL" />
+    </Key>
+    <Property Name="MADL" Type="Int32" Nullable="false" />
+    <Property Name="TENDL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIENTHOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYTIEPNHAN" Type="DateTime" Precision="0" />
+    <Property Name="SONO" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TINHTRANG" Type="Int32" />
+    <Property Name="TENLOAI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TENQUAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAQUAN" Type="Int32" />
+    <Property Name="LOAIDL" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_CTPX_MATHANG">
+    <End Role="MATHANG" Type="Self.MATHANG" Multiplicity="1" />
+    <End Role="CTPX" Type="Self.CTPX" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MATHANG">
+        <PropertyRef Name="MAHANG" />
+      </Principal>
+      <Dependent Role="CTPX">
+        <PropertyRef Name="MAHANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTPX_PHIEUXUATHANG">
+    <End Role="PHIEUXUATHANG" Type="Self.PHIEUXUATHANG" Multiplicity="1" />
+    <End Role="CTPX" Type="Self.CTPX" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHIEUXUATHANG">
+        <PropertyRef Name="MAPHIEU" />
+      </Principal>
+      <Dependent Role="CTPX">
+        <PropertyRef Name="MAPHIEU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DAILY_LOAIDL">
+    <End Role="LOAIDL" Type="Self.LOAIDL" Multiplicity="0..1" />
+    <End Role="DAILY" Type="Self.DAILY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAIDL">
+        <PropertyRef Name="MALOAI" />
+      </Principal>
+      <Dependent Role="DAILY">
+        <PropertyRef Name="LOAIDL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DAILY_QUAN">
+    <End Role="QUAN" Type="Self.QUAN" Multiplicity="0..1" />
+    <End Role="DAILY" Type="Self.DAILY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QUAN">
+        <PropertyRef Name="MAQUAN" />
+      </Principal>
+      <Dependent Role="DAILY">
+        <PropertyRef Name="MAQUAN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PHIEUTHUTIEN_DAILY">
+    <End Role="DAILY" Type="Self.DAILY" Multiplicity="0..1" />
+    <End Role="PHIEUTHUTIEN" Type="Self.PHIEUTHUTIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DAILY">
+        <PropertyRef Name="MADL" />
+      </Principal>
+      <Dependent Role="PHIEUTHUTIEN">
+        <PropertyRef Name="MADL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PHIEUXUATHANG_DAILY">
+    <End Role="DAILY" Type="Self.DAILY" Multiplicity="0..1" />
+    <End Role="PHIEUXUATHANG" Type="Self.PHIEUXUATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DAILY">
+        <PropertyRef Name="MADL" />
+      </Principal>
+      <Dependent Role="PHIEUXUATHANG">
+        <PropertyRef Name="MADL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MATHANG_DVT">
+    <End Role="DVT" Type="Self.DVT" Multiplicity="0..1" />
+    <End Role="MATHANG" Type="Self.MATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DVT">
+        <PropertyRef Name="MADVT" />
+      </Principal>
+      <Dependent Role="MATHANG">
+        <PropertyRef Name="MADVT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PHIEUTHUTIEN_NHANVIEN">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+    <End Role="PHIEUTHUTIEN" Type="Self.PHIEUTHUTIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="MANV" />
+      </Principal>
+      <Dependent Role="PHIEUTHUTIEN">
+        <PropertyRef Name="NGUOITHU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PHIEUXUATHANG_NHANVIEN">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+    <End Role="PHIEUXUATHANG" Type="Self.PHIEUXUATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="MANV" />
+      </Principal>
+      <Dependent Role="PHIEUXUATHANG">
+        <PropertyRef Name="NGUOIXUAT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TAIKHOAN_NHANVIEN">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+    <End Role="TAIKHOAN" Type="Self.TAIKHOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="MANV" />
+      </Principal>
+      <Dependent Role="TAIKHOAN">
+        <PropertyRef Name="MANV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLDLEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CTPXes" EntityType="Self.CTPX" />
+    <EntitySet Name="DAILies" EntityType="Self.DAILY" />
+    <EntitySet Name="DVTs" EntityType="Self.DVT" />
+    <EntitySet Name="LOAIDLs" EntityType="Self.LOAIDL" />
+    <EntitySet Name="MATHANGs" EntityType="Self.MATHANG" />
+    <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
+    <EntitySet Name="PHIEUTHUTIENs" EntityType="Self.PHIEUTHUTIEN" />
+    <EntitySet Name="PHIEUXUATHANGs" EntityType="Self.PHIEUXUATHANG" />
+    <EntitySet Name="QUANs" EntityType="Self.QUAN" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TAIKHOANs" EntityType="Self.TAIKHOAN" />
+    <EntitySet Name="vw_PhieuThu_NhanVien_DaiLy" EntityType="Self.vw_PhieuThu_NhanVien_DaiLy" />
+    <EntitySet Name="vw_PhieuXuat_CTPX_MatHang" EntityType="Self.vw_PhieuXuat_CTPX_MatHang" />
+    <EntitySet Name="vw_PhieuXuat_CTPX_NhanVien_DaiLy" EntityType="Self.vw_PhieuXuat_CTPX_NhanVien_DaiLy" />
+    <EntitySet Name="vw_PhieuXuat_NhanVien_DaiLy" EntityType="Self.vw_PhieuXuat_NhanVien_DaiLy" />
+    <EntitySet Name="vwDAILY_LOAIDL_QUAN" EntityType="Self.vwDAILY_LOAIDL_QUAN" />
+    <AssociationSet Name="FK_CTPX_MATHANG" Association="Self.FK_CTPX_MATHANG">
+      <End Role="MATHANG" EntitySet="MATHANGs" />
+      <End Role="CTPX" EntitySet="CTPXes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTPX_PHIEUXUATHANG" Association="Self.FK_CTPX_PHIEUXUATHANG">
+      <End Role="PHIEUXUATHANG" EntitySet="PHIEUXUATHANGs" />
+      <End Role="CTPX" EntitySet="CTPXes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DAILY_LOAIDL" Association="Self.FK_DAILY_LOAIDL">
+      <End Role="LOAIDL" EntitySet="LOAIDLs" />
+      <End Role="DAILY" EntitySet="DAILies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DAILY_QUAN" Association="Self.FK_DAILY_QUAN">
+      <End Role="QUAN" EntitySet="QUANs" />
+      <End Role="DAILY" EntitySet="DAILies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PHIEUTHUTIEN_DAILY" Association="Self.FK_PHIEUTHUTIEN_DAILY">
+      <End Role="DAILY" EntitySet="DAILies" />
+      <End Role="PHIEUTHUTIEN" EntitySet="PHIEUTHUTIENs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PHIEUXUATHANG_DAILY" Association="Self.FK_PHIEUXUATHANG_DAILY">
+      <End Role="DAILY" EntitySet="DAILies" />
+      <End Role="PHIEUXUATHANG" EntitySet="PHIEUXUATHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MATHANG_DVT" Association="Self.FK_MATHANG_DVT">
+      <End Role="DVT" EntitySet="DVTs" />
+      <End Role="MATHANG" EntitySet="MATHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PHIEUTHUTIEN_NHANVIEN" Association="Self.FK_PHIEUTHUTIEN_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="PHIEUTHUTIEN" EntitySet="PHIEUTHUTIENs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PHIEUXUATHANG_NHANVIEN" Association="Self.FK_PHIEUXUATHANG_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="PHIEUXUATHANG" EntitySet="PHIEUXUATHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TAIKHOAN_NHANVIEN" Association="Self.FK_TAIKHOAN_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="TAIKHOAN" EntitySet="TAIKHOANs" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(QLDLModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(QLDLModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>
