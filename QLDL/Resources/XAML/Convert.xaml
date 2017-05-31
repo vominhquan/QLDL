@@ -7,4 +7,7 @@
     <_:SizeToTextFontSize x:Key="SizeToTextFontSize"/>
     <_:SizeToIconFontSize x:Key="SizeToIconFontSize"/>
 
+    <_:SolidColorBrushOrDefault x:Key="SolidColorBrushOrDefault"/>
+
+    <_:ItemsSource x:Key="ItemsSource"/>
 </ResourceDictionary>

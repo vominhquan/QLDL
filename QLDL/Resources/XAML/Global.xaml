@@ -6,10 +6,12 @@
     <_:Double x:Key="FontSize">20</_:Double>
         
     <Color x:Key="Background">#ff227447</Color>
-    <SolidColorBrush x:Key="BackgroundSolid" Color="{StaticResource Background}"/>
     <Color x:Key="Foreground">#ffffffff</Color>
+    <Color x:Key="Overlay">#22000000</Color>
+    <SolidColorBrush x:Key="BackgroundSolid" Color="{StaticResource Background}"/>
     <SolidColorBrush x:Key="ForegroundSolid" Color="#ffffff"/>
-    
+    <SolidColorBrush x:Key="OverlaySolid" Color="#22000000"/>
+
     <SolidColorBrush x:Key="WhiteLineColor" Color="#88ffffff"/>
     <SolidColorBrush x:Key="GrayLineColor" Color="#7c8086"/>
     <SolidColorBrush x:Key="BlueLineColor" Color="#007acc"/>

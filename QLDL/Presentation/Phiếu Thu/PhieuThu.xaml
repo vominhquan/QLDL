@@ -16,7 +16,7 @@
                         Text="Quay lại"/>
                     <_:Button 
                         Icon=""
-                        Click="Add"
+                        Click="LapPhieuThu"
                         DockPanel.Dock="Right"
                         Text="Lập phiếu thu"/>
                     <Rectangle/>

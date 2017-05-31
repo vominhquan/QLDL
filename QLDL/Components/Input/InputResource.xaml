@@ -7,7 +7,7 @@
     <convert:VisibilityVisible x:Key="VisibilityVisible"/>
     <convert:SizeToPaddingText x:Key="SizeToPaddingText"/>
     <Style TargetType="{x:Type TextBox}" x:Key="InputStyle">
-        <Setter Property="Foreground" Value="{StaticResource ForegroundSolid}"/>
+        <Setter Property="Foreground" Value="{Binding Path=Foreground, ElementName=UserControlInput}"/>
         <Setter Property="BorderBrush" Value="{StaticResource GrayLineColor}"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Template">
@@ -19,7 +19,7 @@
                         BorderBrush="{TemplateBinding BorderBrush}">
                         <Border Background="{TemplateBinding Background}">
                             <DockPanel
-                                Background="#22000000"
+                                Background="{Binding Path=Overlay, ElementName=UserControlInput}"
                                 Height="{Binding 
                                     Path=Height,
                                     ElementName=UserControlInput
@@ -40,7 +40,7 @@
                                         VerticalAlignment="Center"
                                         HorizontalAlignment="Center"
                                         FontFamily="{StaticResource TextFont}"
-                                        Foreground="{StaticResource ForegroundSolid}"
+                                        Foreground="{TemplateBinding Foreground}"
                                         Text="{Binding 
                                             Path=Label,
                                             ElementName=UserControlInput
@@ -66,8 +66,8 @@
                                     }"
                                     FontFamily="{StaticResource TextFont}"
                                     Background="Transparent"
-                                    Foreground="{StaticResource ForegroundSolid}"
-                                    CaretBrush="{StaticResource ForegroundSolid}"
+                                    Foreground="{TemplateBinding Foreground}"
+                                    CaretBrush="{TemplateBinding Foreground}"
                                     DataContext="{Binding
                                         Path=Type,
                                         ElementName=UserControlInput

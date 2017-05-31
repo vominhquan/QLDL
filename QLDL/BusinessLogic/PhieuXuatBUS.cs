@@ -53,7 +53,7 @@ namespace QLDL.BusinessLogic
         }
 
 
-        public bool InsertPhieuXuat(CTPX[] arr_ctpx,PHIEUXUATHANG pxh)
+        public bool InsertPhieuXuat(CTPX[] arr_ctpx, PHIEUXUATHANG pxh)
         {
             try
             {

@@ -37,7 +37,7 @@
         </StackPanel>
         <ListView
             Name="ListViewDanhSachPhieuThu"
-            Margin="20"
+            Margin="10"
             SelectionMode="Single"
             ItemContainerStyle="{StaticResource ListViewItem}"
             ItemsSource="{Binding Path=DanhSachPhieuThu}">

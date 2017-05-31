@@ -11,21 +11,21 @@ namespace Applications.Components
 {
     public partial class Input : UserControl
     {
-        // Background
-        private static readonly DependencyProperty _Background =
+        // Overlay
+        private static readonly DependencyProperty _Overlay =
             DependencyProperty.Register
             (
-                "Background",
+                "Overlay",
                 typeof(SolidColorBrush),
                 typeof(Input),
                 new FrameworkPropertyMetadata(
-                    (SolidColorBrush) Application.Current.Resources["BackgroundSolid"]
+                    (SolidColorBrush)Application.Current.Resources["OverlaySolid"]
                 )
             );
-        public new SolidColorBrush Background
+        public SolidColorBrush Overlay
         {
-            get { return (SolidColorBrush)GetValue(_Background); }
-            set { SetValue(_Background, value); }
+            get { return (SolidColorBrush)GetValue(_Overlay); }
+            set { SetValue(_Overlay, value); }
         }
     }
 }

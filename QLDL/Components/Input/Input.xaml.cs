@@ -30,5 +30,12 @@ namespace Applications.Components
         {
             Height = ActualHeight - (Border.Top + Border.Bottom);
         }
+
+        public event TextChangedEventHandler TextChanged;
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextChanged?.Invoke(this, e);
+        }
     }
 }

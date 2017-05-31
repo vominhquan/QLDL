@@ -11,21 +11,21 @@ namespace Applications.Components
 {
     public partial class Input : UserControl
     {
-        // Background
-        private static readonly DependencyProperty _Background =
+        // Foreground
+        private static readonly DependencyProperty _Foreground =
             DependencyProperty.Register
             (
-                "Background",
+                "Foreground",
                 typeof(SolidColorBrush),
                 typeof(Input),
                 new FrameworkPropertyMetadata(
-                    (SolidColorBrush) Application.Current.Resources["BackgroundSolid"]
+                    (SolidColorBrush)Application.Current.Resources["ForegroundSolid"]
                 )
             );
-        public new SolidColorBrush Background
+        public new SolidColorBrush Foreground
         {
-            get { return (SolidColorBrush)GetValue(_Background); }
-            set { SetValue(_Background, value); }
+            get { return (SolidColorBrush)GetValue(_Foreground); }
+            set { SetValue(_Foreground, value); }
         }
     }
 }

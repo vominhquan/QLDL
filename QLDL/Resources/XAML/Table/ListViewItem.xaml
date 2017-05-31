@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style TargetType="ListViewItem" x:Key="ListViewItem">
+        <!--<EventSetter Event="PreviewGotKeyboardFocus" Handler="SelectCurrentItem"/>-->
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Setter Property="Background" Value="Transparent"/>
@@ -48,7 +49,7 @@
                                 VerticalAlignment="Center" 
                                 HorizontalAlignment="Center" 
                                 Content="{TemplateBinding Content}"
-                                Width="Auto" 
+                                Width="Auto"
                                 Margin="0">
                             </GridViewRowPresenter>
                         </StackPanel>
@@ -57,9 +58,13 @@
             </Setter.Value>
         </Setter>
         <Style.Triggers>
+                <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                    <Setter Property="IsSelected" Value="True"/>
+                </Trigger>
             <DataTrigger Binding="{Binding TINHTRANG}" Value="0">
                 <Setter Property="Background" Value="#33e74c3c"/>
             </DataTrigger>
         </Style.Triggers>
+        
     </Style>
 </ResourceDictionary>

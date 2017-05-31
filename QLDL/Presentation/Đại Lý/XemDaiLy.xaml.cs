@@ -69,15 +69,18 @@ namespace QLDL.Presentation
 
         private void XuatHang(object sender, RoutedEventArgs e)
         {
-            //new PhieuXuat((DataContext as State).DaiLy)
-            //    .ShowDialog();
+            if ((bool)new PhieuXuat((DataContext as State).DaiLy).ShowDialog()) {
+                ((State)DataContext).DaiLy =
+                    new DaiLyBUS().GetDaiLyByMADL(((State)DataContext).DaiLy.MADL);
+            };
         }
 
         private void ThuTien(object sender, RoutedEventArgs e)
         {
             if ((bool)new PhieuThu(((State)DataContext).DaiLy).ShowDialog())
             {
-                ((State)DataContext).DaiLy = new DaiLyBUS().GetDaiLyByMADL(((State)DataContext).DaiLy.MADL);
+                ((State)DataContext).DaiLy = 
+                    new DaiLyBUS().GetDaiLyByMADL(((State)DataContext).DaiLy.MADL);
             };
         }
 

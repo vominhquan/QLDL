@@ -101,6 +101,8 @@
     <Compile Include="Components\Button\Button.xaml.cs">
       <DependentUpon>Button.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Components\Input\Input.Overlay.cs" />
+    <Compile Include="Components\Input\Input.Foreground.cs" />
     <Compile Include="Components\Input\Input.Background.cs" />
     <Compile Include="Components\Input\Input.Align.cs" />
     <Compile Include="Components\Input\Input.Border.cs" />
@@ -158,10 +160,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Presentation\Phiếu Xuất\ChiTietPhieuXuat.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Presentation\Phiếu Xuất\CTPXUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -256,7 +254,9 @@
       <DependentUpon>TextBlock.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converter\BooleanToVisibility.cs" />
+    <Compile Include="Converter\ItemsSource.cs" />
     <Compile Include="Converter\ColorToBrush.cs" />
+    <Compile Include="Converter\SolidColorBrushOrDefault.cs" />
     <Compile Include="Converter\StringToD.cs" />
     <Compile Include="Converter\DateTimeToDate.cs" />
     <Compile Include="Converter\ColorToHex.cs" />
@@ -352,9 +352,6 @@
     </Compile>
     <Compile Include="Presentation\Phiếu Xuất\ChiTietPhieuXuat.xaml.cs">
       <DependentUpon>ChiTietPhieuXuat.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Phiếu Xuất\CTPXUserControl.xaml.cs">
-      <DependentUpon>CTPXUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Phiếu Xuất\PhieuXuat.xaml.cs">
       <DependentUpon>PhieuXuat.xaml</DependentUpon>

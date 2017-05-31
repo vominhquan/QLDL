@@ -53,7 +53,7 @@ namespace QLDL.Presentation
             #endregion
         }
 
-        private void Add(object sender, RoutedEventArgs e)
+        private void LapPhieuThu(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Khi đã tạo không thể thay đổi", "Xác nhận", MessageBoxButton.YesNo);
 

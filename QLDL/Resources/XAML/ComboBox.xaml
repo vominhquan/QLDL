@@ -6,7 +6,12 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ComboBox}">
-                    <Grid Name="Grid" Background="{StaticResource BackgroundSolid}">
+                    <Grid 
+                        Name="Grid" 
+                        Background="{TemplateBinding 
+                            Background, 
+                            Converter={StaticResource SolidColorBrushOrDefault},
+                            ConverterParameter={StaticResource BackgroundSolid}}">
                         <ToggleButton x:Name="ToggleButton"
                             Grid.Column="2"
                             Focusable="false"
@@ -49,7 +54,7 @@
                                                     Text="" 
                                                     TextAlignment="Center"
                                                     FontFamily="{StaticResource IconFont}"
-                                                    Foreground="{StaticResource ForegroundSolid}"
+                                                    Foreground="{TemplateBinding Foreground}"
                                                     Height="{Binding 
                                                         Path=ActualHeight,
                                                         ElementName=Grid, 
@@ -79,7 +84,10 @@
                             HorizontalAlignment="Left"
                             TextBlock.FontSize="{Binding Path=ActualHeight, ElementName=Grid, Converter={StaticResource SizeToTextFontSize}}"
                             TextBlock.FontFamily="{StaticResource TextFont}"
-                            TextBlock.Foreground="{StaticResource ForegroundSolid}">
+                            TextBlock.Foreground="{TemplateBinding 
+                                Foreground, 
+                                Converter={StaticResource SolidColorBrushOrDefault},
+                                ConverterParameter={StaticResource ForegroundSolid}}">
                         </ContentPresenter>
                         <Popup 
                             x:Name="Popup"

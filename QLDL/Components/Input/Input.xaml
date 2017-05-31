@@ -11,7 +11,9 @@
     </UserControl.Resources>
     <UserControl.Template>
         <ControlTemplate>
-            <TextBox Style="{StaticResource ResourceKey=InputStyle}" Focusable="False" IsTabStop="False"/>
+            <TextBox 
+                TextChanged="TextBox_TextChanged"
+                Style="{StaticResource ResourceKey=InputStyle}" Focusable="False" IsTabStop="False"/>
         </ControlTemplate>        
     </UserControl.Template>
 </UserControl>
