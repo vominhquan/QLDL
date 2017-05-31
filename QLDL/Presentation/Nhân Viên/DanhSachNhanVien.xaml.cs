@@ -153,7 +153,12 @@ namespace QLDL.Presentation
 
         private void SuaNV(object sender, RoutedEventArgs e)
         {
-
+            vwCHUCVU_NHANVIEN_TAIKHOAN Item = ListViewDanhSachNhanVien.SelectedItem as vwCHUCVU_NHANVIEN_TAIKHOAN;
+            if (Item == null) return;
+            int SelectedIndex = ListViewDanhSachNhanVien.SelectedIndex;
+            new SuaNhanVien(Item).ShowDialog();
+            ((State)DataContext).DanhSachNhanVien[SelectedIndex] =
+            new NhanVienBUS().GetDaiLyByMANV(Item.MANV);
         }
 
         private void ToggleMoreFilter(object sender, RoutedEventArgs e)

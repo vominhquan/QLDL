@@ -209,8 +209,10 @@ E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ p
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Components\Line\Line.g.cs
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Components\TextBlock\TextBlock.g.cs
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Menu.g.cs
+E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Nhân Viên\SuaNhanVien.g.cs
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Phiếu Xuất\ChiTietPhieuXuat.g.cs
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Phiếu Xuất\PhieuXuat.g.cs
+E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Nhân Viên\DanhSachNhanVien.g.cs
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Đại Lý\DanhSachDaiLy.g.cs
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Phiếu Thu\DanhSachPhieuThu.g.cs
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Phiếu Xuất\DanhSachPhieuXuat.g.cs
@@ -229,8 +231,10 @@ E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ p
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Components\Line\Line.baml
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Components\TextBlock\TextblockResource.baml
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Menu.baml
+E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Nhân Viên\SuaNhanVien.baml
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Phiếu Xuất\ChiTietPhieuXuat.baml
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Phiếu Xuất\PhieuXuat.baml
+E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Nhân Viên\DanhSachNhanVien.baml
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Đại Lý\DanhSachDaiLy.baml
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Phiếu Thu\DanhSachPhieuThu.baml
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Phiếu Xuất\DanhSachPhieuXuat.baml
@@ -240,6 +244,7 @@ E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ p
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Đại Lý\TiepNhanDaiLy.baml
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Resources\XAML\ComboBox.baml
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Resources\XAML\Convert.baml
+E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Resources\XAML\Date.baml
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Resources\XAML\Table\Separator.baml
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\QLDL.g.resources
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\QLDL.Properties.Resources.resources
@@ -249,5 +254,3 @@ E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ p
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\QLDL.application
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\QLDL.exe
 E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\QLDL.pdb
-E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Nhân viên\DanhSachNhanVien.g.cs
-E:\Google Drive\[Học tập]\[UIT]\[2016 - 2017] HK2\Nhập môn công nghệ phần mềm\Code\QLDL\QLDL\obj\Debug\Presentation\Nhân viên\DanhSachNhanVien.baml

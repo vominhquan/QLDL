@@ -4,9 +4,8 @@
         xmlns:_="clr-namespace:Applications.Components"
         SnapsToDevicePixels="True"
         Title="Danh sách nhân viên" Height="514" Width="811">
-    <!--<Window.Resources>
+    <Window.Resources>
         <ContextMenu x:Key="ContextMenu">
-            <MenuItem Header="Xem thông tin" Click="XemNV"/>
             <MenuItem Header="Cập nhật thông tin" Click="SuaNV"/>
         </ContextMenu>
         <Style x:Key="ListViewItemResources" 
@@ -14,7 +13,7 @@
                BasedOn="{StaticResource ListViewItem}">
             <Setter Property="ContextMenu" Value="{StaticResource ContextMenu}"/>
         </Style>
-    </Window.Resources>-->
+    </Window.Resources>
     <DockPanel Name="Main" Style="{StaticResource DockPanelScale}">
         <StackPanel 
             Style="{StaticResource Shadow}"
@@ -85,10 +84,12 @@
                 </Grid>
             </Border>
         </StackPanel>
-            <!--ItemContainerStyle="{StaticResource ListViewItemResources}"-->
         <ListView 
+            Name="ListViewDanhSachNhanVien"
             Margin="10"
             SelectionMode="Single" 
+            MouseDoubleClick="SuaNV"
+            ItemContainerStyle="{StaticResource ListViewItemResources}"
             ItemsSource="{Binding Path=DanhSachNhanVien}">
             <ListView.View>
                 <GridView>

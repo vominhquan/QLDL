@@ -34,5 +34,35 @@ namespace QLDL.BusinessLogic
             }
             return allChucVu;
         }
+        public bool UpdateNhanVien(vwCHUCVU_NHANVIEN_TAIKHOAN nhanvien)
+        {
+            try
+            {
+                using (QLDLEntities db = new QLDLEntities())
+                {
+                    NHANVIEN nv = db.NHANVIENs.Where(p => p.MANV == nhanvien.MANV).Single();
+                    nv.TENNV = nhanvien.TENNV.Length > 10 ? nhanvien.TENNV.Substring(0, 10) : nhanvien.TENNV;
+                    nv.NGAYSINH = nhanvien.NGAYSINH;
+                    nv.DIACHI = nhanvien.DIACHI.Length > 50 ? nhanvien.DIACHI.Substring(0,50) : nhanvien.DIACHI; //.Substring(0, 50);
+                    nv.MACHUCVU = nhanvien.MACHUCVU;
+                    db.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                System.Console.Out.WriteLine(e.ToString());
+                return false;
+            }
+        }
+        public vwCHUCVU_NHANVIEN_TAIKHOAN GetDaiLyByMANV(int manv)
+        {
+            using (QLDLEntities context = new QLDLEntities())
+            {
+                vwCHUCVU_NHANVIEN_TAIKHOAN nhanvien =
+                    context.vwCHUCVU_NHANVIEN_TAIKHOAN.FirstOrDefault(nv => nv.MANV == manv);
+                return nhanvien;
+            }
+        }
     }
 }

@@ -27,5 +27,13 @@
 
     <FontFamily x:Key="TextFont">\Resources\Fonts\#Segoe UI Light</FontFamily>
     <FontFamily x:Key="IconFont">aicon</FontFamily>
+
+    <VisualBrush x:Key="MyVisualBrush" TileMode="Tile" Viewport="0,0,15,15" ViewportUnits="Absolute" Viewbox="0,0,15,15" ViewboxUnits="Absolute">
+        <VisualBrush.Visual>
+            <Grid Background="#227447">
+                <Path Data="M 0 15 L 15 0" Stroke="White"/>
+            </Grid>
+        </VisualBrush.Visual>
+    </VisualBrush>
     <!--<FontFamily x:Key="IconFont">\Resources\Fonts\#aicon</FontFamily>-->
 </ResourceDictionary>

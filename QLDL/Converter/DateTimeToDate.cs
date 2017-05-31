@@ -20,10 +20,14 @@ namespace Applications.Converter
             System.Globalization.CultureInfo culture
         )
         {
-            if (value == null || !(value is DateTime)) {
+            if(value == null)
+            {
+                return "01/01/2000";
+            }
+            else if (!(value is DateTime)) {
                 throw new NotImplementedException("Kiểu dữ liệu khi sử dụng Converter không đúng");
             };
-            return ((DateTime)value).ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
+            return ((DateTime)value).ToString("dd/MM/yyyy", new CultureInfo("vi-VN"));
         }
         public object ConvertBack(
             object value, 
@@ -32,7 +36,11 @@ namespace Applications.Converter
             System.Globalization.CultureInfo culture
         )
         {
-            throw new NotImplementedException("Không cho phép convert nguược");
+            if (value == null || !(value is string))
+            {
+                throw new NotImplementedException("Kiểu dữ liệu khi sử dụng Converter không đúng");
+            };
+            return value;
         }
     }
 }

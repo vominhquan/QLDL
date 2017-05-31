@@ -98,7 +98,7 @@ namespace QLDL.BusinessLogic
                 (int)DaiLy.LOAIDL
             );
         }
-        public bool UpdateDaiLy (int madl, string tendl, string diachi, string dienthoai,int maquan, int loaidl)
+        public bool UpdateDaiLy(int madl, string tendl, string diachi, string dienthoai,int maquan, int loaidl)
         { 
             try
             {

@@ -149,9 +149,9 @@ namespace QLDL.Presentation
         public void SuaDL()
         {
             vwDAILY_LOAIDL_QUAN Item = ListViewDanhSachDaiLy.SelectedItem as vwDAILY_LOAIDL_QUAN;
+            if (Item == null) return;
             int SelectedIndex = ListViewDanhSachDaiLy.SelectedIndex;
             new SuaDaiLy(Item).ShowDialog();
-
             ((State)DataContext).DanhSachDaiLy[SelectedIndex] =
                 new DaiLyBUS().GetDaiLyByMADL(Item.MADL);
         }

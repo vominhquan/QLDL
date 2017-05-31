@@ -1,0 +1,77 @@
+﻿<Window x:Class="QLDL.Presentation.SuaNhanVien"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:_="clr-namespace:Applications.Components"
+        Title="Sửa thông tin nhân viên" Height="400" Width="350">
+    <DockPanel Name="Main" Style="{StaticResource DockPanelScale}">
+        <StackPanel 
+            DockPanel.Dock="Top"
+            Style="{StaticResource Shadow}">
+            <Border Padding="10">
+                <DockPanel>
+                    <_:Button 
+                        Icon=""
+                        Click="Back"
+                        DockPanel.Dock="Left"
+                        Text="Quay lại"/>
+                    <_:Button 
+                        Icon=""
+                        Click="Save"
+                        DockPanel.Dock="Right"
+                        Text="Lưu"/>
+                    <Rectangle/>
+                </DockPanel>
+            </Border>
+        </StackPanel>
+        <Grid 
+            Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <_:Input 
+                Grid.Row="0"
+                Label="Họ tên"
+                LabelWidth="150"
+                Value="{Binding NhanVien.TENNV}"/>
+            <DockPanel Grid.Row="2">
+                <_:TextBlock
+                    Text="Chức vụ"
+                    DockPanel.Dock="Left"
+                    Background="#195836"
+                    Align="Center"
+                    Width="150"/>
+                <ComboBox 
+                    ItemsSource="{Binding ChucVu}"
+                    SelectedValue="{Binding NhanVien.MACHUCVU}"
+                    SelectedValuePath="MACHUCVU"
+                    DisplayMemberPath="TENCHUCVU"
+                    IsSynchronizedWithCurrentItem="True"/>
+            </DockPanel>
+            <DockPanel Grid.Row="4">
+                <_:TextBlock
+                    Text="Ngày sinh"
+                    DockPanel.Dock="Left"
+                    Background="#195836"
+                    Align="Center"
+                    Width="150"/>
+                <DatePicker 
+                    Height="50"/>
+            </DockPanel>
+            <_:Input 
+                Grid.Row="6"
+                Label="Địa chỉ"
+                LabelWidth="150"
+                Value="{Binding NhanVien.DIACHI}"/>
+        </Grid>
+    </DockPanel>
+</Window>
