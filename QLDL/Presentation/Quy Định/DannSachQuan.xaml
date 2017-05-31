@@ -54,7 +54,7 @@
             ItemsSource="{Binding Path=DanhSachQuan}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Tên loại đại lý" Width="250">
+                    <GridViewColumn Header="Tên quận" Width="250">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <_:Input 
@@ -64,12 +64,12 @@
                                     Overlay="#dd227447"
                                     Margin="-6, 0"
                                     Height="50"
-                                    Value="{Binding TENLOAI}"
+                                    Value="{Binding TENQUAN}"
                                     Align="Left"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Số nợ tối đa" Width="250">
+                    <GridViewColumn Header="Số đại lý tối đa" Width="250">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Width="250" Orientation="Horizontal">
@@ -80,9 +80,7 @@
                                         Overlay="#dd227447"
                                         Margin="-6, 0"
                                         Height="50"
-                                        Value="{Binding 
-                                            SONOTOIDA, 
-                                            Converter={StaticResource DecimalToD}}"
+                                        Value="{Binding SODLTOIDA}"
                                         Align="Left"/>
                                     <_:Button 
                                         Click="RemoveSoNoToiDa"

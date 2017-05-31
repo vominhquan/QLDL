@@ -32,7 +32,7 @@ namespace QLDL.Presentation
             DataContext = new State()
             {
                 LocTheoTen = "",
-                DanhSachQuan = new DaiLyBUS().GetAllLoaiDL()
+                DanhSachQuan = new DaiLyBUS().GetAllQuan()
             };
             ((State)DataContext).SetFilter();
             
@@ -67,8 +67,8 @@ namespace QLDL.Presentation
             #endregion
 
             #region (ObservableCollection) Danh sách quận
-            private ObservableCollection<LOAIDL> danhSachQuan;
-            public ObservableCollection<LOAIDL> DanhSachQuan
+            private ObservableCollection<QUAN> danhSachQuan;
+            public ObservableCollection<QUAN> DanhSachQuan
             {
                 get => danhSachQuan;
                 set => danhSachQuan = value;
@@ -82,7 +82,7 @@ namespace QLDL.Presentation
                 GroupFilter Filters = new GroupFilter();
                 Filters.AddFilter(delegate (object item)
                 {
-                    return (item as LOAIDL).TENLOAI.ToLower()
+                    return (item as QUAN).TENQUAN.ToLower()
                     .Contains(LocTheoTen.ToLower()) == true;
                 });
                 #endregion
@@ -96,31 +96,30 @@ namespace QLDL.Presentation
         private void Add(object sender, RoutedEventArgs e)
         {
             (DataContext as State).DanhSachQuan.Add(
-                new LOAIDL()
+                new QUAN()
                 {
-                    MALOAI = 0,
-                    TENLOAI = "Loại đại lý mới",
-                    SONOTOIDA = null
+                    MAQUAN = 0,
+                    TENQUAN = "Quận ?",
+                    SODLTOIDA = null
                 }
             );
         }
         private void Save(object sender, RoutedEventArgs e)
         {
-            if (new LoaiDLBUS().InsertOrUpdateLoaiDL(
+            if (new QuanBUS().InsertOrUpdateQuan(
                 (DataContext as State).DanhSachQuan.ToArray()
             ))
             {
-                MessageBox.Show("Lưu thành công");
+                MessageBox.Show("lưu thành công");
             }
             else
             {
-                MessageBox.Show("Có lỗi xảy ra");
-
+                MessageBox.Show("có lỗi xảy ra");
             }
         }
         private void Refresh(object sender, RoutedEventArgs e)
         {
-            (DataContext as State).DanhSachQuan = new DaiLyBUS().GetAllLoaiDL();
+            (DataContext as State).DanhSachQuan = new DaiLyBUS().GetAllQuan();
             MessageBox.Show("Đã làm mới");
         }
         private void RemoveSoNoToiDa(object sender, RoutedEventArgs e)
