@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using QLDL.DataAccess;
 
-namespace BUS
+namespace QLDL.BusinessLogic
 {
     public class BUSThietLapQuyDinh
     {

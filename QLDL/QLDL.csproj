@@ -89,6 +89,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="BusinessLogic\MatHangBUS.cs" />
+    <Compile Include="BusinessLogic\NhanVienBUS.cs" />
     <Compile Include="BusinessLogic\PhieuThuBUS.cs" />
     <Compile Include="BusinessLogic\PhieuXuatBUS.cs" />
     <Compile Include="Class\GroupFilter.cs" />
@@ -169,6 +170,10 @@
     <Page Include="Presentation\Phiếu Xuất\PhieuXuat.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Presentation\Nhân Viên\DanhSachNhanVien.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Presentation\Đại Lý\DanhSachDaiLy.xaml">
       <SubType>Designer</SubType>
@@ -361,6 +366,9 @@
     </Compile>
     <Compile Include="Presentation\Phiếu Xuất\PhieuXuat.xaml.cs">
       <DependentUpon>PhieuXuat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Nhân Viên\DanhSachNhanVien.xaml.cs">
+      <DependentUpon>DanhSachNhanVien.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Đại Lý\DanhSachDaiLy.xaml.cs">
       <DependentUpon>DanhSachDaiLy.xaml</DependentUpon>

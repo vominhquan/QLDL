@@ -94,12 +94,12 @@ namespace QLDL.Presentation
                 Filters.AddFilter(delegate (object item)
                 {
                     return (item as vw_PhieuThu_NhanVien_DaiLy).TENNV.ToLower()
-                    .Contains(LocTheoTen.ToLower()) == true ? true : false;
+                    .Contains(LocTheoTen.ToLower()) == true;
                 });
                 //Filters.AddFilter(delegate (object item)
                 //{
                 //    return (item as vw_PhieuThu_NhanVien_DaiLy).TENNV.ToLower()
-                //    .Contains(LocTheoTen.ToLower()) == true ? true : false;
+                //    .Contains(LocTheoTen.ToLower()) == true;
                 //});
                 #endregion
 

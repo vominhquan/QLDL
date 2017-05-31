@@ -31,6 +31,10 @@
                 <_:Button 
                     Click="DanhSachPhieuThu"
                     Text="Danh sách phiếu thu"/>
+                <Rectangle Height="10"/>
+                <_:Button 
+                    Click="DanhSachNhanVien"
+                    Text="Danh sách nhân viên"/>
             </StackPanel>
         </Border>
     </DockPanel>

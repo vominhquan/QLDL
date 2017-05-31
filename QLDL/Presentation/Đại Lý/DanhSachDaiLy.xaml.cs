@@ -32,7 +32,7 @@ namespace QLDL.Presentation
             {
                 LocTheoTen = "",
                 HienThiDLNgungHoatDong = true,
-                DanhSachDaiLy = (new DaiLyBUS()).GetAllDaiLy()
+                DanhSachDaiLy = new DaiLyBUS().GetAllDaiLy()
             };
             ((State)DataContext).SetFilter();
         }
@@ -54,8 +54,7 @@ namespace QLDL.Presentation
                 set
                 {
                     locTheoTen = value;
-                    if (DanhSachDaiLy != null)
-                        CollectionViewSource.GetDefaultView(DanhSachDaiLy).Refresh();
+                    SetFilter();
                 }
             }
             #endregion
@@ -92,7 +91,7 @@ namespace QLDL.Presentation
                 Filters.AddFilter(delegate (object item)
                 {
                     return (item as vwDAILY_LOAIDL_QUAN).TENDL.ToLower()
-                    .Contains(LocTheoTen.ToLower()) == true ? true : false;
+                    .Contains(LocTheoTen.ToLower()) == true;
                 });
                 Filters.AddFilter(delegate (object item)
                 {
@@ -132,7 +131,7 @@ namespace QLDL.Presentation
             if (DaiLyMoi.ReturnValue != null)
             {
                 ((State)DataContext).DanhSachDaiLy.Add(
-                    (new DaiLyBUS()).GetDaiLyByMADL((int)DaiLyMoi.ReturnValue)
+                    new DaiLyBUS().GetDaiLyByMADL((int)DaiLyMoi.ReturnValue)
                 );
             }
         }
@@ -144,7 +143,7 @@ namespace QLDL.Presentation
             new XemDaiLy(Item).ShowDialog();
             
             ((State)DataContext).DanhSachDaiLy[SelectedIndex] =
-                (new DaiLyBUS()).GetDaiLyByMADL(Item.MADL);
+                new DaiLyBUS().GetDaiLyByMADL(Item.MADL);
         }
 
         public void SuaDL()
@@ -154,7 +153,7 @@ namespace QLDL.Presentation
             new SuaDaiLy(Item).ShowDialog();
 
             ((State)DataContext).DanhSachDaiLy[SelectedIndex] =
-                (new DaiLyBUS()).GetDaiLyByMADL(Item.MADL);
+                new DaiLyBUS().GetDaiLyByMADL(Item.MADL);
         }
         private void SuaDL(object sender, RoutedEventArgs e)
         {
@@ -166,7 +165,7 @@ namespace QLDL.Presentation
             MessageBoxResult result = MessageBox.Show("Bạn muốn xóa đại lý đã chọn?", "Xác nhận xóa", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
-                if ((new DaiLyBUS()).RemoveDaiLy(item.MADL))
+                if (new DaiLyBUS().RemoveDaiLy(item.MADL))
                 {
                     MessageBox.Show("Đã xóa thành công");
                     ((State)DataContext).DanhSachDaiLy.Remove(item);

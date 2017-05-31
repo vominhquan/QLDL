@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using QLDL.DataAccess;
 
-namespace BUS
+namespace QLDL.BusinessLogic
 {
     public class BUSQLNhanVien
     {

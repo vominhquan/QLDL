@@ -54,7 +54,7 @@
                                                     Text="" 
                                                     TextAlignment="Center"
                                                     FontFamily="{StaticResource IconFont}"
-                                                    Foreground="{TemplateBinding Foreground}"
+                                                    Foreground="{StaticResource ForegroundSolid}"
                                                     Height="{Binding 
                                                         Path=ActualHeight,
                                                         ElementName=Grid, 
@@ -84,10 +84,7 @@
                             HorizontalAlignment="Left"
                             TextBlock.FontSize="{Binding Path=ActualHeight, ElementName=Grid, Converter={StaticResource SizeToTextFontSize}}"
                             TextBlock.FontFamily="{StaticResource TextFont}"
-                            TextBlock.Foreground="{TemplateBinding 
-                                Foreground, 
-                                Converter={StaticResource SolidColorBrushOrDefault},
-                                ConverterParameter={StaticResource ForegroundSolid}}">
+                            TextBlock.Foreground="{StaticResource ForegroundSolid}">
                         </ContentPresenter>
                         <Popup 
                             x:Name="Popup"

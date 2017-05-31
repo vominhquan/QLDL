@@ -43,11 +43,11 @@ namespace QLDL.Presentation
             #region List
             public ObservableCollection<LOAIDL> LoaiDL
             {
-                get => (new DaiLyBUS()).GetAllLoaiDL();
+                get => new DaiLyBUS().GetAllLoaiDL();
             }
             public ObservableCollection<QUAN> Quan
             {
-                get => (new DaiLyBUS()).GetAllQuan();
+                get => new DaiLyBUS().GetAllQuan();
             }
             #endregion
         }
@@ -57,7 +57,7 @@ namespace QLDL.Presentation
             MessageBoxResult result = MessageBox.Show("Bạn muốn thêm thông tin đã chọn?", "Xác nhận thêm", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
-                int? MADL = (new DaiLyBUS()).InsertDaiLy(((State)DataContext).DaiLy);
+                int? MADL = new DaiLyBUS().InsertDaiLy(((State)DataContext).DaiLy);
                 if (MADL != null)
                 {
                     MessageBox.Show("Đã thêm thành công");
