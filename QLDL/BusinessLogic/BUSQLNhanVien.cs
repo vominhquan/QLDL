@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAODLL;
 using System.Collections.ObjectModel;
 using QLDL.DataAccess;
 
@@ -46,12 +45,14 @@ namespace BUS
         {
             if (ten == "" || dc == "" || macv == 0)
                 return false;
-            NHANVIEN nv = new NHANVIEN();
-            nv.MANV = manv;
-            nv.TENNV = ten;
-            nv.NGAYSINH = ngay;
-            nv.DIACHI = dc;
-            nv.MACHUCVU = macv;
+            NHANVIEN nv = new NHANVIEN()
+            {
+                MANV = manv,
+                TENNV = ten,
+                NGAYSINH = ngay,
+                DIACHI = dc,
+                MACHUCVU = macv
+            };
             return DAOQLNhanVien.Instance.Update(nv);
         }
 

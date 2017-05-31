@@ -10,7 +10,7 @@ namespace QLDL.BusinessLogic
 {
     class PhieuThuBUS
     {
-        public ObservableCollection<vw_PhieuThu_NhanVien_DaiLy> getAllPhieuThu()
+        public ObservableCollection<vw_PhieuThu_NhanVien_DaiLy> GetAllPhieuThu()
         {
             ObservableCollection<vw_PhieuThu_NhanVien_DaiLy> allPX = new ObservableCollection<vw_PhieuThu_NhanVien_DaiLy>();
             using (QLDLEntities context = new QLDLEntities())
@@ -23,7 +23,7 @@ namespace QLDL.BusinessLogic
             return allPX;
         }
 
-        public ObservableCollection<vw_PhieuThu_NhanVien_DaiLy> getPhieuThuByDaiLy(int madl)
+        public ObservableCollection<vw_PhieuThu_NhanVien_DaiLy> GetPhieuThuByDaiLy(int madl)
         {
             ObservableCollection<vw_PhieuThu_NhanVien_DaiLy> PXs = new ObservableCollection<vw_PhieuThu_NhanVien_DaiLy>();
             using (QLDLEntities context = new QLDLEntities())
@@ -37,7 +37,7 @@ namespace QLDL.BusinessLogic
             return PXs;
         }
 
-        public bool insertPhieuThu(PHIEUTHUTIEN pt)
+        public bool InsertPhieuThu(PHIEUTHUTIEN pt)
         {
             try
             {

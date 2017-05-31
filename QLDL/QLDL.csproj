@@ -80,6 +80,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BusinessLogic\BUSQLNhanVien.cs" />
+    <Compile Include="BusinessLogic\BUSThietLapQuyDinh.cs" />
+    <Compile Include="BusinessLogic\BUSView.cs" />
     <Compile Include="BusinessLogic\DaiLyBUS.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -278,6 +281,9 @@
     <Compile Include="DataAccess\DAILY.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataAccess\DAOQLNhanVien.cs" />
+    <Compile Include="DataAccess\DAOThietLapQuyDinh.cs" />
+    <Compile Include="DataAccess\DAOView.cs" />
     <Compile Include="DataAccess\DVT.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

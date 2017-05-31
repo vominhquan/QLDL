@@ -32,7 +32,7 @@ namespace QLDL.Presentation
             {
                 DaiLyWidth = double.NaN,
                 LocTheoTen = "",
-                DanhSachPhieuThu = (new PhieuThuBUS()).getAllPhieuThu()
+                DanhSachPhieuThu = (new PhieuThuBUS()).GetAllPhieuThu()
             };
             ((State)DataContext).SetFilter();
         }
@@ -44,7 +44,7 @@ namespace QLDL.Presentation
             {
                 DaiLyWidth = 0,
                 LocTheoTen = "",
-                DanhSachPhieuThu = (new PhieuThuBUS()).getPhieuThuByDaiLy(MADL)
+                DanhSachPhieuThu = (new PhieuThuBUS()).GetPhieuThuByDaiLy(MADL)
             };
             ((State)DataContext).SetFilter();
         }

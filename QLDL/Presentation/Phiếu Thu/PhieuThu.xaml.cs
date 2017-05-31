@@ -59,7 +59,7 @@ namespace QLDL.Presentation
 
             if (result == MessageBoxResult.Yes)
             {
-                if(new PhieuThuBUS().insertPhieuThu(((State)DataContext).PhieuThu))
+                if(new PhieuThuBUS().InsertPhieuThu(((State)DataContext).PhieuThu))
                 {
                     MessageBox.Show("Đã thêm thành công");
                     ((State)DataContext).DaiLy.SONO -=
