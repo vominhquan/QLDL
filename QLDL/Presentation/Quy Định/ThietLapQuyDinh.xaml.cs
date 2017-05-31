@@ -26,17 +26,17 @@ namespace QLDL.Presentation
 
         private void DanhSachLoaiDL(object sender, RoutedEventArgs e)
         {
-
+            new DanhSachLoaiDL().ShowDialog();
         }
 
         private void DanhSachQuan(object sender, RoutedEventArgs e)
         {
-
+            new DanhSachQuan().ShowDialog();
         }
 
         private void DanhSachMatHang(object sender, RoutedEventArgs e)
         {
-
+            new DanhSachMatHang().ShowDialog();
         }
     }
 }

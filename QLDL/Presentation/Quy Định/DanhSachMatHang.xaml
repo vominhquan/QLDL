@@ -1,0 +1,112 @@
+﻿<Window x:Class="QLDL.Presentation.DanhSachMatHang"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:_="clr-namespace:Applications.Components"
+        SnapsToDevicePixels="True"
+        Title="Danh sách loại đại lý" Height="514" Width="811">
+    <DockPanel Name="Main" Style="{StaticResource DockPanelScale}">
+        <StackPanel 
+            Style="{StaticResource Shadow}"
+            DockPanel.Dock="Top">
+            <Border Padding="10">
+                <DockPanel>
+                    <StackPanel 
+                        Orientation="Horizontal"
+                        DockPanel.Dock="Left">
+                        <_:Button 
+                            Icon=""
+                            Text="Thêm loại đại lý" 
+                            Click="Add"/>
+                    </StackPanel>
+                    <StackPanel
+                        Orientation="Horizontal"
+                        DockPanel.Dock="Right">
+                        <_:Input 
+                            Height="50"
+                            Width="250"
+                            Border="0"
+                            Label="Tên"
+                            LabelWidth="60"
+                            Value="{Binding 
+                                Path=LocTheoTen, 
+                                UpdateSourceTrigger=PropertyChanged
+                            }"/>
+                        <_:Line/>
+                        <_:Button 
+                            Icon=""
+                            Click="Refresh"
+                            Text="Làm mới"/>
+                        <_:Line/>
+                        <_:Button 
+                            Icon=""
+                            Click="Save"
+                            Text="Lưu"/>
+                    </StackPanel>
+                    <Rectangle/>
+                </DockPanel>
+            </Border>
+        </StackPanel>
+        <ListView 
+            Name="ListViewDanhSachDaiLy"
+            Margin="20"
+            SelectionMode="Single" 
+            ItemContainerStyle="{StaticResource ListViewItem}"
+            ItemsSource="{Binding Path=DanhSachMatHang}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Tên mặt hàng" Width="250">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <_:Input 
+                                    Width="250"
+                                    Background="Transparent"
+                                    Foreground="White"
+                                    Overlay="#dd227447"
+                                    Margin="-6, 0"
+                                    Height="36"
+                                    Value="{Binding TENHANG}"
+                                    Align="Left"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Đơn giá" Width="250">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <_:Input 
+                                    Width="250"
+                                    Background="Transparent"
+                                    Foreground="White"
+                                    Overlay="#dd227447"
+                                    Margin="-6, 0"
+                                    Height="36"
+                                    Value="{Binding 
+                                        DONGIA, 
+                                        Converter={StaticResource DecimalToD}}"
+                                    Align="Left"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Đơn vị tính" Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <ComboBox 
+                                        Margin="-6, 0"
+                                        Height="36"
+                                        Width="200"
+                                        Background="#dd227447"
+                                        Foreground="White"
+                                        SelectedValuePath="MADVT"
+                                        DisplayMemberPath="DVT1"
+                                        SelectedValue="{Binding MADVT}"
+                                        ItemsSource="{Binding 
+                                            RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, 
+                                            Path=DataContext.DonViTinh}">
+                                </ComboBox>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </DockPanel>
+</Window>

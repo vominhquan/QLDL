@@ -80,14 +80,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BusinessLogic\BUSQLNhanVien.cs" />
-    <Compile Include="BusinessLogic\BUSThietLapQuyDinh.cs" />
-    <Compile Include="BusinessLogic\BUSView.cs" />
     <Compile Include="BusinessLogic\DaiLyBUS.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BusinessLogic\DonViTinhBUS.cs" />
     <Compile Include="BusinessLogic\LoaiDLBUS.cs" />
     <Compile Include="BusinessLogic\MatHangBUS.cs" />
     <Compile Include="BusinessLogic\NhanVienBUS.cs" />
@@ -186,6 +184,10 @@
       <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
     <Page Include="Presentation\Nhân Viên\DanhSachNhanVien.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\Quy Định\DanhSachMatHang.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -317,9 +319,6 @@
     <Compile Include="DataAccess\DAILY.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataAccess\DAOQLNhanVien.cs" />
-    <Compile Include="DataAccess\DAOThietLapQuyDinh.cs" />
-    <Compile Include="DataAccess\DAOView.cs" />
     <Compile Include="DataAccess\DVT.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -409,6 +408,9 @@
     </Compile>
     <Compile Include="Presentation\Nhân Viên\DanhSachNhanVien.xaml.cs">
       <DependentUpon>DanhSachNhanVien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Quy Định\DanhSachMatHang.xaml.cs">
+      <DependentUpon>DanhSachMatHang.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Quy Định\DannSachQuan.xaml.cs">
       <DependentUpon>DannSachQuan.xaml</DependentUpon>
