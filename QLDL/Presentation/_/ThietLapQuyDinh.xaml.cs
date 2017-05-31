@@ -11,10 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using BUS;
 using System.Text.RegularExpressions;
+using QLDL.BusinessLogic;
 
-namespace GUI
+namespace QLDL.Presentation
 {
     /// <summary>
     /// Interaction logic for ThietLapQuyDinh.xaml

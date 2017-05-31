@@ -16,41 +16,40 @@
     </Window.Resources>
     <DockPanel Name="Main" Style="{StaticResource DockPanelScale}">
         <StackPanel 
+            Name="StackPanel"
             Style="{StaticResource Shadow}"
             DockPanel.Dock="Top">
-            <Border Padding="10">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="10"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <_:Button 
+                    Grid.Column="0"
+                    Icon=""
+                    Text="Tiếp nhận nhân viên" 
+                    Click="ThemNhanVien"/>
+                <DockPanel
+                    Grid.Column="2">
                     <_:Button 
-                        Icon=""
-                        Text="Tiếp nhận nhân viên" 
-                        Click="ThemNhanVien"/>
-                    <DockPanel
-                        Grid.Column="2">
-                        <_:Button 
-                            DockPanel.Dock="Right"
-                            Icon=""
-                            Active="{Binding Path=MoreFilter}"
-                            Click="ToggleMoreFilter"/>
-                        <_:Input 
-                            Height="50"
-                            Border="0"
-                            Label="Tên"
-                            LabelWidth="60"
-                            Value="{Binding 
-                                Path=LocTheoTen, 
-                                UpdateSourceTrigger=PropertyChanged
-                            }"/>
-                    </DockPanel>
-                </Grid>
-            </Border>
-            <Border Padding="10,0,10,10"
-                    Visibility="{Binding MoreFilter, Converter={StaticResource BooleanToVisibility}}">
-                <Grid>
+                        DockPanel.Dock="Right"
+                        Icon=""
+                        Active="{Binding Path=MoreFilter}"
+                        Click="ToggleMoreFilter"/>
+                    <_:Input 
+                        Height="50"
+                        Border="0"
+                        Label="Tên"
+                        LabelWidth="60"
+                        Value="{Binding 
+                            Path=LocTheoTen, 
+                            UpdateSourceTrigger=PropertyChanged
+                        }"/>
+                </DockPanel>
+            </Grid>
+            <Border Height="{Binding MoreFilter, Converter={StaticResource BooleanToHeight}}">
+                <Grid Margin="10,0,10,10" Height="50">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="10"/>
@@ -71,16 +70,12 @@
                             IsSynchronizedWithCurrentItem="True"/>
                     </DockPanel>
                     <_:Input
-                        Grid.Column="3"
-                        Height="50"
-                        DockPanel.Dock="Right"
-                        Border="0"
                         Label="Địa chỉ"
+                        Grid.Column="2"
                         LabelWidth="100"
                         Value="{Binding 
                             Path=LocTheoDiaChi, 
-                            UpdateSourceTrigger=PropertyChanged
-                        }"/>
+                            UpdateSourceTrigger=PropertyChanged}"/>
                 </Grid>
             </Border>
         </StackPanel>
@@ -96,7 +91,7 @@
                     <GridViewColumn Header="Tên nhân viên" DisplayMemberBinding="{Binding TENNV}"/>
                     <GridViewColumn Header="Chức vụ" DisplayMemberBinding="{Binding TENCHUCVU}"/>
                     <GridViewColumn Header="Ngày sinh" DisplayMemberBinding="{Binding NGAYSINH, Converter={StaticResource DateTimeToDate}}"/>
-                    <GridViewColumn Header="Địa chỉ" DisplayMemberBinding="{Binding DIACHI}"/>
+                    <GridViewColumn Header="Địa chỉ" DisplayMemberBinding="{Binding DIACHI}" Width="450"/>
                 </GridView>
             </ListView.View>
         </ListView>

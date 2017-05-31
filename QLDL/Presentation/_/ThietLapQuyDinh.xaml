@@ -1,4 +1,4 @@
-﻿<Window x:Class="GUI.ThietLapQuyDinh"
+﻿<Window x:Class="QLDL.Presentation.ThietLapQuyDinh"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="ThietLapQuyDinh" Height="370" Width="450">

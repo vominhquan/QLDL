@@ -51,5 +51,10 @@ namespace QLDL.Presentation
         {
             new DanhSachNhanVien().ShowDialog();
         }
+
+        private void ThietLapQuyDinh(object sender, RoutedEventArgs e)
+        {
+            new ThietLapQuyDinh().ShowDialog(); 
+        }
     }
 }

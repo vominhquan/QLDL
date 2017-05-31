@@ -88,6 +88,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BusinessLogic\LoaiDLBUS.cs" />
     <Compile Include="BusinessLogic\MatHangBUS.cs" />
     <Compile Include="BusinessLogic\NhanVienBUS.cs" />
     <Compile Include="BusinessLogic\PhieuThuBUS.cs" />
@@ -187,6 +188,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Presentation\Quy Định\DannSachQuan.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\Quy Định\DanhSachLoaiDL.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\Quy Định\ThietLapQuyDinh.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Presentation\Đại Lý\DanhSachDaiLy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -277,6 +290,7 @@
     <Compile Include="Components\TextBlock\TextBlock.xaml.cs">
       <DependentUpon>TextBlock.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converter\BooleanToHeight.cs" />
     <Compile Include="Converter\BooleanToVisibility.cs" />
     <Compile Include="Converter\ItemsSource.cs" />
     <Compile Include="Converter\ColorToBrush.cs" />
@@ -395,6 +409,15 @@
     <Compile Include="Presentation\Nhân Viên\DanhSachNhanVien.xaml.cs">
       <DependentUpon>DanhSachNhanVien.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Quy Định\DannSachQuan.xaml.cs">
+      <DependentUpon>DannSachQuan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Quy Định\DanhSachLoaiDL.xaml.cs">
+      <DependentUpon>DanhSachLoaiDL.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Quy Định\ThietLapQuyDinh.xaml.cs">
+      <DependentUpon>ThietLapQuyDinh.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Đại Lý\DanhSachDaiLy.xaml.cs">
       <DependentUpon>DanhSachDaiLy.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -468,6 +491,7 @@
   <ItemGroup>
     <Folder Include="bin\Debug\" />
     <Folder Include="bin\Release\" />
+    <Folder Include="Presentation\_\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataAccess\Model.Context.tt">

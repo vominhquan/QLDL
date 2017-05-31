@@ -11,6 +11,7 @@
 
     <_:ItemsSource x:Key="ItemsSource"/>
     <_:BooleanToVisibility x:Key="BooleanToVisibility"/>
-    <_:VisibilityVisible x:Key="VisibilityVisible"/>
+    <_:VisibilityVisible x:Key="VisibilityVisible"/>      
+    <_:BooleanToHeight x:Key="BooleanToHeight"/>
 
 </ResourceDictionary>

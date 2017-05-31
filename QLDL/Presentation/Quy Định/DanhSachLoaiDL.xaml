@@ -1,0 +1,101 @@
+﻿<Window x:Class="QLDL.Presentation.DanhSachLoaiDL"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:_="clr-namespace:Applications.Components"
+        SnapsToDevicePixels="True"
+        Title="Danh sách loại đại lý" Height="514" Width="811">
+    <DockPanel Name="Main" Style="{StaticResource DockPanelScale}">
+        <StackPanel 
+            Style="{StaticResource Shadow}"
+            DockPanel.Dock="Top">
+            <Border Padding="10">
+                <DockPanel>
+                    <StackPanel 
+                        Orientation="Horizontal"
+                        DockPanel.Dock="Left">
+                        <_:Button 
+                            Icon=""
+                            Text="Thêm loại đại lý" 
+                            Click="Add"/>
+                    </StackPanel>
+                    <StackPanel
+                        Orientation="Horizontal"
+                        DockPanel.Dock="Right">
+                        <_:Input 
+                            Height="50"
+                            Width="250"
+                            Border="0"
+                            Label="Tên"
+                            LabelWidth="60"
+                            Value="{Binding 
+                                Path=LocTheoTen, 
+                                UpdateSourceTrigger=PropertyChanged
+                            }"/>
+                        <_:Line/>
+                        <_:Button 
+                            Icon=""
+                            Click="Refresh"
+                            Text="Làm mới"/>
+                        <_:Line/>
+                        <_:Button 
+                            Icon=""
+                            Click="Save"
+                            Text="Lưu"/>
+                    </StackPanel>
+                    <Rectangle/>
+                </DockPanel>
+            </Border>
+        </StackPanel>
+        <ListView 
+            Name="ListViewDanhSachDaiLy"
+            Margin="20"
+            SelectionMode="Single" 
+            ItemContainerStyle="{StaticResource ListViewItem}"
+            ItemsSource="{Binding Path=DanhSachLoaiDL}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Tên loại đại lý" Width="250">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <_:Input 
+                                    Width="250"
+                                    Background="Transparent"
+                                    Foreground="White"
+                                    Overlay="#dd227447"
+                                    Margin="-6, 0"
+                                    Height="50"
+                                    Value="{Binding TENLOAI}"
+                                    Align="Left"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Số nợ tối đa" Width="250">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Width="250" Orientation="Horizontal">
+                                    <_:Input 
+                                        Width="200"
+                                        Background="Transparent"
+                                        Foreground="White"
+                                        Overlay="#dd227447"
+                                        Margin="-6, 0"
+                                        Height="50"
+                                        Value="{Binding 
+                                            SONOTOIDA, 
+                                            Converter={StaticResource DecimalToD}}"
+                                        Align="Left"/>
+                                    <_:Button 
+                                        Click="RemoveSoNoToiDa"
+                                        Tag="{Binding}"
+                                        Height="50"
+                                        Width="50"
+                                        Icon=""/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </DockPanel>
+</Window>
