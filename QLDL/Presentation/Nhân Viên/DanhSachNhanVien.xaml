@@ -20,58 +20,74 @@
             Style="{StaticResource Shadow}"
             DockPanel.Dock="Top">
             <Border Padding="10">
-                <DockPanel>
-                    <StackPanel 
-                        Orientation="Horizontal"
-                        DockPanel.Dock="Left">
-                        <_:Button 
-                            Icon=""
-                            Text="Tiếp nhận nhân viên" 
-                            Click="ThemNhanVien"/>
-                    </StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
                     <_:Button 
-                        DockPanel.Dock="Right"
-                        Icon=""
-                        Active="{Binding Path=moreFilter}"
-                        Text="Lọc" 
-                        Click="ToggleMoreFilter"/>
-                    <_:Input 
+                        Icon=""
+                        Text="Tiếp nhận nhân viên" 
+                        Click="ThemNhanVien"/>
+                    <DockPanel
+                        Grid.Column="2">
+                        <_:Button 
+                            DockPanel.Dock="Right"
+                            Icon=""
+                            Active="{Binding Path=MoreFilter}"
+                            Click="ToggleMoreFilter"/>
+                        <_:Input 
+                            Height="50"
+                            Border="0"
+                            Label="Tên"
+                            LabelWidth="60"
+                            Value="{Binding 
+                                Path=LocTheoTen, 
+                                UpdateSourceTrigger=PropertyChanged
+                            }"/>
+                    </DockPanel>
+                </Grid>
+            </Border>
+            <Border Padding="10,0,10,10"
+                    Visibility="{Binding MoreFilter, Converter={StaticResource BooleanToVisibility}}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <DockPanel Grid.Column="0">
+                        <_:Button 
+                            DockPanel.Dock="Left"
+                            Background="#33000000"
+                            Click="ClearChucVu"
+                            Text="Chức vụ"/>
+                        <ComboBox 
+                            Background="#22000000"
+                            ItemsSource="{Binding ChucVu}"
+                            SelectedValuePath="MACHUCVU"
+                            SelectedValue="{Binding LocTheoMaChucVu}"
+                            DisplayMemberPath="TENCHUCVU"
+                            IsSynchronizedWithCurrentItem="True"/>
+                    </DockPanel>
+                    <_:Input
+                        Grid.Column="3"
                         Height="50"
-                        Width="250"
                         DockPanel.Dock="Right"
                         Border="0"
-                        Label="Tên"
-                        LabelWidth="60"
+                        Label="Địa chỉ"
+                        LabelWidth="100"
                         Value="{Binding 
-                            Path=LocTheoTen, 
+                            Path=LocTheoDiaChi, 
                             UpdateSourceTrigger=PropertyChanged
                         }"/>
-                    <Rectangle/>
-                </DockPanel>
-            </Border>
-            <Border Padding="10">
-                <StackPanel Height="50" Orientation="Horizontal">
-                    <_:TextBlock 
-                        Background="#33000000"
-                        Align="Center"
-                        Text="Chức vụ"/>
-                    <ComboBox 
-                        Width="300"
-                        Background="#22000000"
-                        ItemsSource="{Binding ChucVu}"
-                        SelectedValuePath="MACHUCVU"
-                        SelectedValue="{Binding MaChucVu}"
-                        DisplayMemberPath="TENCHUCVU"
-                        IsSynchronizedWithCurrentItem="True"/>
-                        
-                        <!--Text="{Binding DaiLy.TENLOAI}"-->
-                        
-                </StackPanel>
+                </Grid>
             </Border>
         </StackPanel>
             <!--ItemContainerStyle="{StaticResource ListViewItemResources}"-->
         <ListView 
-            Margin="20"
+            Margin="10"
             SelectionMode="Single" 
             ItemsSource="{Binding Path=DanhSachNhanVien}">
             <ListView.View>

@@ -32,6 +32,7 @@ namespace QLDL.Presentation
             DataContext = new State()
             {
                 LocTheoTen = "",
+                LocTheoDiaChi = "",
                 DanhSachNhanVien = new NhanVienBUS().GetAllNhanVien()
             };
             ((State)DataContext).SetFilter();
@@ -60,13 +61,26 @@ namespace QLDL.Presentation
             #endregion
 
             #region (int) Lọc theo mã Chức vụ
-            private int maChucVu;
-            public int MaChucVu
+            private int locTheoMaChucVu;
+            public int LocTheoMaChucVu
             {
-                get => maChucVu;
+                get => locTheoMaChucVu;
                 set
                 {
-                    maChucVu = value;
+                    locTheoMaChucVu = value;
+                    SetFilter();
+                }
+            }
+            #endregion
+
+            #region (int) Lọc theo địa chỉ
+            private string locTheoDiaChi;
+            public string LocTheoDiaChi
+            {
+                get => locTheoDiaChi;
+                set
+                {
+                    locTheoDiaChi = value;
                     SetFilter();
                 }
             }
@@ -107,7 +121,12 @@ namespace QLDL.Presentation
                 });
                 Filters.AddFilter(delegate (object item)
                 {
-                    return MaChucVu == 0 ? true : (item as vwCHUCVU_NHANVIEN_TAIKHOAN).MACHUCVU == MaChucVu;
+                    return LocTheoMaChucVu == 0 ? true : (item as vwCHUCVU_NHANVIEN_TAIKHOAN).MACHUCVU == LocTheoMaChucVu;
+                }, MoreFilter);
+                Filters.AddFilter(delegate (object item)
+                {
+                    return (item as vwCHUCVU_NHANVIEN_TAIKHOAN).DIACHI.ToLower()
+                    .Contains(LocTheoDiaChi.ToLower()) == true;
                 }, MoreFilter);
                 #endregion
 
@@ -132,11 +151,6 @@ namespace QLDL.Presentation
 
         }
 
-        private void XemNV(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void SuaNV(object sender, RoutedEventArgs e)
         {
 
@@ -145,7 +159,12 @@ namespace QLDL.Presentation
         private void ToggleMoreFilter(object sender, RoutedEventArgs e)
         {
             (DataContext as State).MoreFilter ^= true;
-        } 
+        }
+
+        private void ClearChucVu(object sender, RoutedEventArgs e)
+        {
+            (DataContext as State).LocTheoMaChucVu = 0;
+        }
         #endregion
 
         ///// <summary>

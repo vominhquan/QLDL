@@ -10,4 +10,7 @@
     <_:SolidColorBrushOrDefault x:Key="SolidColorBrushOrDefault"/>
 
     <_:ItemsSource x:Key="ItemsSource"/>
+    <_:BooleanToVisibility x:Key="BooleanToVisibility"/>
+    <_:VisibilityVisible x:Key="VisibilityVisible"/>
+
 </ResourceDictionary>
