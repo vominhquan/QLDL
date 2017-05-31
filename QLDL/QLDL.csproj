@@ -159,6 +159,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Presentation\DangNhap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Presentation\Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -369,6 +373,9 @@
     </Compile>
     <Compile Include="DataAccess\vw_PhieuXuat_NhanVien_DaiLy.cs">
       <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\DangNhap.xaml.cs">
+      <DependentUpon>DangNhap.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>

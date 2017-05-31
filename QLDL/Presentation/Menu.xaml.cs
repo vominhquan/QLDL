@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.ComponentModel;
 
 namespace QLDL.Presentation
 {
@@ -24,6 +25,13 @@ namespace QLDL.Presentation
         {
             InitializeComponent();
             Application.Current.MainWindow.Loaded += DPI.Initialize;
+            Closing += CloseAll;
+            // Application.Current.MainWindow.
+        }
+
+        private void CloseAll(object sender, CancelEventArgs e)
+        {
+            App.Current.Shutdown();
         }
 
         private void DanhSachDaiLy(object sender, RoutedEventArgs e)

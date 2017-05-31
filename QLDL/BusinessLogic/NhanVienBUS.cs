@@ -66,9 +66,10 @@ namespace QLDL.BusinessLogic
         }
         public int? AddNhanVien_TaiKhoan(NHANVIEN nhanvien, TAIKHOAN taikhoan)
         {
-            using (QLDLEntities db = new QLDLEntities())
+
+            try
             {
-                try
+                using (QLDLEntities db = new QLDLEntities())
                 {
                     db.NHANVIENs.Add(nhanvien);
                     db.SaveChanges();
@@ -77,15 +78,40 @@ namespace QLDL.BusinessLogic
                     db.TAIKHOANs.Add(taikhoan);
                     db.SaveChanges();
                     return nhanvien.MANV;
-                    // return ;
                 }
-                catch (Exception e)
+            }
+            catch (Exception e)
+            {
+                System.Console.Out.WriteLine(e.ToString());
+                return null;
+            }
+
+        }
+        public int? KiemTraDangNhap(TAIKHOAN taikhoan)
+        {
+            try
+            {
+                using (QLDLEntities db = new QLDLEntities())
                 {
-                    System.Console.Out.WriteLine(e.ToString());
+                    var all = from tk in db.TAIKHOANs
+                              select tk;
+                    foreach (var item in all)
+                    {
+                        if(item.TENDANGNHAP.Trim() == taikhoan.TENDANGNHAP
+                            && item.PASSWORD == taikhoan.PASSWORD)
+                        {
+                            return item.MANV;
+                        }
+                    }
                     return null;
                 }
-
             }
+            catch (Exception e)
+            {
+                System.Console.Out.WriteLine(e.ToString());
+                return null;
+            }
+
         }
     }
 }
