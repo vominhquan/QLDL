@@ -187,21 +187,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Presentation\Quy Định\DanhSachMatHang.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Presentation\Quy Định\DanhSachLoaiDL.xaml">
       <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Presentation\Quy Định\DonViTinh.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Presentation\Quy Định\DanhSachMatHang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
     <Page Include="Presentation\Quy Định\DannSachQuan.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Presentation\Quy Định\DanhSachLoaiDL.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
     <Page Include="Presentation\Quy Định\ThietLapQuyDinh.xaml">
       <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
     <Page Include="Presentation\Đại Lý\DanhSachDaiLy.xaml">
       <SubType>Designer</SubType>
@@ -409,14 +413,17 @@
     <Compile Include="Presentation\Nhân Viên\DanhSachNhanVien.xaml.cs">
       <DependentUpon>DanhSachNhanVien.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Quy Định\DanhSachLoaiDL.xaml.cs">
+      <DependentUpon>DanhSachLoaiDL.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Quy Định\DonViTinh.xaml.cs">
+      <DependentUpon>DonViTinh.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Quy Định\DanhSachMatHang.xaml.cs">
       <DependentUpon>DanhSachMatHang.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Quy Định\DannSachQuan.xaml.cs">
       <DependentUpon>DannSachQuan.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Quy Định\DanhSachLoaiDL.xaml.cs">
-      <DependentUpon>DanhSachLoaiDL.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Quy Định\ThietLapQuyDinh.xaml.cs">
       <DependentUpon>ThietLapQuyDinh.xaml</DependentUpon>
