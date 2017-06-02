@@ -21,7 +21,7 @@
                 </StackPanel>
             </Border>
         </StackPanel>
-        <Border Padding="20" Background="#3f8660">
+        <Border Padding="20">
             <StackPanel VerticalAlignment="Center">
                 <Border Style="{StaticResource ShadowBlock}">
                     <_:Button 
@@ -39,6 +39,12 @@
                     <_:Button 
                         Click="DanhSachMatHang"
                         Text="Danh sách mặt hàng"/>
+                </Border>
+                <Rectangle Height="15"/>
+                <Border Style="{StaticResource ShadowBlock}">
+                    <_:Button 
+                        Click="DanhSachDonViTinh"
+                        Text="Danh sách đơn vị tính"/>
                 </Border>
             </StackPanel>
         </Border>

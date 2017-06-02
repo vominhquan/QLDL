@@ -86,7 +86,7 @@ namespace QLDL.Presentation
                 GroupFilter Filters = new GroupFilter();
                 Filters.AddFilter(delegate (object item)
                 {
-                    return (item as MATHANG).TENHANG.ToLower()
+                    return (item as DVT).DVT1.ToLower()
                     .Contains(LocTheoTen.ToLower()) == true;
                 });
                 #endregion

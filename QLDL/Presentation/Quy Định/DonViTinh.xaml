@@ -19,7 +19,7 @@
                             Text="Quay lại"/>
                         <_:Button 
                             Icon=""
-                            Text="Thêm loại đại lý" 
+                            Text="Thêm đơn vị tính" 
                             Click="Add"/>
                     </StackPanel>
                     <StackPanel

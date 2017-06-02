@@ -43,5 +43,10 @@ namespace QLDL.Presentation
         {
             DialogResult = false;
         }
+
+        private void DanhSachDonViTinh(object sender, RoutedEventArgs e)
+        {
+            new DonViTinh().ShowDialog();
+        }
     }
 }
